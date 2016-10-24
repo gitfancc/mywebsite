@@ -1,0 +1,105 @@
+var email_pattern=/(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function(){
+	$("#account").blur(function(){
+		$("#account_error_message").remove();
+		if(!$(this).val()){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>手机号/邮箱不能为空</span>");
+    		return false;
+    	}else if($(this).val().indexOf("@")!=-1&&!email_pattern.exec($(this).val())){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>请输入格式正确的邮箱</span>");
+    		return false;
+    	}else if($(this).val().indexOf("@")==-1&&!telphone_pattern.exec($(this).val())){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>请输入格式正确的手机号码</span>");
+    		return false;
+    	}
+		
+		valid_account();
+	});
+	$("#password").blur(function(){
+		$("#password_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='password_error_message'>登录密码不能为空</span>");
+    		return false;
+		}
+	});
+	$("#rePassword").blur(function(){
+		$("#repassword_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='repassword_error_message'>确认密码不能为空</span>");
+    		return false;
+		}
+		if($(this).val()!=$("#password").val()){
+    		$(this).val("");
+    		$(this).after("<span class=\"tipbox-reg-error\" id='repassword_error_message'>输入的密码不相符</span>");
+    		$("#password").val("");
+    		$("#password").focus();
+    		return false;
+    	}
+	});
+	$("#userName").blur(function(){
+		$("#userName_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='userName_error_message'>昵称不能为空</span>");
+    		return false;
+		}
+	});
+	$("#txtVarcode").blur(function(){
+		$("#varcode_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='varcode_error_message'>验证码不能为空</span>");
+    		return false;
+		}
+	});
+	
+	$("#btnRegister").click(function(){
+		$("#service_error_message").remove();
+		$("#account_error_message").remove();
+		$("#password_error_message").remove();
+		$("#repassword_error_message").remove();
+		$("#userName_error_message").remove();
+		$("#varcode_error_message").remove();
+		if(!$("#account").val()){
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-error\">手机号/邮箱不能为空</span>");
+    		return false;
+		}else if(!$("#password").val()){
+			$("#password").after("<span id='password_error_message' class=\"tipbox-reg-error\">登录密码不能为空</span>");
+    		return false;
+		}else if(!$("#rePassword").val()){
+			$("#rePassword").after("<span id='repassword_error_message' class=\"tipbox-reg-error\">确认密码不能为空</span>");
+    		return false;
+		}else if(!$("#userName").val()){
+			$("#userName").after("<span id='userName_error_message' class=\"tipbox-reg-error\">昵称不能为空</span>");
+    		return false;
+		}else if(!$("#txtVarcode").val()){
+			$("#txtVarcode").after("<span id='varcode_error_message' class=\"tipbox-reg-error\">验证码不能为空</span>");
+    		return false;
+		}else if(!$("#readerService").attr("checked")){
+			$("#readerService ~ a").after("<span id='service_error_message' class=\"tipbox-reg-error\">请先阅读乐康服务条款</span>");
+			return false;
+		}
+		$("#register").submit();
+	});
+});
+
+function valid_account(){
+	$("#account_error_message").remove();
+	$.post(cxtPath+'/valid_account',{"user.account":$("#account").val()},function(results){
+		if(!results)
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-error\">帐号已经被注册</span>");
+		else
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-correct\">可用</span>");
+	},'json');
+}
+
+function getCheckCode() {
+    $("#changeVercode").attr("src",cxtPath+"/authImg.jpg?t="+Math.random());
+}
+
+document.onkeydown = function(e) {
+	var theEvent = window.event || e;
+	var code = theEvent.keyCode || theEvent.which;
+	if (code == 13) {
+		$("#btnRegister").click();
+	}
+}

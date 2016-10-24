@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+        <ul class="nav pull-right">
+            <li><a>欢迎您来到乐康</a></li>
+            <li><a href="index.html"><i class="icon-home icon-white"></i> 我的首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="个人信息.html">个人信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="绑定设备.html">设备设置</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">退出</a></li>
+        </ul> 
+    </div>
+  </div>
+</div>
+
+<div class="container userbox">
+	 <div class="row">
+     	<div class="span3">
+          <div class="well well-large sidebar-nav">
+                <div class="text-center mb20"><a href="个人信息.html"><img src="theme1/images/imagthumb.gif" width="123"  height="123" alt=""/></a></div>
+                <ul class="nav nav-list nav">
+                  <li><a href="个人信息.html">基本资料</a></li>
+                  <li class="active"><a href="绑定设备.html">设备设置</a></li>
+                  <li><a href="账号安全.html">账号安全</a></li>
+                </ul>
+          </div><!--/.well -->
+        </div>
+        <div class="span9">
+          <ul class="breadcrumb">
+              <li><a href="绑定设备.html">设备列表</a> <span class="divider">/</span></li>
+              <li class="active">h2老年腕表</li>
+          </ul>
+           
+          <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-setting1" data-toggle="tab">电子围栏设置</a></li>
+                <li><a href="#tab-setting2" data-toggle="tab">定位设置</a></li>
+                <li><a href="#tab-setting3" data-toggle="tab">通讯设置</a></li>
+                <li><a href="#tab-setting4" data-toggle="tab">其他设置</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab-setting1">  
+                    <form class="form-inline" name="form1">
+                    <fieldset>
+                    <div class="control-group clearfix">
+                        <button class="btn btn-success pull-right">保存设置</button>
+                    </div>
+                    <div class="well well-small  pl40">
+                        <h4 class="muted">功能开关</h4>
+                        <div class="control-group">
+                            <label class="radio inline">
+                              <input value="1" checked="checked" name="group" type="radio">
+                              开
+                            </label>
+                            <label class="radio inline">
+                              <input value="2" name="group" type="radio">
+                              关
+                            </label>
+                        </div>
+                    </div>
+                    <div class="well well-small pl40">
+                        <h4 class="muted">重复</h4>
+                        <div class="control-group">
+                            <label class="checkbox inline"><input value="1" id="checkAll" type="checkbox"> 全选</label>
+                         </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期一
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期二
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期三
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期四
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期五
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期六
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期日
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                    </div>
+                    <div class="well well-small  pl40">
+                        <h4 class="muted">围栏中心点：</h4>
+                        <div>
+                         	<label>经度:</label>
+                            <input type="text" class="input-mini">
+                            <label class="ml10">纬度:</label>
+                            <input type="text" class="input-mini">
+                            <label class="ml15">围栏半径:</label>
+                            <input type="text" class="input-mini">
+                            <label>米</label>
+                        </div>
+                    </div>
+                    </fieldset>
+                    </form>
+                    <div class="chart chart-medium"><img src="theme1/images/chart7.jpg"/></div>
+                </div>
+                <!--end电子围栏设置-->
+                <div class="tab-pane fade" id="tab-setting2"> 
+                	<form class="form-inline" name="form2">
+                    <fieldset>
+                    <div class="control-group clearfix">
+                        <button class="btn btn-success pull-right">保存设置</button>
+                    </div>
+                    <div class="well well-small  pl40">
+                        <h4 class="muted">功能开关</h4>
+                        <div class="mb10">
+                            <label class="radio inline">
+                              <input value="1" checked="checked" name="group" type="radio">
+                              开
+                            </label>
+                            <label class="radio inline">
+                              <input value="2" name="group" type="radio">
+                              关
+                            </label>
+                        </div>
+                    </div>
+                    <div class="well well-small  pl40">
+                        <h4 class="muted">重复</h4>
+                        <div class="control-group">
+                            <label class="checkbox inline"><input value="1" id="checkAll2" type="checkbox"> 全选</label>
+                         </div>
+                         
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期一
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期二
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期三
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期四
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期五
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期六
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox inline">
+                              <input value="1"  type="checkbox"> 星期日
+                            </label>
+                            <label class="checkbox inline">开始时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                            <label class="ml25 checkbox inline">结束时间:</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>点</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>分</label>
+                        </div>
+                    </div>
+                    <div class="well well-small  pl40">
+                        <h4 class="muted">数据采集频率：</h4>
+                        <label class="">每 <input class="input-medium" type="text"> 分钟采集一次</label>
+                    </div>
+                    </fieldset>
+                    </form>
+                </div>
+                <!--end数据上报-->
+                <div class="tab-pane fade" id="tab-setting3">
+                	<form class="form-inline form-horizontal">
+                    <fieldset>
+                    <div class="control-group clearfix">
+                        <button class="btn btn-success pull-right">保存设置</button>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">心率数据通讯:</label>
+                        <div class="controls">
+                        <label class="radio inline">
+                          <input value="1" checked="checked" name="group" type="radio">
+                          开
+                        </label>
+                        <label class="radio inline">
+                          <input value="2" name="group" type="radio">
+                          关
+                        </label>
+                        <label class="checkbox inline ml25">数据上传间隔时间:</label>
+                        <select class="input-mini">
+                            <option>1</option>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>60</option>
+                        </select>
+                        <label>分</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">定位数据通讯(GPS/LBS):</label>
+                        <div class="controls">
+                        <label class="radio inline">
+                          <input value="1" checked="checked" name="group" type="radio">
+                          开
+                        </label>
+                        <label class="radio inline">
+                          <input value="2" name="group" type="radio">
+                          关
+                        </label>
+                        <label class="checkbox inline ml25">数据上传间隔时间:</label>
+                        <select class="input-mini">
+                            <option>1</option>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>60</option>
+                        </select>
+                        <label>分</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="radio inline control-label">运动数据通讯:</label>
+                        <div class="controls">
+                        <label class="radio inline">
+                          <input value="1" checked="checked" name="group" type="radio">
+                          开
+                        </label>
+                        <label class="radio inline">
+                          <input value="2" name="group" type="radio">
+                          关
+                        </label>
+                        <label class="checkbox inline ml25">数据上传间隔时间:</label>
+                        <select class="input-mini">
+                            <option>1</option>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>60</option>
+                        </select>
+                        <label>分</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="radio inline control-label">腕表低电量预警值:</label>
+                        <div class="controls">
+                        <select class="input-mini">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                        </select>
+                        <label>%</label>
+                        </div>
+                    </div> 
+                    </fieldset>
+                    </form>
+                </div>
+                 <!--end定位设置-->
+                 <div class="tab-pane fade" id="tab-setting4">
+                 	<h5>暂无内容</h5>
+                </div>
+                 <!--end其他设置-->
+            </div>
+            <!--tab-content-->
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	$(function() {
+	   $("#checkAll").click(function() {
+			$('form[name="form1"] input:checkbox').attr("checked",this.checked);
+		});
+		 $("#checkAll2").click(function() {
+			$('form[name="form2"] input:checkbox').attr("checked",this.checked);
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>足迹日志</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+<link type="text/css" rel="stylesheet" href="../theme/css/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li>欢迎您</li>
+            <li><a href="login.html">[注销]</a></li>
+            <li class="dropdown">
+            	<a href="../index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i><sup class="badge badge-important">6</sup></a>
+                <ul class="dropdown-menu">
+                    <li class="text-error"><a href="javascript:;">6条新消息</a></li>
+                    <li class="divider"></li>
+                    <li class="text-error"><a href="javascript:;">0条新群组要求</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+        <ul class="nav">
+            <li><a href="myledong.html">我的乐康</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">运动日志 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="sportsLog2.html">运动日志</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sportsLog.html">足迹日志</a></li>
+                </ul>
+            </li>
+            <li><a href="../group/gLatestNews.html">群组动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="info.html">编辑资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="deviceManagement.html">设备管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">退出</a></li>
+                </ul>
+          </li>
+        </ul>
+        <div class="pull-right">
+            <select id="custom-select">
+                <option>请选择设备</option>
+                <option  data-imagesrc="../theme/images/a1.png">A1智能腕表</option>
+                <option  data-imagesrc="../theme/images/l28.png" >L28手环</option>
+            </select>
+    	</div>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	 <div class="row">
+     	<div class="span3 sidebar">
+        	<div class="well">
+                <div class="person-info">
+                	<a><img src="../theme/images/imagthumb.gif"/></a>
+                </div>
+                <a href="#" data-toggle="tooltip" title="离leval还差多少步">
+                    <div class="progress progress-info">
+                        <div class="bar" style="width: 60%"></div>
+                    </div>
+                </a>
+                <p class="text-center mb20">leval 6</p>
+                <ul class="user-atten">
+                    <li><a href="sportsLog2.html"><h3>65</h3>日志</a></li>
+                    <li><a href="../group/gRanking.html"><h3>265</h3>排名</a></li>
+                    <li  class="noborder"><a  href="../group/gSportLatest.html"><h3>65</h3>动态</a></li>
+                </ul>
+                <ul class="nav nav-list">
+                  <li><a href="sportsLog2.html"><i class=" cus-icon icon-searing"></i>运动日志</a></li>
+                  <li class="active"><a href="sportsLog.html"><i class=" cus-icon icon-line"></i>足迹日志</a></li>
+                </ul>
+                
+          </div><!--/.well -->
+        </div>
+        <div class="span9 relative">
+            <ul class="nav nav-tabs pull-left">
+                <li class="active"><a href="#" title="今天" data-toggle="tab">今天</a></li>
+                <li class="line"><a>|</a></li>
+                <li><a href="#" title="最近一周" data-toggle="tab">最近一周</a></li>
+                <li class="line"><a>|</a></li>
+                <li><a href="#" title="最近一月" data-toggle="tab">最近一月</a></li>
+            </ul>
+            <div class="pull-right">
+                <span class="input-prepend mr10">
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                    <input type="text" class="span2" id="datepicker">
+                </span>
+                <a class="btn btn-primary">查看</a>
+            </div>
+            <hr class="clear">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>位置</th>
+                        <th>经纬度</th>
+                        <th>心率</th>
+                        <th>运动状态</th>
+                        <th>海拔</th>
+                        <th>气压</th>
+                        <th>湿度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>00:01</td>
+                        <td>广州市科学城开泰大道创新大厦</td>
+                        <td>112°E  89°S</td>
+                        <td>80</td>
+                        <td>运动</td>
+                        <td>200</td>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                     <tr>
+                        <td>00:01</td>
+                        <td>广州市科学城开泰大道创新大厦</td>
+                        <td>112°E  89°S</td>
+                        <td>80</td>
+                        <td>运动</td>
+                        <td>200</td>
+                        <td></td>
+                        <td></td>
+                     </tr> 
+                </tbody> 
+            </table> 
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="../theme/js/jquery.customSelect.js"></script>
+<script src="../theme/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../theme/js/query.ui.datepicker-zh-CN.js"></script>
+<script>
+$(function() {
+	$('#custom-select').ddslick();
+	$( "#datepicker" ).datepicker({
+		dateFormat:'yy-mm-dd',  //更改时间显示模式
+		showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+		changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+		changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+		showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+		closeText:'关闭',      //设置关闭按钮的值
+		currentText:'今天', //设置今天按钮的值
+		showOtherMonths  :true,
+		yearRange:'2008:2017',  //显示可供选择的年份7天
+		defaultDate:1
+	})
+})
+</script>
+</body>
+</html>

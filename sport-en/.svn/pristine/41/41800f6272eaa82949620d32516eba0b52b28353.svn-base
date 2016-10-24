@@ -1,0 +1,32 @@
+static.file.path = http://localhost:8080/static/sport/L11
+#static.file.path = http://192.168.1.206:8088/static/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = /sport
+prefix.url = http://localhost:8080/sport/img/
+file.upload.path = D:/img/
+restfulURL=http://localhost:9080/appscomm/
+#email config
+emailAddress=noreply@mykronoz.com
+email.url=http://localhost:8080/sport
+findPwdsubject=ZeFit password reset
+registSubject=ZeFit sign up confirmation
+newPwdSubject=ZeFit get new password
+#email.forgotPwd=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_forgot_pwd.html
+#email.register=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_register.html
+#email.newPwd=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_new_pwd.html
+
+email.forgotPwd=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_forgot_pwd.html
+email.register=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_register.html
+email.newPwd=D:\\appscomm-workspace\\sport-en\\src\\main\\filters\\prodcution\\template_new_pwd.html
+
+watch.search.system.user=test@test.com
+
+deviceType=L28
+deviceName=ZeFit
+href.learnmore=http://www.mykronoz.com/zefit
+pc.download=
+mac.download=
+
+ios.download=
+andriod.download=
+wp.download=http://www.windowsphone.com/s?appid=b76a1534-2508-4912-a19a-f93719962840

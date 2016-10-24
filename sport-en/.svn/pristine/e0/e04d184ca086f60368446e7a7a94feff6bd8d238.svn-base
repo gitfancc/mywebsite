@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><@s.text name='page.myProfile.t1'/></title>
+	<#include "../../commons/top.html">
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<#include "../../commons/batteryBoard.html">
+	<div class="bg-lightgray">
+		<h2 class="tc pt10 pb10"><@s.text name='page.myProfile.b1'/></h2>
+	</div>
+	<div class="content">
+		    <div class="ui-grid-row ptb30">
+		     <form class="ui-form" method="post" action="<@s.text name='root.path'/>/user/save" id="save" enctype="multipart/form-data">
+		    	<div class="ui-grid-4">
+		        	<div id="preview">
+		             <#if user.imgUrl??>
+	                	<img class="mb10"  width="123"  height="123" src="<@s.text name='prefix.url'/>/${user.imgUrl}" />
+	                 <#else>
+	                	<img class="mb10" width="123"  height="123" src="<@s.text name='static.file.path'/>/images/imagthumb.gif"/>
+	                </#if>
+	                </div>
+	                <div class="cus-uploadfile">
+			            	<input type="file" onchange="previewImage(this)" id="uploadFile" name="uploadFile"></input>
+			            	<a class="color-red"><@s.text name='page.myProfile.b2'/></a>
+			        </div>
+	            </div>
+	        
+	        <div class="ui-grid-21">
+	                <fieldset>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="email"><@s.text name='page.myProfile.b3'/></label>
+	                        <p class="ui-form-text">${(user.mail)!}</p>
+	                    </div>
+	            
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="username"><@s.text name='page.myProfile.b4'/></label>
+	                        <input type="text" id="nickName" name="person.userName"  value="${(user.userName)!}" class="ui-input">
+	                    </div>
+	                    
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="password"></label>
+	                        <a id="dialog-link" class="color-red tdl" href="javascript:;"><@s.text name='page.myProfile.b5'/></a>
+	                    </div>
+	                    
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="height"><@s.text name='page.myProfile.b6'/></label>
+	                       <#if user.heightUnit==1>
+	                        	<input size="6" type="text" id="txtft" name="heightFt" 	value="${(heightFt)!}" >
+	                        	<span> <@s.text name='page.myProfile.b8'/> 
+	                        	<input type="text" size="6" id="txtin" name="heightIn"  value="${(heightIn)!}"/> in</span>
+	                        <#else>
+	                        	<input size="6" type="text" id="height" name="person.height" 	value="${(user.height)!}" >
+	                        	<span><@s.text name='page.myProfile.b7'/></span>
+	                        </#if>
+	                        <span id="height_error_message" class="color-red"></span>
+	                        <!--
+	                        <select disabled="disabled" id="heightUnit" name="person.heightUnit" >
+	                        	<option <#if user.heightUnit==0>selected</#if> value="0" ><@s.text name='page.myProfile.b7'/></option>
+	                            <option <#if user.heightUnit==1>selected</#if> value="1" ><@s.text name='page.myProfile.b8'/></option>
+	                        </select>
+	                        
+	                        <#if user.heightUnit==1>
+	                        	<span><input type="text" size="6" id="txtin" name="heightIn"  value="${(heightIn)!}"/>in</span>
+	                        </#if>
+	                        -->
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="weight"><@s.text name='page.myProfile.b9'/></label>
+	                        <#if user.heightUnit==0>
+	                        <input size="6" type="text" id="weight" name="person.weight" value="${(user.weight)?c} "  />
+	                        	<span><@s.text name='page.myProfile.b10'/></span>
+	                        <#else>
+	                        <input size="6" type="text" id="weightLbs" name="person.weight" value="${(user.weight)?c} "  />
+	                        	<span><@s.text name='page.myProfile.b11'/></span>
+	                        </#if>
+	                        <span id="weight_error_message" class="color-red"></span>
+	                        <!--
+	                        <select disabled="disabled" id="weightUnit" name="person.weightUnit" >
+	                        	<option <#if user.weightUnit==0>selected</#if> value="0"><@s.text name='page.myProfile.b10'/></option>
+	                            <option <#if user.weightUnit==1>selected</#if> value="1"><@s.text name='page.myProfile.b11'/></option>
+	                        </select>
+	                        -->
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="gender"><@s.text name='page.myProfile.b12'/></label>
+	                        <label class="ui-radio"><input  type="radio" name="person.gender" value="0" <#if user??><#if user.gender==0>checked</#if><#else>checked</#if> /> <@s.text name='page.myProfile.b13'/></label>
+                      		<label class="ui-radio"><input  type="radio" name="person.gender" value="1" <#if user??&&user.gender==1>checked</#if> /> <@s.text name='page.myProfile.b14'/></label> 
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label"><@s.text name='page.myProfile.b15'/></label>
+	                        <input type="text" id="datepicker" value="${(user.birthDate?date("yyyy-MM-dd")?string("dd/MM/yyyy"))! }" class="ui-input calendar" >
+	                       	<label><@s.text name='page.time.format.tips'/></label>
+	                      	<input type="hidden" id="alternate" name="person.birthDate" value="${(user.birthDate)! }" />
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="country"><@s.text name='page.myProfile.b16'/></label>
+	                        <select id="country" name="person.countryId" >
+	                        </select>
+	                    </div>
+	                    
+	                    <div class="ui-form-item">
+	                        <input type="submit" value="<@s.text name='page.myProfile.b17'/>" class="btn btn-red" onclick="return validateSave();" />
+	                    </div>
+	                </fieldset>
+	            
+	        </div>
+	        </form>
+	    </div>
+	</div>    
+	
+	<#include "../../commons/foot.html">
+<!--浮动层;-->
+<div  id="dialog"   style="display:none;">
+      <form class="ui-form mt20" id="fmmodifypw">
+            <fieldset>
+                <p class=" mb20"><input type="password" class="ui-input" id="idOldPassword" name="oldPassword" placeholder="Old Password"></p>
+                <p class=" mb20"><input type="password" class="ui-input" id="idNewPassword" name="newPassword" placeholder="New Password"></p>
+                <p class=" ml85"><input type="submit" value="SAVE"  id="modifypw" class="btn btn-red"></p>  
+            </fieldset>
+        </form>
+</div>
+<!--end浮动层-->
+</body>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/pictureupload.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$( "#datepicker" ).datepicker({
+		//	dateFormat:'yy-mm-dd',  //更改时间显示模式
+			dateFormat:'dd/mm/yy', 
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'Close',      //设置关闭按钮的值
+			currentText:'Today', //设置今天按钮的值
+			showOtherMonths  :true,
+			altField: "#alternate",
+            altFormat:'yy-mm-dd',
+            yearRange:'-80:+0',  //显示可供选择的年份7天
+            maxDate:'+0',
+			defaultDate:1
+	});
+	
+	$( "#dialog" ).dialog({
+		title:'Modify Password',
+		autoOpen: false,
+		modal: true,
+		width: 280,
+		height:230
+	});
+	// Link to open the dialog
+	$( "#dialog-link" ).click(function( event ) {
+		$( "#dialog" ).dialog( "open" );
+	});
+	
+	// modify password
+	$("#modifypw").click(function(){
+		$("#idOldPassword").val(hex_md5($("#idOldPassword").val()));
+		$("#idNewPassword").val(hex_md5($("#idNewPassword").val()));
+		$.post(cxtPath+"/user/modifyPassword", $("#fmmodifypw").serialize(),
+			function(data) {
+			if (data.indexOf("success") > 0){
+				alert("Sucessful");
+				$( "#dialog" ).dialog( "close" );
+			}else{
+				alert(data);
+			}
+		}, 'json');
+		return false;
+	});
+	
+	var countryId = "${(user.countryId?c)!}";
+	$.post(cxtPath+'/city/loadCountry',{"language":lang},function(result){
+				result = eval(result);
+				$.each(result,function(i,data){
+					if(parseInt(countryId)==data.districtId)
+						$("#country").append("<option selected value='"+data.districtId+"'>"+data.name+"</option>");
+					else
+						$("#country").append("<option value='"+data.districtId+"'>"+data.name+"</option>");
+				});
+		});
+		
+	$("#txtft").focus(function(){
+		$("#height_error_message").html("");
+	});
+	$("#txtin").focus(function(){
+		$("#height_error_message").html("");
+	});
+	$("#height").focus(function(){
+		$("#height_error_message").html("");
+	});
+	$("#weight").focus(function(){
+		$("#weight_error_message").html("");
+	});
+	$("#weightLbs").focus(function(){
+		$("#weight_error_message").html("");
+	});
+});
+
+var hunit = "${(user.heightUnit)!0}";
+function validateSave(){
+		$("#height_error_message").html("");
+		$("#weight_error_message").html("");
+		
+		if(hunit == "0"){
+			if(!validateHNoraml()) return false;
+			if(!validateWNormal()) return false;
+		}else{
+			if(!validateHFt()) return false;
+			if(!validateHIn()) return false;
+			if(!validateLbs()) return false;
+		}
+		return true;
+	}
+	function validateHFt(){
+		var hFt = $.trim($("#txtft").val());
+			if( hFt=="" || /[^\d]/.test(hFt) ){
+			$("#height_error_message").text(regFtMsg);
+				return false;
+		}else{
+			if(parseInt(hFt) > 7 || parseInt(hFt) < 3){
+				$("#height_error_message").text(regFtFormatMsg);
+				return false;
+			}
+		}
+		return true;
+	}
+	function validateHIn(){
+		var hIn = $.trim($("#txtin").val());
+			if( hIn=="" || /[^\d]/.test(hIn) ){
+			$("#height_error_message").text(regFtinMsg);
+				return false;
+		}else{
+			if(parseInt(hIn) > 11 || parseInt(hIn) < 0){
+				$("#height_error_message").text(regFtinFormatMsg);
+				return false;
+			}
+		}
+		return true;
+	}
+	function validateHNoraml(){
+		var hNormal = $.trim($("#height").val());
+		if( hNormal=="" ||  /[^\d+(\d|(\.\d{1}))$]/.test(hNormal) ){
+			$("#height_error_message").text(regHeightMsg);
+				return false;
+		}else{
+			if(hNormal.substr(hNormal.indexOf('.')).length>2){
+				$("#height_error_message").text(regWeightFormatThreeMsg);
+				return false;
+			}
+			if(parseInt(hNormal) > 240 || parseInt(hNormal) < 90){
+				$("#height_error_message").text(regHeightFormatMsg);
+				return false;
+			}
+		}
+		return true;
+	}
+	function validateWNormal(){
+		var wNormal =$.trim($("#weight").val());
+		if(wNormal=="" || /[^\d+(\d|(\.\d{1}))$]/.test(wNormal)){
+			$("#weight_error_message").text(regWeightMsg);
+			return false;
+		}else{
+			if(wNormal.substr(wNormal.indexOf('.')).length>2){
+				$("#weight_error_message").text(regWeightFormatThreeMsg);
+				return false;
+			}
+			if(parseInt(wNormal) > 400.9 || parseInt(wNormal) < 30){
+				$("#weight_error_message").text(regWeightFormatMsg);
+				return false;
+			}
+		}
+		return true;
+	}
+	function validateLbs(){
+		var wLbs = $.trim($("#weightLbs").val());
+		if(wLbs=="" || /[^\d+(\d|(\.\d{1}))$]/.test(wLbs) ){
+			$("#weight_error_message").text(regWeightMsg);
+				return false;
+		}else{
+			if(wLbs.substr(wLbs.indexOf('.')).length>2){
+				$("#weight_error_message").text(regWeightFormatThreeMsg);
+				return false;
+			}
+			if(parseInt(wLbs) > 999.9 || parseInt(wLbs) < 70){
+				$("#weight_error_message").text(regWeightFormatTwoMsg);
+				return false;
+			}
+		}
+		return true;
+	}
+</script>
+
+</html>

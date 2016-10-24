@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="common-api" extends="struts-default" namespace="/common/api">
+                <action name="check_version" class="com.appscomm.sport.api.action.CommonAction"
+                                method="checkVersion" />
+                <action name="suggest_submit" class="com.appscomm.sport.api.action.CommonAction"
+                                method="suggestContent" />
+                <action name="pic_upload" class="com.appscomm.sport.api.action.CommonAction"
+                                method="uploadPic" />     
+                <action name="pic_download" class="com.appscomm.sport.api.action.CommonAction"
+                                method="downloadPic" />   
+                <action name="time" class="com.appscomm.sport.api.action.CommonAction"
+                                method="getTime" />
+                <action name="get_firmware_info" class="com.appscomm.sport.api.action.CommonAction"
+                                method="getFirmwareInfo" />                                                                                           
+    </package>
+    
+	<package name="api" extends="struts-default" namespace="/api">
+		<action name="login" class="com.appscomm.sport.api.action.IndexAction"
+			method="login" />
+		<action name="login_ex" class="com.appscomm.sport.api.action.IndexAction"
+			method="loginEx" />
+		<action name="get_user_info" class="com.appscomm.sport.api.action.UserAction"
+			method="info" />
+		<action name="set_user_info" class="com.appscomm.sport.api.action.UserAction"
+			method="set" />
+		<action name="reg" class="com.appscomm.sport.api.action.IndexAction"
+			method="register" />
+		<action name="get_valid_img" class="com.appscomm.sport.api.action.AuthImgAction"
+			method="authCode" />
+		<action name="get_district_info" class="com.appscomm.sport.api.action.UserAction"
+			method="districtInfo" />
+		<action name="sync_user_country" class="com.appscomm.sport.api.action.UserAction"
+			method="syncUserCountry" />
+
+		<action name="device_bind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="bindDeviceId" />
+		<action name="device_unbind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="unBindDeviceId" />
+		<action name="device_sim_bind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="bindDeviceSim" />
+		<action name="device_sim_unbind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="unBindDeviceSim" />
+		<action name="device_param_setting"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="saveDevice" />
+		<action name="get_devices"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="listDevices" />
+		<action name="get_device_info"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="getDeviceParam" />
+		<action name="get_sport_info"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="qryHisSportData" />
+		<action name="get_sport_total"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="qryTotalSport" />			
+			
+		<action name="edit_target_period"
+			class="com.appscomm.sport.api.action.PcAction" method="periodSet" />
+		<action name="watch_more_setting"
+			class="com.appscomm.sport.api.action.PcAction" method="moreSeting" />	
+		<action name="get_binddevices"
+			class="com.appscomm.sport.api.action.UserAction" method="qryBindDevice" />								
+
+		<!-- 添加提醒 -->
+		<action name="add_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="add_remind_info" />
+		<!-- 删除提醒 -->
+		<action name="delete_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="delete_remind_info" />
+		<!-- 获取提醒 -->
+		<action name="get_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="get_remind_info" />
+		<!-- 修改提醒状态 -->
+		<action name="modify_remind_status" class="com.appscomm.sport.api.action.RemaindAction"
+			method="modifyRemindStatus" />
+				
+		<!-- 法国注册 -->
+		<action name="reg_for_france" class="com.appscomm.sport.api.action.IndexAction"
+			method="registerForFrance" />
+		<!-- 修改密码-->
+		<action name="modify_password" class="com.appscomm.sport.api.action.IndexAction"
+			method="modifyPassword" />
+		<!-- 忘记密码-->
+		<action name="forgot_passwd" class="com.appscomm.sport.api.action.IndexAction"
+			method="forgetPassword" />
+			
+		<!-- 设备高级设置 -->
+		<action name="set_advanced_settings" class="com.appscomm.sport.api.action.UserAction"  
+			method="setAdvanceInfo" />
+		<action name="get_advanced_settings" class="com.appscomm.sport.api.action.UserAction"  
+			method="getAdvanceInfo"  />
+		
+		<action name="reset_device" class="com.appscomm.sport.api.action.UserAction"
+			method="removeUserData" />
+		<action name="get_new_password" class="com.appscomm.sport.api.action.IndexAction"
+			method="getNewPassword" />
+		
+		<!-- 个人头像 -->
+		<action name="set_upload_img" class="com.appscomm.sport.api.action.UserAction"  
+			method="setUploadImg" />
+		<action name="get_upload_img" class="com.appscomm.sport.api.action.UserAction"
+			 method="getUploadImg" />
+		<action name="set_upload_img_ex" class="com.appscomm.sport.api.action.UserAction"  
+			method="setUploadImgBase64" />	 
+		<!-- 设备固件版本,同步开关 -->
+		<action name="set_device_version" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="setDeviceFirmwareVersion" />
+		<action name="get_device_version" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="getDeviceFirmwareVersion" />
+		<action name="set_sync_switch" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="setDeviceSyncInfo" />
+		<action name="get_sync_switch" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="getDeviceSyncInfo" />
+		<!-- 提醒相关 -->
+		<action name="set_sleep_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setSleepRemind" />
+		<action name="get_sleep_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getSleepRemind" />
+		<action name="set_notify_info" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setNotifyInfo" />
+		<action name="get_notify_info" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getNotifyInfo" />
+		<action name="set_stay_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setStayRemind" />	
+		<action name="get_stay_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getStayRemind" />	
+		<action name="set_stay_remind_pc" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setStayRemindPC" />	
+		<action name="get_stay_remind_pc" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getStayRemindPC" />	
+			
+		<action name="test_char" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="testChar" />
+		
+		<!-- 客户端版本信息 -->
+		<action name="set_client_version" class="com.appscomm.sport.api.action.ClientVersionAction" 
+			method="setClientVersion" />
+		<action name="get_client_version" class="com.appscomm.sport.api.action.ClientVersionAction" 
+			method="getClientVersion" />
+	</package>
+</struts>

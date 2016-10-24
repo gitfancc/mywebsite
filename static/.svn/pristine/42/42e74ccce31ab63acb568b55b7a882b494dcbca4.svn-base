@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>乐动 感受运动的乐趣</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐动 运动 感受乐趣" />
+<meta name="keywords"  content="乐动 运动 感受乐趣" />
+<script src="js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="css/base.css">
+<link type="text/css" rel="stylesheet" href="css/layout.css">
+<link type="text/css" rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <img src="images/logo_index.png" width="305px" height="90px;" alt="感受运动的乐趣" title="首页"/>
+        </span>
+        <ul class="index-nav">
+        	<li class="index-nav-1"><a href="javascript:;" title="返回FashionComm"></a></li>
+            <li class="index-nav-2"><a href="javascript:;" title="下载"></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="wrapper">
+    <div class="banner1box">
+		<div class="loginbox">
+            <h2>欢迎登陆乐动</h2>
+            <form  method="post" class="relative">
+                <p class="tipbox tipbox-pos"><span class="error">请输入正确的邮箱格式</span></p>
+                <p style="margin-bottom:40px;">
+                    <label class="font14px" for="userName">账号:</label>
+                    <input class="w-input align-middle" type="text" name="userName" id="userName" />
+                </p>
+                <p class="tipbox tipbox-pos2"><span class="error">密码不能为空</span></p>
+                <p>
+                    <label class="font14px" for="password">密码:</label>
+                    <input class="w-input align-middle" type="password" name="password" id="password"/>
+                </p>
+                <p class="pl40">
+                    <input  class="align-middle" type="checkbox"  name="checkLogin" id="checkLogin"/>
+                    <label  for="checkLogin">下次自动登陆</label>
+                </p>
+                <p>
+                    <span class="btnsummit mr10"><a href="javascript:;" title="登录">登 录</a></span>
+                    <span><a href="javascript:;">忘记密码？</a></span>
+                </p>
+                <p><span class="mr10">还没有账号？</span><a href="users/register.html">免费注册</a></p>              
+             </form>
+        </div>
+    </div>
+    <div class="banner2box">
+    	<h2>活动量检测</h2>
+        <p>佩戴在身上的设备，检测你的活动状态。重新定义你每天的活动量，<br />为自己带来健康的生活方式</p>
+        <p>距离、步数、卡路里燃烧等数字的不断增加，任何时候都能了解你的<br />活动量</p>
+        <h2>户外跑步，轨迹追踪</h2>
+        <h2>免费APP支持</h2>
+        <p>除了登录乐动网，您还可以通过手机APP查看您<br />的运动信息，以及更多丰富的功能。</p>
+    </div>
+    <div class="banner3box">
+    	<p>任何时候都可以查看、分享运动信息，查看好友群组的排行、评论</p>	
+    </div>
+    <div id="footer">
+        <div class="footbox2 ml50">
+        	<h3>乐动平台支持绑定的设备</h3>
+            <ul>
+            	<li>
+                	<p><img src="images/pic-product1.jpg" height="51px" width="51px"/></p>
+                    <h4>乐动蓝牙计步器</h4>
+                    <h5>蓝牙设备+ios客户端展示</h5>
+                </li>
+            	<li>
+                	<p><img src="images/pic-product2.jpg" height="51px" width="51px"/></p>
+                    <h4>乐动心率测量仪</h4>
+                    <h5>蓝牙设备+网站数据展示</h5>
+                </li>
+            	<li>
+                	<p><img src="images/pic-product3.jpg" height="51px" width="51px"/></p>
+                    <h4>乐动蓝牙计步器</h4>
+                    <h5>蓝牙设备+ios客户端展示</h5>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="footbox  ml150">
+        	<h3>乐动服务</h3>
+            <ul>
+            	<li><a href="javascript:;" title="乐动应用下载">乐动应用下载</a></li>
+                <li><a href="javascript:;" title="乐动产品说明">乐动产品说明</a></li>
+                <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+                <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+            </ul>
+        </div>
+        <div class="footbox  ml150">
+        	<h3>商务合作</h3>
+            <ul>
+            	<li><a href="javascript:;" title="联系我们">联系我们</a></li>
+                <li><a href="javascript:;" title="合作伙伴">合作伙伴</a></li>
+                <li><a href="javascript:;" title="商务咨询">商务咨询</a></li>
+                <li><a href="javascript:;" title="法律声明态">法律声明态</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div> 
+    
+    <div id="copyright">
+        	<p>Copyright 2012-2013Lifesense粤ICP备 110110100</p>
+    </div>
+</div>
+
+</body>
+</html>

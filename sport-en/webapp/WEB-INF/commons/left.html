@@ -1,0 +1,11 @@
+		<div id="left">
+            <div class="thumb">
+            	<#if user.imgUrl??>
+                	<img src="<@s.text name='prefix.url'/>/${user.imgUrl}" width="123"  height="123" alt="" />
+                <#else>
+                	<img src="<@s.text name='static.file.path'/>/images/imagthumb.gif" alt=""/>
+                </#if>
+            </div>
+            <div id="progressbar" class="pro-box"></div>
+            <p class="tc mt10" id="left_level">  </p>
+        </div>

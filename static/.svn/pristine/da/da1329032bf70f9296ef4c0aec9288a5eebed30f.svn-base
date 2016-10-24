@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定设备</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li><a href="login.html">[登录]</a></li>
+            <li><a href="register.html">[注册]</a></li>    
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li class="active">当前位置：</li>
+        <li><a href="../index.html">首页</a> <span class="divider">/</span></li>
+        <li class="active">绑定设备</li>
+    </ul>
+    <ol class="ui-step">
+        <li class="ui-step-start ui-step-done">
+            <div class="ui-step-line">-</div>    
+            <div class="ui-step-icon">         
+                <i class="icon icon-step-done"></i>
+                <i class="ui-step-number">1</i>
+                <span class="ui-step-text">注册成功</span>
+            </div>
+        </li>
+        <li class=" ui-step-done">
+            <div class="ui-step-line">-</div>    
+            <div class="ui-step-icon">
+                <i class="icon icon-step-done"></i>
+                <i class="ui-step-number">2</i>
+                <span class="ui-step-text">完善会员资料</span>
+            </div>
+        </li>
+        <li class="ui-step-end ui-step-active">
+            <div class="ui-step-line">-</div>    
+            <div class="ui-step-icon">
+                <i class="icon icon-step-end-active"></i>
+                <i class="ui-step-number"></i>
+                <span class="ui-step-text">绑定设备</span>
+            </div>
+        </li>
+    </ol>
+    
+    <p>步骤1.选择设备</p>
+        <ul class="nav nav-pills mb10">
+            <li class="active"><a href="#a1" data-toggle="tab"><img src="../theme/images/link_6_1.png"/></a></li>
+            <li><a href="#l28" data-toggle="tab"><img src="../theme/images/link_6_2.png"/></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="a1">
+                <p>步骤2.在腕表上获得机器号</p>
+                <p><img src="../theme/images/pic_guild2.jpg"/></p>
+                <p>步骤3.输入机器码，进行绑定</p>
+                <p>
+                    <form class="form-inline">
+                        <input  type="text"/>
+                        <a  class="btn" href="javascript:;" title="绑定设备">绑定设备</a>
+                        <span>一个腕表绑定一个帐号（留空可解除绑定）</span>
+                    </form>
+                    
+                </p>
+                <p>
+                    <form class="form-inline">
+                        <input  type="text"/>
+                        <a  class="btn" href="javascript:;" title="绑定设备">绑定号码</a>
+                        <span>输入腕表要使用的sim卡号（留空可解除绑定）</span>
+                    </form>
+                </p>
+                <p class="text-center"><a href="myledong.html" class="btn btn-primary">保 存</a></p>
+            </div>
+            <!--登录账号-->
+            <div class="tab-pane fade relative" id="l28">
+                <p>请使用客户端进行绑定</p>
+                <p><a href="http://ledong.appscomm.cn/dispaterHtml!dispaterdownhtml" target="_blank">iPhone客户端下载</a></p>
+                <p><a href="javascript:;">PC客户端下载</a></p>
+            </div>
+        </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

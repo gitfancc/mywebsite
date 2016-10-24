@@ -1,0 +1,296 @@
+wp.download=http://www.windowsphone.com/en-us/store/app/zefit/b435bba0-c983-4ab5-a4e9-d778a6d064fa 
+
+
+verCode_error = Verification code error\!
+register_error = Failed to register\!
+login_error = Login failed\!
+login_password_error = Login or password is wrong\!
+login_account_not_exist =The login account does not exist\!
+reset_password_success=Reset successfully . Go to the homepage\?
+reset_password_failed=Reset password failure\!
+
+page.time.format.tips=(DD/MM/YYYY)
+
+page.index.title=MyKronoz - ZeFit2 Applications - Home
+page.index.h21=ACTIVITY TRACKER WITH SMART NOTIFICATIONS
+page.index.p1=ZeFit<sup>2</sup> is an connected wrist band with color touch screen that tells time, tracks steps, distance traveled, calories burnedand sleep quality.
+page.index.p2=
+page.index.h22=GET NOTIFIED ON YOUR WRIST
+page.index.p3=When synced to a smartphone via Bluetooth, ZeFit<sup>2</sup> shows notifications of calls, SMS, emails, calendar events and social media activity.
+page.index.h23=MONITOR YOURSELF 24/7
+page.index.p4=With ZeFit<sup>2</sup> free mobile app or software, set daily goals and reminders, monitor your performance level and analyze your progress!
+page.index.p5=ZeFit<sup>2</sup> will help you stay motivated and active throughout the day.
+page.index.p6=LEARN MORE
+
+page.head.login=LOG IN
+page.head.forget=Forgot Password
+page.head.password=Password
+page.head.email=Email
+
+page.foot.h31=COMPATIBLE PRODUCT 
+page.foot.p1=ZeFit<sup>2</sup>
+page.foot.p2=Activity Tracker with smart notifications
+page.foot.h32=INFORMATION 
+page.foot.p4=Contact us
+page.foot.p5=Support
+page.foot.p6=Legal Mentions
+page.foot.h33=DOWNLOAD 
+page.foot.p7=Mobile Application
+page.foot.p8=Software
+page.foot.a1=English
+page.foot.a2=Fran\u00E7ais
+page.foot.f=2015 KRONOZ LLC, All rights reserved
+
+page.battery.sync=Last sync
+page.battery.sync.time=Today 12:35
+page.battery.level=Battery Level
+page.battery.version=ZeFit<sup>2</sup> Version:1.1
+
+page.common.logo=ZeFit<sup>2</sup>
+page.common.dashboard=DASHBOARD
+page.common.support=SUPPORT
+page.common.download=DOWNLOAD
+page.common.mobile.app=Mobile Application
+page.common.software=Software
+page.common.collection=COLLECTIONS
+
+page.login.head.profile=my profile
+page.login.head.Dashboard=Dashboard
+page.login.head.info=My Profile
+page.login.head.manager=Device Manager
+page.login.head.logout=Logout
+
+page.nologin.head.register=Sign up
+page.nologin.head.login=Log in
+
+page.activityReport.t1=Mykronoz - ZeFit2 - Activity Report
+page.activityReport.b1=ACTIVITY REPORT
+page.activityReport.b2=level 0
+page.activityReport.b3=TODAY
+page.activityReport.b4=WEEK
+page.activityReport.b5=MONTH
+page.activityReport.b6=YEAR
+page.activityReport.b7=ALL
+page.activityReport.b8=VIEW
+page.activityReport.b9=STEPS
+page.activityReport.b10=DISTANCE
+page.activityReport.b11=CALORIES
+page.activityReport.b12=SLEEP
+
+page.deviceManagement.t1=Mykronoz - ZeFit2 - Device Manager
+page.deviceManagement.b1=DEVICE MANAGER
+page.deviceManagement.b2=Device name
+page.deviceManagement.b3=Preview
+page.deviceManagement.b4=Device No
+page.deviceManagement.b5=Date of pairing
+page.deviceManagement.b6=Operation
+page.deviceManagement.b7=DOWNLOAD NEW FIRMWARE
+page.deviceManagement.b8=ZeFit<sup>2</sup>
+page.deviceManagement.b9=Unpair
+
+page.forgetPassword.t1=Mykronoz - ZeFit2 - Forget Password
+page.forgetPassword.b1=RESET PASSWORD
+page.forgetPassword.b2=Email
+page.forgetPassword.b3=Input your login E-mail
+page.forgetPassword.b4=RESET PASSWORD
+
+page.mobileApplication.t1=Mykronoz - ZeFit2 - Mobile Application
+page.mobileApplication.b1=mobile applications
+page.mobileApplication.b2=ZeFit<sup>2</sup> App let users sync activity and sleep data, enable smart notifications, set daily goals and reminders, follow their daily, weekly and monthly performance and progress!
+page.mobileApplication.b3=ZeFit<sup>2</sup> App is available in English, French, Dutch, German, Spanish, Italian, Portuguese, Russian, Polish, Traditional Chinese, Simplified Chinese, Japanese and Korean.
+page.mobileApplication.b4=System Requirements:
+page.mobileApplication.b5=iPhone 4s and newer, iPad 3rd gen and newer, iPad Mini, iPod Touch 5 - Select Android 4.3+ devices w/ Bluetooth 4.0 BLE  - Select Windows Phone 8.1 w/ Bluetooth 4.0 BLE
+
+page.myProfile.t1=Mykronoz - ZeFit2 - My Profile
+page.myProfile.b1=MY PROFILE
+page.myProfile.b2=Edit profile picture
+page.myProfile.b3=Email
+page.myProfile.b4=Username
+page.myProfile.b5=Change Password
+page.myProfile.b6=Height
+page.myProfile.b7=cm
+page.myProfile.b8=ft
+page.myProfile.b9=Weight
+page.myProfile.b10=kg
+page.myProfile.b11=lbs
+page.myProfile.b12=Gender
+page.myProfile.b13=Male
+page.myProfile.b14=Female
+page.myProfile.b15=Birthdate
+page.myProfile.b16=Country
+page.myProfile.b17=SAVE
+
+page.myZeFit.t1=Mykronoz - ZeFit2 - Dashboard
+page.myZeFit.b1=STEPS
+page.myZeFit.b2=CALORIES
+page.myZeFit.b3=DISTANCE
+page.myZeFit.b4=SLEEP
+page.myZeFit.b5=ACTIVITY REPORT
+page.myZeFit.b6=Total sleep time
+page.myZeFit.b7=h
+page.myZeFit.b8=min
+page.myZeFit.b9=Light Sleep
+page.myZeFit.b10=Deep Sleep
+page.myZeFit.b11=Fell Asleep in
+page.myZeFit.b12=Awake for
+page.myZeFit.b13=Awake
+page.myZeFit.b14=times
+
+page.signUp.t1=MyKronoz - ZeFit2 Applications - Sign Up
+page.signUp.b1=Edit profile picture
+page.signUp.b2=Email
+page.signUp.b3=Username
+page.signUp.b4=Password
+page.signUp.b5=Confirm Password
+page.signUp.b6=Height
+page.signUp.b7=cm
+page.signUp.b8=ft
+page.signUp.b9=Weight
+page.signUp.b10=kg
+page.signUp.b11=lbs
+page.signUp.b12=Gender
+page.signUp.b13=Male
+page.signUp.b14=Female
+page.signUp.b15=Birthdate
+page.signUp.b16=Country
+page.signUp.b17=I agree with the
+page.signUp.b18=Terms of service and privacy policy
+page.signUp.b19=SIGN UP
+page.signUp.b20=in
+
+page.software.t1=MyKronoz - ZeFit2 Applications - Software
+page.software.b1=software
+page.software.b2=Set up your ZeFit<sup>2</sup> on a computer using ZeFit<sup>2</sup> software. Download ZeFit<sup>2</sup> software; install it on your Mac or Windows PC. Put ZeFit<sup>2</sup> on its magnetic charging dock and plug it into a power source using the supplied USB cable.
+page.software.b3=ZeFit<sup>2</sup> Software is available in English, French, Dutch, German, Spanish, Italian, Portuguese, Russian, Polish, TraditionalChinese, SimplifiedChinese, Japanese and Korean.
+page.software.b4=System Requirements:
+page.software.b5=Windows 7,8,XP
+page.software.b6=DOWNLOAD
+page.software.b7=Mac OS X 10.8 and up
+
+
+page.resetPassword.t1=Mykronoz - ZeFit2 - Reset Password
+page.resetPassword.b1=Reset password
+page.resetPassword.b2=new password
+page.resetPassword.b3=verify password
+page.resetPassword.b4=confirm
+
+page.confirm.t1=Mykronoz - ZeFit2 - Confirm
+page.confirm.b1=Dear user
+page.confirm.b2=You have used app-zefit2.mykronoz.com to reset your password. We have sent a mail to your email address:
+page.confirm.b3=Please check your email format
+
+page.deviceBind.t1=MyKronoz - ZeFit2 - Connect Device
+page.deviceBind.b1=My Device
+page.deviceBind.b2=Choose your device and select your application platform
+page.deviceBind.b3=Available applications
+page.deviceBind.b4=Download iOS app
+page.deviceBind.b5=Download Android app
+page.deviceBind.b6=You have bound your ZeFit<sup>2</sup> account
+page.deviceBind.b7=Connect a device to your ZeFit<sup>2</sup> account
+
+page.downloadAndroid.t1=MyKronoz - ZeFit2 Applications - Android download
+page.downloadAndroid.b1=ZeFit<sup>2</sup> Application (Android version)
+page.downloadAndroid.b2=Download ZeFit<sup>2</sup> app to set your daily goals and reminders, sync your activity data,follow your performance and progress!
+page.downloadAndroid.b3=Issued date:
+page.downloadAndroid.b4=Version:
+page.downloadAndroid.b5="v1.0"
+page.downloadAndroid.b6=Size:
+page.downloadAndroid.b7=Language:
+page.downloadAndroid.b8="English/French"
+page.downloadAndroid.b9=System:
+page.downloadAndroid.b10=1. Android 4.3 or above.
+page.downloadAndroid.b11=2. BT 4.0.
+page.downloadAndroid.b12=Scan to download
+page.downloadAndroid.b13=ZeFit<sup>2</sup> mobile application
+page.downloadAndroid.b14=Intuitive activity dashboard, goals and
+page.downloadAndroid.b15= reminders setting interface
+page.downloadAndroid.b16=Data acquisition and analysis
+page.downloadAndroid.b17=Track your steps taken, distance travelled and calories burned
+page.downloadAndroid.b18=Sleep Monitoring
+page.downloadAndroid.b19=Keep an eye on your sleep quality
+
+page.downloadiOS.t1=MyKronoz - ZeFit2 Applications - iOS download
+page.downloadiOS.b1=ZeFit<sup>2</sup> Application (iOS version)
+page.downloadiOS.b2=Download ZeFit<sup>2</sup> app to set your daily goals and reminders, sync your activity data, follow your performance and progress !
+page.downloadiOS.b3=Issued date:
+page.downloadiOS.b4=Version:
+page.downloadiOS.b5=Size:
+page.downloadiOS.b6=Language:
+page.downloadiOS.b7=English/French/Traditional/Chinese
+page.downloadiOS.b8=System:
+page.downloadiOS.b9=Compatible with iPhone, iPod touch, ipad, requires iOS 5.0 or higher version
+page.downloadiOS.b10=1. To run the program requires iPhone 4 s or higher version\u3002
+page.downloadiOS.b11=2. Supports ios7.
+page.downloadiOS.b12=Scan to Download
+page.downloadiOS.b13=ZeFit<sup>2</sup> mobile application
+page.downloadiOS.b14=Intuitive activity dashboard, goals and
+page.downloadiOS.b15=reminders setting interface.
+page.downloadiOS.b16=Data acquisition and analysis
+page.downloadiOS.b17=Track your steps taken, distance travelled and calories burned
+page.downloadiOS.b18=Sleep Monitoring
+page.downloadiOS.b19=Keep an eye on your sleep quality
+
+
+js.login.must.email=Please enter a valid email address
+js.login.email.format=Please enter a valid email address
+js.login.pwd.not.null=Please enter your password
+js.login.pwd.length=password is 6 to 16 characters
+
+js.register.pwd.confirm=Please enter  confirm password
+js.register.pwd.not.consistant=Password is not consistant
+js.register.nickname=Please enter your name
+js.register.nickname.format=username must be 2-12 characters, can be composed of underscore and numbers
+js.register.height=Please enter a non negative integer,include 0
+js.register.height.format=the height range is 80-400 cm
+js.register.height.ft=Please enter your height
+js.register.height.ft.format=the height range is 3-10 ft
+js.register.height.ftin=Please enter your height
+js.register.height.ftin.format=the height range is 0-12 in
+js.register.weight=please input a non negative integer,include 0
+js.register.weight.format=the weight range is 14-227 kg
+js.register.weight.format.two=the weight range is 30-300 lbs
+js.register.weight.format.three=only support one decimal
+js.register.email.information=Please enter a valid email address
+js.register.email.info.format=Please enter a valid email address
+js.register.pwd.check=login password must be input and length should be from 6 to 16 characters
+js.register.retpwd.confirm=Please enter  confirm password
+js.register.name.check=user name must be 2-12 characters, can be composed of underscore and numbers
+js.register.service.check=Please read our Terms of Service
+js.register.account.have.reg=this email account is already being used
+js.register.name.have.used=the user name name is already being used
+
+js.sport.report.starttime=start time
+js.sport.report.endtime=end time
+js.sport.report.setps=steps (step)
+js.sport.report.distance.mile=distance (mile)
+js.sport.report.distance.km=distance (km)
+js.sport.report.calorie=calorie (kcal)
+js.sport.report.quality=quality
+js.sport.report.sleep.duration=sleep duration (min)
+js.sport.report.awake.duration=awake duration (min)
+js.sport.report.light.duration=light sleep duration (min)
+js.sport.report.deep.duration=deep sleep duration (min)
+js.sport.report.total.duration=total duration (min)
+js.sport.report.level=Level
+
+js.myledong.today=Today
+js.myledong.yesterday=yesterday
+js.myledong.steps=steps
+js.myledong.mile=mile
+js.myledong.km=km
+js.myledong.kcal=kcal
+js.myledong.current=current
+js.myledong.title.steps=STEPS
+js.myledong.title.calories=CALORIES
+js.myledong.title.distance=DISTANCE
+js.myledong.title.sleep=SLEEP
+js.myledong.txt.deep.sleep=deep sleep
+js.myledong.txt.light.sleep=light sleep
+js.myledong.txt.wake=wake
+js.myledong.array.week=SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY
+js.myledong.array.week.lower=Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+js.myledong.array.month=January,February,March,April,May,June,July,August,September,October,November,December
+js.myledong.hours=hours
+
+js.common.unit=km
+js.common.lang=english

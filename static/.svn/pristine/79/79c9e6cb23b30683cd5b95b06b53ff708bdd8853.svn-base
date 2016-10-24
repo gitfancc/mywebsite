@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>运动日志</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="品思 运动 感受乐趣" />
+<meta name="keywords"  content="品思 运动 感受乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/jquery/query.ui.datepicker-zh-CN.js"></script>
+<script >
+$(function() {
+	var dates = $("#dateStart,#dateEnd");
+	dates.datepicker({      //绑定开始日期  
+		dateFormat:'yy-mm-dd',  //更改时间显示模式
+		showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+		changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+		changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+		showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+		closeText:'关闭',      //设置关闭按钮的值
+		currentText:'今天', //设置今天按钮的值
+		showOtherMonths  :true,
+		yearRange:'2008:2017',  //显示可供选择的年份7天
+		defaultDate:1,
+		onSelect: function(selectedDate){  
+			var option = this.id == "dateStart" ? "minDate" : "maxDate";  
+			dates.not(this).datepicker("option", option, selectedDate);  
+    	}  
+	
+	});  
+
+})
+</script>
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <a href="../index.html"><img src="../images/logo_index.png" title="首页"/></a>
+        </span>
+        
+        <ul class="user-nav">
+            <li class="user-nav-6"><a  href="#"></a></li>
+            <li class="user-nav-3"><a href="myledong.html" title="我的品思"></a></li>
+            <li class="user-nav-4">
+           		<a class="first" href="sportsLog2.html" title="运动日志"></a>
+                <ul>
+                    <li><a href="sportsLog2.html" >运动日志</a></li>
+                    <li><a href="sportsLog.html" >足迹日志</a></li>
+                </ul>
+            </li>
+            <li class="user-nav-5"><a href="../group/gGroupsLatest.html" title="群组动态"></a></li>
+        </ul>
+        <ul class="topmenu">
+            <li class="weltxt">欢迎来到品思</li>
+            <li class="dropmenu">
+            	<a href="javascript:;" ></a>
+                <ul>
+                    <li><a href="info.html" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                    <li><a href="javascript:;" >账号安全</a></li>
+                    <li><a href="deviceManagement.html" >设备管理</a></li>
+                    <li><a href="../index.html" >退出</a></li>
+                </ul>
+             </li>
+        </ul>
+        <!--end topmenu-->
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="minwrapper">
+        <div id="left">
+            <div class="thumb">
+                <img src="../images/imagthumb.gif" width="123"  height="146" alt=""/>
+            </div>
+            <div class="mt30">
+                <ul class="sidebar-log">
+                	<li><a class="current"   href="sportsLog2.html" title="轨迹跟踪腕表运动日志">轨迹跟踪腕表运动日志</a></li>
+                	<li><a href="sportsLog.html" title="轨迹跟踪腕表足迹日志">轨迹跟踪腕表足迹日志</a></li>
+                </ul>
+            </div> 
+        </div>
+        <div id="right">
+            <div class="right-menu-box">
+                <ul class="right-menu">
+                    <li><a  class="current"href="javascript:;" title="今天">今天</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:;" title="最近一周">最近一周</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:;" title="最近一月">最近一月</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:;" title="最近一年">最近一年</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:;" title="最近一月">全部</a></li>
+                </ul>
+                <span class="calendar-box-pos"><input id="dateStart" type="text" class="calendar" value=""/> -- <input id="dateEnd" type="text" class="calendar" value=""/></span>
+                <input type="button" class="button button-mblue btn-pos" value="查 看">
+            </div>
+            
+            <div class="form-box first-child">
+            	<div class="form-box-head">
+                	<ul class="menu">
+                        <li><a  class="current" href="javascript:;" title="">步数</a></li>
+                        <li><a href="javascript:;" title="距离">距离</a></li>
+                        <li><a href="javascript:;" title="">速度</a></li>
+                        <li><a href="javascript:;" title="距离">卡路里</a></li>
+                        <li><a href="javascript:;" title="">心率</a></li>
+                    </ul> 
+                </div>
+                <div class="form-box-container">
+                	<div style="height:300px; width:100%;" class="nodata"></div>
+                </div>	
+            </div>
+           <!--end form-box-->
+            <div class="form-box">
+            	<div class="form-box-head">
+                	<h3>同步记录</h3>
+                </div>
+                <div class="form-box-container">
+                	<table class="ui-table">
+                        <thead>
+                            <tr>
+                                <th>开始时间</th>
+                                <th>同步时间</th>
+                                <th>步数<br/>(步)</th>
+                                <th>距离<br/>(米)</th>
+                                <th>速度<br/>(公里/小时)</th>
+                                <th>卡路里<br/>(卡)</th>
+                                <th>平均心率<br/>(帕)</th>
+                                <th>最高/最低心率<br/>(帕)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td>2013-09-01 10:03</td>
+                                <td>2013-09-02 10:03</td>
+                                <td>2,531</td>
+                                <td>5.3</td>
+                                <td>521</td>
+                                <td>89.3</td>
+                                <td>91</td>
+                                <td>95</td>
+                             </tr> 
+                        </tbody> 
+                    </table>
+                </div>	
+            </div>
+           <!--end form-box-->
+        </div>  
+        <div class="clear"></div>
+	</div>
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+</body>
+</html>

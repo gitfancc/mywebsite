@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>邀请好友加入群</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+<link type="text/css" rel="stylesheet" href="../theme/css/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li>欢迎您</li>
+            <li><a href="../users/login.html">[注销]</a></li>
+            <li class="dropdown">
+            	<a href="../index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i><sup class="badge badge-important">6</sup></a>
+                <ul class="dropdown-menu">
+                    <li class="text-error"><a href="javascript:;">6条新消息</a></li>
+                    <li class="divider"></li>
+                    <li class="text-error"><a href="javascript:;">0条新群组要求</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="../users/download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+        <ul class="nav">
+            <li><a href="../users/myledong.html">我的乐康</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">运动日志 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="../users/sportsLog2.html">运动日志</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../users/sportsLog.html">足迹日志</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="gLatestNews.html">群组动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../users/info.html">编辑资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../users/deviceManagement.html">设备管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../users/login.html">退出</a></li>
+                </ul>
+          </li>
+        </ul>
+        <div class="pull-right">
+            <select id="custom-select">
+                <option>请选择设备</option>
+                <option  data-imagesrc="../theme/images/a1.png">A1智能腕表</option>
+                <option  data-imagesrc="../theme/images/l28.png" >L28手环</option>
+            </select>
+    	</div>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	 <div class="row">
+     	<div class="span3 sidebar">
+        	<div class="well">
+                <div class="person-info">
+                	<a><img src="../theme/images/imagthumb.gif"/></a>
+                </div>
+                <a href="#" data-toggle="tooltip" title="离leval还差多少步">
+                    <div class="progress progress-info">
+                        <div class="bar" style="width: 60%"></div>
+                    </div>
+                </a>
+                <p class="text-center mb20">leval 6</p>
+                <ul class="user-atten">
+                    <li><a href="../users/sportsLog2.html"><h3>65</h3>日志</a></li>
+                    <li><a href="gRanking.html"><h3>265</h3>排名</a></li>
+                    <li  class="noborder"><a  href="gSportLatest.html"><h3>65</h3>动态</a></li>
+                </ul>
+                
+                <ul class="nav nav-list">
+                  <li><a href="gGroupsLatest.html"><i class=" cus-icon icon-man"></i>群组动态</a></li>
+                  <li class="active"><a href="gSetting.html"><i class=" cus-icon icon-group"></i>群组管理</a></li>
+                  <li><a href="gSearching.html"><i class=" cus-icon icon-searing"></i>搜索群组</a></li>
+                </ul>
+                
+          </div><!--/.well -->
+        </div>
+        <div class="span9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a>邀请好友加入群</a></li>
+            </ul>
+            <hr>
+            <form class="form-inline">
+                <label class="checkbox">输入好友呢称：</label>
+                <input type="text" id="txtSearch"  placeholder="请输入好友呢称">
+                <a href="javascript:;" class="btn btn-primary">邀请</a>
+            </form>
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="../theme/js/jquery.customSelect.js"></script>
+<script src="../theme/js/jquery.autocomplete.min.js"></script>
+<script>
+$(function() {
+	$('#custom-select').ddslick();
+	 var arrUserName = ["张三", "王小五", "张才子",
+		"李四", "张大三", "李大四", "王五", "刘明",
+		"李小四", "刘促明", "李渊", "张小三", "王小明"];
+		$("#txtSearch").autocomplete(arrUserName, {
+			minChars: 0, 
+			max:5,
+			width:220
+	})
+})
+</script>
+</body>
+</html>

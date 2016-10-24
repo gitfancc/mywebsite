@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定设备</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+        <ul class="nav pull-right">
+            <li><a>欢迎您来到乐康</a></li>
+            <li><a href="index.html"><i class="icon-home icon-white"></i> 我的首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="个人信息.html">个人信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="绑定设备.html">设备设置</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">退出</a></li>
+        </ul> 
+    </div>
+  </div>
+</div>
+
+<div class="container userbox">
+	 <div class="row">
+     	<div class="span3">
+          <div class="well well-large sidebar-nav">
+                <div class="text-center mb20"><a href="个人信息.html"><img src="theme1/images/imagthumb.gif" width="123"  height="123" alt=""/></a></div>
+                <ul class="nav nav-list nav">
+                  <li><a href="个人信息.html">基本资料</a></li>
+                  <li class="active"><a href="绑定设备.html">设备设置</a></li>
+                  <li><a href="账号安全.html">账号安全</a></li>
+                </ul>
+          </div><!--/.well -->
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                	<h4 class="muted">设备列表</h4>
+                </div>
+                <div class="span9 mb10">
+                   <a role="button" href="#addModal" data-toggle="modal" class="btn btn-success pull-right"><span class="icon-plus icon-white"></span> 增加设备</a> 
+                </div>
+                <div class="span9">
+                	<table class="table">
+                        <thead>
+                            <tr>
+                                <th class="span1">设备类型</th>
+                                <th>预览</th>
+                                <th class="span1">设备唯一码</th>
+                                <th class="span1">设备sim卡号</th>
+                                <th>状态</th>
+                                <th class="span1">绑定日期</th>
+                                <th class="span1">解绑日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>h2老年腕表</td>
+                                <td><img src="theme1/images/pic-product1.jpg"/></td>
+                                <td>A40B6542</td>
+                                <td>A40B6542</td>
+                                <td>正常</td>
+                                <td>2013-12-12</td>
+                                <td>2013-12-13</td>
+                                <td >
+                                    <a class="btn btn-mini"> 解绑</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">设置</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>h2老年腕表</td>
+                                <td><img src="theme1/images/pic-product1.jpg"/></td>
+                                <td>A40B6542</td>
+                                <td>A40B6542</td>
+                                <td>正常</td>
+                                <td>2013-12-12</td>
+                                <td>2013-12-13</td>
+                                <td>
+                                    <a class="btn btn-mini"> 解绑</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">设置</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>h2老年腕表</td>
+                                <td><img src="theme1/images/pic-product1.jpg"/></td>
+                                <td>A40B6542</td>
+                                <td>A40B6542</td>
+                                <td>正常</td>
+                                <td>2013-12-12</td>
+                                <td>2013-12-13</td>
+                                <td>
+                                    <a class="btn btn-mini"> 解绑</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">设置</a>
+                                    <a class="btn btn-success btn-mini" href="设备设置.html">删除</a>
+                                </td>
+                            </tr>
+                        </tbody>         
+                    </table>
+                    <div class="pagination pagination-right">
+                        <ul>
+                            <li><a href="#">上一页</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">下一页</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<!-- Modal -->
+<div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 id="myModalLabel" class="muted">增加设备</h4>
+  </div>
+  <div class="modal-body">
+  	<h5 class="muted">1、在设备上获取机器码</h5>
+    <div class="well well-small">获取机器码说明书(这里放说明书)</div>
+    <h5 class="muted">2、输入机器码，进行绑定</h5>
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">选择设备类型</label>
+            <div class="controls">
+                <select>
+                	<option>h2养老腕表</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="mark">机器码</label>
+            <div class="controls">
+                <input type="password" id="mark" placeholder="请输入机器码">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="sim">腕表内置sim卡</label>
+            <div class="controls">
+                <input type="password" id="sim" placeholder="请输入sim卡">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">绑 定</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

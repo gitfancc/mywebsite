@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>设备绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li>欢迎您</li>
+            <li><a href="login.html">[注销]</a></li>
+            <li class="dropdown">
+            	<a href="../index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i><sup class="badge badge-important">6</sup></a>
+                <ul class="dropdown-menu">
+                    <li class="text-error"><a href="javascript:;">6条新消息</a></li>
+                    <li class="divider"></li>
+                    <li class="text-error"><a href="javascript:;">0条新群组要求</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+        <ul class="nav">
+            <li><a href="myledong.html">我的乐康</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">运动日志 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="sportsLog2.html">运动日志</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sportsLog.html">足迹日志</a></li>
+                </ul>
+            </li>
+            <li><a href="../group/gLatestNews.html">群组动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="info.html">编辑资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="deviceManagement.html">设备管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">退出</a></li>
+                </ul>
+          </li>
+        </ul>
+        <div class="pull-right">
+            <select id="custom-select">
+                <option>请选择设备</option>
+                <option  data-imagesrc="../theme/images/a1.png">A1智能腕表</option>
+                <option  data-imagesrc="../theme/images/l28.png" >L28手环</option>
+            </select>
+    	</div>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	 <div class="row">
+     	<div class="span3 sidebar">
+        	<div class="well">
+                <div class="person-info">
+                	<a><img src="../theme/images/imagthumb.gif"/></a>
+                </div>
+                <a href="#" data-toggle="tooltip" title="离leval还差多少步">
+                    <div class="progress progress-info">
+                        <div class="bar" style="width: 60%"></div>
+                    </div>
+                </a>
+                <p class="text-center mb20">leval 6</p>
+                <ul class="user-atten">
+                    <li><a href="sportsLog2.html"><h3>65</h3>日志</a></li>
+                    <li><a href="../group/gRanking.html"><h3>265</h3>排名</a></li>
+                    <li  class="noborder"><a  href="../group/gSportLatest.html"><h3>65</h3>动态</a></li>
+                </ul>
+                <ul class="nav nav-list">
+                  <li><a href="info.html"><i class=" cus-icon icon-info"></i>基本资料</a></li>
+                  <li class="active"><a href="deviceManagement.html"><i class=" cus-icon icon-setting"></i>设备管理</a></li>
+                </ul>
+                
+          </div><!--/.well -->
+        </div>
+        <div class="span9 relative">
+            <ul class="nav nav-tabs pull-left">
+                <li class="active"><a>设备绑定</a></li>
+            </ul>
+            <a class="pull-right btn btn-white pull-right" href="#addModal" data-toggle="modal"><i class="icon-plus"></i> 添加设备</a>
+            <hr class="clear">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>设备名称</th>
+                        <th>预览</th>
+                        <th>机器码</th>
+                        <th>绑定日期</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bl">乐康蓝牙计步器</td>
+                        <td><img src="../theme/images/pic-product1.jpg"/></td>
+                        <td>A40B6542</td>
+                        <td>2013-9-12</td>
+                        <td class="br"><a href="javascript:;" class="btn btn-primary" >解 绑</a><br></td>
+                    </tr>
+                     <tr>
+                        <td class="bl">乐康蓝牙计步器</td>
+                        <td><img src="../theme/images/pic-product1.jpg"/></td>
+                        <td>A40B6542</td>
+                        <td>2013-9-12</td>
+                        <td class="br"><a href="javascript:;"  class="btn btn-primary" >解 绑</a><br></td>
+                    </tr>
+                </tbody>         
+            </table>
+            
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<!-- Modal -->
+<div id="addModal" class="modal hide fade" style="width:800px" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h4 class="muted">添加设备</h4>
+    </div>
+    <div class="modal-body">
+    	<p>步骤1.选择设备</p>
+        <ul class="nav nav-pills mb10">
+            <li class="active"><a href="#a1" data-toggle="tab"><img src="../theme/images/link_6_1.png"/></a></li>
+            <li><a href="#l28" data-toggle="tab"><img src="../theme/images/link_6_2.png"/></a></li>
+        </ul>
+        <hr>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="a1">
+                <p>步骤2.在腕表上获得机器号</p>
+                <p><img src="../theme/images/pic_guild2.jpg"/></p>
+                <p>步骤3.输入机器码，进行绑定</p>
+                <p>
+                    <form class="form-inline">
+                        <input  type="text"/>
+                        <a  class="btn" href="javascript:;" title="绑定设备">绑定设备</a>
+                        <span>一个腕表绑定一个帐号（留空可解除绑定）</span>
+                    </form>
+                    
+                </p>
+                <p>
+                    <form class="form-inline">
+                        <input  type="text"/>
+                        <a  class="btn" href="javascript:;" title="绑定设备">绑定号码</a>
+                        <span>输入腕表要使用的sim卡号（留空可解除绑定）</span>
+                    </form>
+                </p>
+                <p class="text-center"><a class="btn btn-primary">保 存</a></p>
+            </div>
+            <!--登录账号-->
+            <div class="tab-pane fade relative" id="l28">
+                <p>请使用客户端进行绑定</p>
+                <p><a href="http://ledong.appscomm.cn/dispaterHtml!dispaterdownhtml" target="_blank">iPhone客户端下载</a></p>
+                <p><a href="javascript:;">PC客户端下载</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="../theme/js/jquery.customSelect.js"></script>
+<script>
+$(function() {
+	$('#custom-select').ddslick();
+})
+</script>
+</body>
+</html>

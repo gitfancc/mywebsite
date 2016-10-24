@@ -1,0 +1,29 @@
+﻿window.onerror = function () { return true; };
+Array.prototype.max = function () { return Math.max.apply({}, this) };
+Array.prototype.min = function () { return Math.min.apply({}, this) };
+var map = null; //地图
+if (!Lecomm) var Lecomm = {};
+Lecomm.Map = {
+    //初始化
+    init: function (z, lat, lnt) {
+        var _z = 10; //默认zoom
+        var _p = new google.maps.LatLng(22.53787, 113.9395);
+        if (lat && lnt) {
+            _p = new google.maps.LatLng(parseFloat(lat), parseFloat(lnt));
+        }
+        if (z) { _z = parseInt(z); }
+        var myLatlng = new google.maps.LatLng(22.53787, 113.9395);
+        var myOptions = {
+            zoom: _z,
+            center: _p,
+            disableDoubleClickZoom: true,
+            scaleControl: true,
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    },
+    //2 地图居中
+    SetCenter: function (Lat, Lnt) {
+        map.setCenter(new google.maps.LatLng(Lat, Lnt));
+    }
+}

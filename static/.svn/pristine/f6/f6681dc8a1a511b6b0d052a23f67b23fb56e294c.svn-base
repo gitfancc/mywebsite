@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+        <ul class="nav pull-right">
+            <li><a>欢迎您来到乐康</a></li>
+            <li><a href="index.html"><i class="icon-home icon-white"></i> 我的首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="个人信息.html">个人信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="绑定设备.html">设备设置</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">退出</a></li>
+        </ul> 
+    </div>
+  </div>
+</div>
+
+<div class="container userbox">
+	 <div class="row">
+     	<div class="span3">
+          <div class="well well-large sidebar-nav">
+                <div class="text-center mb20"><a href="个人信息.html"><img src="theme1/images/imagthumb.gif" width="123"  height="123" alt=""/></a></div>
+                <ul class="nav nav-list nav">
+                  <li class="active"><a href="个人信息.html">基本资料</a></li>
+                  <li><a href="绑定设备.html">设备设置</a></li>
+                  <li><a href="账号安全.html">账号安全</a></li>
+                </ul>
+          </div><!--/.well -->
+        </div>
+        <div class="span9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#account" data-toggle="tab">登录账号</a></li>
+                <li><a href="#info" data-toggle="tab">个人资料</a></li>
+                <li><a href="#familynum" data-toggle="tab">亲情号码</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="account">
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="num">手机号码：</label>
+                            <div class="controls">
+                                <p class="form-control-static text-success">13795520485</p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="mail">电子邮箱:</label>
+                            <div class="controls">
+                                <p class="form-control-static text-success">5292409@qq.com</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--登录账号-->
+                <div class="tab-pane fade relative" id="info">
+                  <form class="form-horizontal form-horizontal-small">
+                        <div class="control-group error">
+                            <label class="control-label" for="name">姓名</label>
+                            <div class="controls">
+                                <input type="text" id="name" placeholder="请输入姓名">
+                                <span class="help-block">请输入正确的邮箱号码</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="nickname">呢称</label>
+                            <div class="controls">
+                                <input type="text" id="nickname" placeholder="请输入呢称">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">性别</label>
+                            <div class="controls">
+                                <label class="checkbox inline">
+                                	<input type="radio" id="inlineCheckbox1" value="option1"> 男
+                                </label>
+                                <label class="checkbox inline">
+                                	<input type="radio" id="inlineCheckbox2" value="option2"> 女
+                                </label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="birth">出生日期</label>
+                            <div class="controls">
+                                <input type="text" id="birth" placeholder="请输入出生日期">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">所在地</label>
+                            <div class="controls">
+                                <select class="span2">
+                                	<option>选择省(直辖市)</option>
+                                </select></span>
+                                <select class="span2">
+                                	<option>选择市(县)</option>
+                                </select>
+                                <select class="span2">
+                                	<option>选择区</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="daddress">详细地址</label>
+                            <div class="controls">
+                                <input type="text" id="daddress" placeholder="请输入详细地址">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="tel">电话</label>
+                            <div class="controls">
+                                <input type="text" id="tel" placeholder="请输入电话号码">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="IDcard">身份证号</label>
+                            <div class="controls">
+                                <input type="text" id="IDcard" placeholder="请输入身份证号码">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="intro">详细介绍</label>
+                            <div class="controls">
+                                <textarea rows="3" id="intro"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-large btn-success">保存信息</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="uploadimg">
+                    	<a href="javascript:;">
+                        	<img src="theme1/images/imagthumb.gif" alt="更换照片" title="更换照片" height="123" width="123"/>
+                        </a>
+                        <div class="cus-input-file">
+                            <input type="file">
+                            <a class="btn input-block-level"><i class="icon-arrow-up"></i> 上传相片</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="familynum">
+                  <table class="table table-hover">
+                      <tbody>
+                        <thead>
+                        	<tr>
+                            	<th>称谓</th>
+                                <th>号码</th>
+                                <th>是否接收短信</th>
+                                <th>号码类型</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                          <td><input type="text" class="input-small"></td>
+                          <td><input type="text" class="input-medium"></td>
+                          <td><input type="checkbox"></td>
+                          <td> 
+                          	<label class="radio inline">
+                                <input type="radio" name="radio"> 亲情号码
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="radio"> SOS号码
+                            </label>
+                           </td>
+                          <td><a class="btn  btn-mini" href="javascript:;"><i class="icon-plus"></i>立刻添加</a></td>
+                        </tr>
+                        <tr>
+                          <td><input type="text" class="input-small"></td>
+                          <td><input type="text" class="input-medium"></td>
+                          <td><input type="checkbox"></td>
+                          <td> 
+                          	<label class="radio inline">
+                                <input type="radio" name="radio2"> 亲情号码
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="radio2" > SOS号码
+                            </label>
+                           </td>
+                          <td><a class="btn  btn-mini" href="javascript:;"><i class="icon-plus"></i>立刻添加</a></td>
+                        </tr>
+                       <tr>
+                          <td><input type="text" class="input-small"></td>
+                          <td><input type="text" class="input-medium"></td>
+                          <td><input type="checkbox"></td>
+                          <td> 
+                          	<label class="radio inline">
+                                <input type="radio" name="radio3"> 亲情号码
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="radio3"> SOS号码
+                            </label>
+                           </td>
+                          <td><a href="javascript:;" class="btn btn-mini"><i class="icon-plus"></i>立刻添加</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--tab-content-->
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

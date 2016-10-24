@@ -1,0 +1,53 @@
+var email_pattern=/(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function(){
+	$("#account").blur(function(){
+		return valid_account();
+	});
+	$("#password").blur(function(){
+		return valid_password();
+	});
+	
+	$("#userLogin").click(function(){
+		if(valid_account()&&valid_password())
+			$("#userLogin").attr('disabled',"true");
+			$("#login").submit();
+	});
+});
+
+valid_account = function(){
+	$("#account_error_message").remove();
+	if(!$("#account").val()){
+		$("#account").parent().before("<p class=\"tipbox tipbox-pos\" id=\"account_error_message\"><span class=\"error\">手机号/邮箱不能为空</span></p>");
+		return false;
+	}else if($("#account").val().indexOf("@")!=-1&&!email_pattern.exec($("#account").val())){
+		$("#account").parent().before("<p class=\"tipbox tipbox-pos\" id=\"account_error_message\"><span class=\"error\">请输入正确的邮箱格式</span></p>");
+		return false;
+	}else if($("#account").val().indexOf("@")==-1&&!telphone_pattern.exec($("#account").val())){
+		$("#account").parent().before("<p class=\"tipbox tipbox-pos\" id=\"account_error_message\"><span class=\"error\">请输入格式正确的手机号码</span></p>");
+		return false;
+	}
+	return true;
+}
+
+valid_password = function(){
+	$("#password_error_message").remove();
+	if(!$("#password").val()){
+		$("#password").parent().before("<p class=\"tipbox tipbox-pos2\" id=\"password_error_message\"><span class=\"error\">登录密码不能为空</span></p>");
+		return false;
+	}
+	var rePwd = /^(\S){6,20}$/;//6-20个字符  xc
+	if(!rePwd.exec($("#password").val())){
+		$("#password").parent().before("<p class=\"tipbox tipbox-pos2\" id=\"password_error_message\"><span class=\"error\">密码为6-16个字符组成, 不能输入空格</span></p>");
+		return false;
+	}
+	return true;
+}
+
+document.onkeydown = function(e) {
+	var theEvent = window.event || e;
+	var code = theEvent.keyCode || theEvent.which;
+	if (code == 13) {
+		$("#userLogin").click();
+	}
+}

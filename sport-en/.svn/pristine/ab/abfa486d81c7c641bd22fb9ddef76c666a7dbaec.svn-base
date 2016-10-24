@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="device" extends="secure" namespace="/user/device">
+		<!-- 设备绑定页面 -->
+		<action name="index" class="com.appscomm.sport.action.UserAction"
+			method="index">
+			<result name="success" type="freemarker">${getText("view.path")}/users/deviceBind.html
+			</result>
+		</action>
+
+		<!-- 设备管理页面 -->
+		<action name="manager" class="com.appscomm.sport.action.DeviceSetAction"
+			method="listDevice">
+			<result name="success" type="freemarker">${getText("view.path")}/users/deviceManagement.html
+			</result>
+		</action>
+		<action name="add" class="com.appscomm.sport.action.DeviceSetAction"
+			method="saveBind">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="unbind" class="com.appscomm.sport.action.DeviceSetAction"
+			method="unBindWatchId">
+			<result name="success" type="redirect">/user/device/manager</result>
+		</action>
+
+		<!-- 设备配置页面 -->
+		<action name="save" class="com.appscomm.sport.action.DeviceSetAction"
+			method="saveDevice">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="bindWatch" class="com.appscomm.sport.action.DeviceSetAction"
+			method="bindWatchId">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="bindSim" class="com.appscomm.sport.action.DeviceSetAction"
+			method="bindWatchSim">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="unBindWatch" class="com.appscomm.sport.action.DeviceSetAction"
+			method="unBindWatchId">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="unBindSim" class="com.appscomm.sport.action.DeviceSetAction"
+			method="unBindWatchSim">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="setWatchType" class="com.appscomm.sport.action.DeviceSetAction"
+			method="setDefaultWatch">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

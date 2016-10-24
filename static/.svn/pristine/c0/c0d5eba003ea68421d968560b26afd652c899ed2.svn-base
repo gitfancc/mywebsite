@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>欢迎登录乐康</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li><a href="login.html">[登录]</a></li>
+            <li><a href="register.html">[注册]</a></li>    
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+    <h4>欢迎登录乐康</h4>
+    <hr>
+    <form class="offset2 form-horizontal">
+       <div class="control-group">
+             <div class="controls">
+                 <span class="text-error"><i class="icon-remove"></i> 请输入正确的手机号码或者邮箱</span>
+             </div>
+       </div>
+       <div class="control-group error">
+             <label for="user" class="control-label">登录账号：</label>
+             <div class="controls">
+                 <input type="text" id="user"  placeholder="手机号/邮箱">
+                 <span class="text-error"><i class="icon-remove"></i> 请输入正确的手机号码或者邮箱</span>
+             </div>
+       </div>
+        <div class="control-group">
+            <label for="password" class="control-label">登录密码：</label>
+            <div class="controls">
+            	<input type="text"  id="password" placeholder="请输入密码1122">
+            	<span class=" text-success"><i class="icon-ok"></i> </span>
+            </div>    
+        </div>
+        <div class="control-group">
+            <label for="nickname" class="control-label">请输入验证码：</label>
+            <div class="controls">
+            	<input type="text" class="input-small" placeholder="请输入验证码">
+           		<img align="absMiddle" alt="请输入您看到的内容" src="https://omeo.alipay.com/service/checkcode?sessionID=82012ab6b1f4ed9e675fb9092a25cb3b&r=0.9321065918075809"  title="点击刷新图片校验码">
+          		<a href="#">看不清，换一张</a>
+            </div>    
+        </div>
+        <div class="control-group">
+            <div class="controls">
+            	<label class="checkbox"><input type="checkbox"> 一周内自动登录</label>
+             </div>   
+         </div>  
+         <div  class="control-group">
+            <div class="controls">
+            	<a href="myledong.html"  class="btn btn-primary">登录</a>
+            </div>    
+        </div> 
+        <div class="control-group">
+            <div class="controls">
+            	<a href="register.html" class="mr10">免费注册</a><a href="javascript:;">找回密码</a>
+            </div>   
+        </div>
+	</form>
+    <hr>
+    <ul class="thumbnails noborder">
+        <li class="span2">
+            <div class="thumbnail">
+           		<img src="../theme/images/icon-1.jpg" title="卡路里">
+            	<h5 class="text-center">卡路里</h5>
+            </div>
+        </li>
+        <li class="span2">
+            <div class="thumbnail">
+            	<img src="../theme/images/icon-2.jpg" alt="">
+           		<h5 class="text-center">跑步速度</h5>
+            </div>
+        </li>
+        <li class="span2">
+            <div class="thumbnail">
+            	<img src="../theme/images/icon-3.jpg" alt="">
+            	<h5 class="text-center">动一动</h5>
+            </div>
+        </li>
+        <li class="span2">
+            <div class="thumbnail">
+            	<img src="../theme/images/icon-4.jpg" alt="">
+            	<h5 class="text-center">睡眠检测</h5>
+            </div>
+        </li>
+        <li class="span2">
+            <div class="thumbnail">
+            	<img src="../theme/images/icon-5.jpg" alt="">
+            	<h5 class="text-center">设定提醒</h5>
+            </div>
+        </li>
+        <li class="span2">
+            <div class="thumbnail">
+            	<img src="../theme/images/icon-6.jpg" alt="">
+            	<h5 class="text-center">后台分享</h5>
+            </div>
+        </li>
+    </ul>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+var email_pattern=/(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function(){
+	$("#account").blur(function(){
+		return valid_account();
+	});
+	$("#password").blur(function(){
+		return valid_password();
+	});
+	
+	$("#userLogin").click(function(){
+		$("#userLogin").attr('disabled',"true");
+		if(valid_account()&&valid_password()){
+		$.post(cxtPath+"/login", $("#login").serialize(),
+				function(data) {
+					if (data == "successful"){
+						window.location.href=cxtPath+"/user/sport/index";
+					}else{
+						$("#account_error_message").html("");
+						$("#account_error_message").html(data);
+					}
+				}, 'json');
+		}
+	});
+});
+
+valid_account = function(){
+	$("#account_error_message").html("");
+	if(!$("#account").val()){
+		$("#account_error_message").html(mustEmail);
+		return false;
+	}else if($("#account").val().indexOf("@")==-1&&!email_pattern.exec($("#account").val())){
+		$("#account_error_message").html(mustEmail);
+		return false;
+	}
+	return true;
+};
+
+valid_password = function(){
+	$("#password_error_message").html("");
+	if(!$("#password").val()){
+		$("#password_error_message").html(pwdNotNull);
+		return false;
+	}
+	var rePwd = /^(\S){6,20}$/;
+	if(!rePwd.exec($("#password").val())){
+		$("#password_error_message").html(pwdLength);
+		return false;
+	}
+	return true;
+};
+
+document.onkeydown = function(e) {
+	var theEvent = window.event || e;
+	var code = theEvent.keyCode || theEvent.which;
+	if (code == 13) {
+		$("#userLogin").click();
+	}
+};

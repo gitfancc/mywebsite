@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>乐康iPhone客户端下载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li><a href="login.html">[登录]</a></li>
+            <li><a href="register.html">[注册]</a></li>    
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+         <ul class="nav">
+            <li><a href="http://www.fashioncomm.com/" target="_blank">返回FashionComm</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">下载 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                	<li><a href="download.html" >iPhone客户端下载</a></li>
+                    <li class="divider"></li>
+                    <li><a href="downloadPC.html" >PC客户端下载</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container d-section-phone1">
+    <div class="row">
+        <div class="span2"><img src="../theme/images/d.jpg"/></div>
+        <div class="span7">
+            <h2>乐康iPhone客户端</h2>
+            <h4 class="muted">炫红运动界面，精准统计数据，运动达人首选 </h4>
+            <p>发布日期: 2014年04月17日  版本:1.5 <br />大小:5.3 MB<br/>语言: 简体中文<br />系统:与 iPhone、iPod touch、iPad 兼容。 需要 iOS 5.0 或更高版本<br />1.界面优化iphone 5适配。<br />2.程序支持ios7。</p>
+        </div>
+        <div class="span3 text-center">
+            <p><img src="../theme/images/d_weixin.jpg" /></p>
+            <p>使用手机扫描二维码下载</p>
+            <p><a href="http://ledong.fashioncomm.coms:8585/sport/app/index.html" target="_blank"><img src="../theme/images/btn_localdownload.jpg" /></a></p>
+            <p><a href="https://itunes.apple.com/cn/app/le-kang-yun-dong/id755446885?mt=8" target="_blank"><img src="../theme/images/btn_appdownload.jpg" /></a></p>
+        </div>
+    </div>
+</div>
+
+<div class="d-section-phone2">
+	<div class="container">
+    	<div class="row">
+        	<div class="span6 offset2">
+        		<h2 class="">炫红界面</h2>
+        		<h4 class="muted">时尚的手机App运动界面</h4>
+            </div>
+            <div class="span4">
+            	<img src="../theme/images/d_pic2.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-section-phone3">
+	<div class="container">
+    	<div class="row">
+        	<div class="span5 offset1">
+            	<img src="../theme/images/d_pic3.jpg"/>
+            </div>
+            <div class="span5 offset1">
+                <h2>数据采集分析</h2>
+        		<h4 class="muted">计步器收集运动数据，蓝牙同步到手机显示</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-section-phone4">
+	<div class="container">
+    	<div class="row">
+        	<div class="span6 offset2">
+        		<h2 class="">睡眠分析</h2>
+        		<h4 class="muted">睡眠质量好不好一目了然</h4>
+            </div>
+            <div class="span4">
+            	<img src="../theme/images/d_pic5.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-section-phone5">
+	<div class="container">
+        <h2>群组</h2>
+        <h4 class="muted">创建或加入您喜欢的群组，组建运动圈子</h4>
+    </div>
+</div>
+
+<div class="d-section-phone4">
+	<div class="container">
+    	<div class="row">
+        	<div class="span6 offset2">
+        		<h2 class="">运动排行</h2>
+        		<h4 class="muted">朋友们都在努力，</h4>
+                <h4 class="muted">你还有什么理由天天宅在家里？</h4>
+            </div>
+            <div class="span4">
+            	<img src="../theme/images/d_pic7.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-section-phone7">
+	<div class="container">
+    	<div class="row">
+        	<div class="span5 offset1">
+            	<img src="../theme/images/d_pic6.jpg"/>
+            </div>
+            <div class="span5 offset1">
+                <h2>分享</h2>
+        		<h4 class="muted">在好友之间分享运动的乐趣</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

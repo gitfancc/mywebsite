@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>设备管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li>欢迎您</li>
+            <li><a href="login.html">[注销]</a></li>
+            <li class="dropdown">
+            	<a href="../index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i><sup class="badge badge-important">6</sup></a>
+                <ul class="dropdown-menu">
+                    <li class="text-error"><a href="javascript:;">6条新消息</a></li>
+                    <li class="divider"></li>
+                    <li class="text-error"><a href="javascript:;">0条新群组要求</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+        <ul class="nav">
+            <li><a href="myledong.html">我的乐康</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">运动日志 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="sportsLog2.html">运动日志</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sportsLog.html">足迹日志</a></li>
+                </ul>
+            </li>
+            <li><a href="../group/gLatestNews.html">群组动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="info.html">编辑资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="deviceManagement.html">设备管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">退出</a></li>
+                </ul>
+          </li>
+        </ul>
+        <div class="pull-right">
+            <select id="custom-select">
+                <option>请选择设备</option>
+                <option data-imagesrc="../theme/images/a1.png">A1智能腕表</option>
+                <option data-imagesrc="../theme/images/l28.png" >L28手环</option>
+            </select>
+    	</div>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	 <div class="row">
+     	<div class="span3 sidebar">
+        	<div class="well">
+                <div class="person-info">
+                	<a><img src="../theme/images/imagthumb.gif"/></a>
+                </div>
+                <a href="#" data-toggle="tooltip" title="离leval还差多少步">
+                    <div class="progress progress-info">
+                        <div class="bar" style="width: 60%"></div>
+                    </div>
+                </a>
+                <p class="text-center mb20">leval 6</p>
+                <ul class="user-atten">
+                    <li><a href="sportsLog2.html"><h3>65</h3>日志</a></li>
+                    <li><a href="../group/gRanking.html"><h3>265</h3>排名</a></li>
+                    <li  class="noborder"><a  href="../group/gSportLatest.html"><h3>65</h3>动态</a></li>
+                </ul>
+                <ul class="nav nav-list">
+                  <li><a href="info.html"><i class=" cus-icon icon-info"></i>基本资料</a></li>
+                  <li class="active"><a href="deviceManagement.html"><i class=" cus-icon icon-setting"></i>设备管理</a></li>
+                </ul>
+                
+          </div><!--/.well -->
+        </div>
+        <div class="span9 relative">
+            <ul class="nav nav-tabs">
+                	<li class="active"><a href="#M1" title="sim卡设置">sim卡设置</a></li>
+                    <li class="line"><a>|</a></li>
+                    <li><a href="#M2" title="通讯设置">通讯设置</a></li>
+                    <li><a>|</a></li>
+                    <li><a href="#M3" title="GPS开启时间段">GPS开启时间段</a></li>
+                    <li><a>|</a></li>
+                    <li><a href="#M4" title="活动区域设置">活动区域设置</a></li>
+                    <li><a>|</a></li>
+                    <li><a href="#M5" title="方式设置">报警发送方式设置</a></li>
+            </ul>
+            <hr>
+            <h4 class="mb20" id="M1">sim卡设置</h4>
+           	<p class="mb20 form-inline">设置sim卡号: <input class="mr10" type="text"/> 输入设备要使用的手机sim卡号</p>
+            <hr>
+            <h4 class="mb20"  id="M2">通讯设置</h4>
+            <p>腕表与云端服务器通信，关闭则不通信</p>
+            <p class="form-inline mb20">
+               <label class="radio inline mr10">实时心率上传设置</label>
+               <label class="radio inline"><input  type="radio" name="RGroup1" /> 开启</label>
+               <label class="radio inline mr10"><input  type="radio" name="RGroup1"/> 关闭</label>
+               <label class="radio inline">上传时间间隔</label>
+               <select class="input-small">
+                   <option value="10" selected="selected">10</option>
+                   <option value="20">20</option>
+               </select>
+               <label class="radio inline">分钟</label>
+            </p>
+            <p class="form-inline mb20">
+               <label class="radio inline mr10">实时位置上传设置</label>
+               <label class="radio inline"><input  type="radio" name="RGroup2" /> 开启</label>
+               <label class="radio inline mr10"><input  type="radio" name="RGroup2"/> 关闭</label>
+               <label class="radio inline">上传时间间隔</label>
+               <select class="input-small">
+                   <option value="10" selected="selected">10</option>
+                   <option value="20">20</option>
+               </select>
+               <label class="radio inline">分钟</label>
+            </p>
+            <p class="form-inline mb20">
+               <label class="radio inline mr10">运动信息上传设置</label>
+               <label class="radio inline"><input  type="radio" name="RGroup3" /> 开启</label>
+               <label class="radio inline mr10"><input  type="radio" name="RGroup3"/> 关闭</label>
+               <label class="radio inline">上传时间间隔</label>
+               <select class="input-small">
+                   <option value="10" selected="selected">10</option>
+                   <option value="20">20</option>
+               </select>
+               <label class="radio inline">分钟</label>
+            </p>
+            <hr>
+            <h4 class="mb20"  id="M3">GPS开启时间段</h4>
+            <p class="form-inline mb20">
+               <label class="radio inline mr10">开启时间段</label>
+               <select class="input-small">
+                   <option value="10" selected="selected">10</option>
+                   <option value="20">20</option>
+               </select>
+               <label class="radio inline"> 点-</label>
+               <select class="input-small">
+                   <option value="10" selected="selected">10</option>
+                   <option value="20">20</option>
+               </select>
+				<label class="radio inline"> 点<span class="muted"> (24小时进制，两个值相同表示全天开启)</span></label>
+            </p>
+            <hr>
+            <h4 class="mb20" id="M4">活动区域</h4>
+            <p class="mb20">先在地图上标记活动的位置，然后写上活动范围的半径。</p>
+            <p class="mb20"><img />这是地图占位符</p>
+            <p class="form-inline mb20">区域半径  <input class="mr10 span2" type="text"/>  米腕表在这个区域外的时候，家属手机将会收到短信通知</p>
+            <hr>
+            <h4 class="mb20" id="M5">报警发送方式设置</h4>
+            <p class="form-inline">
+                <label class="checkbox inline mr10"><input type="checkbox" />由主腕表发送</label>
+                <label class="checkbox inline"><input type="checkbox" />由云端服务器发送</label>
+            </p>
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="../theme/js/jquery.customSelect.js"></script>
+<script>
+$(function() {
+	$('#custom-select').ddslick(
+		/*{
+			onSelected: function (data) {
+				alert(data.selectedData.value)获取value值
+		}}*/);	
+})
+</script>
+</body>
+</html>

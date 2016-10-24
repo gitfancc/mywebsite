@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="common-api" extends="struts-default" namespace="/common/api">
+       <result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+       <interceptors>
+       		<interceptor name="json"
+				class="org.apache.struts2.json.JSONInterceptor" />
+			<interceptor name="tokenInterceptor"
+				class="com.appscomm.sport.interceptor.KronozInterceptor" />
+			<interceptor-stack name="tokenStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="tokenInterceptor" />
+			</interceptor-stack>
+		</interceptors> 
+		
+		<global-results>
+			<result name="none" type="redirect">/index</result>
+			<result name="login" type="redirect">/index</result>
+		</global-results>
+       <action name="check_version" class="com.appscomm.sport.api.action.CommonAction"
+                       method="checkVersion" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+       <action name="suggest_submit" class="com.appscomm.sport.api.action.CommonAction"
+                       method="suggestContent" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+       <action name="pic_upload" class="com.appscomm.sport.api.action.CommonAction"
+                       method="uploadPic" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	     
+       <action name="pic_download" class="com.appscomm.sport.api.action.CommonAction"
+                       method="downloadPic" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	   
+       <action name="time" class="com.appscomm.sport.api.action.CommonAction"
+                       method="getTime" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+       <action name="get_firmware_info" class="com.appscomm.sport.api.action.CommonAction"
+                       method="getFirmwareInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	    
+    </package>
+    
+	<package name="api" extends="struts-default" namespace="/sport/api">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+       <interceptors>
+       		<interceptor name="json"
+				class="org.apache.struts2.json.JSONInterceptor" />
+			<interceptor name="tokenInterceptor"
+				class="com.appscomm.sport.interceptor.KronozInterceptor" />
+			<interceptor-stack name="tokenStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="tokenInterceptor" />
+			</interceptor-stack>
+		</interceptors> 
+		
+		<global-results>
+			<result name="none" type="redirect">/index</result>
+			<result name="login" type="redirect">/index</result>
+		</global-results>
+	    <!-- 登陆注册 -->
+		<action name="login" class="com.appscomm.sport.api.action.IndexAction" method="login">
+			<result type="json"></result>
+		</action>
+		<action name="login_ex" class="com.appscomm.sport.api.action.IndexAction"
+			method="loginEx" >
+			<result type="json"></result>
+		</action>
+		<action name="get_valid_img" class="com.appscomm.sport.api.action.AuthImgAction"
+			method="authCode" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_district_info" class="com.appscomm.sport.api.action.UserAction"
+			method="districtInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="sync_user_country" class="com.appscomm.sport.api.action.UserAction"
+			method="syncUserCountry" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="reg" class="com.appscomm.sport.api.action.IndexAction"
+			method="register" >
+			<result type="json"></result>
+		</action>
+		<!-- 个人信息 -->	
+		<action name="get_user_info" class="com.appscomm.sport.api.action.UserAction"
+			method="info" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="set_user_info" class="com.appscomm.sport.api.action.UserAction"
+			method="set" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<!-- 个人头像 -->
+		<action name="set_upload_img" class="com.appscomm.sport.api.action.UserAction"  
+			method="setUploadImg" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_upload_img" class="com.appscomm.sport.api.action.UserAction"
+			 method="getUploadImg" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="set_upload_img_ex" class="com.appscomm.sport.api.action.UserAction"  
+			method="setUploadImgBase64" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+				
+		<!-- 法国注册 -->
+		<action name="reg_for_france" class="com.appscomm.sport.api.action.IndexAction"
+			method="registerForFrance" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<!-- 修改密码相关-->
+		<action name="modify_password" class="com.appscomm.sport.api.action.IndexAction"
+			method="modifyPassword" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="forgot_passwd" class="com.appscomm.sport.api.action.IndexAction"
+			method="forgetPassword" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_new_password" class="com.appscomm.sport.api.action.IndexAction"
+			method="getNewPassword" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+			
+		<!-- 绑定解绑相关 -->
+		<action name="device_bind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="bindDeviceId" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="device_unbind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="unBindDeviceId" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="device_sim_bind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="bindDeviceSim" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="device_sim_unbind"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="unBindDeviceSim" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="device_param_setting"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="saveDevice" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_devices"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="listDevices" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_device_info"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="getDeviceParam" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		
+		<action name="get_binddevices"
+			class="com.appscomm.sport.api.action.UserAction" method="qryBindDevice" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+			
+		<!--  运动查询统计 -->
+		<action name="get_sport_info"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="qryHisSportData" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_sport_total"
+			class="com.appscomm.sport.api.action.DeviceManagerAction" method="qryTotalSport" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+
+		<!-- 事项提醒相关 -->
+		<action name="add_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="add_remind_info" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="delete_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="delete_remind_info" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_remind_info" class="com.appscomm.sport.api.action.RemaindAction"
+			method="get_remind_info" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="modify_remind_status" class="com.appscomm.sport.api.action.RemaindAction"
+			method="modifyRemindStatus" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+			
+		<!-- 设备高级设置 -->
+		<action name="set_advanced_settings" class="com.appscomm.sport.api.action.UserAction"  
+			method="setAdvanceInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_advanced_settings" class="com.appscomm.sport.api.action.UserAction"  
+			method="getAdvanceInfo"  >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="reset_device" class="com.appscomm.sport.api.action.UserAction"
+			method="removeUserData" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+			
+		<!-- 特殊接口 -->
+		<action name="edit_target_period"
+			class="com.appscomm.sport.api.action.PcAction" method="periodSet" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="watch_more_setting"
+			class="com.appscomm.sport.api.action.PcAction" method="moreSeting" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+			
+		<!-- 设备固件版本,同步开关 -->
+		<action name="set_device_version" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="setDeviceFirmwareVersion" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_device_version" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="getDeviceFirmwareVersion" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="set_sync_switch" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="setDeviceSyncInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_sync_switch" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="getDeviceSyncInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<!-- 设备亮度,铃声控制 -->
+		<action name="set_device_config" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="setDeviceConfig" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_device_config" class="com.appscomm.sport.api.action.DeviceManagerAction" 
+			method="getDeviceConfig" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>		
+				
+		<!-- 通知提醒相关 -->
+		<action name="set_sleep_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setSleepRemind" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_sleep_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getSleepRemind" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="set_notify_info" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setNotifyInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_notify_info" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getNotifyInfo" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="set_stay_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setStayRemind" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>		
+		<action name="get_stay_remind" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getStayRemind" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>		
+		<action name="set_stay_remind_pc" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="setStayRemindPC" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_stay_remind_pc" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="getStayRemindPC" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>		
+		<action name="test_char" class="com.appscomm.sport.api.action.DeviceNotifyRemindAction" 
+			method="testChar" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		
+		<!-- 客户端版本信息 -->
+		<action name="set_client_version" class="com.appscomm.sport.api.action.ClientVersionAction" 
+			method="setClientVersion" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+		<action name="get_client_version" class="com.appscomm.sport.api.action.ClientVersionAction" 
+			method="getClientVersion" >
+			<interceptor-ref name="tokenInterceptor" />
+			<result type="json"></result>
+		</action>	
+	</package>
+</struts>

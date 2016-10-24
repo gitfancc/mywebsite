@@ -1,0 +1,561 @@
+var stepsTotal = 0,  calTotal = 0, distanceTotal = 0, sleepTotal = 0;
+var stepsTarget = 10000, calTarget=500, distanceTarget=1000, sleepTarget=20;
+var w=weeks.split(",");
+var m=months.split(",");
+var lowerw=lowerweeks.split(",");
+var sleepGageTip="";
+
+var heartOpt=[];
+heartOpt.heartTime=[];
+heartOpt.heartData=[];
+heartOpt.heartMin=0;
+heartOpt.heartMax=0; 		
+
+
+$(function(){
+ 
+	//加载用户目标值
+ 	 loadSportTarget();
+	var pathnameStr = window.location.protocol+"//"+window.location.host+"/index";
+	$.post(cxtPath+"/user/sport/sport",{'watchId':watchId},function(results){
+		$("#searchDate").val(results.searchDate);
+		if(myledong=='myledong'){
+			var tmpCal = calTotal; //(calTotal/1000).toFixedEx(2);
+			var tmpDis = (distanceTotal/1000).toFixedEx(2);
+			loadJustGage(stepsTotal,0,tmpCal,tmpDis, sleepTotal);
+		}
+		handleSportResult(results.searchDate,  results);
+		getSleepInfo($("#searchDate").val());
+		getHeartRate();
+		 $("#stepsA").trigger("click");
+	},'json');
+		
+	$("#previous").click(function(){
+		//加载用户目标值
+		 //loadSportTarget();
+		$.post(cxtPath+"/user/sport/previous",{'watchId':watchId,"searchDate":$("#searchDate").val()},function(results){
+			$("#searchDate").val(results.searchDate);
+			handleSportResult(results.searchDate,  results);
+			getSleepInfo($("#searchDate").val());
+			getHeartRate();
+			$("#stepsA").trigger("click");
+		},'json');
+	});
+	
+	$("#next").click(function(){
+		//加载用户目标值
+		// loadSportTarget();
+		$.post(cxtPath+"/user/sport/next",{'watchId':watchId,"searchDate":$("#searchDate").val()},function(results){
+			$("#searchDate").val(results.searchDate);
+			handleSportResult(results.searchDate,  results);
+			getSleepInfo($("#searchDate").val());
+			getHeartRate();
+			$("#stepsA").trigger("click");
+		},'json');
+	});
+	
+	$("#datepicker").change(function(){
+		//加载用户目标值
+		// loadSportTarget();
+		//var newDate = $("#datepicker").val();
+		var newDate = $("#alternate").val();
+		$.post(cxtPath+"/user/sport/previous",{'watchId':watchId,"searchDate":newDate,'current':'current'},function(results){
+			$("#searchDate").val(newDate);
+			handleSportResult(newDate,  results);
+			getSleepInfo(newDate);
+			getHeartRate();
+			$("#stepsA").trigger("click");
+		},'json');
+	});
+	
+    //steps, distance, calories, and selected
+    $("ul.nav-tabs li a").click(function () {
+        $(this).parents("ul").find("li").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+   
+});
+
+loadSportTarget = function(){
+	$.post(cxtPath+"/user/sport/target", function(data){
+		$.each(data, function(i,t){
+			if(t.property=="steps_target"){stepsTarget=t.value;}
+			if(t.property=="distance_target"){distanceTarget=t.value;}
+			if(t.property=="calories_target"){calTarget=t.value;}
+			if(t.property=="sleep_target"){sleepTarget=t.value;}
+		});
+	},'json');
+};
+
+var xArray = [], stepsArray = [], speedArray = [], calArray = [], distArray = [];
+handleSportResult = function(newDate, results){
+	stepsTotal = 0, speedTotal = 0, calTotal = 0, distanceTotal = 0;
+	xArray = [], stepsArray = [], speedArray = [], calArray = [], distArray = [];
+	showDate(newDate,  results.latelyTime);
+ 
+	$.each(results.paramSportResults,function(i,data){
+		xArray.push([data.endTime]);
+		stepsArray.push([data.steps]);
+		//var tmpCal2 = parseFloat(([data.cal]/1000).toFixedEx(2));
+		var tmpCal2 = parseFloat(data.cal);
+		calArray.push(tmpCal2);
+		
+		if(lengthUnit==1){
+			// 英里
+			data.dist = 0.621371*[data.dist];
+		}
+		var tmpDis2 = parseFloat(([data.dist]/1000).toFixedEx(2));
+		distArray.push(tmpDis2);
+		
+		stepsTotal+=data.steps;
+		calTotal+=data.cal;
+		distanceTotal+=data.dist;
+	});
+	
+	stepsTotal = subStr(stepsTotal+"");
+	distanceTotal = subStr(distanceTotal+"");
+	calTotal = subStr(calTotal+"");
+	refreshJustGage(stepsTotal, distanceTotal, calTotal);
+};
+
+refreshJustGage = function(stepsTotal, distanceTotal, calTotal){
+	a.refreshEx(stepsTotal,"", parseInt(stepsTarget));
+	//d.refreshEx((calTotal/1000).toFixedEx(2),"", parseInt(calTarget));
+	d.refreshEx(calTotal,"", parseInt(calTarget));
+	e.refreshEx((distanceTotal/1000).toFixedEx(2),"", parseInt(distanceTarget));
+};
+
+dateTopTitle = function(curDate){
+	if(curDate == 1 || curDate == 21 || curDate == 31){
+		$("#currentDate").append("<sup>st</sup>");
+	}else if(curDate == 2 || curDate == 22){
+		$("#currentDate").append("<sup>nd</sup>");
+	}else if(curDate == 3 || curDate == 23){
+		$("#currentDate").append("<sup>rd</sup>");
+	}
+	else{
+	   	$("#currentDate").append("<sup>th</sup>");
+	}	
+};
+
+showDate = function(searchDate,  latelyTime){
+	var currentDate = new Date();
+	var newCurrentDate = (currentDate.getFullYear()+"-"+(currentDate.getMonth()+1)+"-"+currentDate.getDate()).replace(/-/g,"/");
+	var newSearchDate = searchDate.replace(/-/g,"/");
+	var nsd = searchDate.split("-");
+	var sd = new Date(nsd[0],nsd[1]-1,nsd[2]);
+	
+	$("#currentDate").text("");
+	if(Date.parse(newCurrentDate)-Date.parse(newSearchDate)==0){
+		//$("#next").attr("class","btn-arrowright disable");
+		$("#next").attr("class","btn-arrowr trans-zero");
+		$("#datepicker").val(" "+myledongToday+" ");
+		if(lang=="english"){
+			$("#currentDate").append(lowerw[currentDate.getDay()]+", "+m[currentDate.getMonth()]+" "+currentDate.getDate()); //searchDate.substring(0,4));
+			dateTopTitle(currentDate.getDate());
+		}else{
+			$("#currentDate").append(lowerw[currentDate.getDay()]+" "+currentDate.getDate()+" "+m[currentDate.getMonth()]); 
+		}
+		$("#currentDate").append(" " +currentDate.getFullYear());
+	}else if(Date.parse(newCurrentDate)-Date.parse(newSearchDate)>0){
+		$("#next").attr("class","btn-arrowright");
+		if(Date.parse(newCurrentDate)-Date.parse(newSearchDate)==86400000){
+			$("#datepicker").val(" "+myledongYesterday+" ");
+			if(lang=="english"){
+				$("#currentDate").append(m[sd.getMonth()]+" "+sd.getDate());
+				dateTopTitle(sd.getDate());
+			}else{
+				$("#currentDate").append(sd.getDate()+" "+m[sd.getMonth()]);
+			}
+			$("#currentDate").append(" " +sd.getFullYear());
+
+		}else{
+			//$("#datepicker").val(" "+searchDate+" ");
+			$("#datepicker").val(w[sd.getDay()]);
+			if(lang=="english"){
+				$("#currentDate").append(m[sd.getMonth()]+" "+sd.getDate());
+				dateTopTitle(sd.getDate());
+			}else{
+				$("#currentDate").append(sd.getDate()+" "+m[sd.getMonth()]);
+			}
+			$("#currentDate").append(" " +sd.getFullYear());
+			
+		}
+	}else if(Date.parse(newCurrentDate)-Date.parse(newSearchDate)<0){
+		$("#next").attr("class","btn-arrowr trans-zero");
+	}
+};
+
+showStepsDiv = function(){
+	$('#main_sleep').attr("style","display:none");
+    $('#main_heart').attr("style","display:none");
+	$('#chart').attr("style","margin-left:-23px");
+	showCharts(xArray, stepsArray,'','',myledongSteps);
+};
+showDistanceDiv = function(){
+	$('#main_sleep').attr("style","display:none");
+	$('#main_heart').attr("style","display:none");
+	$('#chart').attr("style","margin-left:-23px");
+	if(lengthUnit==1){
+		showCharts(xArray, distArray,'','',myledongMile);
+	}else {
+		showCharts(xArray, distArray,'','',myledongKm);
+	}
+};
+
+showCalDiv = function(){
+	$('#main_sleep').attr("style","display:none");
+	$('#main_heart').attr("style","display:none");
+	$('#chart').attr("style","margin-left:-23px");
+	showCharts(xArray, calArray, '', '', myledongKcal);
+};
+
+showSleepDiv = function(){
+	if(sleepTotal==0){
+		$('#main_sleep').attr("style","display:none");
+		$('#main_heart').attr("style","display:none");
+		$('#chart').attr("style","margin-left:-23px");
+		var sy = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		showCharts (xArray, sy,'','',myledongHour);
+	}else{
+		$('#chart').attr("style","display:none");
+		$('#main_heart').attr("style","display:none");
+		$('#main_sleep').attr("style","");
+	}
+};
+
+showHeartDiv = function(){
+	//EconfigAPI(heartOpt);
+	 $('#chart').attr("style","display:none");
+	 $('#main_sleep').attr("style","display:none");
+	 $('#main_heart').attr("style","");
+	 EconfigAPI(heartOpt);
+};
+
+function subStr(str){
+	if(str.indexOf(".")>0){
+		str = str.substring(0, str.indexOf(".")+2);
+		if(str == "0.0"){
+			str = "0";
+		}
+	}
+	return str;
+}
+
+showCharts = function(xArray, dataArray,title,text,unit){
+	$('#chart').highcharts({
+	    chart: {
+	        type: 'column',
+	        width: 850,
+	        height: 300
+	    },
+	    title: {
+	        text: ''
+	    },
+	    subtitle: {
+	        text: ''
+	    },
+	    xAxis: {
+	        categories: xArray
+	    },
+	    yAxis: {
+	    	min : 0,
+	        lineWidth: 1,
+	        gridLineWidth:0,
+	        tickLength: 5,
+	        tickWidth: 1,
+	        title: {
+	            text: unit
+	        }
+	    },
+	    tooltip: {
+	     //   headerFormat: '<span style="font-size:12px">{point.key} '+myledongCurrent+'</span><table>',
+	    	headerFormat: '<span style="font-size:12px">{point.key} h</span><table>',
+	        pointFormat: '<tr><td style="padding:0"><b>{point.y} ' + unit + '</b></td></tr>',
+	        footerFormat: '</table>',
+	        shared: true,
+	        useHTML: true
+	    },
+	    plotOptions: {
+	        column: {
+	            pointPadding: 0.2,
+	            borderWidth: 0
+	        }
+	    },
+	    series: [{
+	        data: dataArray
+	
+	    }],
+	    credits: {
+			enabled: false
+		},
+		legend: {
+			enabled: false
+		}
+	});
+};
+
+var a,b,c,d,e,f;
+var loadJustGage = function(stepsTotal,speedTotal,calTotal,distanceTotal, sleepTotal){
+	stepsTotal = subStr(stepsTotal+"");
+	distanceTotal = subStr(distanceTotal+"");
+	calTotal = subStr(calTotal+"");
+	sleepTotal = subStr(sleepTotal+"");
+	a = new JustGage({
+	    id: "stepCount", 
+	    value: stepsTotal, 
+	    min: 0,
+	    max:stepsTarget,
+	    title: myledongTitleStep,
+	    levelColorsGradient: false,
+	    showMinMax: true
+	  });
+	d = new JustGage({
+	    id: "calories", 
+	    value: calTotal, 
+	    min: 0,
+	    max: calTarget,
+	    title: myledongTitleCalories,
+	    levelColorsGradient: false,
+	    showMinMax: true
+	  });
+	e = new JustGage({
+	    id: "distance", 
+	    value: distanceTotal,
+	    min: 0,
+	    max: distanceTarget,
+	    title: myledongTitleDistance,
+	    showMinMax: true,
+	    levelColorsGradient: false
+	  });
+	f = new JustGage({
+		id: "sleep",
+		value: sleepTotal,
+		min: 0,
+		max: sleepTarget,
+		title:myledongTitleSleep,
+		showMinMax: true,
+		levelColorsGradient: false
+	});
+
+};
+
+getSleepInfo = function(){
+	sleepTotal = 0;
+	var searchDate = $("#searchDate").val();
+	$.post(cxtPath+'/sleepInfo/sleepInfoAction!getSleepRecord',{'time':searchDate},function(data){
+		var j = data.data;
+		$(".J_chartWrap").empty();
+	if(j.length!=0){
+			$("#main_sleep").removeClass("nodata");
+			$("#main_sleep").addClass(".J_chartWrap");
+			var chart = new ChartSleep($('.J_chartWrap'), j, {
+				'chartWidth' : 850,
+				'chartHeight' : 210,  //深度睡眠的高度，最好为3的倍数
+				'colors' : ['#3266cb', '#99cdff', '#ffcb98','#ffcb98'],  //熟睡，浅睡，清醒
+				'txt' : [myledongTxtDeepSleep, myledongTxtLightSleep, myledongTxtWake,myledongTxtWake]
+			});
+			
+				var lightDuration=0;
+				var awakeDuration=0;
+				var deepDuration=0;
+				var sleepDuration=0;
+				var awakeCount=0;
+				var totalsleep=0;
+				var totalDuration=0;
+				var differMinutes=0;
+				var quality=0;
+				var totalquality =0;
+				for(var i=0;i<j.length;i++){
+					lightDuration+=j[i].lightDuration;
+					awakeDuration+=j[i].awakeDuration;
+					deepDuration+=j[i].deepDuration;
+					sleepDuration+=j[i].sleepDuration;
+					awakeCount+=j[i].awakeCount;
+					totalDuration+=j[i].totalDuration;
+					totalsleep =lightDuration+deepDuration;
+					quality+=j[i].quality*(j[i].lightDuration+j[i].deepDuration);
+					totalquality = quality/(lightDuration+deepDuration).toFixed(2);
+				}
+				sleepTotal = totalsleep;
+				var lightDu = lightDuration/60;
+				var deepDu = deepDuration/60;
+				var sleepDu = sleepDuration/60;
+				var awakeDu = awakeDuration/60+sleepDu;
+				var totalDu = awakeDu+lightDu+deepDu;
+				var guardTotal = sleepTotal/60;
+				$("#lightDuration").text(parseInt((lightDu*60)/60));
+				$("#lightDuration_2").text(parseInt((lightDu*60)%60));
+				$("#deepDuration").text(parseInt((deepDu*60)/60));
+				$("#deepDuration_2").text(parseInt((deepDu*60)%60));
+				$("#awakeDuration").text(parseInt(awakeDu*60));
+				$("#awakeCount").text(awakeCount);
+				$("#sleepDuration").text(parseInt(sleepDu*60));
+				//$("#totalsleep").text(totalsleep/60>>0);
+				//$("#totalsleep_2").text(totalsleep%60);
+				$("#totalsleep").text(parseInt((totalDu*60)/60));
+				$("#totalsleep_2").text(parseInt((totalDu*60)%60));
+				sleepGageTip=(parseInt((guardTotal*60)/60)) +"h" + (parseInt((guardTotal*60)%60)) +"min";
+				
+		}else{
+				//$("#main_sleep").addClass("char");
+				
+				$("#lightDuration").text(0);
+				$("#lightDuration_2").text(0);
+				$("#awakeDuration").text(0);
+				$("#deepDuration").text(0);
+				$("#deepDuration_2").text(0);
+				$("#sleepDuration").text(0);
+				$("#awakeCount").text(0);
+				$("#totalDuration").text(0);
+				$("#totalDuration_2").text(0);
+				$("#totalsleep").text(0);
+				$("#totalsleep_2").text(0);
+				$("#main_sleep").html('');
+				sleepGageTip="0h0min";
+		}
+		
+		//f.refresh((sleepTotal/60).toFixedEx(2), sleepGageTip);
+		f.refreshEx((sleepTotal/60).toFixedEx(2), sleepGageTip, parseInt(sleepTarget));
+	}, 'json');
+};
+
+/*点击日志分析  直接查询加载对应时间的chart、表格数据*/
+function logAnalysis(){
+	var currentTime = $("#searchDate").val();
+	var url = cxtPath+'/user/sport/log?time='+currentTime;
+	window.location.href = url; 
+} 
+
+var heartOpt = new Object();
+    heartOpt.heartMin=0;
+    heartOpt.heartMax=0;
+    heartOpt.heartTime=[];
+    heartOpt.heartData=[];
+getHeartRate = function(){
+ 
+	var searchDate = $("#searchDate").val();
+	var startDateStr=searchDate+" 00:00:00";
+	var endDateStr=searchDate+" 23:59:59";
+
+	var startDate = new Date(startDateStr.replace(/-/g,"/"));
+	var endDate = new Date(endDateStr.replace(/-/g,"/"));
+	var url=cxtPath+"/appscomm/api/heartrate/getHeartRecord?personId="+personId+"&deviceId="+watchId+"&startDate="+startDate.Format("yyyy-MM-dd hh:mm:ss")+"&endDate="+endDate.Format("yyyy-MM-dd hh:mm:ss");
+	$.get(url,function(data){
+	  //  alert(JSON.stringify(data));
+	    $(".J_heartWrap").empty();
+	    var heartTimes = [];
+	    var heartDatas = [];
+	    var j = data.data;
+	    if(j && j.length!=0){
+	        for(var i=0;i<j.length;i++){
+
+	            if(j[i].endTime){
+			heartTimes.push(j[i].endTime.substr(0,19));
+		    }
+		    heartDatas.push(j[i].heartAvg);
+	            if(heartOpt.heartMin> j[i].heartMin){
+			 heartOpt.heartMin=j[i].heartMin;
+	  	    }
+		    if(heartOpt.heartMax<j[i].heartMax) {
+		    	heartOpt.heartMax=j[i].heartMax;
+		    }
+		}
+	    }
+		
+	    heartOpt.heartTime=heartTimes;	
+	    heartOpt.heartData=heartDatas;
+	    // alert(JSON.stringify(heartOpt));			
+	}, 'json');
+	
+};
+
+
+function EconfigAPI(heartOpt){
+    // 路径配置
+	//alert(heartOpt);
+    require.config({
+            paths: {
+                echarts:staticfilepath+ "/js/dist/"
+            }
+    });
+       
+    // 使用
+    require([
+                'echarts',
+                'echarts/theme/macarons',  
+                'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec,theme) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main_heart'),theme); 
+               option = {
+					    grid: {
+					        borderWidth: 0,
+					        //外边框
+					    },
+					    tooltip: {
+					        trigger: 'axis',
+					        formatter: function(params) {
+					            var re = params[2][1] + '<br/>' + params[2][0] + ':' + params[2][2];
+					            return re;
+					        }
+					    },
+					    dataZoom: {
+					        show: true,
+					        realtime: true,
+					        y: 30,
+					        height: 20,
+					        start: 0,
+					        end: 100
+					    },
+					    xAxis: [{
+					        type: 'category',
+					        boundaryGap: false,
+					        data: heartOpt.heartTime,
+					    }],
+					    yAxis: [{
+					        type: 'value'
+					    }],
+					    series: [{
+					        type: 'line',
+					        data: [heartOpt.heartMax],
+					        markLine: {
+					            data: [{
+					                type: 'max',
+					                name: 'max limit',
+					                itemStyle:{normal:{color:'red'}}
+					            }]
+					        }
+					    },
+					    {
+					        type: 'line',
+					        data: [heartOpt.heartMin],
+					        markLine: {
+					            data: [{
+					                type: 'min',
+					                name: 'min limit',
+					                itemStyle:{normal:{color:'#E47833'}}
+					            }]
+					        }
+					    },
+					    {
+					        name: 'heart',
+					        type: 'line',
+					        itemStyle:{
+                                 normal: {
+                                   lineStyle:{
+                                      color:'#FF6EC7'
+                                   }
+                                 }
+                               },
+					        data: heartOpt.heartData,
+					    }],
+					    calculable: false
+					};
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+}

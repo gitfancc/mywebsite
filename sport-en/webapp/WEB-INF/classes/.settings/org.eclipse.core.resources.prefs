@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/appscomm/sport/action/DeviceSetAction.java=utf-8
+encoding//src/main/java/com/appscomm/sport/api/action/IndexAction.java=utf-8
+encoding//src/main/java/com/appscomm/sport/service/PlaceLocateService.java=GBK
+encoding//src/main/java/com/appscomm/sport/utils/HttpUtils.java=utf-8
+encoding//webapp/WEB-INF/commons=ISO-8859-1
+encoding//webapp/WEB-INF/view/users=UTF-8
+encoding//webapp/WEB-INF/view/users/deviceBind.html=UTF-8
+encoding//webapp/WEB-INF/view/users/deviceManagement.html=UTF-8
+encoding//webapp/WEB-INF/view/users/myledong.html=UTF-8
+encoding//webapp/index.html=UTF-8
+encoding/<project>=UTF-8

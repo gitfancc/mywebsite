@@ -1,0 +1,96 @@
+﻿var map = null;  
+var dropPoint = [];
+var gc = null;
+var infoWindow = null;   
+
+function initMap(time)
+{  
+    map = new BMap.Map("mapBox"); // 初始化时，即可设置中心点和地图缩放级别
+    gc = new BMap.Geocoder();
+    $.post(cxtPath+'/user/sport/getMapList',{time: time}, function(data){
+    		var d = eval(data);
+    		for(var i=0; i<d.data.length; i++){
+    			var lat = d.data[i].lat;
+            	var lng = d.data[i].lng;
+            	var point = new BMap.Point(lat,lng); // 设置初始化坐标   
+            	map.centerAndZoom(point,4); // 设置初始化放大级数  
+            	map.enableScrollWheelZoom();
+            	map.disableDoubleClickZoom();
+            	map.addControl(new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT}));
+            	map.addOverlay(new BMap.Marker(point));
+    		}
+    		$("#positions").html("位置：北京市北京市顺义区幸庄子北大街");
+    		map.addEventListener("click", function(e)
+    				{
+    					var pt = e.point;
+    					gc.getLocation(pt, function(rs){
+    						var addComp = rs.addressComponents;
+//    						alert(addComp.province +  addComp.city +  addComp.district + addComp.street + addComp.streetNumber);
+    						$("#positions").html("位置：" + addComp.province +  addComp.city +  addComp.district + addComp.street + addComp.streetNumber);
+    					}); 
+    					
+    		});
+        	showPath(d.data);
+    	/*
+         map.centerAndZoom(point, 13);  
+         var marker = new BMap.Marker(point);  
+         var opts = {  
+             width: 250,     // 信息窗口宽度  
+             height: 100,     // 信息窗口高度  
+             title: '<span style="font-size:15px;color:#0A8021">地理位置信息</span>'   // 信息窗口标题  
+         }  
+         //marker.setAnimation(BMAP_ANIMATION_BOUNCE);  
+         var content = "进店时间 <br/>离店时间 ";  
+         var info_Window = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象  
+         marker.addEventListener("click", function () {  
+             this.openInfoWindow(info_Window);  
+         });  
+         map.addOverlay(marker);  
+         */
+	},'json');
+}
+
+
+
+
+//在百度地图上显示当天运动的足迹
+function showPath(dropPoint){
+	//alert("显示轨迹"+dropPoint.length );
+	if (dropPoint.length==0) return;
+	var myPath = [];
+	for (var i=0; i<dropPoint.length; i++) 
+	{
+		var x = dropPoint[i].lng;
+		var y = dropPoint[i].lat;
+		myPath[i] = new BMap.Point(y,x);
+	}
+	//起始点标注
+	var myIconStart = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(23, 25), {  
+                    offset: new BMap.Size(10, 25), // 指定定位位置  
+                    imageOffset: new BMap.Size(0, 0) // 设置图片偏移  
+                });  
+    var startMarker=new BMap.Marker(dropPoint[0],{icon:myIconStart}); 
+	var startMarker=new BMap.Marker(dropPoint[0]); 
+	var labelS = new BMap.Label("起点位置",{offset:new BMap.Size(20,-10)});
+	startMarker.setLabel(labelS);
+    //终止点标注
+	var myIconEnd = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(23, 25), {  
+                    offset: new BMap.Size(10, 25), // 指定定位位置  
+                    imageOffset: new BMap.Size(0, 0 - 1 * 25) // 设置图片偏移  
+                });  
+    var endMarker=new BMap.Marker(dropPoint[dropPoint.length-1],{icon:myIconEnd}); 
+	var endMarker=new BMap.Marker(dropPoint[dropPoint.length-1]); 
+	var labelE = new BMap.Label("终点位置",{offset:new BMap.Size(20,-10)});
+	endMarker.setLabel(labelE);
+	
+	map.removeOverlay(startMarker); 
+	map.removeOverlay(endMarker); 
+	map.addOverlay(startMarker); 		
+    map.addOverlay(endMarker); 
+	
+	polyline = new BMap.Polyline(myPath, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5})
+	map.addOverlay(polyline);
+}
+
+
+

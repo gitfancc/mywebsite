@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>change passward</title>
+	<#include "../../commons/top.html">
+	<script src="<@s.text name='static.file.path'/>/js/modules/users/changePassword.js"></script>
+
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<div class="bg-lightgray">
+		<h2 class="tc pt10 pb10"><@s.text name='page.changePassword.title'/></h2>
+	</div>
+	<div  class="content" style="height:471px;">
+	 <div class="ui-grid-row ptb30" style="margin-left:250px;">
+		    <form method="post" id="changePassword" action="${token!}">
+		    	<div class="l mr20 mt-5">
+					<p class="color-red" id="passw_error_message"></p>
+					<p class="color-red" id="password_error_message"></p>
+				</div>
+		        <div class="ui-form-item">
+		          <label class="ui-label" ><@s.text name='page.changePassword.l1'/></label>  <input class="ui-input" type="password" name="newpassword" id="password1"  placeholder="<@s.text name='page.changePassword.l1'/>" />
+		          <p class="color-red"></p>
+		        </div>
+		       <div class="ui-form-item">
+		           <label class="ui-label"><@s.text name='page.changePassword.l2'/></label>  <input class="ui-input" type="password" name="newpassword2" id="password2" placeholder="<@s.text name='page.changePassword.l2'/>"/>
+		           <p class="color-red"></p>
+		        </div>  
+		       <div class="ui-form-item">
+		             <input type="button" value="<@s.text name='page.changePassword.savebtn'/>" id="btnChangePwd" class="btn btn-red">
+		        	 <p class="color-red"></p>
+		        </div>           
+		     </form>
+	     </div>
+	</div>
+
+	<#include "../../commons/foot2.html">
+</body>
+</html>

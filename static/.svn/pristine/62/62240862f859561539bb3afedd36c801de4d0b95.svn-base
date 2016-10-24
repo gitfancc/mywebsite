@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>activity Report</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Scope" />
+<meta name="keywords"  content="Scope" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="header">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="battery-box">
+    <div class="l">
+    	<span class="ml20">Last sync</span>
+        <i class="icon icon-refresh"></i>
+        <span>Today 12:35</span>
+    </div>
+    <div class="r">
+        <span class="mr20">Battery Level <i class="icon icon-ele1"></i></span>
+        <span class="mr20">Scope Version:1.1</span>
+    </div>
+</div>
+<div class="bg-lightgray">
+	<h2 class="tc pt10 pb10">ACTIVITY REPORT</h2>
+</div>
+<div class="content">
+    <div class="ui-grid-row ptb30">
+        <div class="ui-grid-4">
+            <img class="mb10" src="../images/imagthumb.gif"/>
+            <div id="progressbar" class="progressbar"></div>
+            <p class="tc">leval</p>
+        </div>
+        <div class="ui-grid-21">
+            <ul class="nav-tabs line l">
+                <li><a class="cuurent" href="javascript:;">TODAY</a></li>
+                <li class="active"><a href="javascript:;">WEEK</a></li>
+                <li><a href="javascript:;">MONTH</a></li>
+                <li><a href="javascript:;">YEAR</a></li>
+                <li class="noborder"><a href="javascript:;">ALL</a></li>
+        	</ul>
+            <div class="r">
+                <input id="dateStart" type="text" class="ui-input calendar small" value="2014-05-29"/>
+                <input id="dateEnd" type="text" class="ui-input calendar small" value="2014-06-03"/>
+                <a href="javascript:;" class="btn btn-red">VIEW</a>
+            </div>
+            <ul class="nav-tabs">
+                <li><a href="javascript:;">STEPS</a></li>
+                <li class="active"><a href="javascript:;">DISTANCE</a></li>
+                <li><a href="javascript:;">COALORIES</a></li>
+                <li class="noborder"><a href="javascript:;">SLEEP</a></li>
+        	</ul>
+            <div class="chart nodata"></div>
+        </div>
+    </div>
+</div>    
+<div class="bg-lightgray pt20 pb20">
+    	<div class="clearfix">
+        	<div class="footer l ml20">
+            	<h3>COMPATIBLE PRODUCT </h3>
+                <img src="../images/pic-product1.png"/>
+                <p>Scope</p>
+                <p>Activity & Sleep Tracker</p>
+            </div>
+             <div class="footer r small">
+            	<h3>INFORMATION</h3>
+        		<p><a href="javascript:;" title="Contact us">Contact us</a></p>
+            	<p><a href="javascript:;" title="Support">Support</a></p>
+            	<p><a href="javascript:;" title="Legal Mentions">Legal Mentions</a></p>
+            </div>
+             <div class="footer r">
+            	<h3>DOWNLOAD</h3>
+        		<p><a href="mobileApplication.html" title="Mobile Application">Mobile Application</a></p>
+            	<p><a href="software.html" title="Software">Software</a></p>
+            </div> 
+        </div>
+        <div class="lang">
+            <a class="mr20"><img alt="English" src="../images/UK.png"> English</a>
+            <a><img alt="Français" src="../images/FR.png"> Français</a>
+        </div>
+</div> 
+<p class="copyright">© 2014 KRONOZ LLC, All rights reserved</p>
+<!--浮动层;-->
+<div  id="dialog"  style="display:none;">
+      <form class="ui-form mt20">
+            <fieldset>
+                <p class=" mb20"><input type="text" class="ui-input" placeholder="Old Password"></p>
+                <p class=" mb20"><input type="text" class="ui-input" placeholder="New Password"></p>
+                <p class=" ml30"><input type="submit" value="SAVE" class="btn btn-red"></p>  
+            </fieldset>
+        </form>
+</div>
+<!--end浮动层-->
+</body>
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/jquery.fixedHeader.js"></script>
+<script>
+$(function(){
+	var dates = $("#dateStart,#dateEnd");
+	dates.datepicker({      //绑定开始日期  
+		dateFormat:'yy-mm-dd',  //更改时间显示模式
+		showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+		changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+		changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+		showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+		closeText:'关闭',      //设置关闭按钮的值
+		currentText:'今天', //设置今天按钮的值
+		showOtherMonths  :true,
+		yearRange:'2008:2017',  //显示可供选择的年份7天
+		defaultDate:1,
+		onSelect: function(selectedDate){  
+			var option = this.id == "dateStart" ? "minDate" : "maxDate";  
+			dates.not(this).datepicker("option", option, selectedDate);  
+    	}  
+	
+	});  
+	$( "#progressbar" ).progressbar({
+		value: 56
+	});
+})
+</script>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的乐康</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+<link type="text/css" rel="stylesheet" href="../theme/css/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li>欢迎您</li>
+            <li><a href="login.html">[注销]</a></li>
+            <li class="dropdown">
+            	<a href="../index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope"></i><sup class="badge badge-important">6</sup></a>
+                <ul class="dropdown-menu">
+                    <li class="text-error"><a href="javascript:;">6条新消息</a></li>
+                    <li class="divider"></li>
+                    <li class="text-error"><a href="javascript:;">0条新群组要求</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+        <ul class="nav">
+            <li class="active"><a href="myledong.html">我的乐康</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">运动日志 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="sportsLog2.html">运动日志</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sportsLog.html">足迹日志</a></li>
+                </ul>
+            </li>
+            <li><a href="../group/gLatestNews.html">群组动态</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="info.html">编辑资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="deviceManagement.html">设备管理</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">退出</a></li>
+                </ul>
+          </li>
+        </ul>
+        <div class="pull-right">
+            <select id="custom-select">
+                <option>请选择设备</option>
+                <option  data-imagesrc="../theme/images/a1.png">A1智能腕表</option>
+                <option  data-imagesrc="../theme/images/l28.png" >L28手环</option>
+            </select>
+    	</div>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	<div class="text-center">
+        <a href="javascript:;" class="btn-arrow btn-arrow-left disabled"></a>
+        <a href="javascript:;" class="btn-arrow btn-arrow-left"></a>
+        <input type="text" class="span2 data-text"  value="今 天" id="datepicker">
+        <a href="javascript:;" class="btn-arrow btn-arrow-right"></a>
+        <a href="javascript:;" class="btn-arrow btn-arrow-right disabled"></a>
+        <p class="muted"><span class="mr10">8月29日</span><span>4小时前更新</span></p>
+    </div>
+    <hr>
+    <ul class="nav nav-pills pull-left">
+        <li class="active"><a href="#" title="" data-toggle="tab">步数</a></li>
+        <li><a href="#" title="距离" data-toggle="tab">距离</a></li>
+        <li><a href="#" title="" data-toggle="tab">速度</a></li>
+        <li><a href="#" title="距离" data-toggle="tab">卡路里</a></li>
+        <li><a href="#" title="" data-toggle="tab">心率</a></li>
+    </ul>
+    <a class="btn btn-primary pull-right">日志分析</a>
+    <p class="clear"></p>
+    <div class="chart nodata"></div>
+    <hr>
+     <div class="row">
+     	<div class="span4">
+        	<h4>完成目标</h4>
+            <div class="progress progress-danger mr60">
+                <div class="bar" style="width: 60%"></div>
+            </div>
+            <p>已击败全国 <span class="fsize text-error">56%</span> 的用户</p>
+            <h5>我要分享</h5>
+            <div class="jiathis_style_24x24">
+                <a class="jiathis_button_qzone"></a>
+                <a class="jiathis_button_tsina"></a>
+                <a class="jiathis_button_tqq"></a>
+                <a class="jiathis_button_weixin"></a>
+                <a class="jiathis_button_renren"></a>
+                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+               <!-- <a class="jiathis_counter_style"></a>-->
+            </div>
+            <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1377747580808428" charset="utf-8"></script>
+        </div>
+        <div class="span4 gauge-box">
+        	<i class="cus-icon icon-step"></i>
+            <div id="g3" class="gauge"></div>
+            <h4>steps</h4>
+        </div>
+        <div class="span4 gauge-box">
+        	<i class="cus-icon icon-fire"></i>
+        	<div id="g4" class="gauge"></div>
+            <h4>cal</h4>
+        </div>
+     </div>
+     <hr>
+     <div class="row">
+     	<div class="span4 gauge-box">
+        	<i class="cus-icon icon-distance"></i>
+            <div id="g5" class="gauge"></div>
+            <h4>m</h4>
+        </div>
+        <div class="span4 gauge-box">
+        	<i class="cus-icon icon-run"></i>
+        	<div id="g1" class="gauge"></div>
+            <h4>km/h</h4>
+        </div>
+        <div class="span4 gauge-box">
+        	<i class="cus-icon icon-heart"></i>
+        	<div id="g2" class="gauge"></div>
+            <h4>b/min</h4>
+        </div>
+     </div>
+     <hr>
+     <div class="row">
+     	<div class="span8">
+        	<p class="pull-left">您总共睡了<span>9</span>小时<span>30</span>分钟</p>
+            <p class="pull-right">睡眠质量：<span class="starbox"><i class="star two"></i></span>目标达成：<span class="text-error">80%</span></p>
+            <p class="clear"></p>
+            <div class="nodata large"></div>
+        </div>
+        <div class="span3 offset1 sleep-box">
+        	<div>
+                <i class="cus-icon icon-z"></i>
+                <h5>轻度睡眠</h5>
+                <p><span>6</span>小时<span>17</span>分钟</p>
+            </div>
+            <div>
+                <i class="cus-icon icon-z"></i>
+                <h5>清醒时间</h5>
+                <p><span>6</span>分钟</p>
+            </div>
+            <div>
+                <i class="cus-icon icon-bulb"></i>
+                <h5>深度睡眠</h5>
+                <p><span>6</span>小时<span>17</span>分钟</p>
+            </div>
+            <div>
+                <i class="cus-icon icon-clock2"></i>
+                <h5>入睡时间</h5>
+                <p><span>6</span>分钟</p>
+            </div>
+            <div>
+                <i class="cus-icon icon-clock3"></i>
+                <h5>醒来次数</h5>
+                <p><span>6</span>次数</p>
+            </div>
+            <div>
+                <i class="cus-icon icon-clock4"></i>
+                <h5>床上时间总计</h5>
+                <p><span>6</span>小时<span>17</span>分钟</p>
+            </div>
+        </div>
+     </div>
+</div>
+<hr>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="../theme/js/jquery.customSelect.js"></script>
+<script src="../theme/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../theme/js/query.ui.datepicker-zh-CN.js"></script>
+<script src="../theme/js/justgage/justgage.1.0.1.js" type="text/javascript"></script>
+<script src="../theme/js/justgage/raphael.2.1.0.min.js" type="text/javascript"></script>
+<script>
+$(function() {
+	$('#custom-select').ddslick();
+	$( "#datepicker" ).datepicker({
+		dateFormat:'yy-mm-dd',  //更改时间显示模式
+		showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+		changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+		changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+		showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+		closeText:'关闭',      //设置关闭按钮的值
+		currentText:'今天', //设置今天按钮的值
+		showOtherMonths  :true,
+		yearRange:'2008:2017',  //显示可供选择的年份7天
+		defaultDate:1
+	})
+})
+var g1, g2, g3, g4, g5;
+	window.onload = function () {
+		var g1 = new JustGage({
+			id: "g1",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"速 度",
+			showMinMax: false,
+		});
+
+		var g2 = new JustGage({
+			id: "g2",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"心 率",
+			showMinMax: false,
+		});
+
+		var g3 = new JustGage({
+			id: "g3",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"步 数",
+			showMinMax: false,
+		});
+
+		var g4 = new JustGage({
+			id: "g4",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			showMinMax: false,
+			title:"卡路里",
+		});
+
+
+		var g5 = new JustGage({
+			id: "g5",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"距离",
+			showMinMax: false,
+
+		});
+	}
+</script>
+</body>
+</html>

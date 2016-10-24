@@ -1,0 +1,169 @@
+var email_pattern=/(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function(){
+	$("#account").blur(function(){
+		$("#account_error_message").remove();
+		if(!$(this).val()){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>手机号/邮箱不能为空</span>");
+    		return false;
+    	}else if($(this).val().indexOf("@")!=-1&&!email_pattern.exec($(this).val())){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>请输入格式正确的邮箱</span>");
+    		return false;
+    	}else if($(this).val().indexOf("@")==-1&&!telphone_pattern.exec($(this).val())){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='account_error_message'>请输入格式正确的手机号码</span>");
+    		return false;
+    	}else{
+			valid_account();
+    		//$(this).after("<span class=\"tipbox-reg-correct\" id='account_error_message'></span>");//add by xc
+    		return true;
+    	}
+		
+	});
+	$("#password").blur(function(){
+		var regPwd = /^(\S){6,16}$/;//6-20个字符/下划线/数字/字母都可以  add by xc
+		$("#password_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='password_error_message'>登录密码不能为空</span>");
+    		return false;
+		}else if(!regPwd.exec($(this).val())){//add by xc
+			$(this).after("<span class=\"tipbox-reg-error\" id='password_error_message'>注册密码为6-16个字符组成, 且不能输入空格</span>");	
+    		return false;	
+		}else{
+			$(this).after("<span class=\"tipbox-reg-correct\" id='password_error_message'></span>");//add by xc
+    		return true;
+		}
+	});
+	$("#rePassword").blur(function(){
+		$("#repassword_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='repassword_error_message'>确认密码不能为空</span>");
+    		return false;
+		}
+		if($(this).val()!=$("#password").val()){
+    		$(this).val("");
+    		$(this).after("<span class=\"tipbox-reg-error\" id='repassword_error_message'>输入的密码不相符</span>");
+    		$("#password").val("");
+    		$("#password").focus();
+    		return false;
+    	}else{//add by xc
+    		$(this).after("<span class=\"tipbox-reg-correct\" id='repassword_error_message'></span>");
+    		return true;
+    	}
+	});
+	$("#nickName").blur(function(){
+		$("#userName_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='userName_error_message'>昵称不能为空</span>");
+    		return false;
+		}
+		if(!regUserName.exec($(this).val())){//add by xc
+			$(this).after("<span class=\"tipbox-reg-error\" id='userName_error_message'>昵称必须为2-12个字符组成,可以由下划线、中文、数字组成,不允许空格.</span>");
+    		return false;
+		}else{
+			valid_nickname();
+//			$(this).after("<span class=\"tipbox-reg-correct\" id='userName_error_message'></span>");
+			return true;
+		}
+	});
+	$("#txtVarcode").blur(function(){
+		$("#varcode_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span class=\"tipbox-reg-error\" id='varcode_error_message'>验证码不能为空</span>");
+    		return false;
+		}
+	});
+	
+	
+	var regPwd = /^(\S){6,16}$/;//6-20个字符/下划线/数字/字母都可以  add by xc
+	var regUserName =  /^[\u4e00-\u9fa5a-zA-Z0-9_!@#$%^&*()~`]{2,12}$/;//6-20个字符
+	
+	$("#btnRegister").click(function(){
+		$("#service_error_message").remove();
+		$("#account_error_message").remove();
+		$("#password_error_message").remove();
+		$("#repassword_error_message").remove();
+		$("#userName_error_message").remove();
+		$("#varcode_error_message").remove();
+		if($("#account").val().indexOf("@")==-1&&!telphone_pattern.exec($("#account").val())){
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-error\">手机号码格式不正确</span>");
+    		return false;
+		}else if($("#account").val().indexOf("@")!=-1&&!email_pattern.exec($("#account").val())){
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-error\">邮箱格式不正确</span>");
+    		return false;
+		}else if(!$("#password").val() || !regPwd.exec($("#password").val())){
+			$("#password").after("<span id='password_error_message' class=\"tipbox-reg-error\">登录密码不能为空, 且范围在6-16之间, 不能输入空格</span>");
+    		return false;
+		}else if(!$("#rePassword").val() || !regPwd.exec($("#rePassword").val())){
+			$("#rePassword").after("<span id='repassword_error_message' class=\"tipbox-reg-error\">确认密码不能为空, 且范围在6-16之间, 不能输入空格</span>");
+    		return false;
+		}else if(!$("#nickName").val() || !regUserName.exec($("#nickName").val())){
+			$("#nickName").after("<span id='userName_error_message' class=\"tipbox-reg-error\">昵称必须为2-12个字符组成,可以由下划线、中文、数字组成,不允许空格.</span>");
+    		return false;
+		}else if(!$("#txtVarcode").val()){
+			$("#txtVarcode").after("<span id='varcode_error_message' class=\"tipbox-reg-error\">验证码不能为空</span>");
+    		return false;
+		}else if(!$("#readerService").attr("checked")){
+			$("#readerService ~ a").after("<span id='service_error_message' class=\"tipbox-reg-error\">请先阅读乐康服务条款</span>");
+			return false;
+		}
+		if($("#nickName").attr("nick")!="false"){
+			$("#btnRegister").attr('disabled',"true");
+			$("#register").submit();
+		}
+	});
+});
+
+function valid_account(){
+	$("#account_error_message").remove();
+	$.post(cxtPath+'/valid_account',{"user.account":$("#account").val()},function(results){
+		if(!results)
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-error\">帐号已经被注册</span>");
+		else
+			$("#account").after("<span id='account_error_message' class=\"tipbox-reg-correct\">可用</span>");
+	},'json');
+}
+
+//验证昵称
+/*function valid_nickname(){
+	$("#nickname_error_message").remove();
+	$.post(cxtPath+'/valid_nickname',{"user.nickName":$("#nickName").val()},function(results){
+		if(!results)
+			$("#nickName").after("<span id='nickname_error_message' class=\"tipbox-reg-error\">昵称已经存在</span>");
+		else
+			$("#nickName").after("<span id='nickname_error_message' class=\"tipbox-reg-correct\">可用</span>");
+	},'json');
+}*/
+
+
+//验证昵称
+function valid_nickname(){
+	$("#nickname_error_message").remove();
+	$.post(cxtPath+'/valid_nickname',{"user.nickName":$("#nickName").val()},function(results){
+		if(!results){
+			$("#nickName").focus();
+			$("#nickName").attr("nick", "false");
+			if($("#nickName").html()==""){
+				$("#nickName").after("<span id='nickname_error_message' class=\"tipbox-reg-error\">昵称已经存在</span>");
+			}
+		}
+		else{
+			$("#nickName").attr("nick", "true");
+			if($("#nickName").html()==""){
+				$("#nickName").after("<span id='nickname_error_message' class=\"tipbox-reg-correct\">可用</span>");
+			}
+		}
+	},'json');
+}
+
+
+function getCheckCode() {
+    $("#changeVercode").attr("src",cxtPath+"/authImg.jpg?t="+Math.random());
+}
+
+document.onkeydown = function(e) {
+	var theEvent = window.event || e;
+	var code = theEvent.keyCode || theEvent.which;
+	if (code == 13) {
+		$("#btnRegister").click();
+	}
+}

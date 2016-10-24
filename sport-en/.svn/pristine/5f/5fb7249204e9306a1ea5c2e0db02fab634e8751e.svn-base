@@ -1,0 +1,293 @@
+verCode_error = \u9A8C\u8BC1\u7801\u9519\u8BEF\!
+register_error = \u6CE8\u518C\u5931\u8D25\!
+login_error = \u767B\u9646\u5931\u8D25\!
+login_password_error = \u7528\u6237\u5BC6\u7801\u9519\u8BEF\!
+login_account_not_exist =\u767B\u9646\u8D26\u53F7\u4E0D\u5B58\u5728\!
+reset_password_success=\u91CD\u7F6E\u5BC6\u7801\u6210\u529F . \u8FDB\u5165\u4E3B\u9875\?
+reset_password_failed=\u91CD\u7F6E\u5BC6\u7801\u5931\u8D25\!
+
+page.time.format.tips=(DD/MM/YYYY)
+
+page.index.title=MyKronoz - ZeFit Applications - \u4E3B\u9875
+page.index.h21=\u8fd0\u52a8 &amp; \u7761\u7720 \u8f68\u8ff9 SMARTWATCH
+page.index.p1=ZeFit \u662F\u4E00\u6B3E\u53EF\u4EE5\u544A\u8BC9\u6211\u4EEC\u65F6\u95F4,\u8FD0\u52A8\u8DDD\u79BB\u548C\u6B65\u6570\u7684\u8155\u8868
+page.index.p2=\u8DDD\u79BB,\u71C3\u70E7\u7684\u5361\u8DEF\u91CC\u548C\u7761\u7720\u65F6\u95F4.
+page.index.h22=\u81EA\u8EAB\u7BA1\u7406 24/7
+page.index.p3=ZeFit \u53EF\u4EE5\u540C\u6B65iOS 6.0+\u548CAndroid 4.3+\u8BBE\u5907\u4E0A\u7684\u6570\u636E\uFF0C\u76EE\u524D\u652F\u6301\u84DD\u72594.0
+page.index.h23=\u4FDD\u6301\u79EF\u6781\u548C\u4E3B\u52A8
+page.index.p4=\u4F7F\u7528 ZeFit \u514D\u8D39\u7684\u79FB\u52A8\u5E94\u7528\u7A0B\u5E8F\uFF0C\u8BBE\u5B9A\u6BCF\u5929\u7684\u76EE\u6807\u548C\u63D0\u9192\uFF0C\u76D1\u7763\u4F60\u7684\u8868\u73B0\u6C34\u5E73\uFF0C\u5E76\u5206\u6790\u4F60\u7684\u8FDB\u6B65!
+page.index.p5=ZeFit \u5C06\u5E2E\u52A9\u4F60\u4FDD\u6301\u52A8\u529B\u548C\u79EF\u6781\u5168\u5929.
+page.index.p6=\u66f4\u591a
+
+page.head.login=\u767B\u9646
+page.head.forget=\u5FD8\u8BB0\u5BC6\u7801
+
+page.foot.h31=\u6240\u6709\u4ea7\u54c1 
+page.foot.p1=ZeFit
+page.foot.p2=\u8fd0\u52a8 & \u7761\u89c9\u8f68\u8ff9
+page.foot.h32=\u7b80\u4ecb 
+page.foot.p4=\u8054\u7cfb\u6211\u4eec
+page.foot.p5=\u6280\u672f\u652f\u6301
+page.foot.p6=\u6CD5\u5F8B\u58F0\u660E
+page.foot.h33=\u4e0b\u8f7d 
+page.foot.p7=\u624b\u673aAPP
+page.foot.p8=\u8f6f\u4ef6
+page.foot.a1=\u82f1\u6587\u7248
+page.foot.a2=\u6cd5\u6587\u7248
+page.foot.f=2014 KRONOZ LLC, \u7248\u6743\u6240\u6709
+
+page.battery.sync=\u6700\u8FD1\u540C\u6B65
+page.battery.sync.time=\u4ECA\u5929 12:35
+page.battery.level=\u7535\u6C60\u7535\u91CF
+page.battery.version=ZeFit Version:1.1
+
+page.common.logo=Zefit
+page.common.dashboard=\u9996\u9875
+page.common.support=\u6280\u672f\u652f\u6301
+page.common.download=\u4e0b\u8f7d
+page.common.mobile.app=\u624b\u673aAPP
+page.common.software=\u8f6f\u4ef6
+page.common.collection=\u6536\u85CF
+
+
+page.login.head.profile=\u4E2A\u4EBA\u4FE1\u606F
+page.login.head.Dashboard=\u4E3B\u9875
+page.login.head.info=\u4E2A\u4EBA\u4FE1\u606F
+page.login.head.manager=\u8BBE\u5907\u7BA1\u7406
+page.login.head.logout=\u9000\u51FA
+
+page.nologin.head.register=\u6ce8\u518c
+page.nologin.head.login=\u767b\u5f55
+
+
+page.activityReport.t1=Mykronoz - ZeFit - \u8FD0\u52A8\u65E5\u5FD7
+page.activityReport.b1=\u8FD0\u52A8\u65E5\u5FD7
+page.activityReport.b2=\u7EA7\u522B 0
+page.activityReport.b3=\u4ECA\u5929
+page.activityReport.b4= \u6700\u8FD1\u4E00\u5468
+page.activityReport.b5=\u6700\u8FD1\u4E00\u6708
+page.activityReport.b6=\u6700\u8FD1\u4E00\u5E74
+page.activityReport.b7=\u5168\u90E8
+page.activityReport.b8=\u67E5\u770B
+page.activityReport.b9=\u6B65\u6570
+page.activityReport.b10=\u8DDD\u79BB
+page.activityReport.b11=\u5361\u8DEF\u91CC
+page.activityReport.b12=\u7761\u7720
+
+page.deviceManagement.t1=Mykronoz - ZeFit - \u8BBE\u5907\u7BA1\u7406
+page.deviceManagement.b1=\u8BBE\u5907\u7BA1\u7406
+page.deviceManagement.b2=\u8BBE\u5907\u540D\u79F0
+page.deviceManagement.b3=\u9884\u89C8
+page.deviceManagement.b4=\u8BBE\u5907\u53F7
+page.deviceManagement.b5=\u7ED1\u5B9A\u65E5\u671F
+page.deviceManagement.b6=\u64CD\u4F5C
+page.deviceManagement.b7=\u4E0B\u8F7D\u65B0\u56FA\u4EF6
+page.deviceManagement.b8=ZeFit
+page.deviceManagement.b9=\u89E3\u7ED1
+
+page.forgetPassword.t1=Mykronoz - ZeFit - \u5FD8\u8BB0\u5BC6\u7801
+page.forgetPassword.b1=\u91CD\u7F6E\u5BC6\u7801
+page.forgetPassword.b2=\u90AE\u7BB1
+page.forgetPassword.b3=\u8BF7\u8F93\u5165\u60A8\u7684\u767B\u9646\u90AE\u7BB1
+page.forgetPassword.b4=\u91CD\u7F6E\u5BC6\u7801
+
+page.mobileApplication.t1=Mykronoz - ZeFit - \u79FB\u52A8\u5E94\u7528
+page.mobileApplication.b1=\u79FB\u52A8\u5E94\u7528
+page.mobileApplication.b2=ZeFit \u5E94\u7528\u7A0B\u5E8F\u8BA9\u7528\u6237\u540C\u6B65\u6D3B\u52A8\u548C\u7761\u7720\u6570\u636E\uFF0C\u8BBE\u5B9A\u6BCF\u5929\u7684\u76EE\u6807\u548C\u63D0\u9192\uFF0C\u6309\u7167\u4ED6\u4EEC\u7684\u6BCF\u65E5\uFF0C\u6BCF\u5468\u548C\u6BCF\u6708\u7684\u7EE9\u6548\u548C\u8FDB\u5C55!
+page.mobileApplication.b3=ZeFit \u5E94\u7528\u7A0B\u5E8F\u662F\u5728\u82F1\u8BED\uFF0C\u6CD5\u8BED\uFF0C\u8377\u5170\u8BED\uFF0C\u5FB7\u8BED\uFF0C\u897F\u73ED\u7259\u8BED\uFF0C\u610F\u5927\u5229\u8BED\uFF0C\u8461\u8404\u7259\u8BED\uFF0C\u7E41\u4F53\u4E2D\u6587\u548C\u7B80\u4F53\u4E2D\u56FD.
+page.mobileApplication.b4=\u7CFB\u7EDF\u8981\u6C42:
+page.mobileApplication.b5=iPhone 4s\u6216\u66F4\u65B0\u4EA7\u54C1, iPad 3\u6216\u66F4\u65B0\u4EA7\u54C1,iPad Mini,  Android 4.3\u4EE5\u4E0A\u8BBE\u5907, \u84DD\u72594.0
+
+page.myProfile.t1=Mykronoz - ZeFit - \u4E2A\u4EBA\u4FE1\u606F
+page.myProfile.b1=\u4E2A\u4EBA\u4FE1\u606F
+page.myProfile.b2=\u7F16\u8F91\u56FE\u7247
+page.myProfile.b3=\u90AE\u7BB1
+page.myProfile.b4=\u7528\u6237\u540D
+page.myProfile.b5=\u4FEE\u6539\u5BC6\u7801
+page.myProfile.b6=\u8EAB\u9AD8
+page.myProfile.b7=\u5398\u7C73
+page.myProfile.b8=\u82F1\u5C3A
+page.myProfile.b9=\u4F53\u91CD
+page.myProfile.b10=\u5343\u514B
+page.myProfile.b11=\u78C5
+page.myProfile.b12=\u6027\u522B
+page.myProfile.b13=\u7537
+page.myProfile.b14=\u5973
+page.myProfile.b15=\u751F\u65E5
+page.myProfile.b16=\u56FD\u5BB6
+page.myProfile.b17=\u4FDD\u5B58
+
+page.myZeFit.t1=Mykronoz - ZeFit -\u4E3B\u9875
+page.myZeFit.b1=\u6B65\u6570
+page.myZeFit.b2=\u5361\u8DEF\u91CC
+page.myZeFit.b3=\u8DDD\u79BB
+page.myZeFit.b4=\u7761\u7720
+page.myZeFit.b5=\u8FD0\u52A8\u65E5\u5FD7
+page.myZeFit.b6=\u7761\u7720\u603B\u65F6\u95F4
+page.myZeFit.b7=\u5C0F\u65F6
+page.myZeFit.b8=\u5206\u949F
+page.myZeFit.b9=\u8F7B\u5EA6\u7761\u7720
+page.myZeFit.b10=\u6DF1\u5EA6\u7761\u7720
+page.myZeFit.b11=\u5165\u7761\u65F6\u95F4
+page.myZeFit.b12=\u6E05\u9192
+page.myZeFit.b13=\u6E05\u9192\u65F6\u95F4
+page.myZeFit.b14=\u9192\u6765\u6B21\u6570
+
+page.signUp.t1=MyKronoz - ZeFit Applications - \u6CE8\u518C
+page.signUp.b1=\u7F16\u8F91\u56FE\u7247
+page.signUp.b2=\u90AE\u7BB1
+page.signUp.b3=\u7528\u6237\u540D
+page.signUp.b4=\u5BC6\u7801
+page.signUp.b5=\u786E\u8BA4\u5BC6\u7801
+page.signUp.b6=\u8EAB\u9AD8
+page.signUp.b7=\u5398\u7C73
+page.signUp.b8=\u82F1\u5C3A
+page.signUp.b9=\u4F53\u91CD
+page.signUp.b10=\u5343\u514B
+page.signUp.b11=\u78C5
+page.signUp.b12=\u6027\u522B
+page.signUp.b13=\u7537
+page.signUp.b14=\u5973
+page.signUp.b15=\u751F\u65E5
+page.signUp.b16=\u56FD\u5BB6
+page.signUp.b17=\u6211\u540C\u610F
+page.signUp.b18=\u670D\u52A1\u6761\u6B3E\u548C\u9690\u79C1\u653F\u7B56
+page.signUp.b19=\u6CE8\u518C
+page.signUp.b20=\u82F1\u5BF8
+
+page.software.t1=MyKronoz - ZeFit Applications - \u8F6F\u4EF6
+page.software.b1= \u8F6F\u4EF6
+page.software.b2=\u8BBE\u7F6E\u4F7F\u7528ZeFit\u8F6F\u4EF6\u5728\u8BA1\u7B97\u673A\u4E0A\u7684ZeFit\u3002\u4E0B\u8F7DZeFit\u8F6F\u4EF6\uFF0C\u60A8\u7684Windows PC\u4E0A\u5B89\u88C5\u5B83\u3002\u4F7F\u7528\u9644\u9001\u7684USB\u5145\u7535\u7EBF\u63D2\u5165ZeFit\u5230\u8BA1\u7B97\u673A\u7684USB\u7AEF\u53E3
+page.software.b3=ZeFit \u5E94\u7528\u7A0B\u5E8F\u662F\u5728\u82F1\u8BED\uFF0C\u6CD5\u8BED\u548C\u7B80\u4F53\u4E2D\u56FD.
+page.software.b4=\u7CFB\u7EDF\u8981\u6C42:
+page.software.b5=Windows 7,8,XP
+page.software.b6=\u4E0B\u8F7D
+
+page.resetPassword.t1=Mykronoz - ZeFit - \u91CD\u7F6E\u5BC6\u7801
+page.resetPassword.b1=\u91CD\u7F6E\u5BC6\u7801
+page.resetPassword.b2=\u65B0\u5BC6\u7801
+page.resetPassword.b3=\u786E\u8BA4\u5BC6\u7801
+page.resetPassword.b4=\u786E\u5B9A
+
+page.confirm.t1=Mykronoz - ZeFit - \u786E\u8BA4
+page.confirm.b1=\u4EB2\u7231\u7684
+page.confirm.b2=\u60A8\u6B63\u5728\u4F7F\u7528 app-zefit.mykronoz.com \u627E\u56DE\u60A8\u7684\u5BC6\u7801. \u6211\u4EEC\u5C06\u53D1\u9001\u4E00\u5C01\u90AE\u4EF6\u5230\u60A8\u7684\u90AE\u7BB1:
+page.confirm.b3=\u8BF7\u68C0\u67E5\u60A8\u7684\u90AE\u7BB1
+
+page.deviceBind.t1=MyKronoz - ZeFit - \u8FDE\u63A5\u8BBE\u5907
+page.deviceBind.b1=\u60A8\u5DF2\u7ED1\u5B9A\u60A8\u7684ZeFit\u8D26\u53F7
+page.deviceBind.b2=\u8BF7\u5C06\u8BBE\u5907\u7ED1\u5B9A\u5230\u4F60\u7684ZeFit\u8D26\u53F7
+page.deviceBind.b3=\u6211\u7684\u8BBE\u5907
+page.deviceBind.b4=\u8BF7\u9009\u62E9\u60A8\u7684\u8BBE\u5907\u548C\u5E94\u7528\u5E73\u53F0
+page.deviceBind.b5=\u53EF\u7528\u7684\u5E94\u7528\u7A0B\u5E8F
+page.deviceBind.b6=\u4E0B\u8F7DiOS\u5E94\u7528
+page.deviceBind.b7=\u4E0B\u8F7DAndroid\u5E94\u7528
+
+page.downloadAndroid.t1=MyKronoz - ZeFit \u4E00\u5E74\u591F\u7528 - \u5B89\u5353\u4E0B\u8F7D
+page.downloadAndroid.b1=ZeFit \u5E94\u7528 (Android version)
+page.downloadAndroid.b2=Download ZeFit app to set your daily goals and reminders, sync your activity data,follow your performance and progress!
+page.downloadAndroid.b3=Issued date:
+page.downloadAndroid.b4=Version:
+page.downloadAndroid.b5="v1.0"
+page.downloadAndroid.b6=Size:
+page.downloadAndroid.b7=Language:
+page.downloadAndroid.b8="English/French"
+page.downloadAndroid.b9=System:
+page.downloadAndroid.b10=1. Android 4.3 or above.
+page.downloadAndroid.b11=2. BT 4.0.
+page.downloadAndroid.b12=Scan to download
+page.downloadAndroid.b13=ZeFit mobile application
+page.downloadAndroid.b14=Intuitive activity dashboard, goals and
+page.downloadAndroid.b15= reminders setting interface
+page.downloadAndroid.b16=Data acquisition and analysis
+page.downloadAndroid.b17=Track your steps taken, distance travelled and calories burned
+page.downloadAndroid.b18=Sleep Monitoring
+page.downloadAndroid.b19=Keep an eye on your sleep quality
+
+
+page.downloadiOS.t1=MyKronoz - ZeFit Applications - iOS download
+page.downloadiOS.b1=ZeFit Application (iOS version)
+page.downloadiOS.b2=Download ZeFit app to set your daily goals and reminders, sync your activity data, follow your performance and progress !
+page.downloadiOS.b3=Issued date:
+page.downloadiOS.b4=Version:
+page.downloadiOS.b5=Size:
+page.downloadiOS.b6=Language:
+page.downloadiOS.b7=English/French/Traditional/Chinese
+page.downloadiOS.b8=System:
+page.downloadiOS.b9=Compatible with iPhone, iPod touch, ipad, requires iOS 5.0 or higher version
+page.downloadiOS.b10=1. To run the program requires iPhone 4 s or higher version\u3002
+page.downloadiOS.b11=2. Supports ios7.
+page.downloadiOS.b12=Scan to Download
+page.downloadiOS.b13=ZeFit mobile application
+page.downloadiOS.b14=Intuitive activity dashboard, goals and
+page.downloadiOS.b15=reminders setting interface.
+page.downloadiOS.b16=Data acquisition and analysis
+page.downloadiOS.b17=Track your steps taken, distance travelled and calories burned
+page.downloadiOS.b18=Sleep Monitoring
+page.downloadiOS.b19=Keep an eye on your sleep quality
+
+
+js.login.must.email=\u90AE\u7BB1\u4e0d\u80fd\u4e3a\u7a7a
+js.login.email.format=\u8bf7\u8f93\u5165\u6b63\u786e\u683c\u5f0f\u7684\u90AE\u7BB1
+js.login.pwd.not.null=\u8BF7\u8F93\u5165\u60A8\u7684\u5BC6\u7801
+js.login.pwd.length=\u5BC6\u7801\u957F\u5EA6\u8981\u6C426-16\u5B57\u7B26
+
+js.register.pwd.confirm=\u8BF7\u8F93\u5165\u60A8\u7684\u786E\u8BA4\u5BC6\u7801
+js.register.pwd.not.consistant=\u5BC6\u7801\u4E0D\u4E00\u81F4
+js.register.nickname=\u8BF7\u8F93\u5165\u60A8\u7684\u7528\u6237\u540D
+js.register.nickname.format=\u7528\u6237\u540D\u8981\u6C422-12\u4E2A\u5B57\u7B26
+js.register.height=\u8BF7\u8F93\u5165\u5927\u4E8E\u96F6\u7684\u6570\u503C
+js.register.height.format=\u8EAB\u9AD8\u8303\u56F490-240\u5398\u7C73
+js.register.height.ft=\u8BF7\u8F93\u5165\u60A8\u7684\u8EAB\u9AD8
+js.register.height.ft.format=\u8EAB\u9AD8\u7684\u82F1\u5C3A\u8303\u56F4\u662F3-7\u82F1\u5C3A
+js.register.height.ftin=\u8BF7\u8F93\u5165\u82F1\u5BF8
+js.register.height.ftin.format=\u8EAB\u9AD8\u7684\u82F1\u5BF8\u8303\u56F4\u662F0-11\u82F1\u5BF8
+js.register.weight=\u8BF7\u8F93\u5165\u5927\u4E8E0\u7684\u6570\u503C
+js.register.weight.format=\u4F53\u91CD\u8303\u56F4\u662F30-400.9\u5343\u514B
+js.register.weight.format.two=\u4F53\u91CD\u8303\u56F4\u662F70-999.9\u78C5
+js.register.weight.format.three=\u4EC5\u652F\u6301\u4E00\u4F4D\u5C0F\u6570
+js.register.email.information=\u8BF7\u8F93\u5165\u6709\u6548\u7684\u90AE\u7BB1
+js.register.email.info.format=\u8BF7\u8F93\u5165\u6709\u6548\u7684\u90AE\u7BB1
+js.register.pwd.check=\u5BC6\u7801\u957F\u5EA6\u8981\u6C426-16\u5B57\u7B26
+js.register.retpwd.confirm=\u8BF7\u5982\u6570\u786E\u8BA4\u5BC6\u7801
+js.register.name.check=\u7528\u6237\u540D\u957F\u5EA6\u8981\u6C422-12\u4E2A\u5B57\u7B26
+js.register.service.check=\u8BF7\u5148\u9605\u8BFB\u670D\u52A1\u534F\u8BAE
+js.register.account.have.reg=\u8D26\u6237\u5DF2\u88AB\u6CE8\u518C
+js.register.name.have.used=\u7528\u6237\u540D\u5DF2\u88AB\u4F7F\u7528
+
+js.sport.report.starttime=\u5F00\u59CB\u65F6\u95F4
+js.sport.report.endtime=\u7ED3\u675F\u65F6\u95F4
+js.sport.report.setps=\u6B65\u6570 (\u6B65)
+js.sport.report.distance.mile=\u8DDD\u79BB (\u82F1\u91CC)
+js.sport.report.distance.km=\u8DDD\u79BB (\u5343\u7C73)
+js.sport.report.calorie=\u5361\u8DEF\u91CC(\u5343\u5361)
+js.sport.report.quality=\u8D28\u91CF
+js.sport.report.sleep.duration=\u7761\u7720\u65F6\u957F(\u5206\u949F)
+js.sport.report.awake.duration=\u6E05\u9192\u65F6\u957F (\u5206\u949F)
+js.sport.report.light.duration=\u8F7B\u5EA6\u7761\u7720 (\u5206\u949F)
+js.sport.report.deep.duration=\u6DF1\u5EA6\u7761\u7720(\u5206\u949F)
+js.sport.report.total.duration=\u5931\u7720\u603B\u65F6\u95F4 (\u5206\u949F)
+js.sport.report.level=\u7EA7\u522B
+
+js.myledong.today=\u4ECA\u5929
+js.myledong.yesterday=\u6628\u5929
+js.myledong.steps=\u6B65\u6570
+js.myledong.mile=\u82F1\u91CC
+js.myledong.km=\u5343\u7C73
+js.myledong.kcal=\u5343\u5361
+js.myledong.current=current
+js.myledong.title.steps=\u6B65\u6570
+js.myledong.title.calories=\u5361\u8DEF\u91CC
+js.myledong.title.distance=\u8DDD\u79BB
+js.myledong.title.sleep=\u7761\u7720
+js.myledong.txt.deep.sleep=\u6DF1\u5EA6\u7761\u7720
+js.myledong.txt.light.sleep=\u6D45\u5EA6\u7761\u7720
+js.myledong.txt.wake=\u6E05\u9192
+js.myledong.array.week=\u661F\u671F\u65E5,\u661F\u671F\u4E00,\u661F\u671F\u4E8C,\u661F\u671F\u4E09,\u661F\u671F\u56DB,\u661F\u671F\u4E94,\u661F\u671F\u516D
+js.myledong.array.week.lower=\u661F\u671F\u65E5,\u661F\u671F\u4E00,\u661F\u671F\u4E8C,\u661F\u671F\u4E09,\u661F\u671F\u56DB,\u661F\u671F\u4E94,\u661F\u671F\u516D
+js.myledong.array.month=\u4E00\u6708,\u4E8C\u6708,\u4E09\u6708,\u56DB\u6708,\u4E94\u6708,\u516D\u6708,\u4E03\u6708,\u516B\u6708,\u4E5D\u6708,\u5341\u6708,\u5341\u4E00\u6708,\u5341\u4E8C\u6708
+js.myledong.hours=\u5C0F\u65F6
+
+js.common.unit=km
+js.common.lang=chinese
+

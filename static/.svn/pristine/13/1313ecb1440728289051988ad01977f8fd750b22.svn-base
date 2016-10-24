@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>联系我们</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="../theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li><a href="../users/login.html">[登录]</a></li>
+            <li><a href="../users/register.html">[注册]</a></li>    
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="../index.html"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="#">购买设备</a></li>
+            <li><a href="../users/downloadPC.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="../index.html"><img src="../theme/images/logo.jpg"/></a>
+         <ul class="nav">
+            <li><a href="#">返回FashionComm</a></li>
+            <li  class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">下载 <b class="caret"></b></a>
+            	<ul class="dropdown-menu">
+                	<li><a href="../users/download.html" >iPhone客户端下载</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../users/downloadPC.html" >PC客户端下载</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+
+<div class="container">
+	<h3 class="text-center">联系我们</h3>
+    <p>电话：020-28065366</p>
+    <p>地址：广州萝岗区科学城科学大道182号创新大厦C3栋903</p>
+    <p><img src="../theme/images/map_company.jpg"/></p>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span5 offset1">
+                <h4><img src="../theme/images/icon-footer-title.jpg"/> 乐康平台支持绑定的设备</h4>
+                <ul class="unstyled">
+                    <li class="mb20">
+                        <p>乐康L28计步器</p>
+                        <p>蓝牙设备+ios客户端展示</p>
+                        
+                    </li>
+                    <li>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank">A1智能腕表</a></p>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank">蓝牙耳机+Android客户端</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="span3">
+                <h4><img src="../theme/images/icon-footer-title.jpg"/> 乐康服务</h4>
+                <ul class="unstyled">
+                    <li><a href="../users/download.html" title="iPhone客户端下载">iPhone客户端下载</a></li>
+                    <li><a href="../users/downloadPC.html"  title="PC客户端下载">PC客户端下载</a></li>
+                    <li><a href="javascript:;" title="乐康产品说明">乐康产品说明</a></li>
+                    <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+                    <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+                </ul>
+            </div>
+            <div class="span3">
+                <h4><img src="../theme/images/icon-footer-title.jpg"/> 商务合作</h4>
+                <ul class="unstyled">
+                    <li><a href="contactus.html" title="联系我们">联系我们</a></li>
+                    <li><a href="businessConsulting.html" title="商务咨询">商务咨询</a></li>
+                    <li><a href="legal.html" title="法律声明">法律声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="../theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="bg-lightgray pt20 pb20">
+    	<div class="clearfix">
+        	<div class="footer l ml20">
+            	<h3><@s.text name='page.foot.h31'/></h3>
+                <img src="<@s.text name='static.file.path'/>/images/pic-product1.png"/>
+                <p><@s.text name='page.foot.p1'/></p>
+                <p><@s.text name='page.foot.p2'/></p>
+            </div>
+             <div class="footer r small">
+            	<h3><@s.text name='page.foot.h32'/></h3>
+        		<p><a href="http://www.mykronoz.com/contact/" title="Contact us"> <@s.text name='page.foot.p4'/></a></p>
+            	<p><a href="http://www.mykronoz.com/support/" title="Support"> <@s.text name='page.foot.p5'/></a></p>
+            	<p><a href="http://www.mykronoz.com/credits-legal-mentions/" title="Legal Mentions"><@s.text name='page.foot.p6'/></a></p>
+            </div>
+             <div class="footer r">
+            	<h3><@s.text name='page.foot.h33'/></h3>
+        		<p><a href="<@s.text name='root.path'/>/mobileAppDownload" title="<@s.text name='page.foot.p7'/>"><@s.text name='page.foot.p7'/>&nbsp; </a></p>
+            	<p><a href="<@s.text name='root.path'/>/softwareAppDownload" title="<@s.text name='page.foot.p8'/>"><@s.text name='page.foot.p8'/></a></p>
+            </div> 
+        </div>
+        <div class="lang">
+            <a class="mr20" href="<@s.text name='root.path'/>/index?i18n=en_US"><img alt="<@s.text name='page.foot.a1'/>" src="<@s.text name='static.file.path'/>/images/UK.png"> <@s.text name='page.foot.a1'/></a>
+            <a href="<@s.text name='root.path'/>/index?i18n=fr"><img alt="<@s.text name='page.foot.a2'/>" src="<@s.text name='static.file.path'/>/images/FR.png"> <@s.text name='page.foot.a2'/></a>
+        </div>
+</div>
+<p class="copyright">© <@s.text name='page.foot.f'/></p>

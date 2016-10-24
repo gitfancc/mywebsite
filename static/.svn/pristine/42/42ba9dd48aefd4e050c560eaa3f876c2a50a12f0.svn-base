@@ -1,0 +1,134 @@
+﻿if (!Lecomm) var Lecomm = {};
+var ChartData = {times:[], steps: [], cal: [], speed: [], distance: [], heartRate: [] };
+Lecomm.Trace = {    
+    //生成分页
+    GetPage:function(startTime,endTime,action){
+    	var page = new Lecomm.FY();
+		Lecomm.Trace.LoadTraceData(cxtPath+"/user/sport/GetPlaceLocateData", {
+			oPagePanel : "msg",
+			currentPageIndex : 1,
+            startTime: startTime,
+             endTime: endTime,
+			pageSize : 20,
+			action:action
+		}, function(data, total) {
+		   
+			page.GetPagerText({
+				oPagePanel : "page",
+				recordCount : total,
+				currentPage : 1,
+				displayPages : 8,
+				pageSize : 20,
+				language : 'cn'
+			}, function(currentPage) {
+				Lecomm.Trace.LoadTraceData(cxtPath+"/user/sport/GetPlaceLocateData", {
+					oPagePanel : "msg",
+				    startTime: startTime,
+		             endTime: endTime,
+					currentPageIndex : currentPage,
+					pageSize : 20,
+					action:action
+				}, function() {
+				});
+			});
+		});
+    },
+  //加载运动数据
+    LoadTraceData: function (url, options, callback) {
+        var defaultOptions = { action: "", currentPageIndex: 1, pageSize: 10 };
+        options = $.extend(defaultOptions, options);
+        var data = $.extend({ time: new Date().getTime() }, options);
+        jQuery.ajax({
+            type: "get",
+            url: url,
+            data: data,
+            dataType: "text",
+            beforeSend: function () {
+              $("#msg").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/>loading....</p>");
+            },
+            error: function (status, data) {
+            	 $("#msg").html("");
+            	 $("#page").html("");
+                if (typeof error == "function") {
+                    error.call(null);
+                }
+            },
+            success: function (data) {
+	           	$("#msg").html("");
+	        	$("#page").html("");
+                var d =eval( "["+data+"]");
+                if(d[0].data.length == 0){
+                	$("#msg").html("<div class='nodata' style='height: 250px'></div>");
+            		return false;
+                }
+                var recordCount =d[0].count; //总条数
+                Lecomm.Trace.ParseJSONTraceData(d);
+             
+                if (typeof callback == "function") {
+                    callback.call(null, data, recordCount);
+                }
+
+            }
+        });
+    },
+    //解析运动日志数据
+     ParseJSONTraceData: function(data) {
+    	 	initMap();
+    	 /*
+            var d = data[0].data;
+            var len = d.length;
+//            if (len = 0) return;
+            var sb = "<table class='ui-table'>";
+             sb+="<tr>";
+             sb+="<th>时间</th><th class='w'>位置</th><th>经纬度</th><th>设备ID</th>";
+             sb+="<th>海拔</th><th>气压</th><th>湿度</th>";
+             sb+="</tr><tbody>";
+            for (var i = 0; i < len ; i++) {
+                sb += "<tr>";
+                sb += "<td>" + d[i].time + "</td>";
+           
+                sb += "<td>" + d[i].lac + "</td>";
+                sb += "<td>" + d[i].lat+'/'+d[i].lng + "</td>";
+                sb += "<td>" + d[i].deviceId + "</td>";
+                sb += "<td>" + d[i].seaLevel + "</td>";
+                sb += "<td>" + d[i].pressure + "</td>";
+                sb += "<td>" + d[i].humidity + "</td>";
+                sb += "</tr>";
+            }
+            sb += "</tbody></table>";
+            $("#msg").html(sb);*/
+    },
+    //查看今天的数据
+    //今天1，最近一周2，最近一月3，自定义6
+    LoadToday:function(){
+//      Lecomm.Trace.GetPage('','',1);
+      $("#LoadToday").parents("ul");
+      initMap($("#startTime").val()+" 00:00:00");
+    },
+    //最近一周
+     LoadLastWeek:function(){
+    
+      Lecomm.Trace.GetPage('','',2);
+    },
+    //最近一月
+     LoadLastMonth:function(){
+      Lecomm.Trace.GetPage('','',3);
+    },
+    loadSportsInfo:function(startTime){
+    	$.post(cxtPath+"/user/sport/sport",{'watchId':watchId,'searchDate':startTime},function(results){
+    		initLoad(results.paramSportResults);
+    	},'json');
+    },
+    //自定义搜索
+    LoadFromTo:function(){
+      var startTime=$("#startTime").val();
+//      var endTime=$("#endTime").val()+" 23:59:59";
+//      if(startTime > endTime){//add by xc
+//    	  alert("开始时间不能大于结束时间!");
+//      	  return;
+//      }	  
+      Lecomm.Trace.loadSportsInfo(startTime);
+      initMap(startTime);
+//      Lecomm.Trace.GetPage(startTime,endTime,6);
+    }  
+};

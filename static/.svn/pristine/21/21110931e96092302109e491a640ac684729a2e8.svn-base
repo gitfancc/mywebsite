@@ -1,0 +1,23 @@
+/*
+* element 页面上定义的标签元素(传递时需"#id")，areaId 地市id
+* 
+* usedProvinceId，usedCityId，usedAreaId 如果已经保存有地市信息，在页面上声明这三个变量，并把对应值赋予它们
+*
+**/
+AreaVO = {
+	loadArea:function(element,areaId){
+		$(element).empty().append("<option value='-1'>请选择</option>");
+		$.post(cxtPath+'/city/load',{"districtId":areaId},function(result){
+			$.each(result,function(i,data){
+				if(parseInt(usedProvinceId)==data.districtId)
+					$(element).append("<option selected value='"+data.districtId+"'>"+data.name+"</option>");
+				else if(parseInt(usedCityId)==data.districtId)
+					$(element).append("<option selected value='"+data.districtId+"'>"+data.name+"</option>");
+				else if(parseInt(usedAreaId)==data.districtId)
+					$(element).append("<option selected value='"+data.districtId+"'>"+data.name+"</option>");
+				else
+					$(element).append("<option value='"+data.districtId+"'>"+data.name+"</option>");
+			})
+		});
+	}
+}

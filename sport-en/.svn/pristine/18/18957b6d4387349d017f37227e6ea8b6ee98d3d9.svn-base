@@ -1,0 +1,25 @@
+<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"] />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyKronoz - Error</title>
+    <style type="text/css">
+        .centerss {
+           height:250px;
+           text-align:center;
+	}
+    </style>
+
+    <#include "../WEB-INF/commons/top.html">
+</head>
+
+<body>
+    <#include "../WEB-INF/commons/head.html">
+    <div class="centerss">
+        <h2>Error 404</h2>
+        <h3>This page doesn't exist</h3>
+    </div> 
+    <#include "../WEB-INF/commons/foot.html">
+</body>
+</html>

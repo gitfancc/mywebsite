@@ -1,0 +1,63 @@
+var dateReg = /^(\d{4})-([0-9]{1,2})-([0-9]{1,2})$/
+$(function(){
+	$("#userName").blur(function(){
+		$("#userName_error_message").remove();
+		if($.trim($(this).val())&&$(this).val().length>5){
+    		$(this).after("<span class=\"tipbox-reg-error\" id='userName_error_message'>请输入5个汉字以内</span>");
+    		return false;
+    	}
+	})
+	$("#birthday").blur(function(){
+		$("#birthday_error_message").remove();
+		if($.trim($(this).val())&&!dateReg.exec($(this).val())){
+			$(this).after("<span class=\"tipbox-reg-error\" id='birthday_error_message'>请输入格式正确的日期</span>");
+    		return false;
+		}
+	})
+	$("#btnSave").click(function(){
+		$("#userName_error_message").remove();
+		if($.trim($("#userName").val())&&$("#userName").val().length>5){
+    		$("#userName").after("<span class=\"tipbox-reg-error\" id='userName_error_message'>请输入5个汉字以内</span>");
+    		return false;
+    	}
+		$("#birthday_error_message").remove();
+		if($.trim($("#birthday").val())&&!dateReg.exec($("#birthday").val())){
+			$("#birthday").after("<span class=\"tipbox-reg-error\" id='birthday_error_message'>请输入格式正确的日期</span>");
+    		return false;
+		}
+		$("#sex").val($("input[type='radio'][checked]").val());
+		$("#save").submit();
+	})
+	
+	/*var JcropApi = $.Jcrop("#target",{
+		onChange: showPreview,
+		onSelect: showPreview,
+		onRelease: hidePreview,
+		aspectRatio: 1
+	})*/
+	AreaVO.loadArea("#useProvince",0);
+	if(parseInt(usedProvinceId))
+		AreaVO.loadArea("#useCity",parseInt(usedProvinceId));
+	if(parseInt(usedCityId))
+		AreaVO.loadArea("#useArea",parseInt(usedCityId));
+})
+
+function showPreview(coords)
+{
+	if (parseInt(coords.w) > 0)
+    {
+      var rx = 100 / coords.w;
+      var ry = 100 / coords.h;
+
+      $('#preview').css({
+        width: Math.round(rx * 500) + 'px',
+        height: Math.round(ry * 370) + 'px',
+        marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+        marginTop: '-' + Math.round(ry * coords.y) + 'px'
+      }).show();
+    }
+}
+function hidePreview()
+{
+	$('#preview').stop().fadeOut('fast');
+}

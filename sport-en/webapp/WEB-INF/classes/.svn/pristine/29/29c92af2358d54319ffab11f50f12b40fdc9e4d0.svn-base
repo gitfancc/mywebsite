@@ -1,0 +1,390 @@
+package com.appscomm.sport.action;
+
+import java.io.File;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.appscomm.sport.common.SportApiCode;
+import com.appscomm.sport.model.PersonWatchVO;
+import com.appscomm.sport.model.UserVO;
+import com.appscomm.sport.service.SendMailForPassword;
+import com.appscomm.sport.service.UserService;
+import com.appscomm.sport.utils.AESEncrypty;
+import com.appscomm.sport.utils.AuthImg;
+import com.appscomm.sport.utils.ImageUtil;
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
+
+/**
+ * @author qindf
+ *
+ */
+public class IndexAction extends BaseAction {
+	private static final long serialVersionUID = -8160664524280068733L;
+
+	private static Logger log = Logger.getLogger(IndexAction.class);
+
+	@Autowired
+	private UserService userService;
+	private UserVO user;
+	private String txtVarcode;
+	private Boolean results = true;
+	private String checkLogin;
+	private Boolean register = false;
+	private Integer heightFt; // 英尺
+	private Integer heightIn; // 英寸
+	
+	private String KEY_HEX = "C1511E2A29B3C721EC1E4E1C0A396559";
+	AESEncrypty encrypty = new AESEncrypty(KEY_HEX);
+	private static final String LANGUAGE = "language";// application中key
+	@Autowired
+	private SendMailForPassword sendMailForPassword;
+	private String type;
+	private File uploadFile;
+	private String uploadFileFileName;
+	
+	public String login_index(){
+		user = (UserVO)session.get(LOGIN_SESSION_USER);
+		return Action.SUCCESS;
+	}
+	
+	/**
+	 * 登录入口
+	 * @return
+	 */
+	public void login(){
+		String message = "";
+		List<UserVO> resultUsers;
+		 String  username="",pwd="";
+		if(user!=null&&StringUtils.isNotEmpty(user.getAccount())){
+			Map<String,Object> params = new HashMap<String,Object>();
+			String account = user.getAccount().trim();
+		    if(!username.equals(null)&& StringUtils.isNotEmpty(username))	account=username;
+		    if(!pwd.equals(null)&& StringUtils.isNotEmpty(pwd))this.user.setPassword(pwd);
+			if(account.indexOf("@")!=-1)
+				params.put("mail", account);
+			else
+				params.put("telphone", account);
+			try{
+				resultUsers= userService.getUserActive(params);//get user info by email or phone which matches the given string.
+				if(resultUsers!=null&&resultUsers.size()>0){
+					UserVO userVO = resultUsers.get(0);//get the first match result
+					//auth password
+					if(StringUtils.isNotEmpty(user.getPassword())&&authUser(user.getPassword(), userVO.getPassword())){
+						session.put(LOGIN_SESSION_USER, userVO);
+						params.clear();
+						params.put("personId", userVO.getUserId());
+						params.put("active", 1);
+						params.put("isDefault", 1);
+						List<PersonWatchVO> personWatchList = userService.getPersonWatch(params);
+						if(personWatchList!=null  && personWatchList.size()>0){
+							userVO.setWatchId(personWatchList.get(0).getWatchId());
+							//缺省的设备类型 
+							session.put(DEFAULT_WATCH_TYPE, personWatchList.get(0).getWatchType());
+						}
+						session.put(LOGIN_SESSION_USER, userVO);
+						log.debug("Login Default watchType:" + super.getDefaultWatchType());
+						message = "successful";
+					}else
+						//super.addFieldError("login_password_error", getText("login_password_error"));
+						message = getText("login_password_error");
+				}else
+					//super.addFieldError("login_account_not_exist", getText("login_account_not_exist"));
+					message = getText("login_account_not_exist");
+			}catch(Exception e){
+				log.info("登录:"+e);
+				super.addFieldError("login_error", getText("login_error"));
+			}
+		}
+		getLanguage();
+		super.writeJson(message);
+	}
+	
+	// 默认初始语言 或是 找用户计算机上的cookie信息
+	public String getLanguage() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		Cookie[] cookies = request.getCookies();
+		Object lan = ServletActionContext.getContext().getApplication().get(LANGUAGE);
+		String language = "zh_CN";
+		if(lan!=null){
+			language = lan.toString();
+		}
+		// cookie 中没有语言 默认从application取
+		for (Cookie ck : cookies) {
+			if (ck.getName().equals(LANGUAGE) && ck.getValue() != null
+					&& !"".equals(ck.getValue())) {
+				language = ck.getValue();
+			}
+		}
+		ActionContext.getContext().setLocale(
+				new Locale(language.split("_")[0], language.split("_")[1]));
+		ServletActionContext.getContext().getApplication().put(LANGUAGE, language);
+		return language;
+	}
+	
+	public String register_index(){
+		UserVO loginUsers = (UserVO)session.get(LOGIN_SESSION_USER);
+		if(loginUsers!=null)
+			return Action.SUCCESS;
+		this.register = true;
+		return Action.NONE;
+	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * 注册用户
+	 * @return
+	 */
+	public String register(){
+	//	String verCode = (String)session.get(AuthImg.AUTH_VERCODE);
+	//	if(StringUtils.isNotEmpty(verCode)){
+	//		session.put(AuthImg.AUTH_VERCODE, null);
+	//		if(verCode.equals(txtVarcode)){
+				String account = user.getAccount().trim();
+				if(account.indexOf("@")!=-1)
+					user.setMail(account);
+				else
+					user.setTelphone(account);
+				//user.setPassword(encrypty.encrypt(user.getPassword()));
+				user.setPassword(user.getPassword());
+				user.setNickName(String.valueOf(System.currentTimeMillis()));
+				
+				user.setUserName(user.getUserName().trim());
+				user.setRegisterTime(new Date());
+				user.setIsActive(1);
+								
+				try{
+					SportApiCode retCode = userService.isExistUser(user);
+					if (retCode != null){
+						// 用户已存在
+						super.addFieldError("register_error", retCode.getDesc());
+						this.register = true;
+						user = null;
+						return Action.INPUT;
+					}
+					// upload user picture
+					String filePath = getText("file.upload.path");
+					String uploadPath = "";
+					if (uploadFile != null) {
+						// 上传
+						int suffixIndex = uploadFileFileName.lastIndexOf('.');
+						if (suffixIndex == -1) {
+							log.error("Failed to upload the file name suffix! No, not allowed to upload, please try again later！");
+						}
+						String suffix = uploadFileFileName.substring(suffixIndex + 1)
+								.toLowerCase();
+						uploadPath = ImageUtil.saveFile(uploadFile, suffix, filePath);
+						String imgUrl = uploadPath.substring(filePath.length());
+						user.setImgUrl(imgUrl);
+					}
+					
+					if(user.getHeightUnit() == 1){
+						Integer ht = this.heightFt*12 + this.heightIn;
+						user.setHeight(ht+"");
+					}
+					
+					UserVO resultUser = null;
+					if((resultUser = userService.addUserAndPerson(user))!=null){
+						session.put(LOGIN_SESSION_USER, resultUser);
+						//发送邮件
+						sendEmail(account);
+						return Action.SUCCESS;
+					}
+				}catch(Exception e){
+					log.info("注册"+e);
+					super.addFieldError("register_error", getText("register_error"));
+				}
+	//		}else
+	//			super.addFieldError("verCode_error", getText("verCode_error"));
+	//	}
+		this.register = true;
+		user = null;
+		return Action.INPUT;
+	}
+	
+	private void sendEmail(String email) {
+		String rootPath = getText("email.url");
+		String staticFilePath = getText("static.file.path");
+		String companyMail = getText("emailAddress");
+		String registSubject = getText("registSubject");
+		String emailRegisterContent = getText("email.register");
+		String deviceType = getText("eviceType");
+		//String watchName = registSubject.split(" ")[0];
+		String 
+		//客户端的注册密码
+		type = request.getParameter("type");
+		if(StringUtils.isNotBlank(email)){
+			log.info("Start send email: " + email);
+			if(StringUtils.isNotBlank(deviceType) && (deviceType.trim().equalsIgnoreCase("L28w") || 
+					deviceType.trim().equalsIgnoreCase("L38"))){
+				emailRegisterContent = getText("email.register.ext");
+				if(deviceType.trim().equalsIgnoreCase("L38")){
+					registSubject = "Welcome to ZeFit2 Pulse by MyKronoz";
+				}
+			}
+			//String contents = sendMailForPassword.getMailRegistContents(rootPath, email, txtVarcode, staticFilePath, type, companyMail, watchName);
+			String contents = sendMailForPassword.getMailRegistContents(rootPath, email, txtVarcode, emailRegisterContent);
+			sendMailForPassword.sendMail(companyMail, registSubject, email, contents);
+		}
+		log.info("End send email: " + email);
+	}
+	
+	public String validAccount(){
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.clear();
+		String account = user.getAccount();
+		if(account.indexOf("@")!=-1)
+			params.put("mail", account);
+		else
+			params.put("telphone", account);
+		List<UserVO> userVOs = userService.getUserUnActive(params);
+		if(userVOs!=null&&userVOs.size()>0)
+			results = false;
+		return Action.SUCCESS;
+	}
+	
+	
+	public String validNickname(){
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.clear();
+		String nickName = user.getNickName().trim();
+		params.put("nickName", nickName);
+		List<UserVO> userVOs = userService.getUserUnActive(params);
+		if(userVOs!=null&&userVOs.size()>0)
+			results = false;
+		return Action.SUCCESS;
+	}
+	
+	/**
+	 * 系统登出功能
+	 * @return
+	 */
+	public String logout(){
+		UserVO loginUsers = (UserVO)session.get(LOGIN_SESSION_USER);
+		if(loginUsers!=null){
+			session.remove(LOGIN_SESSION_USER);
+		}
+		// 登出时清除session
+		session.remove(DEFAULT_WATCH_TYPE);
+		return Action.NONE;
+	}
+	
+	public String mobileAppDownload() {
+		user = super.getUsers();
+		return Action.SUCCESS;
+	}
+	
+	public String pcAppDownload() {
+		user = super.getUsers();
+		return Action.SUCCESS;
+	}
+	
+	public String iosDownload() {
+		user = super.getUsers();
+		return Action.SUCCESS;
+	}
+	
+	public String andriodDownload() {
+		user = super.getUsers();
+		return Action.SUCCESS;
+	}
+	
+	/**
+	 * 验证登录密码与数据库密码是否相符
+	 * @param loginPassword
+	 * @param databasePassword
+	 * @return
+	 */
+	private boolean authUser(String loginPassword,String databasePassword){
+		//return encrypty.decrypt(databasePassword).equals(loginPassword);
+		return loginPassword.equals(databasePassword);
+	}
+
+	public String getTxtVarcode() {
+		return txtVarcode;
+	}
+
+	public void setTxtVarcode(String txtVarcode) {
+		this.txtVarcode = txtVarcode;
+	}
+
+	public UserVO getUser() {
+		return user;
+	}
+
+	public void setUser(UserVO user) {
+		this.user = user;
+	}
+
+	public Boolean getResults() {
+		return results;
+	}
+
+	public String getCheckLogin() {
+		return checkLogin;
+	}
+
+	public void setCheckLogin(String checkLogin) {
+		this.checkLogin = checkLogin;
+	}
+
+	public Boolean getRegister() {
+		return register;
+	}
+
+	public void setRegister(Boolean register) {
+		this.register = register;
+	}
+
+	public File getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(File uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+
+	public String getUploadFileFileName() {
+		return uploadFileFileName;
+	}
+
+	public void setUploadFileFileName(String uploadFileFileName) {
+		this.uploadFileFileName = uploadFileFileName;
+	}
+
+	public Integer getHeightFt() {
+		return heightFt;
+	}
+
+	public void setHeightFt(Integer heightFt) {
+		this.heightFt = heightFt;
+	}
+
+	public Integer getHeightIn() {
+		return heightIn;
+	}
+
+	public void setHeightIn(Integer heightIn) {
+		this.heightIn = heightIn;
+	}
+	
+}

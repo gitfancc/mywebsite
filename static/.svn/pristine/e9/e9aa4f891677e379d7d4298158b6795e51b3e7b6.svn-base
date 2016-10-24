@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<title>百度地图DEMO</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+<script type="text/javascript" src="js/map.js"></script> 
+<script type="text/javascript" src="js/convertor.js"></script> 
+<script type="text/javascript" src="js/DrawingManager_min.js"></script>  
+<link rel="stylesheet" href="js/DrawingManager_min.css" />
+<script type="text/javascript">
+function hideResult()
+{
+	$("result").style.display="none";
+	cleanMap();
+}
+</script>
+</head>
+
+<body onload="initMap();">
+	<p>
+		搜索城市<input id="txtCity" type="text" value="广州市" />
+		地名关键词<input id="txtSearch" type="text" value="创新大厦" />
+		<input type="button" value="查找" onclick="search()" /> 
+		<input type="button" value="隐藏/清理" onclick="hideResult()" /> <br/>
+	</p>
+	<p>
+		GPS经度  <input type="text" id="txtLng" value="" /> 
+		GPS纬度  <input type="text" id="txtLat" value="" />
+		<input type="button" value="定位" onclick="gpsToBmap()" />		
+	</p>
+	<div>
+		当前百度坐标<input type="text" style="width:230px;" id="txtXY" readonly="true">
+		详细地址 <input type="text" style="width:300px" id="txtAddress" readonly="true">
+		<input type="button" id="btnPath" value="显示轨迹" onclick="showPath()"></br></br>
+	</div>
+	<div id="result" style="display:none">
+		<p><textarea style="width:800px;" id="txtResult" rows="10" cols="30" value="" /></textarea> <br/>	
+	</div>
+	<div id="mapBox" style="width:800px;height:500px;border:solid 1px gray"></div>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* reste css */ 
+/* reste css */ 
+html {
+    background:white;
+    color:#666666;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	margin:0;
+    padding:0; 
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+@font-face {
+    font-family: "open_sansregular";
+    src: url("../font/opensans-regular-webfont.eot");
+    src: url("../font/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../font/opensans-regular-webfont.woff") format("woff"),
+         url("../font/opensans-regular-webfont.ttf") format("truetype"),
+         url("../font/opensans-regular-webfont.svg#open_sansbold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/*header font*/
+@font-face {
+    font-family: "ralewaybold";
+    src: url("../font/raleway-bold-webfont.eot");
+    src: url("../font/raleway-bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../font/raleway-bold-webfont.woff") format("woff"),
+         url("../font/raleway-bold-webfont.ttf") format("truetype"),
+         url("../font/raleway-bold-webfont.svg#ralewaybold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../font/raleway-regular-webfont.eot');
+    src: url('../font/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/raleway-regular-webfont.woff') format('woff'),
+         url('../font/raleway-regular-webfont.ttf') format('truetype'),
+         url('../font/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body,button,input,select,textarea {
+	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	font-family:"open_sansregular";
+	font-size:14px;
+	font-style: normal;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+input,select,textarea {
+    font-size:100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+    text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset,img {
+    border:none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border:none;
+    font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style:normal;
+    font-weight:500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul {
+    list-style:none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th {
+    text-align:left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+	font-family:"ralewaybold";
+	font-style: normal;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+q:before,q:after {
+    content:'';
+}
+/* 统一上标和下标 */
+sub,sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+    text-decoration:none;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration:none;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {
+	outline:none;
+}
+
+/*公共样式 css*/
+/*公共样式 css*/
+
+a{color:#666;}
+a:link{ color:#666;}
+a:visite{ color:#005ca3;}
+a:hover{color:#e61813;}
+
+/* display */
+.dn{display:none;}
+.di{display:inline;}
+.db{display:block;}
+.dib{display:inline-block;}
+
+
+/*解决input与文字的垂直对齐 */
+.align-middle{vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
+
+/*  相对 绝对定位 */
+.absolute{position:absolute;}
+.relative{position:relative;}
+.fixed{position:fixed;}
+
+/* 浮动 */
+.l{float:left;}
+.r{float:right;}
+
+/* cursor */
+.poi{cursor:pointer;}
+.def{cursor:default;}
+
+/*z-index*/
+.zx1{z-index:1;}
+.zx2{z-index:2;}
+
+/*透明度为0*/
+.trans-zero{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* ie8  */
+    filter:alpha(opacity=0);    /* ie5-7  */
+    opacity: 0.0;    /* css standard, currently it works in most modern browsers  */
+}
+.trans-100{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* ie8  */
+    filter:alpha(opacity=1);    /* ie5-7  */
+    opacity: 1.0;    /* css standard, currently it works in most modern browsers  */
+}
+/*  边框 */
+.brc { border-right: 1px solid #ccc; }
+.bbc { border-bottom: 1px solid #ccc; }
+
+/* text-decoration */
+.tdl { text-decoration: underline; }
+.tdn, .tdn:hover, .tdn a:hover, a.tdl:hover { text-decoration: none; }
+
+/*bg*/
+.bg-lightgray{background:#f5f6f5;}
+.bg-gray{background:#b5b5b5;}
+.bg-white{ background:#fff;}
+
+/* cursor */
+.poi { cursor: pointer; }
+.def { cursor: default; }
+
+/*  字体大小 */
+.f12{font-size:12px;}
+.f13{font-size:13px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f20{font-size:20px;}
+.f24{font-size:24px;}
+
+/* font-style */
+.n{font-weight:normal; font-style:normal;}
+.b{font-weight:bold;}
+.i{font-style:italic;}
+
+/*  颜色 */
+.color-red,a.color-red{ color:#ff0000;}
+.color-black,a.color-black{ color:#333;}
+/* text-align */
+.tc{text-align:center;}
+.tr{text-align:right;}
+.tl{text-align:left;}
+.tj{text-align:justify;}
+
+
+/* text-decoration */
+.tdl{text-decoration:underline;}
+.tdn,.tdn:hover,.tdn a:hover,a.tdl:hover{text-decoration:none;}
+
+/* height */
+.h14{height:14px;}
+.h16{height:16px;}
+.h18{height:18px;}
+.h20{height:20px;}
+.h22{height:22px;}
+.h24{height:24px;}
+
+/* line-height */
+.lh14{line-height:14px;}
+.lh16{line-height:16px;}
+.lh18{line-height:18px;}
+.lh20{line-height:20px;}
+.lh22{line-height:22px;}
+.lh24{line-height:24px;}
+
+/* width */
+.w20{width:20px;}
+.w50{width:50px;}
+.w70{width:70px;}
+.w300{ width:400px;}/*index用到*/
+
+/* margin */
+.m0{margin:0 auto;}
+.ml1{margin-left:1px;}
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml30{margin-left:30px;}
+.mr1{margin-right:1px;}
+.mr5{margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+.mr20{margin-right:20px;}
+.mr30{margin-right:30px;}
+.mt1{margin-top:1px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+.mb1{margin-bottom:1px;}
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb30{margin-bottom:30px;}
+/* margin negative */
+.ml-1{margin-left:-1px;}
+.mr-1{margin-right:-1px;}
+.mt-5{margin-top:-5px;}
+
+/* padding */
+.p0{padding:0;}
+.pl1{padding-left:1px;}
+.pl5{padding-left:5px;}
+.pl10{padding-left:10px;}
+.pl15{padding-left:15px;}
+.pl20{padding-left:20px;}
+.pl30{padding-left:30px;}
+.pr1{padding-right:1px;}
+.pr5{padding-right:5px;}
+.pr10{padding-right:10px;}
+.pr15{padding-right:15px;}
+.pr20{padding-right:20px;}
+.pr30{padding-right:30px;}
+.pt1{padding-top:1px;}
+.pt5{padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt15{padding-top:15px;}
+.pt20{padding-top:20px;}
+.pt30{padding-top:30px;}
+.pb1{padding-bottom:1px;}
+.pb5{padding-bottom:5px;}
+.pb10{padding-bottom:10px;}
+.pb15{padding-bottom:15px;}
+.pb20{padding-bottom:20px;}
+.pb30{padding-bottom:30px;}
+.plf20{ padding:0 20px;}
+
+/*border*/
+.bbc{ border-bottom:1px solid #ccc;}
+
+/* visibility */
+.vh{visibility:hidden;}
+.vv{visibility:visible;}
+/**/
+.overflow-h{
+	overflow:hidden;
+	_overflow: visible;
+}
+
+/* 清除浮动 */
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+    overflow:hidden;
+}
+.clearfix {
+    zoom:1; /* for ie6 & ie7 */
+}
+.clear {
+    clear:both;
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+}
+
+

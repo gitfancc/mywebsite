@@ -1,0 +1,265 @@
+/*var TXT_BIND_WATCH = "绑定设备";
+var TXT_BIND_SIM = "绑定号码";
+var TXT_UNBIND_WATCH = "解绑设备";
+var TXT_UNBIND_SIM = "解绑号码";*/
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function() {
+
+	$("#btnSaveDevSet").click(
+			function() {
+				var watchSim = $("#watchSim").val();
+				if (watchSim!=null && watchSim!=""){
+					if(!telphone_pattern.exec(watchSim)){
+						alert("请填写正确的电话号码!");
+						return false;
+					}
+				}
+				
+				$.post(cxtPath+"/user/device/save", $("#devSetForm").serialize(),
+						function(data) {
+							alert(data);
+							if (data.indexOf("成功") > 0){
+								window.location.href=cxtPath+"/user/device/manager";
+							}
+						}, 'json');
+				return false;
+			});
+	
+	$("#btnSaveBind").click(
+			function(){
+			var watchId = $.trim($("#watchId").val());
+			if (!watchId){
+				alert("设备机器号不能为空!");
+				return false;
+			}
+			if(watchId.substring(0, 3)=="FUC" && watchId.length==20){
+				alert("抱歉！设备机器号以FUC开头, 且为20位的设备只能是在pc客户端或app客户端进行绑定操作 !");
+				return false;
+			}
+			var watchSim = $("#watchSim").val();
+			if (watchSim!=null && watchSim!=""){
+				if(!telphone_pattern.exec(watchSim)){
+					alert("请填写正确的电话号码!");
+					return false;
+				}
+			}
+			///$("#fmSaveBind").submit();
+			$.post(cxtPath+"/user/device/add", $("#fmSaveBind").serialize(),
+					function(data) {
+						alert(data);
+						if (data.indexOf("成功") > 0){
+							window.location.href=cxtPath+"/user/device/manager";
+						}
+					}, 'json');
+			});
+		
+	
+	/*
+	$("#btnBindWatch").click(function bindWatchId() {
+		var wId = $("#watchId").val();
+		var personId = $("#personId").val();
+		if (wId == null || wId == "") { 
+			alert("请填写设备机器号!");
+			return false;
+		}
+		if(wId.substring(0, 3)=="FUC" && wId.length==20){
+			alert("抱歉！设备机器号以FUC开头, 且为20位的设备只能是在pc客户端或app客户端进行绑定操作 !");
+			return false;
+		}
+		var btnBindWatch = $("#btnBindWatch").text();
+		var bindFlag = false;
+		var url = cxtPath+"/user/device/";
+		if (btnBindWatch == "绑定设备") {
+			// bind watch
+			url = url + "bindWatch";
+			bindFlag = true;
+		} else { // unbind watch
+			url = url + "unBindWatch";
+			bindFlag = false;
+		}
+		$.post(url, {
+			'watch.watchId' : wId,
+			'personId' : personId
+		}, function(data) {
+			if (data.indexOf("成功") > 0) {
+				if (bindFlag) {
+					$("#btnBindWatch").text("解绑设备");
+				} else {
+					$("#btnBindWatch").text("绑定设备");
+					$("#btnBindSim").text("绑定号码");
+				}
+			}
+		}, 'json');
+	});
+
+	$("#btnBindSim").click(function bindWatchSim() {
+		var wSim = $("#watchSim").val();
+		var wId = $("#watchId").val();
+		var personId = $("#personId").val();
+		if(!telphone_pattern.exec(wSim)){
+			alert("请填写正确的电话号码!");
+			return false;
+		}
+		
+		if (wSim == null || wSim == "") {
+			alert("请填写腕表SIM号码!");
+			return false;
+		}
+		var btnBindSim = $("#btnBindSim").text();
+		var btnBindWatch = $("#btnBindWatch").text();
+		var bindFlag = false;
+		
+		if (btnBindWatch == "绑定设备") {
+			alert("请先绑定腕表.");
+			return;
+		}
+
+		var url = cxtPath+"/user/device/";
+		if (btnBindSim == "绑定号码") {
+			url = url + "bindSim";
+			bindFlag = true;
+		} else {
+			url = url + "unBindSim";
+			bindFlag = false;
+		}
+		$.post(url, {
+			'watch.watchSim' : wSim,
+			'watch.watchId' : wId,
+			'personId' : personId
+		}, function(data) {
+			if (data.indexOf("成功") > 0) {
+				if (bindFlag) {
+					$("#btnBindSim").text("解绑号码");
+				} else {
+					$("#btnBindSim").text("绑定号码");
+				}
+			}
+			alert(data);
+		}, 'json');
+	});
+	*/
+	
+	function checkBind() {
+		var wId = $("#watchId").val();
+		var wSim = $("#watchSim").val();
+
+		if (wId != null && wId != "") {
+			$("#btnBindWatch").text("解绑设备");
+		} else {
+			$("#btnBindWatch").text("绑定设备");
+		}
+		if (wSim != null && wSim != "") {
+			$("#btnBindSim").text("解绑号码");
+		} else {
+			$("#btnBindSim").text("绑定号码");
+		}
+	}
+
+	$("#alarmMode1").click(function() {
+		$("#alarmMode2").attr("checked", false);
+	})
+	$("#alarmMode2").click(function() {
+		$("#alarmMode1").attr("checked", false);
+	})
+
+});
+
+
+function bindWatchId(flag, urls) {
+	var wId = $.trim($("#watchId").val());
+	var personId = $("#personId").val();
+	if (wId == null || wId == "") { 
+//		alert("请填写设备机器号!");
+		show_div("btnBindWatch", "请填写设备机器号!", -220, -600);
+		return false;
+	}
+	if(wId.substring(0, 3)=="FUC" && wId.length==20){
+		alert("抱歉！设备机器号以FUC开头, 且为20位的设备只能是在pc客户端或app客户端进行绑定操作 !");
+		return false;
+	}
+	var btnBindWatch = $("#btnBindWatch").text();
+	var bindFlag = false;
+	// 不能同时点击‘绑定’按钮和页面下发的两个按钮
+	if (!flag && btnBindWatch == "解绑设备"){
+		window.location.href = urls;
+		return false;
+	}
+	
+	var url = cxtPath+"/user/device/";
+	if (btnBindWatch == "绑定设备") {
+		// bind watch
+		url = url + "bindWatch";
+		bindFlag = true;
+	} else { // unbind watch
+		url = url + "unBindWatch";
+		bindFlag = false;
+	}
+	$.post(url, {
+		'watch.watchId' : wId,
+		'personId' : personId
+	}, function(data) {
+		alert(data);
+		if (data.indexOf("成功") > 0) {
+			if(flag){
+				if (bindFlag) {
+					$("#btnBindWatch").text("解绑设备");
+				} else {
+					$("#btnBindWatch").text("绑定设备");
+					$("#btnBindSim").text("绑定号码");
+				}
+			}else{
+				window.location.href = urls;
+			}
+		}
+	}, 'json');
+}
+
+function bindWatchSim(flag, urls) {
+	var wSim = $("#watchSim").val();
+	var wId = $.trim($("#watchId").val());
+	var personId = $("#personId").val();
+	if(!telphone_pattern.exec(wSim)){
+		alert("请填写正确的电话号码!");
+		return false;
+	}
+	
+	if (wSim == null || wSim == "") {
+		alert("请填写腕表SIM号码!");
+		return false;
+	}
+	var btnBindSim = $("#btnBindSim").text();
+	var btnBindWatch = $("#btnBindWatch").text();
+	var bindFlag = false;
+	
+	if (btnBindWatch == "绑定设备") {
+		alert("请先绑定腕表.");
+		return;
+	}
+
+	var url = cxtPath+"/user/device/";
+	if (btnBindSim == "绑定号码") {
+		url = url + "bindSim";
+		bindFlag = true;
+	} else {
+		url = url + "unBindSim";
+		bindFlag = false;
+	}
+	$.post(url, {
+		'watch.watchSim' : wSim,
+		'watch.watchId' : wId,
+		'personId' : personId
+	}, function(data) {
+		alert(data);
+		if (data.indexOf("成功") > 0) {
+			if(flag){
+				if (bindFlag) {
+					$("#btnBindSim").text("解绑号码");
+				} else {
+					$("#btnBindSim").text("绑定号码");
+				}
+			}else{
+				window.location.href = urls;
+			}
+		}
+	}, 'json');
+}

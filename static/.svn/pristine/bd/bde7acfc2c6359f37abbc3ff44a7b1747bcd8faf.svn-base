@@ -1,0 +1,589 @@
+﻿var m=months.split(",");
+var w=lowerweeks.split(",");
+var convertMonth=[];
+var convertWeek=[];
+var opt = 0;
+
+function initDate(){
+	for(var i=0; i<m.length; i++){
+		convertMonth[m[i]]=m[i];
+	}
+	for(var j=0; j<m.length; j++){
+		convertWeek[w[j]] = w[j];
+	}
+}
+
+$(function () {
+	//the default time
+     var startTime = new Date(), endTime = new Date();
+     startTime.setMonth(startTime.getMonth() - 1);
+     $("#dateStart").val(startTime.Format(df));
+     $("#dateEnd").val(endTime.Format(df));
+     //judge the url and transfer
+     var url = window.location.href;
+     var param = url.indexOf('=');
+     if (param == -1){
+			$("#LoadToday").trigger("click");
+     	return "";
+     }
+     var cTime = url.substring(param + 1);
+ 	var startTime = cTime + " 00:00:00";
+ 	var endTime = cTime + " 23:59:59";
+ 	$("#dateStart").val(dateCovert(cTime));
+ 	$("#dateEnd").val(dateCovert(cTime));
+ //	$("#dateStart").val(cTime);
+  //  $("#dateEnd").val(cTime);
+    if(url != null){
+    	opt =1;
+ 	   Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData',startTime,endTime,6);
+    }
+    
+    // steps level
+    pageonloadFun();
+    //The date selected
+    $("ul.nav-tabs line l li a").click(function () {
+        $(this).parents("ul").find("li").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+    //steps, distance, calories, and selected
+    $("ul.nav-tabs li a").click(function () {
+        $(this).parents("ul").find("li").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+ });
+
+var df = "dd/MM/yyyy";
+// 将yyyy-mm-dd格式转为dd-mm-yyyy
+function dateCovert(curDate){
+	var st = curDate;
+    var a = st.split(" ");
+    var b = a[0].split("-");
+    return b[2]+"/"+b[1]+"/"+b[0];
+}
+//将dd/mm/yyyy格式转为yyyy-mm-dd
+function dateCovert2(curDate){
+	var st = curDate;
+    var a = st.split(" ");
+    var b = a[0].split("/");
+    return b[2]+"-"+b[1]+"-"+b[0];
+}
+var ChartData = {times:[], steps: [], cal: [], speed: [], dist: [], heartRate: [] };
+var SleepData = {times:[], sleepTotal:[], data:[]};
+var date = new Date();
+var strTime = date.toLocaleString();
+var optItem = 0; // if opration is sleep , the value is 1
+Date.prototype.format = function(format){
+    var o = {
+    "M+" : this.getMonth()+1, //month
+    "d+" : this.getDate(),    //day
+    "h+" : this.getHours(),   //hour
+    "m+" : this.getMinutes(), //minute
+    "s+" : this.getSeconds() //second
+ //   "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+  //  "S" : this.getMilliseconds() //millisecond
+    };
+    if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
+    (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    for(var k in o)if(new RegExp("("+ k +")").test(format))
+    format = format.replace(RegExp.$1,
+    RegExp.$1.length==1 ? o[k] :
+    ("00"+ o[k]).substr((""+ o[k]).length));
+    return format;
+};
+
+function changeDate(days){
+   var today=new Date(); // 获取今天时间
+   var begin;
+   var endTime;
+  if(days == 1){
+      today.setTime(today.getTime());
+      begin = today.format(df);
+      end =new Date().format(df);
+  }else if(days == 7){
+      today.setTime(today.getTime()-7*24*3600*1000);
+      begin = today.format(df);
+      end =new Date().format(df);
+  }else if(days == 30){
+        today.setTime(today.getTime()-30*24*3600*1000);
+      begin = today.format(df);
+      end =new Date().format(df);
+  }else if(days == 365){
+	  today.setTime(today.getTime()-365*24*3600*1000);
+      begin = today.format(df);
+      end =new Date().format(df);
+  }
+  $("#dateStart").val(begin);
+  $("#dateEnd").val(end);
+}
+
+Lecomm.Sport = {
+    //加载图表数据
+    LoadChartData: function (url, startTime, endTime, action) {
+        jQuery.ajax({
+            url: url,
+            type: "post",
+            data: { action: action, t: new Date(), startTime: startTime, endTime: endTime },
+            dataType: "text",
+            beforeSend: function () {
+            	$("#page").html("");
+            	$("#pagesleep").html("");
+                $("#chart").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/></p>");
+            },
+            success: function (data, textStatus) {
+            	$("#chart").html("");
+            	ChartData = {times:[], steps: [], cal: [], speed: [], dist: [], heartRate: [] };
+            	$("#action").val(action);
+                Lecomm.Sport.ParseJSONChartData(data);
+                Lecomm.Sport.GetPage(startTime,endTime,action);//获取分页数据
+                Lecomm.Sport.GetPageSleep(startTime,endTime,action);//获取分页数据
+                  $("#ViewSteps").click();
+            },
+            error: function (XMLHttpRequest, textStatus) {
+            	 $("#chart").html("");
+                alert(textStatus);
+            }
+        });
+    },
+  
+    //生成分页
+    GetPage:function(startTime,endTime,action){
+    	var page = new Lecomm.FY();
+		Lecomm.Sport.LoadSportData(cxtPath+"/user/sport/GetSportData", {
+			oPagePanel : "msg",
+			currentPageIndex : 1,
+            startTime: startTime,
+             endTime: endTime,
+			pageSize : 20,
+			action:action
+		}, function(data, total) {
+		   
+			page.GetPagerText({
+				oPagePanel : "page",
+				recordCount : total,
+				currentPage : 1,
+				displayPages : 8,
+				pageSize : 20,
+				language : 'en'
+			}, function(currentPage) {
+				Lecomm.Sport.LoadSportData(cxtPath+"/user/sport/GetSportData", {
+					oPagePanel : "msg",
+				    startTime: startTime,
+		            endTime: endTime,
+					currentPageIndex : currentPage,
+					pageSize : 20,
+					action:action
+				}, function() {
+				});
+			});
+		});
+    },
+  //加载运动数据
+    LoadSportData: function (url, options, callback) {
+        var defaultOptions = { action: "", currentPage: 1, pageSize: 10 };
+        options = $.extend(defaultOptions, options);
+        var data = $.extend({ time: new Date().getTime() }, options);
+        jQuery.ajax({
+            type: "get",
+            url: url,
+            data: data,
+            dataType: "text",
+            beforeSend: function () {
+              $("#msg").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/></p>");
+            },
+            error: function (status, data) {
+            	 $("#msg").html("");
+                if (typeof error == "function") {
+                    error.call(null);
+                }
+            },
+            success: function (data) {
+                var d =eval( "["+data+"]");
+	                var recordCount =d[0].count; //总条数
+	                if(d[0].data.length == 0){
+	                	var sb = "<table class='ui-table'>";
+	                    sb+="<thead><tr>";
+	                    if(lengthUnit == 1){//commonUnit=='mile'
+		                   	 sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+spReportSteps+"</th><th>"+spReportMile+"</th><th>"+spReportCalorie+"</th>";
+		                 }else{
+		                   	 sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+spReportSteps+"</th><th>"+spReportKm+"</th><th>"+spReportCalorie+"</th>";
+		                 }
+	                    sb+="</tr></thead><tbody>";
+	                    sb+="<tr height='30px'><td></td><td></td><td></td><td></td><td></td></tr>";
+	                    sb += "</tbody></table>";
+	                	$("#msg").html(sb);
+	            		return false;
+	                }
+	                Lecomm.Sport.ParseJSONSportData(d);
+	                if (typeof callback == "function") {
+	                    callback.call(null, data, recordCount);
+	                }
+            }
+        });
+    },
+    //解析运动日志数据
+     ParseJSONSportData: function(data) {
+            var d = data[0].data;
+            var len = d.length;
+            if (len == 0) return;
+            var sb = "<table class='ui-table'>";
+             sb+="<thead><tr>";
+             sb+="<thead><tr>";
+             if(lengthUnit == 1){
+                	 sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+spReportSteps+"</th><th>"+spReportMile+"</th><th>"+spReportCalorie+"</th>";
+              }else{
+                	 sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+spReportSteps+"</th><th>"+spReportKm+"</th><th>"+spReportCalorie+"</th>";
+              }
+             sb+="</tr></thead><tbody>";
+            for (var i = 0; i < len ; i++) {
+                sb += "<tr>";
+                sb += "<td>" + d[i].startTime + "</td>";
+                sb += "<td>" + d[i].endTime + "</td>";
+                sb += "<td>" + d[i].steps + "</td>";
+                if(lengthUnit == 1){
+                	sb += "<td>" + (0.621371*d[i].dist/1000).toFixedEx(2) + "</td>";
+                }else{
+                	sb += "<td>" + (d[i].dist/1000).toFixedEx(2) + "</td>";
+                }
+             //   sb += "<td>" + (d[i].cal/1000).toFixed(2) + "</td>";
+                sb += "<td>" + (d[i].cal/1000).toFixedEx(2) + "</td>";
+                sb += "</tr>";
+            }
+            sb += "</tbody></table>";
+            $("#msg").html(sb);
+    },   
+  //生成分页
+    GetPageSleep:function(startTime,endTime,action){
+    	var page = new Lecomm.FY();
+		Lecomm.Sport.LoadSleepData(cxtPath+"/user/sport/GetSleepData", {
+			oPagePanel : "msgsleep",
+			currentPageIndex : 1,
+            startTime: startTime,
+             endTime: endTime,
+			pageSize : 20,
+			action:action
+		}, function(data, total) {
+		   
+			page.GetPagerText({
+				oPagePanel : "pagesleep",
+				recordCount : total,
+				currentPage : 1,
+				displayPages : 8,
+				pageSize : 20,
+				language : 'en'
+			}, function(currentPage) {
+				Lecomm.Sport.LoadSleepData(cxtPath+"/user/sport/GetSleepData", {
+					oPagePanel : "msgsleep",
+				    startTime: startTime,
+		            endTime: endTime,
+					currentPageIndex : currentPage,
+					pageSize :20,
+					action:action
+				}, function() {
+				});
+			});
+		});
+    },
+    LoadSleepData: function (url, options, callback) {
+        var defaultOptions = { action: "", currentPage: 1, pageSize: 10 };
+        options = $.extend(defaultOptions, options);
+        var data = $.extend({ time: new Date().getTime() }, options);
+        jQuery.ajax({
+            type: "get",
+            url: url,
+            data: data,
+            dataType: "text",
+            beforeSend: function () {
+              $("#msgsleep").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/></p>");
+            },
+            error: function (status, data) {
+            	$("#msgsleep").html("");
+                if (typeof error == "function") {
+                    error.call(null);
+                }
+            },
+            success: function (data) {
+                var d =eval( "["+data+"]");
+	                var recordCount =d[0].sleepCount;
+	                if(d[0].sleepData.length == 0){
+	                	var sb = "<table class='ui-table'>";
+	                    sb+="<thead><tr>";
+	                    sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+reportSleepDuration+"</th>";
+	                    sb+="<th>"+reportAwakeDuration+"</th><th>"+reportLightDuration+"</th><th>"+reportDeepDuration+"</th>";
+	                    //sb+="<th>total duration (min)</th>";
+	                    sb+="</tr></thead><tbody>";
+	                    sb+="<tr  height='30px'><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+	                    sb += "</tbody></table>";
+	                	$("#msgsleep").html(sb);
+	            		return false;
+	                }
+	                Lecomm.Sport.ParseJSONSleepData(d);
+	                if (typeof callback == "function") {
+	                   callback.call(null, data, recordCount);
+	                }
+            }
+        });
+    },
+    ParseJSONSleepData: function(data) {       
+    	 var dat = data[0].sleepData;
+         var len = dat.length;
+         if (len == 0) return;
+         var sb = "<table class='ui-table'>";
+          sb+="<thead><tr>";
+          sb+="<th>"+spReportStarttime+"</th><th>"+spReportEndtime+"</th><th>"+reportSleepDuration+"</th>";
+          sb+="<th>"+reportAwakeDuration+"</th><th>"+reportLightDuration+"</th><th>"+reportDeepDuration+"</th>";
+         // sb+="<th>total duration (min)</th>";
+          sb+="</tr></thead><tbody>";
+         for (var i = 0; i < len ; i++) {
+             sb += "<tr>";
+             sb += "<td>" + dat[i].startTime + "</td>";
+             sb += "<td>" + dat[i].endTime + "</td>";
+             sb += "<td>" + dat[i].sleepDuration + "</td>";
+             sb += "<td>" + dat[i].awakeDuration + "</td>";
+             sb += "<td>" + dat[i].lightDuration + "</td>";
+             sb += "<td>" + dat[i].deepDuration + "</td>";
+             //sb += "<td>" + dat[i].totalDuration + "</td>";
+             sb += "</tr>";
+         }
+         sb += "</tbody></table>";
+         $("#msgsleep").html(sb);
+    },
+    
+    //解析图表JSON
+    ParseJSONChartData: function (data) {
+        var d = eval( "["+data+"]");
+        var dst = d[0].sportChart;
+        var dsp = d[0].sleepChart;
+        
+        // sport data
+        var len = dst.length;
+        ChartData = {times:[], steps: [], cal: [], speed: [], dist: [], heartRate: [] };
+        for (var i = 0; i <= len - 1; i++) {
+            ChartData.times.push(dst[i].endTime);
+            ChartData.steps.push(dst[i].steps);
+            var tmpCal = parseFloat((dst[i].cal/1000).toFixedEx(0));
+            ChartData.cal.push(tmpCal);
+            ChartData.speed.push(dst[i].speed);
+            if (lengthUnit == 1){
+            	//英里
+            	dst[i].dist = 0.621371*dst[i].dist;
+            }
+            var tmpDis = parseFloat((dst[i].dist/1000).toFixedEx(2));
+            ChartData.dist.push(tmpDis);
+            ChartData.heartRate.push(dst[i].avgrate);
+        }
+        
+        // sleep data
+        var sleepLen = dsp.length;
+        SleepData = {times:[], sleepTotal:[],data:[]};
+        for(var j=0; j<sleepLen; j++){
+        	SleepData.times.push(dsp[j].endTime);
+        	var st = parseFloat((dsp[j].lightDuration+dsp[j].deepDuration).toFixedEx(2));
+        	SleepData.sleepTotal.push( st );
+        }
+    },
+    
+    //查看今天的数据
+    //type 1: 步数，2距离，3.速度，4.卡路里，5.心率
+    //今天1，最近一周2，最近一月3，最近一年4，全部5，自定义6
+    LoadToday:function(){
+	  var endTime = strTime.substring(0,4)+"-"+strTime.substring(5,7)+"-"+strTime.substring(8,9);
+	  changeDate(1);
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',1);
+      opt = 1;
+    },
+    //最近一周
+    LoadLastWeek:function(){
+      opt = 2;
+	  changeDate(7);
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',2);
+    },
+    //最近一月
+     LoadLastMonth:function(){
+   	  changeDate(30);
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',3);
+    },
+    //最近一年
+     LoadLastYear:function(){
+      opt = 3;
+	  var startTime = (parseInt(strTime.substring(0,4))-1)+"-"+strTime.substring(5,7)+"-"+strTime.substring(8,10);
+   	  var endTime = strTime.substring(0,4)+"-"+strTime.substring(5,7)+"-"+strTime.substring(8,10);
+   	  changeDate(365);
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',4);
+    },
+    //所有
+    LoadALL:function(){
+      opt = 3;
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',5);
+    },
+    //自定义搜索
+    LoadFromTo:function(){
+    // $('ul.nav-tabs line l').children('li').removeClass('active');
+    	 $("#LoadToday").parent().removeClass("active");
+    	 $("#LoadLastWeek").parent().removeClass("active");
+    	 $("#LoadLastMonth").parent().removeClass("active");
+    	 $("#LoadLastYear").parent().removeClass("active");
+    	 $("#LoadALL").parent().removeClass("active");
+     
+      var startTime=dateCovert2($("#dateStart").val())+" 00:00:00";
+      var endTime=dateCovert2($("#dateEnd").val())+" 23:59:59";
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData',startTime,endTime,6);
+      opt = 	Lecomm.Sport.compareDate(dateCovert2($("#dateStart").val()), dateCovert2($("#dateEnd").val()));
+    },
+    compareDate:function(startDate, endDate){
+    	var sd = startDate;
+    	var ed = endDate;
+    	var s = sd.split("-");
+    	var e = ed.split("-");
+    	var ret = new Date(e[0],e[1],e[2]).getTime()- new Date(s[0],s[1],s[2]).getTime();
+    	if (ret==(7*86400000)){
+    		return 2;
+    	}else if (ret>(7*86400000)){
+    		return 3;
+    	} else if(ret == 0){
+    		return 1;
+    	}else{
+    		return 2;
+    	}
+    	return 0;
+    },
+   //统计数据
+    getCount:function(data){
+       var heartCount = 0;
+	   for(var i=0; i<data.length ; i++){
+    	   if(data[i]!=0){
+    		   heartCount+=data[i];
+    	   }
+       }
+	   return heartCount;
+    }, 
+    translateDate:function(vopt){
+    	var ct = ChartData.times[0];
+    	if(isNaN(ct)) return;
+    	
+	    if(vopt == 2){
+	    	for(var i=0; i<ChartData.times.length; i++){
+	    		ChartData.times[i]=w[parseInt(ChartData.times[i])];
+	    		SleepData.times[i]=w[parseInt(SleepData.times[i])];
+	    	}
+	    }else if(vopt==3){
+	    	for(var i=0; i<ChartData.times.length; i++){
+	    		ChartData.times[i]=m[parseInt(ChartData.times[i])-1];
+	    		SleepData.times[i]=m[parseInt(SleepData.times[i])-1];
+	    	}
+	    }
+    },
+    //查看步数
+    ViewSteps:function(){
+    	Lecomm.Sport.translateDate(opt);
+    	Lecomm.Sport.CreateChart(ChartData.times,ChartData.steps,"","",myledongSteps);
+    	Lecomm.Sport.ShowTable();
+    },
+    //查看距离
+    ViewDistance:function(){
+    	if(lengthUnit == 1){
+    		Lecomm.Sport.CreateChart(ChartData.times,ChartData.dist,"","",myledongMile);
+    	}else{
+    		Lecomm.Sport.CreateChart(ChartData.times,ChartData.dist,"","",myledongKm);
+    	}
+    	Lecomm.Sport.ShowTable();
+    },
+    //查看卡路里
+    ViewCalories:function(){
+    	Lecomm.Sport.CreateChart(ChartData.times,ChartData.cal,"","",myledongKcal);
+    	Lecomm.Sport.ShowTable();
+    },
+    //查看睡眠
+    ViewSleeps:function(){
+    	Lecomm.Sport.CreateChart(SleepData.times, SleepData.sleepTotal,"","",myledongHour);
+    	Lecomm.Sport.ShowTable("sleep");
+    },
+    ShowTable: function(tableName){
+    	if(tableName=="sleep"){
+    		$('#msg').attr("style","display:none");
+        	$('#page').attr("style","display:none");
+    		$('#msgsleep').attr("style","");
+    		$('#pagesleep').attr("style","margin: 10px 0px 100px 50px");
+    	}else{
+    		$('#msgsleep').attr("style","display:none");
+        	$('#pagesleep').attr("style","display:none");
+    		$('#msg').attr("style","");
+    		$('#page').attr("style","margin: 10px 0px 100px 50px");
+    	}
+    },
+    //获取倾斜度
+    GetRotation:function(){
+    	var action=parseInt( $("#action").val());
+    	if(!action)action=0;
+    	  //今天1，最近一周2，最近一月3，最近一年4，全部5，自定义6
+    	////var rotation=[0,0,0,-45,0,0,-45];
+    	////return rotation[action];
+    	return -45;
+    },
+    //创建图表
+    CreateChart: function (categories,data,title,text,unit) {
+    	var keyt = "";
+    	if(opt == 1){
+    		keyt = "h";
+		}
+      $('#chart').highcharts(
+       {
+		chart : {
+			type : 'column',
+			margin : [ 30, 50, 50, 60 ]//上右下左
+		},
+		title : {
+			text :title
+		},
+		xAxis : {
+			categories :categories,
+			labels : {
+				rotation :  Lecomm.Sport.GetRotation(),
+				align : 'right',
+				style : {
+					fontSize : '12px',
+					fontFamily : 'Microsoft Accor black'
+				}
+			}
+		},
+		yAxis : {
+			min : 0,
+			lineWidth: 1,
+		    gridLineWidth:0,
+		    tickLength: 5,
+		    tickWidth: 1,
+			title : {
+				text : unit
+			}
+		},
+		legend : {
+			enabled : false
+		},
+		tooltip : {
+//			pointFormat :text+ '<b>{point.y:.1f} '+unit+'</b>'
+			headerFormat: '<span style="font-size:12px">{point.key} '+keyt+'</span><table>',
+            pointFormat: '<tr><td style="padding:0"><b>{point.y} '+unit+'</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+		},
+		series : [ {
+			name : text,
+			data : data,
+			dataLabels : {
+				enabled : false,
+				rotation : -10,
+				color : '#FFFFFF',
+				align : 'left',
+				x : 4,
+				y : -90,
+				style : {
+					fontSize : '11px',
+					fontFamily : 'Microsoft Accor black',
+					textShadow : '0 0 3px black'
+				}
+			}
+		} ],
+		credits : [ false ]
+	});
+    }
+};

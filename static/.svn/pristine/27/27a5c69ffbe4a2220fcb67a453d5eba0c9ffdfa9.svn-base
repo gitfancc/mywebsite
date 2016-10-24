@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>乐康养老</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐康 养老 手表" />
+<meta name="keywords"  content="乐康 养老 手表" />
+<link type="text/css" rel="stylesheet" href="css/base.css">
+<link type="text/css" rel="stylesheet" href="css/user.css">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+
+<div id="iheader">
+	<div id="wrapper">
+        <div class="logo">
+            <img src="images/logo_index.gif" alt="乐康养老" title="首页"/>
+        </div>
+        <div class="setinfo">
+            <a href="user/login.html">登录</a>  | <a href="user/register.html"> 注册</a>
+        </div>
+        <span class="weltext">欢迎来到乐康养老</span>
+    	<div class="clear"></div>
+        
+        <div class="menu">
+            <ul class="menu-inner">
+                <li><a class="current" href="javascript:;" title="首页">首页</a></li>
+                <li class="">|</li>
+                <li><a href="javascript:;" title="我们的产品">我们的产品</a></li>
+                <li class="">|</li>
+                <li><a href="javascript:;" title="养老社区">养老社区</a></li>          
+            </ul>
+            <p class="hotline">客服热线 400-020-39321423</p>
+        </div>
+        
+    </div>
+</div>
+
+
+<div id="index-main">
+    <div id="slideBox" class="slideBox">
+        <div class="hd">
+            <ul><li></li><li></li><li></li></ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><a href="javascript:;"><img src="images/index/banner01.jpg" /></a></li>
+                <li><a href="javascript:;"><img src="images/index/banner02.jpg" /></a></li>
+                <li><a href="javascript:;"><img src="images/index/banner03.jpg" /></a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true});
+    </script>
+    <!-- end bannerbox-->
+      
+   <div class="featurebox">
+        <div class="featurebox-inner ml">
+            <h3>智能产品</h3>
+            <p>高品质，人性化的智能产品，为老人或监 护人提供健康监测、安全监测、运动计划、 主动关怀、在线交流等服务…… </p>
+            <p class="more"><a href="javascript:">更多...</a></p>
+        </div>
+        <div class="featurebox-inner">
+            <h3>智能产品</h3>
+            <p>高品质，人性化的智能产品，为老人或监 护人提供健康监测、安全监测、运动计划、 主动关怀、在线交流等服务…… </p>
+            <p class="more"><a href="javascript:">更多...</a></p>
+        </div>
+        <div class="featurebox-inner">
+            <h3>我们社区</h3>
+            <p>乐康智能居家养老平台是针对老年人居家 生活、社区养老服务机构而开发的智能居 家养老服务平台……</p>
+            <p class="more"><a href="javascript:">更多...</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--end featurebox-->   
+</div>
+ <!--end index-main-->  
+<div id="footer">
+    <div class="footbox">
+        <h3>关于乐康</h3>
+        <ul>
+            <li>乐康健康事业理念</li>
+            <li>乐康优势资源</li>
+            <li>乐康健康云战略</li>
+            <li>乐康动态</li>
+        </ul>
+    </div>
+    <div class="footbox">
+        <h3>乐康服务</h3>
+        <ul>
+            <li><a href="javascript:;" title="乐动应用下载">乐康应用下载</a></li>
+            <li><a href="javascript:;" title="乐动产品说明">乐康产品说明</a></li>
+            <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+            <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+        </ul>
+    </div>
+    <div class="footbox borderright">
+        <h3>商务合作</h3>
+        <ul>
+            <li><a href="fp/contactus.html" title="联系我们">联系我们</a></li>
+            <li><a href="fp/businessConsulting.html" title="商务咨询">商务咨询</a></li>
+            <li><a href="fp/legal.html" title="法律声明">法律声明</a></li>
+        </ul>
+    </div>
+    <div class="footbox2 ">
+        <h2>乐康养老</h2>
+        <p>乐康智能居家养老平台是针对老年人居家生活、社区养老 服务机构而开发的智能居家养老服务平台；本平台采用智 能居家养老手表作为数据终端，实现远程诊脉、实时监控、 健康管理等重要功能，并整合通讯网络、智能呼叫、互联 网等新技术。以信息化、智能化呼叫救助服务平台为支撑， 建立老年人信息数据库，提供紧急救援、生活照料、家政 服务等养老服务，并以社区为依托，有效整合社会服务资 源，建立完善的居家养老服务体系，打造真正意义上的智 能居家养老生活。</p>
+    </div>
+    <div class="clear"></div>
+</div> 
+
+<div id="copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p>
+</div>
+
+</body>
+</html>

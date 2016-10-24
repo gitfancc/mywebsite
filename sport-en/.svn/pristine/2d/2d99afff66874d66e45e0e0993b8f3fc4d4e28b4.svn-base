@@ -1,0 +1,29 @@
+static.file.path = http://app-zewatch2.mykronoz.com/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url = http://app-zewatch2.mykronoz.com/sportimg/user/
+
+file.upload.path = /usr/local/apache/htdocs/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:7080/appscomm/
+
+emailAddress=noreply@mykronoz.com
+email.url=http://app-zewatch2.mykronoz.com
+findPwdsubject=ZeWatch password reset
+registSubject=ZeWatch sign up confirmation
+newPwdSubject=ZeWatch get new password
+email.forgotPwd=/usr/local/L30/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/L30/tomcat/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/L30/tomcat/webapps/ROOT/WEB-INF/classes/template_register.html
+
+watch.search.system.user=test@test.com
+
+deviceType=L30
+deviceName=ZeWatch2
+href.learnmore=http://www.mykronoz.com/zewatch2
+pc.download=http://app-zewatch2.mykronoz.com/download/pcmac/v1.44/ZeWatch2 For PC V1.44.exe
+mac.download=http://app-zewatch2.mykronoz.com/download/pcmac/v1.44/ZeWatch2 For Mac V1.44.dmg
+ios.download=https://itunes.apple.com/us/app/zewatch2/id906609572?mt=8
+andriod.download=https://play.google.com/store/apps/details?id=com.ysp.l30band&hl=fr_FR
+wp.download=http://www.windowsphone.com/s?appid=9bcf93e6-a810-434d-b71d-753525293395

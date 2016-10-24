@@ -1,0 +1,53 @@
+﻿  /*公共样式*/
+body{margin:0px; padding:0px;}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin:0px; padding:0px; font-family:"宋体","黑体","微软雅黑"  }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset, img { border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    height: 29px;
+}
+ol, ul,li { list-style:none;}
+.ClearBoth { clear:both; font-size:0px; height:0px; overflow:hidden; }
+body { font-family:"宋体","黑体","微软雅黑"; font-size:12px; }
+a {text-decoration:none; font-family:"宋体","黑体","微软雅黑";}
+a:hover { text-decoration:none;  font-family:"宋体","黑体","微软雅黑"; }
+a:visited{ color:#666666;font-family:"宋体","黑体","微软雅黑";}
+.blue{color:#1773c1;}
+.FL { float:left; }
+.FR { float:right; }
+.ML5{margin-left:5px;}
+.ML10{margin-left:10px;}
+img{width:auto;height:auto}
+*{margin:0;padding:0;}
+
+/*IE6震动Bug*/
+* html,* html body{background-image:url(about:blank);background-attachment:fixed;}
+
+  /*脚部样式*/
+#footer{width:100%; text-align:center; height:50px;margin-top:20px;   background-image:url(/images/footerBg.gif); }
+div.bottom { width:1024px;margin:0 auto; text-align:left; }
+div.bottom table td{ padding-top:5px;  line-height:25px;  width:80px; text-align:left;vertical-align:top;  }
+div.bottom table td a{font-size:13px;color:#e1e1e1;padding:10px 10px 0px 0px; }
+div.bottom table td a:visited{color:#e1e1e1; }
+div.bottom table td span{font-size:13px;color:#e1e1e1; line-height:25px; }
+div.bottom table td.copyRight{width:675px;_width:648px; text-align:right}
+   /*主页面*/
+ #main{width:100%; background-color:white;  margin:0 auto; height:auto}
+   /*头部样式*/
+#head{width:100%; height:54px;  margin-bottom:0;  background:url(/images/nav_bg.gif) repeat-x;  }
+input.txtKeyword{background:url(/images/search_bg.gif) no-repeat;width:82px;height:18px;border:0; float:left}
+input.btSearch{background:url(/images/search_bt.gif) no-repeat;width:27px;height:18px;border:0;color:White;float:left}
+input.gray{border:2px solid #cbcdcc; line-height:20px;  height:28px;width:256px;}
+input.text
+{ 
+    border: 1px solid #BBBBBB;font-family: arial,"宋体";font-size: 14px;height: 16px;padding: 4px 3px;width: 240px;
+}
+input.VeryfyCode
+{ 
+    border: 1px solid #BBBBBB;font-family: arial,"宋体";font-size: 14px;height: 16px;padding: 4px 3px;width: 150px;
+}
+span.red{color:Red}
+
+.highlight1{border:1px solid #EFA100;outline:2px solid #FFDC97;*border:2px solid #ffcc66;*padding:3px 2px;}
+ 

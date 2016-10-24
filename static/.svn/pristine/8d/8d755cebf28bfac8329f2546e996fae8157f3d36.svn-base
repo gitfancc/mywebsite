@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>下载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐动 运动 感受乐趣" />
+<meta name="keywords"  content="乐动 运动 感受乐趣" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/homepage.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+        <a href="../index.html">
+            <img src="../images/logo_index.png" width="305px" height="90px;" alt="感受运动的乐趣" title="首页"/>
+        </a>
+        </span>
+        <ul class="index-nav">
+        	<li class="index-nav-1"><a href="http://www.fashioncomm.com/" title="返回FashionComm" ></a></li>
+            <li class="index-nav-2">
+            	<a href="download.html"></a>
+                <ul>
+                    <li><a href="download.html" >iPhone客户端下载</a></li>
+                    <li><a href="downloadPC.html" >PC客户端下载</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="downwrapper">
+    	<div class="d-section d-section-b1">
+        	<img class="left" src="../images/d.jpg" />
+            <div class="middle">
+            	<h2>乐康iPhone客户端</h2>
+                <h3>炫红运动界面，精准统计数据，运动达人首选 </h3>
+                <p>发布日期: 2014年04月17日  版本:1.5 <br />大小:5.3 MB<br/>语言: 简体中文<br />系统:与 iPhone、iPod touch、iPad 兼容。 需要 iOS 5.0 或更高版本<br />1.界面优化iphone 5适配。<br />2.程序支持ios7。</p>
+            </div>
+            <div class="right" style="top:10px; left:670px;">
+            	<img class="mb10 ml20" src="../images/d_weixin.jpg" />
+                <p class="mb10 tc">使用手机扫描二维码下载</p>
+                <p class="mb10"><a href="http://ledong.fashioncomm.com:8585/sport/app/index.html" target="_blank"><img src="../images/btn_localdownload.jpg" /></a></p>
+                <a href="https://itunes.apple.com/cn/app/le-kang-yun-dong/id755446885?mt=8" target="_blank"><img src="../images/btn_appdownload.jpg" /></a>
+            </div>
+        </div>
+        
+        <div class="d-section d-section-b2">
+        	<div class="left">
+            	<h2>炫红界面</h2>
+                <h3>时尚的手机App运动界面</h3>
+            </div>
+            <img class="right" src="../images/d_pic2.jpg" />
+        </div>
+        
+        <div class="d-section d-section-b3">
+        	<img class="left" src="../images/d_pic3.jpg" />
+            <div class="right">
+            	<h2>数据采集分析</h2>
+                <h3>计步器收集运动数据，蓝牙同步到手机显示</h3>
+            </div>
+        </div>
+     
+        <div class="d-section d-section-b7">
+        	<img class="right" src="../images/d_pic7.jpg" />
+            <div class="left">
+            	<h2>睡眠分析</h2>
+                <h3>睡眠质量好不好一目了然</h3>
+            </div>
+        </div>
+        
+        <div class="d-section d-section-b4">
+        	<img class="left" src="../images/d_pic4.jpg" />
+            <div class="right">
+            	<h2>群组</h2>
+                <h3>创建或加入您喜欢的群组，组建运动圈子</h3>
+            </div>
+        </div>
+        
+         <div class="d-section d-section-b5">
+        	<div class="left">
+            	<h2>运动排行</h2>
+                <h3>朋友们都在努力，<br />你还有什么理由天天宅在家里？</h3>
+            </div>
+            <img class="right" src="../images/d_pic5.jpg" />
+        </div>
+        
+         <div class="d-section d-section-b6">
+        	<img class="left" src="../images/d_pic6.jpg" />
+            <div class="right">
+            	<h2>分享</h2>
+                <h3>在好友之间分享运动的乐趣</h3>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="footer">
+        <div class="footbox2">
+        	<div class="w300 m0">
+                <h3>乐动平台支持绑定的设备</h3>
+                <ul>
+                    <li>
+                        <p><img src="../images/pic-product1.jpg"/></p>
+                        <h4>乐动L28计步器</h4>
+                        <h5>蓝牙设备+ios客户端展示</h5>
+                    </li>
+                    <li>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank"><img src="../images/pic-product3.jpg"/></a></p>
+                        <h4><a href="http://www.fashioncomm.com/A1.php" target="_blank">A1智能腕表</a></h4>
+                        <h5><a href="http://www.fashioncomm.com/A1.php" target="_blank">蓝牙耳机+Android客户端</a></h5>
+                    </li>
+<!--                    <li>
+                        <p><img src="../images/pic-product2.jpg"/></p>
+                        <h4>乐动心率测量仪</h4>
+                        <h5>蓝牙设备+网站数据展示</h5>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footbox">
+        	<h3>乐动服务</h3>
+            <ul>
+            	<li><a href="download.html" title="iPhone客户端下载">iPhone客户端下载</a></li>
+                <li><a href="javascript:;" title="乐动产品说明">乐动产品说明</a></li>
+                <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+                <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+            </ul>
+        </div>
+        <div class="footbox">
+        	<h3>商务合作</h3>
+            <ul>
+            	<li><a href="../fp/contactus.html" title="联系我们">联系我们</a></li>
+                <li><a href="../fp/businessConsulting.html" title="商务咨询">商务咨询</a></li>
+                <li><a href="../fp/legal.html" title="法律声明">法律声明</a></li>
+            </ul>
+        </div>
+        <div  class="clear"></div>
+    </div> 
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+
+</body>
+</html>

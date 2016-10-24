@@ -1,0 +1,270 @@
+var stepTotal = 0 ;
+//显示等级
+showlevel = function(steps){
+	if(0 <= steps && steps <= 9999){
+		return "Level 0";
+	}else if(10000 <= steps && steps <= 49999){
+		return "Level 1";
+	}else if(50000 <= steps && steps <= 159999){
+		return "Level 2";
+	}else if(160000 <= steps && steps <= 499999){
+		return "Level 3";
+	}else if(500000 <= steps && steps <= 999999){
+		return "Level 4";
+	}else if(1000000 <= steps && steps <= 1999999){
+		return "Level 5";
+	}else if(2000000 <= steps && steps <= 3999999){
+		return "Level 6";
+	}else if(4000000 <= steps && steps <= 7999999){
+		return "Level 7";
+	}else if(8000000 <= steps && steps <= 15999999){
+		return "Level 8";
+	}else if(16000000 <= steps && steps <= 31999999){
+		return "Level 9";
+	}else if(32000000 <= steps && steps <= 63999999){
+		return "Level 10";
+	}else if(64000000 <= steps && steps <= 127999999){
+		return "Level 11";
+	}else if(128000000 <= steps){
+		return "Level 12";
+	}
+}
+
+//计算目测步数离下一等级还差多少步
+calculateSteps = function(steps){
+	if(0 <= steps && steps <= 9999){
+		var s = 10000 - steps;
+		return "离Level 1还差" + s + "步";
+	}else if(10000 <= steps && steps <= 49999){
+		var s = 50000 - steps;
+		return "离Level 2还差" + s + "步";
+	}else if(50000 <= steps && steps <= 159999){
+		var s = 160000 - steps;
+		return "离Level 3还差" + s + "步";
+	}else if(160000 <= steps && steps <= 499999){
+		var s = 500000 - steps;
+		return "离Level 4还差" + s + "步";
+	}else if(500000 <= steps && steps <= 999999){
+		var s = 1000000 - steps;
+		return "离Level 5还差" + s + "步";
+	}else if(1000000 <= steps && steps <= 1999999){
+		var s = 2000000 - steps;
+		return "离Level 6还差" + s + "步";
+	}else if(2000000 <= steps && steps <= 3999999){
+		var s = 4000000 - steps;
+		return "离Level 7还差" + s + "步";
+	}else if(4000000 <= steps && steps <= 7999999){
+		var s = 8000000 - steps;
+		return "离Level 8还差" + s + "步";
+	}else if(8000000 <= steps && steps <= 15999999){
+		var s = 16000000 - steps;
+		return "离Level 9还差" + s + "步";
+	}else if(16000000 <= steps && steps <= 31999999){
+		var s = 32000000 - steps;
+		return "离Level 10还差" + s + "步";
+	}else if(32000000 <= steps && steps <= 63999999){
+		var s = 64000000 - steps;
+		return "离Level 11还差" + s + "步";
+	}else if(64000000 <= steps && steps <= 127999999){
+		var s = 128000000 - steps;
+		return "离Level 12还差" + s + "步";
+	}else if(128000000 <= steps ){
+		return "已经是最高等级";
+	}
+}
+//计算progressbar百分比
+stepPercent = function(steps){
+	if(0 <= steps && steps <= 9999){
+		var s = steps/9999*100;
+		return s+"%";
+	}else if(10000 <= steps && steps <= 49999){
+		var s = steps/49999*100;
+		return s+"%";
+	}else if(50000 <= steps && steps <= 159999){
+		var s = steps/159999*100;
+		return s+"%";
+	}else if(160000 <= steps && steps <= 499999){
+		var s = steps/499999*100;
+		return s+"%";
+	}else if(500000 <= steps && steps <= 999999){
+		var s = steps/999999*100;
+		return s+"%";
+	}else if(1000000 <= steps && steps <= 1999999){
+		var s = steps/1999999*100;
+		return s+"%";
+	}else if(2000000 <= steps && steps <= 3999999){
+		var s = steps/3999999*100;
+		return s+"%";
+	}else if(4000000 <= steps && steps <= 7999999){
+		var s = steps/7999999*100;
+		return s+"%";
+	}else if(8000000 <= steps && steps <= 15999999){
+		var s = steps/15999999*100;
+		return s+"%";
+	}else if(16000000 <= steps && steps <= 31999999){
+		var s = steps/31999999*100;
+		return s+"%";
+	}else if(32000000 <= steps && steps <= 63999999){
+		var s = steps/63999999*100;
+		return s+"%";
+	}else if(64000000 <= steps && steps <= 127999999){
+		var s = steps/127999999*100;
+		return s+"%";
+	}else if(128000000 <= steps ){
+		return "100%";
+	}
+	
+}
+
+//左侧等级效果
+pageonloadFun = function (){
+
+	$.post(cxtPath+'/user/sport/sumStepsByWatchId',function(data){
+		var stepspercent = 0;
+		stepspercent = stepPercent(data);
+		stepspercent = parseInt(stepspercent.substring(0,stepspercent.indexOf("%")));
+		$( "#progressbar" ).progressbar({
+			value: stepspercent
+		});
+		
+		//$("#level_msg").html(calculateSteps(data));
+		
+		var t = Stip('progressbar');
+		var test = $("#progressbar");
+		test.mouseover(function(){
+			t.show({
+	        	content: calculateSteps(data),
+	            kind:"error",
+	            p:'top'
+	        });
+		});
+		
+		test.mouseout(function(){
+			t.hide();
+		});
+		
+		/*$(".pro-box").hover(function(e){
+			var x=e.pageX;
+			var y=e.pageY;
+			var div=$("<div class='ui-poptip' id='div_show' style='display:block;'><div class='ui-poptip-shadow'><div class='ui-poptip-container'><div class='ui-poptip-content'><p id='level_msg'></p></div></div></div></div>");
+			var text=$(this).html();
+			$(this).append(div);
+			$("#level_msg").html(calculateSteps(data)).css({"height":"25px","position":"absolute","zIndex":"99","paddingLeft":"15px","paddingRight":"15px","top":y+10+"px","left":x+10+"px"});
+			$("this").children("#div_show").show();
+			},function(){
+			$(this).children("#div_show").remove();
+		})*/
+		
+		$("#left_level").html(showlevel(data));
+		
+	},'json');
+	
+}
+
+
+changePageFun = function(obj){
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!dispaterGroupMsgJsp')
+}
+
+	
+	
+	//分页
+//	$("#page_message").paginate({
+//		count 		: 100,
+//		start 		: 1,
+//		display     : 8,
+//		border					: true,
+//		border_color			: '#fff',
+//		text_color  			: '#888',
+//		background_color    	: '#EEE',		
+//		border_hover_color		: '#ccc',
+//		text_hover_color  		: 'black',
+//		background_hover_color	: '#CFCFCF', 
+//		images					:  false,
+//		mouse					: 'press',
+//		onChange     			: function(page){
+////				showData(page);
+//		  }
+//			
+//	});
+
+
+//群组信息展示
+showData = function(page){	
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!getPageGroupMsg?page='+page,function(data){
+		var data = eval(data);
+		console.info(data)
+		var d = data.data;
+//		console.info(d)
+		var len = d.length;
+		if(len == 0){
+			$("#group_message").html("<div class='nodata' style='height: 250px'></div>");
+			return;
+		}
+			var sb = "<li class='g-list g-list-li'>";
+			sb+="<img class='middle' src='<@s.text name='static.file.path'/>/images/g_thumb.jpg' />"
+			sb+="<span class='middle nowrap w4'>";
+			for(var i = 0; i < len; i++){
+				if(d[i].type == 1){
+					sb+="<span><h3>" + d[i].toPersonalInfo.nickname + "</h3>申请加入<h3>" + d[i].group.name + "</h3></span>";
+					sb+="<p>" + d[i].message + "</p>";
+					sb+="<h4>" + d[i].createTime + "</h4>";
+					sb+="</span>";
+					if(d[i].state == 0){
+						sb+="<span class='middle' ><a class='btnmorange' href='javascript:;' onclick='' >批准</a> <a class='btnmorange'  href='javascript:;' onclick='' >拒绝</a></span>";
+					}else if(d[i].state == 1){
+						sb+="<span class='middle'><a class='btnmdisable' href='javascript:;' onclick='' >已批准</a></span>";
+					}else{
+						sb+="<span class='middle'><a class='btnmdisable' href='javascript:;' onclick='' >已拒绝</a> <a class='btnmorange'  href='javascript:;' >不再接收</a></span>";
+					}
+					sb+="</li>";
+				}else if(d[i].type == 2){
+					sb+="<span><h3>" + d[i].fromPersonalInfo.nickname + "</h3>邀请加入<h3>" + d[i].group.name + "</h3></span>";
+					sb+="<p>" + d[i].message + "</p>";
+					sb+="<h4>" + d[i].createTime + "</h4>";
+					sb+="</span>";
+					if(d[i].state == 0){
+						sb+="<span class='middle' ><a class='btnmorange' href='javascript:;' onclick='' >接受</a> <a class='btnmorange'  href='javascript:;' onclick='' >拒绝</a></span>";
+					}else if(d[i].state == 1){
+						sb+="<span class='middle'><a class='btnmdisable' href='javascript:;' onclick='' >已接受</a></span>";
+					}else{
+						sb+="<span class='middle'><a class='btnmdisable' href='javascript:;' onclick='' >已拒绝</a> <a class='btnmorange'  href='javascript:;' >不再接收</a></span>";
+					}
+					sb+="</li>";
+				}else if(d[i].type == 3){
+					sb+="<span><h3>" + d[i].fromPersonalInfo.nickname + "</h3>请出群<h3>" + d[i].group.name + "</h3></span>";
+					sb+="<p>" + d[i].message + "</p>";
+					sb+="<h4>" + d[i].createTime + "</h4>";
+					sb+="</span>";
+					sb+="</li>";
+				}
+			}
+//			console.info(sb);
+			$("#group_message").html(sb);
+		
+	},'json')
+}	
+
+//更新群组信息状态
+updateState = function(a,b,c,obj){
+//	var url = cxtPath+'/groupMsgAction/groupMsgAction!updateState?state='+a+'&'
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!updateState?d='+Math.random(),{'state':a,'groupMsgId':b},function(data){
+		var d = eval(data);
+		if(d.message=="用户最多只能加入5个群组"){
+			alert(d.message);
+			return ;
+		}
+		if(c == 3){
+			$(obj).parent().html("<a class='btnmdisable' href='javascript:;' onclick='' >已批准</a>");
+		}else if(c == 4){
+			$(obj).parent().html("<a class='btnmdisable' href='javascript:;' onclick='' >已拒绝</a> <a class='btnmorange'  href='javascript:;' >不再接收</a>");
+		}else if(c == 5){
+			$(obj).parent().html("<a class='btnmdisable' href='javascript:;' onclick='' >已接受</a>");
+		}
+		
+	},'json');
+}
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><@s.text name='page.activityReport.t1'/></title>
+	<#include "../../commons/top.html">
+	<link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/lecomm.fy.css">
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<#include "../../commons/batteryBoard.html">
+	<div class="bg-lightgray">
+		<h2 class="tc pt10 pb10"><@s.text name='page.activityReport.b1'/></h2>
+	</div>
+	<div class="content">
+	    <div class="ui-grid-row ptb30">
+	        <div class="ui-grid-4">
+	        	
+	            <div id="progressbar" class="progressbar"></div>
+	            <p class="tc w123" id="level"><@s.text name='page.activityReport.b2'/></p>
+	        </div>
+	        <div class="ui-grid-21">
+	            <ul class="nav-tabs line l">
+	                <li class="active"><a  href="javascript:;"  id="LoadToday" onclick="Lecomm.Sport.LoadToday()"><@s.text name='page.activityReport.b3'/></a></li>
+	                <li><a href="javascript:;" id="LoadLastWeek" onclick="Lecomm.Sport.LoadLastWeek()"><@s.text name='page.activityReport.b4'/></a></li>
+	                <li><a href="javascript:;" id="LoadLastMonth" onclick="Lecomm.Sport.LoadLastMonth()"><@s.text name='page.activityReport.b5'/></a></li>
+	                <li class="noborder"><a href="javascript:;" id="LoadLastYear" onclick="Lecomm.Sport.LoadLastYear()"><@s.text name='page.activityReport.b6'/></a></li>
+	               <!--  <li class="noborder"><a href="javascript:;" id="LoadALL" onclick="Lecomm.Sport.LoadALL()"><@s.text name='page.activityReport.b7'/></a></li> -->
+	        	</ul>
+	        	 
+	            <div class="r">
+	                <input id="dateStart" type="text" class="ui-input calendar small" value=""/>
+	                <input id="dateEnd" type="text" class="ui-input calendar small" value=""/>
+	                <a href="javascript:;" class="btn btn-red" id="LoadFromTo" onclick="Lecomm.Sport.LoadFromTo()"><@s.text name='page.activityReport.b8'/></a>
+	            </div>
+	            
+	            <ul class="nav-tabs" style="padding-top: 10px;">
+	                <li class="active"><a href="javascript:;" id="ViewSteps" onclick="Lecomm.Sport.ViewSteps()"><@s.text name='page.activityReport.b9'/></a></li>
+	                <li><a href="javascript:;" id="ViewDistance" onclick="Lecomm.Sport.ViewDistance()"><@s.text name='page.activityReport.b10'/></a></li>
+	                <li><a href="javascript:;" id="ViewCalories" onclick="Lecomm.Sport.ViewCalories()"><@s.text name='page.activityReport.b11'/></a></li>
+	                <li class="noborder"><a href="javascript:;" id="ViewSleeps" onclick="Lecomm.Sport.ViewSleeps()"><@s.text name='page.activityReport.b12'/></a></li>
+	        	</ul>
+	            <div class="chart" style="margin-left:-23px" id="chart"></div>
+	        </div>
+	    </div>
+ 
+		<div class="clear"><input type="hidden" id="action" value="0" /></div>
+	</div>    
+	<#include "../../commons/foot2.html">
+</body>
+
+<script src="<@s.text name='static.file.path'/>/js/hightcharts/highcharts-3.0.5.min.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/Lecomm.Common.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/progressbar.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/sportReport.js"></script>
+
+<script>
+var lengthUnit = '';
+	
+$(function(){
+	var dates = $("#dateStart,#dateEnd");
+	dates.datepicker({      //绑定开始日期  
+	//	dateFormat:'yy-mm-dd',  //更改时间显示模式
+		dateFormat:'dd/mm/yy',  //更改时间显示模式
+		showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+		changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+		changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+		showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+		closeText:'Close',      //设置关闭按钮的值
+		currentText:'Today', //设置今天按钮的值
+		showOtherMonths  :true,
+		yearRange:'-10:+0',  //显示可供选择的年份7天
+		maxDate:'+0',
+		defaultDate:1,
+		onSelect: function(selectedDate){  
+			var option = this.id == "dateStart" ? "minDate" : "maxDate";  
+			dates.not(this).datepicker("option", option, selectedDate);  
+    	}  
+	
+	}); 
+	
+})
+</script>
+</html>

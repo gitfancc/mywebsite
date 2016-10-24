@@ -1,0 +1,84 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body {
+	background:#fff;
+	color:#333;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	
+}
+table{
+	font-size:12px;
+}
+
+</style>
+</head>
+<body>
+<div style="background: none repeat scroll 0 0 #FFF6F7;">
+    <table border="0" cellspacing="0" cellpadding="0" background="#FFF6F7">
+        <tbody>
+            <tr>
+                <td height="40" style="font-size:16px; font-weight:bold; padding-left:12px;">
+                乐康网账号验证邮件
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0" style="line-height:2em;">
+        <tbody>
+            <tr>
+                <td style="padding-left:14px;color:#857277;">发件人：</td>
+                <td><a style="color:#5FA207; font-weight:bold; text-decoration:none" href="http://ledong.appscomm.cn/" target="_blank">乐康网&nbsp;&nbsp;</a></td>
+                <td style="color:#857277;">< service4@appscomm.cn ></span></td>
+            </tr>
+            <tr>
+                <td style="padding-left:14px;color:#857277;">收件人：</td>
+                <td>雨丝&nbsp;&nbsp;</td>
+                <td style="color:#857277;">< 529240933@qq.com ></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="0" width="650" align="center">
+    <tbody>
+        <tr>
+            <td> <img style="vertical-align:top;" src="../images/logo_mail.jpg" alt="乐康网logo" title="首页"/></td>
+        </tr>
+    </tbody>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="650" align="center" style="line-height:2.5em;">
+    <tbody>
+        <tr>
+            <td style="font-weight:bold">亲爱的xxxx，您好：</td>
+        </tr>
+        <tr>
+        	<td>你使用了ledong.appscomm.cn找回密码功能，请单击一下链接重置你的密码：</td>
+        </tr>
+        <tr>
+            <td>点击这里：</td>
+        </tr>
+        <tr>
+            <td><a href="http://ledong.appscomm.cn/" target="_blank">http://ledong.appscomm.cn</a></td>
+        </tr>
+        <tr>
+            <td>本链接24小时内有效，如果无法点击请复制，粘贴到浏览器打开</td>
+        </tr>
+        <tr>
+            <td height="5" style="border-bottom:1px dotted #ccc">&nbsp;</td>
+        </tr>
+        <tr>
+            <td >2014-03-21</td>
+        </tr>
+        <tr>
+            <td >本邮件由系统自动付出，请勿回复。</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

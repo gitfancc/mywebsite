@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="感受动动的乐趣" />
+<meta name="keywords"  content="感受动动的乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <img src="../images/logo_index.png" alt="感受运动的乐趣"/>
+        </span>
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="error">
+    	<img class=" img-icon mt30" src="../images/icon_404.gif"/>
+        <img class="img-divide" src="../images/line-divide.gif"/>
+        <img class="img-txt" src="../images/404_txt.jpg"/>
+        <div class="link">
+        	<p>点击以下链接继续网站浏览</p>
+            <p><a href="javascript:;" onclick="window.history.go(-1);">>>返回上一页面</a></p>
+            <p><a href="../index.html">>>返回动动页面</a></p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footbox2">
+        	<div class="w300 m0">
+                <h3>动动平台支持绑定的设备</h3>
+                <ul>
+                    <li>
+                        <p><img src="../images/pic-product1.jpg"/></p>
+                        <h4>动动L28计步器</h4>
+                        <h5>蓝牙设备+ios客户端展示</h5>
+                    </li>
+                    <li>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank"><img src="../images/pic-product3.jpg"/></a></p>
+                        <h4><a href="http://www.fashioncomm.com/A1.php" target="_blank">A1智能腕表</a></h4>
+                        <h5><a href="http://www.fashioncomm.com/A1.php" target="_blank">蓝牙耳机+Android客户端</a></h5>
+                    </li>
+<!--                    <li>
+                        <p><img src="../images/pic-product2.jpg"/></p>
+                        <h4>动动心率测量仪</h4>
+                        <h5>蓝牙设备+网站数据展示</h5>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footbox">
+        	<h3>动动服务</h3>
+            <ul>
+            	<li><a href="download.html" title="动动应用下载">动动应用下载</a></li>
+                <li><a href="downloadPC.html"  title="PC客户端下载">PC客户端下载</a></li>
+                <li><a href="javascript:;" title="动动产品说明">动动产品说明</a></li>
+                <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+                <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+            </ul>
+        </div>
+        <div class="footbox">
+        	<h3>商务合作</h3>
+            <ul>
+            	<li><a href="../fp/contactus.html" title="联系我们">联系我们</a></li>
+                <li><a href="../fp/businessConsulting.html" title="商务咨询">商务咨询</a></li>
+                <li><a href="../fp/legal.html" title="法律声明">法律声明</a></li>
+            </ul>
+        </div>
+        <div  class="clear"></div>
+    </div> 
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+
+</body>
+</html>

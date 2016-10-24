@@ -1,0 +1,75 @@
+/*-----------------------------------------共用样式开始------------------------------------------------*/
+#main{ margin:0 auto;width:1024px;height:100%}
+/*头部*/
+#head{height:73px}
+a{font-family: "宋体","黑体","微软雅黑";font-size:12px;color: #56534A;}
+div.top{width:1024px;height:45px; background-color:#e8e8e8}
+div.logo{float:left;height:35px;padding:5px 0 0 50px}
+div.menu{height:33px;width:980px;margin-left:20px}
+/*已登录*/
+div.sign{float:right;padding:10px 50px 0 0;}
+div.sign ul li{float:left; text-align:center}
+div.sign ul li.btn{ background:url(/images/bg2.png) no-repeat; background-position:center; width:100px;height:39px;}
+div.sign ul li span{color:white;font-size:13px;font-family:黑体;font-weight:bold;  }
+/*未登录*/
+div.nosign{float:right;padding:0px 50px 0 0;}
+div.nosign ul{width:250px;height:37px}
+div.nosign ul li{float:left; text-align:center; padding:20px 5px 0 5px; display:inline-block; margin-top:-8px}
+div.nosign ul li.btn{ background:url(/images/bg2.png) no-repeat; background-position:center; width:100px;height:39px;   }
+div.nosign ul li.btn span{color:White}
+div.nosign ul li a{color:white;font-size:13px;font-family:黑体;font-weight:bold;}
+div.nosign ul li a:hover{color:#FF7D01}
+div.nosign ul li span{color:#656667;font-size:13px;font-family:黑体; }
+/*菜单*/
+ul.nav li{float:left; padding:8px 10px 0 10px}
+ul.nav li a{font-size:15px;font-family:黑体;font-weight:bold}
+ul.nav li.divide{padding-top:0px}
+div.tel{float:right;padding:8px 50px 0 5px;font-size:15px;font-weight:bold;color:#56534A;font-family:黑体}
+/*中间*/
+#mid{width:958px; margin-left:30px; min-height:350px; padding-bottom:20px; background:url(../images/bg.png) no-repeat;border-bottom:1px solid #e2e3e4;border-top:1px solid #e2e3e4;}
+/*底部*/
+#bottom{width:958px;margin-left:30px;}
+div.friend ul li{float:left; line-height:30px;padding:10px 20px 0px 5px}
+div.friend ul li a{color:#6a6a6e;font-size:15px}
+div.about{}
+div.about ul li{float:left;}
+div.service ul li{float:left;}
+div.business ul li{float:left;}
+#bottom div.left{float:left}
+div.about,div.service,div.business{float:left;width:160px}
+div.right{ border-left:1px solid #e2e3e4;float:right;width:470px}
+div.right p.t{color:#3279CD;font-size:15px;font-weight:bold; padding:5px}
+div.right p.c{color:#656667;font-size:15px; line-height:25px;padding:10px}
+div.copyright{height:30px;font-size:13px; line-height:25px;padding:10px; text-align:center}
+/*---------------------------------------------共用样式结束----------------------------------------------------*/
+
+/*登录注册*/
+div.signIn{color:#4286bb;font-size:17px;font-family:黑体;font-weight:bold; padding:20px 0 0 0; margin-left:200px;}
+div.title{color:#66696a;font-size:15px;font-family:黑体;font-weight:bold;  margin-left:300px; margin-top:10px}
+div.title div{float:left} 
+div.title div.fgt{padding-left:30px;color:#3279cd;font-size:15px;padding-top:15px}
+div.title div.fgt a{color:#3279cd;font-size:15px}
+div.title a.reg{color:#3279cd;font-size:15px}
+div.title span.no{color:#7a7c7d;font-size:15px}
+div.text{color:#4286bb;font-size:17px;font-family:黑体;font-weight:bold;  margin-left:300px;}
+input.size{width:100px}
+span.chang{font-size:13px}
+
+.clause{ margin-left:10px; padding-top:15px }/*条款*/
+.clause span{color:#66696a;font-weight:bold;font-family:黑体;font-size:13px;}
+.clause a{color:#4286bb;font-weight:bold;font-family:黑体;}
+.clause a:hover{color:Red}
+
+/*首页*/
+#mid_index{width:1024px;height:520px; margin-left:0px;padding-bottom:30px; background:none;border-bottom:1px solid #f1e9e9;border-top:1px solid #e2e3e4;}
+div.intro{width:1024px;height:200px; margin-top:10px; margin-bottom:20px}
+div.intro div{float:left;border:1px solid #f1e9e9;width:320px;height:130px;}
+div.intro div.health{margin-left:20px;margin-right:20px}
+div.intro p.title{color:#4286bb;font-size:15px;font-family:黑体;font-weight:bold; padding:5px 0 0 0; margin-left:15px;}
+div.intro p.content{color:#66696a;font-size:14px;font-family:黑体;font-weight:bold; padding:5px 0 0 0; margin-left:30px; line-height:25px}
+div.intro p.more{color:#4286bb;font-size:15px;font-family:黑体;font-weight:bold; padding:5px 0 0 0; margin-left:250px;}
+div.intro p.more a{color:#4286bb;}
+div.intro p.more a:hover{color:red;}
+
+
+

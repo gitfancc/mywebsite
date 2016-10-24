@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>商务咨询</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐动 运动 感受乐趣" />
+<meta name="keywords"  content="乐动 运动 感受乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+
+<div id="iheader">
+	<div id="wrapper">
+        <div class="logo"> <a href="../index.html"><img src="../images/logo_index.gif" alt="乐康养老" title="首页"/></a>
+        </div>
+        <div class="setinfo">
+            <a href="../user/login.html">登录</a>  | <a href="../user/register.html"> 注册</a>
+        </div>
+    	<div class="clear"></div>
+        
+        <div class="menu">
+            
+            <p class="hotline">客服热线 400-020-39321423</p>
+        </div>
+        
+  </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="legal">
+        <h2>商务咨询</h2>
+        <h4>电话：020-28065366-8026</h4>
+        <p>地址：广州萝岗区科学城科学大道182号创新大厦C3栋903</p>
+        <p><img src="../images/map_company.jpg" alt="公司地址" class="b-one"/></p>
+   </div>
+</div>
+<div id="footer">
+    <div class="footbox">
+        <h3>关于乐康</h3>
+        <ul>
+            <li>乐康健康事业理念</li>
+            <li>乐康优势资源</li>
+            <li>乐康健康云战略</li>
+            <li>乐康动态</li>
+        </ul>
+    </div>
+    <div class="footbox">
+        <h3>乐康服务</h3>
+        <ul>
+            <li><a href="javascript:;" title="乐动应用下载">乐康应用下载</a></li>
+            <li><a href="javascript:;" title="乐动产品说明">乐康产品说明</a></li>
+            <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+            <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+        </ul>
+    </div>
+    <div class="footbox borderright">
+        <h3>商务合作</h3>
+        <ul>
+            <li><a href="contactus.html" title="联系我们">联系我们</a></li>
+            <li><a href="businessConsulting.html" title="商务咨询">商务咨询</a></li>
+            <li><a href="legal.html" title="法律声明">法律声明</a></li>
+        </ul>
+    </div>
+    <div class="footbox2 ">
+        <h2>乐康养老</h2>
+        <p>乐康智能居家养老平台是针对老年人居家生活、社区养老 服务机构而开发的智能居家养老服务平台；本平台采用智 能居家养老手表作为数据终端，实现远程诊脉、实时监控、 健康管理等重要功能，并整合通讯网络、智能呼叫、互联 网等新技术。以信息化、智能化呼叫救助服务平台为支撑， 建立老年人信息数据库，提供紧急救援、生活照料、家政 服务等养老服务，并以社区为依托，有效整合社会服务资 源，建立完善的居家养老服务体系，打造真正意义上的智 能居家养老生活。</p>
+    </div>
+    <div class="clear"></div>
+</div> 
+
+<div id="copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p>
+</div>
+
+</body>
+</html>

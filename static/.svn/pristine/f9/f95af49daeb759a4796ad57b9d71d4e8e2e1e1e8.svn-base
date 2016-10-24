@@ -1,0 +1,17 @@
+﻿//
+var map = null;  
+var dropPoint = [];
+var gc = null;
+var infoWindow = null;   
+
+function initMap()
+{  
+    map = new BMap.Map("mapBox"); // 初始化时，即可设置中心点和地图缩放级别
+    var point = new BMap.Point(113.461748,23.171896); // 设置初始化坐标   
+    map.centerAndZoom(point,15); // 设置初始化放大级数  
+	map.enableScrollWheelZoom();
+	map.disableDoubleClickZoom();
+	map.addControl(new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT}));
+	
+	map.addOverlay(new BMap.Marker(point));
+}

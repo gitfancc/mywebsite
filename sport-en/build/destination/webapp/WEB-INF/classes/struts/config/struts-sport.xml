@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="sport" extends="secure" namespace="/user/sport">
+		<action name="index" class="com.appscomm.sport.action.UserAction"
+			method="mylog">
+			<result name="success" type="freemarker">${getText("view.path")}/users/myZeFit.html
+			</result>
+		</action>
+		<action name="index_pc" class="com.appscomm.sport.action.UserAction"
+			method="mylog_pc">
+			<!-- <result name="success" type="freemarker">${getText("view.path")}/users/myZeFit.html</result> -->
+			<result name="success"  type="redirect">/user/sport/index</result>
+		</action>
+	
+		<action name="log" class="com.appscomm.sport.action.UserAction"
+			method="sportLog">
+			<result name="success" type="freemarker">${getText("view.path")}/users/activityReport.html
+			</result>
+		</action>
+		<action name="sport" class="com.appscomm.sport.action.UserAction"
+			method="sport">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		<action name="previous" class="com.appscomm.sport.action.UserAction"
+			method="previous">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		<action name="next" class="com.appscomm.sport.action.UserAction"
+			method="next">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		<!-- 运动数据 -->
+		<action name="GetSportData" class="com.appscomm.sport.action.ParamSportAction"
+			method="GetSportData">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		
+		<!-- 图表数据 -->
+		<action name="GetChartData" class="com.appscomm.sport.action.ParamSportAction"
+			method="GetChartData">
+			<result type="json">
+				<param name="root">retMap</param>
+			</result>
+		</action>
+		
+		<!-- 睡眠数据 -->
+		<action name="GetSleepData" class="com.appscomm.sport.action.ParamSportAction"
+			method="getSleepList">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		
+		<!-- 足迹 -->
+		<action name="GetPlaceLocateData" class="com.appscomm.sport.action.PlaceLocateAction"
+			method="GetPlaceLocateData">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		
+		<!-- -->
+		<action name="getMapList" class="com.appscomm.sport.action.PlaceLocateAction"
+			method="getMapList">
+			<result type="json">
+				<param name="root">resultMap</param>
+			</result>
+		</action>
+		
+		<action name="sumStepsByWatchId" class="com.appscomm.sport.action.ParamSportAction"
+			method="sumStepsByWatchId">
+		</action>
+		<action name="target" class="com.appscomm.sport.action.ParamSportAction"
+			method="getSportTarget">
+		</action>
+	</package>
+</struts>

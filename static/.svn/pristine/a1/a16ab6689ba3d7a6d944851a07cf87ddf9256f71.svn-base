@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+<link type="text/css" rel="stylesheet" href="theme1/css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+        <ul class="nav pull-right">
+            <li><a>欢迎您来到乐康</a></li>
+            <li><a href="index.html"><i class="icon-home icon-white"></i> 我的首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="个人信息.html">个人信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="绑定设备.html">设备设置</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">退出</a></li>
+        </ul> 
+    </div>
+  </div>
+</div>
+
+<div class="container userbox">
+	 <div class="row">
+     	<div class="span3">
+        	<div class="well well-large sidebar-nav">
+                <ul class="nav nav-list">
+                  <li><a href="健康数据.html">健康管理</a></li>
+                  <li><a href="安全管理.html">安全管理</a></li>
+                  <li class="active"><a href="运动管理.html">运动管理</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">我的应用<a class="add" href="blank.html"><i class=" icon-plus"></i>添加应用</a></li>
+                  <li><a  href="blank.html">群组</a></li>
+                  <li><a  href="blank.html">活动</a></li>
+                </ul>
+          </div><!--/.well -->
+        </div>
+        <div class="span9 sportbox">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-setting1" data-toggle="tab">运动数据</a></li>
+                <li><a href="#tab-setting2" data-toggle="tab">运动目标</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab-setting1">
+                      <div class="row">
+                          <div class="span3">
+                            <span>单日运动情况:</span>
+                            <span class="input-prepend">
+                                <span class="add-on"><i class="icon-calendar"></i></span>
+                                <input type="text" class="input-mini" id="datepicker">
+                            </span>
+                          </div>
+                          <div class="span5">      
+                            <span class="pull-left">目标完成情况：</span>
+                            <div class="progress progress-striped span3">
+                                <div class="bar" style="width: 60%"></div>
+                            </div>
+                            <span class="pull-right">60%</span> 
+                          </div>
+                      </div>
+                     
+                     <div class="chart chart-medium"><img src="theme1/images/chart1.jpg"/></div>
+                     
+                     <div class="row mt10 "> 
+                        <ul class="tabbernav span5"> 
+                            <li class="active"><a href="#tab-sport1" data-toggle="tab">周运动状况</a></li>
+                            <li><a href="#tab-sport2" data-toggle="tab">月运动状况</a></li>
+                        </ul>
+                        <div class="tab-content span4">
+                            <div class="tab-pane active" id="tab-sport1">
+                                <a class="btn-link"><i class="icon-arrow-left"></i></a>
+                                <input value="12月22-12月28" type="date" class="input-medium text-center"></input>
+                                <a class="btn-link"><i class="icon-arrow-right"></i></a>
+                            </div>
+                            <div class="tab-pane" id="tab-sport2">
+                                <a class="btn-link"><i class="icon-arrow-left"></i></a>
+                                <input value="12月" type="date" class="input-medium text-center"></input>
+                                <a class="btn-link"><i class="icon-arrow-right"></i></a>
+                            </div>
+                         </div>
+                         <!--end tab-content -->
+                     </div>
+                     <div class="chart chart-medium"><img src="theme1/images/chart2.jpg"/></div>
+                </div>
+                <!--end-->
+                <div class="tab-pane fade relative h-medium" id="tab-setting2">
+                    <ul class="tabbernav span8"> 
+                        <li>计算方式：</li>
+                        <li class="active"><a href="#tab-target1" onClick="chageVal(1)" data-toggle="tab">卡路里</a></li>
+                        <li><a href="#tab-target2" onClick="chageVal(1)" data-toggle="tab">运动距离</a></li>
+                    </ul>
+                    <ul class="tabbernav span8">
+                        <li>目标方式：</li>
+                        <li class="active"><a href="#tab-target3" onClick="chageVal(2)" data-toggle="tab">按天设置</a></li>
+                        <li><a href="#tab-target4" onClick="chageVal(2)" data-toggle="tab">按周设置</a></li>
+                    </ul>
+                    <div class="tab-content mt30 pos1">
+                        <span class="tab-pane active" id="tab-target3">
+                        	目标值：每天
+                        	<div class="mt30">平均每天运动距离  xxx米  平均每天需要消耗热量   xxx 千卡</div>
+                        </span>
+                        <span class="tab-pane" id="tab-target4">
+                        	目标值：每周
+                            <div class="mt30">平均每天运动距离  xxx米  平均每天需要消耗热量   xxx 千卡</div>
+                        </span>
+                     </div>
+                     <div class="tab-content pos2">
+                     	<span class="tab-pane active" id="tab-target1">
+                           千卡
+                        </span>
+                        <span class="tab-pane" id="tab-target2">
+                        	米
+                        </span>
+                     </div>
+                    <input class="input-medium pos4" type="text">
+                    <input type="hidden" name="type" value="1" id="type">
+                    <input type="hidden" name="type2" value="1" id="type2">
+                    <button type="submit" class="btn  btn-success pos3">保存信息</button>
+                </div>
+            </div>
+            <!--tab-content-->
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="theme1/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="theme1/js/query.ui.datepicker-zh-CN.js"></script>
+<script >
+$(function() {
+	$( "#datepicker" ).datepicker({
+			dateFormat:'yy-mm-dd',  //更改时间显示模式
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'关闭',      //设置关闭按钮的值
+			currentText:'今天', //设置今天按钮的值
+			showOtherMonths  :true,
+            yearRange:'2008:2017',  //显示可供选择的年份7天
+			defaultDate:1
+	})	
+})
+function chageVal(num){
+	if(num==1){
+		$("#type").val(num)
+	}else{
+		$("#type2").val(num)	
+	}
+}
+</script>
+</body>
+</html>

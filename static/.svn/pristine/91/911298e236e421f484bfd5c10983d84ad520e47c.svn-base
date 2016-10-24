@@ -1,0 +1,190 @@
+@charset "utf-8";
+/*!
+ * @名称：layout.css
+ * @功能：1、用于写整体大框架的布局
+ * 乐动     
+ */
+
+#header{
+	width:100%;
+	background:url(../images/bg_header.jpg) repeat-x;
+	height:90px;
+}
+.minbox{
+	width:990px; 
+	margin:0 auto; 
+	position:relative; 
+	z-index:999;/*此处z-index:1是为了让下来菜单在rightmenu的最上面，ie6bug。设置了relative，z-index要设一下*/
+}
+#wrapper{
+	margin:0 auto;
+	width:990px;
+	background:#f0f0f0;
+	border-bottom:1px solid #f0f0f0;
+}
+/*border-bottom:1px solid #f0f0f0;是解决wrapper和minwrapper下边距合并问题*/
+.minwrapper{
+	background:#fff;
+	width:890px;
+	margin:0 auto;
+	margin-bottom:10px;
+}
+
+#main{}
+#left,#right{ float:left;}
+#left{width:165px;}
+#right{width:725px; background:url(../images/bg_shadow.jpg) repeat-y;min-height:500px;height:auto !important; height:500px; }
+
+#footer{ background:#f8f8f8;padding:15px 0 10px 0;border-top:3px solid #e4e4e4;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4; }
+#copyright{ background:#f8f8f8;height:47px; line-height:47px; border:1px solid #e4e4e4; }
+#copyright p{text-align:center;}
+
+
+/*主页logo，主页menu*/
+.logo{ width:305px;position:absolute; top:0; left:0;}
+
+.index-nav{position:absolute; top:24px; left:350px;display:none;}
+.index-nav li{ float:left; margin:0 20px; display:inline;}
+.index-nav li a{ display:block;}
+
+.index-nav-1 a{background:url(../images/link_return.png) no-repeat; width:226px; height:37px;}
+.index-nav-1 a:hover{background:url(../images/link_return_hover.png) no-repeat; }
+.index-nav-2 a{background:url(../images/link_download.png) no-repeat; width:75px; height:37px;display:none;}
+.index-nav-2 a:hover{background:url(../images/link_download_hover.png) no-repeat;}
+
+/*user页面的nav*/
+.user-nav{position:absolute; top:29px; left:330px; z-index:999;}/*z-index:999使群组动态按钮手型正常*/
+.user-nav li{ float:left;}
+.user-nav li a{ display:block;}
+.user-nav-3 a{
+	background:url(../images/link_3.png) no-repeat; 
+	width:126px; 
+	height:30px;
+}
+.user-nav-3 a:hover{background:url(../images/link_3_hover.png) no-repeat;}
+.user-nav-4 {
+	position:relative;
+	background:url(../images/link_4.png) no-repeat; 
+	width:126px; 
+	height:30px; 
+	cursor:pointer;
+}
+.user-nav-4 .first{width:126px;height:30px;}
+.user-nav-4:hover{background:url(../images/link_4_hover.png) no-repeat;}
+.user-nav-4 ul{display:none;position:absolute;top:30px; left:0;}
+.user-nav-4 ul li{background:url(../images/bg_dropmenu_large.jpg) no-repeat; height:31px; width:126px; line-height:31px; text-align:center;}
+.user-nav-4 ul li a{color:#686868;}
+.user-nav-4 ul li a:hover{color:#ff6e00;}
+.user-nav-4:hover ul{ display:block;}
+
+.user-nav-5 a{
+	background:url(../images/link_5.png) no-repeat; 
+	width:126px; 
+	height:30px;
+}
+.user-nav-5 a:hover{
+	background:url(../images/link_5_hover.png) no-repeat;
+}
+
+/*首页中的下拉菜单left:650px;*/
+.topmenu{
+	position:absolute;
+	top:30px;
+	left:650px;
+	text-align:center;
+}
+.topmenu .weltxt{
+	width:200px;
+	text-align:right;
+	color:#fff;
+}
+.topmenu li{float:left;position:relative; width:86px;height:22px; line-height:22px;}
+
+.dropmenu{ background:url(../images/bg_dropmenu.gif) no-repeat;  cursor:pointer;}
+.dropmenu:hover{background:url(../images/bg_dropmenu_hover.jpg) no-repeat;}
+.dropmenu li{background:url(../images/bg_dropmenu.jpg) no-repeat;}
+.dropmenu ul{display:none;position:absolute;top:22px; left:0; z-index:999;}
+.dropmenu ul li a{color:#686868;}
+.dropmenu ul li a:hover{color:#ff6e00;}
+.dropmenu:hover ul{ display:block;}
+
+/*sidebar*/
+.thumb{ margin:70px 0 0 23px;}
+.sidebar{width:155px; margin:30px 0 0 10px;}
+.sidebar li{ height:32px; margin-bottom:2px; cursor:pointer;}
+
+.bar_info{background:url(../images/bar_info.gif) 0 0 no-repeat;}
+.bar_info:hover{background-position: -156px 0 ;}
+.bar_info_current{background:url(../images/bar_info.gif) -313px 0 no-repeat;}
+.bar_count{background:url(../images/bar_count.gif) 0 0 no-repeat;}
+.bar_count:hover{background-position: -156px 0 ;}
+.bar_count_current{background:url(../images/bar_count.gif) -313px 0 no-repeat;}
+.bar_manage{background:url(../images/bar_manage.gif) 0 0 no-repeat;}
+.bar_manage:hover{background-position: -156px 0 ;}
+.bar_manage_current{background:url(../images/bar_manage.gif) -313px 0 no-repeat;}
+
+/*sidebar 运动日志页面*/
+.sidebar-log{margin:30px 0 0 10px; font-size:15px;}
+.sidebar-log a{height:32px; line-height:32px; text-align:center; margin-bottom:2px; display:block; color:#3e3e3e;}
+.sidebar-log a:hover{ background:#ff7600; color:#fff;}
+
+.sidebar-log .current{background:#ff7600; color:#fff;}
+
+
+/*footer 页脚*/
+.footbox{
+	float:left;
+	width:120px;
+	height:260px;
+}
+.footbox h3,.footbox2 h3{
+	font-size:17px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+.footbox li{
+	line-height:27px;
+}
+.footbox a{color:#686868;}
+
+.footbox2{
+	float:left;
+	width:250px;
+}
+.footbox2 li{
+	border-bottom:1px solid #a8a8a8;
+	padding:20px;
+	height:60px;
+}
+.footbox2 p{
+	float:left;
+	width:70px;
+}
+.footbox2 h4,.footbox2 h5{
+	float:right;
+	width:140px;
+	height:25px;
+	line-height:25px;
+}
+.footbox2 h4{font-size:14px; color:#666;}
+
+
+
+.nav{
+	float:right;
+	width:530px;
+}
+/** margin-top:35px; ie6的bug*/
+.nav li{float:left;margin-left:1px;}
+.nav li a{
+	display:block;
+	width:101px; 
+	height:37px;
+	background:url(../images/nav.gif) 0 0 no-repeat; 
+	line-height:37px; 
+	text-align:center;
+	font-size:15px;
+	color:#3e3e3e; 
+}
+.nav li a:hover{background-position:0 -37px;text-decoration:none;color:#3e3e3e; }

@@ -1,0 +1,32 @@
+static.file.path = http://www.freebee.com.tw/statics
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url =  http://www.freebee.com.tw/sportimg/user/
+file.upload.path = /var/www/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:8080/appscomm/
+customer=bluecloud_web
+#email config
+emailAddress=app_server@126.com
+emailPwd=App#123258
+serverHost=smtp.126.com
+serverPort=25
+email.url= http://www.freebee.com.tw
+
+findPwdSubject=\u627E\u56DE\u5BC6\u7801\u90AE\u4EF6
+findPwdCustom=BlueCloud
+newPwdSubject=\u83B7\u53D6\u65B0\u5BC6\u7801
+email.forgotPwd=/usr/local/tomcat-7/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/tomcat-7/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/tomcat-7/webapps/ROOT/WEB-INF/classes/template_register.html
+
+watch.search.system.user=test@test.com
+
+deviceType=L28
+deviceName=Zefit
+href.learnmore=http://www.mykronoz.com/zefit
+pc.download=http://app-zefit.mykronoz.com/download/ZeFit For WinPC V1.39.exe
+mac.download=http://app-zefit.mykronoz.com/download/ZeFit For Mac V1.39.dmg
+ios.download=https://itunes.apple.com/us/app/zefit/id873887501?mt=8
+andriod.download=https://play.google.com/store/apps/details?id=cn.appscomm.pedometer.activity&hl=fr_FR

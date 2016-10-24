@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>我的动动</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="感受动动的乐趣" />
+<meta name="keywords"  content="感受动动的乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/justgage/justgage.1.0.1.js" type="text/javascript"></script>
+<script src="../js/justgage/raphael.2.1.0.min.js" type="text/javascript"></script>
+
+<script>
+	var g1, g2, g3, g4, g5;
+	window.onload = function () {
+		var g1 = new JustGage({
+			id: "g1",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"速 度",
+			showMinMax: false,
+			shadowOpacity: 1,
+			shadowSize: 0,
+			shadowVerticalOffset: 10
+		});
+
+		var g2 = new JustGage({
+			id: "g2",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"心 率",
+			showMinMax: false,
+			shadowOpacity: 1,
+			shadowSize: 0,
+			shadowVerticalOffset: 10
+		});
+
+		var g3 = new JustGage({
+			id: "g3",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"步 数",
+			showMinMax: false,
+			shadowOpacity: 1,
+			shadowSize: 0,
+			shadowVerticalOffset: 10
+		});
+
+		var g4 = new JustGage({
+			id: "g4",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			showMinMax: false,
+			title:"卡路里",
+			shadowOpacity: 1,
+			shadowSize: 0,
+			shadowVerticalOffset: 10
+		});
+
+
+		var g5 = new JustGage({
+			id: "g5",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"距 离",
+			showMinMax: false,
+			startAnimationTime: 2000,
+			startAnimationType: "&gt;",
+			refreshAnimationTime: 1000,
+			refreshAnimationType: "bounce",
+			shadowOpacity: 1,
+			shadowSize: 0,
+			shadowVerticalOffset: 10
+		});
+		
+		$( "#progressbar" ).progressbar({
+			value: 56
+		}); 
+		
+		$(".ui-poptip .ui-poptip-close").click(function(){
+			$(this).parents(".ui-poptip").animate({ opacity: 'hide' }, "slow");
+		}); 
+	};
+</script>
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <img src="../images/logo_index.png" alt="感受运动的乐趣"/>
+        </span>
+        <form class="diy_select_form">
+            <div class="diy_select">
+                <input type="hidden" name="" class="diy_select_input"/>
+                <div class="diy_select_txt"><img src="../images/customer_select1.jpg" /></div>
+                <div class="diy_select_btn"></div>
+                <ul class="diy_select_list">
+                    <li class="link1"><img src="../images/customer_select1.jpg" /></li>
+                    <li class="link2"><img src="../images/customer_select2.jpg" /></li>
+                </ul>
+            </div>
+         </form>
+        <ul class="user-nav">
+            <li class="user-nav-3"><a href="myledong.html" title="我的动动"></a></li>
+            <li class="user-nav-4">
+       		  <a class="first" href="sportsLog2.html" title="运动日志"></a>
+                <ul>
+                    <li><a href="sportsLog2.html" >运动日志</a></li>
+                    <li><a href="sportsLog.html" >足迹日志</a></li>
+                </ul>
+          </li>
+            <li class="user-nav-5"><a href="../group/gGroupsLatest.html" title="群组动态"></a></li>
+        </ul>
+        <ul class="topmenu">
+            <li class="weltxt">欢迎一起来动动</li>
+            <li class="dropmenu">
+            	<a href="javascript:;" ></a>
+                <ul>
+                    <li><a href="info.html" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                    <li><a href="javascript:;" >账号安全</a></li>
+                    <li><a href="deviceManagement.html" >设备管理</a></li>
+                    <li><a href="../index.html" >退出</a></li>
+                </ul>
+             </li>
+        </ul>
+        <!--end topmenu-->
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="minwrapper f14">
+    	<div class="top-title-box">
+            <p><a class="btn-arrowl"  href="javascript:;"></a><span class="title">今 天</span><a href="javascript:;" class="btn-arrowr"></a></p>
+            <p><span>8月29日</span><span>  4小时前更新</span></p>
+        </div> 
+        <div class="my-wrapper">
+            <div class="box-overview">
+            	<div class="head">
+                	<ul>
+                    	<li><a class="cuurent" href="">步数</a></li>
+                        <li><a href="">距离</a></li>
+                        <li><a href="">速度</a></li>
+                        <li><a href="">卡路里</a></li>
+                        <li><a class="noline" href="">心率</a></li>
+                    </ul>
+                    <span><a href="sportsLog2.html">[日志分析]</a></span>
+                </div>
+                <div class="chart"></div>
+            </div>
+
+			<div class="box-share">
+                <div class="inner">
+                    <div class="top">
+                        <p class="b">已击败全国<span class="fsize">56%</span>的用户</p>
+                        <div id="progressbar"></div>
+                    </div>
+                    <div class="bottom">
+                        <p>我要分享</p>
+                        <div class="jiathis_style_24x24">
+                            <a class="jiathis_button_qzone"></a>
+                            <a class="jiathis_button_tsina"></a>
+                            <a class="jiathis_button_tqq"></a>
+                            <a class="jiathis_button_weixin"></a>
+                            <a class="jiathis_button_renren"></a>
+                            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                           <!-- <a class="jiathis_counter_style"></a>-->
+                        </div>
+                        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1377747580808428" charset="utf-8"></script>
+                     </div>
+                 </div>
+            </div>
+            <div class="box-step">
+                <div class="inner">
+                    <div id="g3" class="gauge"></div>
+                    <h4>steps</h4>
+                </div>
+            </div>
+
+            <div class="box-calories">
+                <div class="inner">
+                    <div id="g4" class="gauge"></div>
+                    <h4>cal</h4>
+                </div>
+            </div>
+            <div class="box-distance">
+                <div class="inner"> 
+                    <div id="g5" class="gauge"></div>
+                    <h4>m</h4>
+                </div>
+            </div>
+            <div class="box-speed">
+                <div class="inner">
+                    <div id="g1" class="gauge"></div>
+                    <h4>km/h</h4>
+                </div>
+            </div>
+            <div class="box-xinlv">
+                <div class="inner">
+                    <div id="g2" class="gauge"></div>
+                    <h4>b/min</h4>
+                </div>
+            </div>
+
+            <!--end right-->
+        </div>
+        <!--end right-->
+        <div class="sleepbox">
+            <div class="l">
+            	<div class="t clearfix">
+                    <h3>您总共睡了<span>9</span>小时<span>30</span>分钟</h3>
+                    <p>睡眠质量：<span class="starbox"><i class="star two"></i></span>目标达成：<span>80%</span></p>
+                </div>
+                <div class="b">
+                    <div>
+                        <img src="../images/icon_l_1.jpg" />
+                        <h3>轻度睡眠</h3>
+                        <p><span>6</span>小时<span>17</span>分钟</p>
+                    </div>
+                    <div>
+                        <img src="../images/icon_l_2.jpg" />
+                        <h3>清醒时间</h3>
+                        <p><span>6</span>分钟</p>
+                    </div>
+                    <div>
+                        <img src="../images/icon_l_3.jpg" />
+                        <h3>深度睡眠</h3>
+                        <p><span>6</span>小时<span>17</span>分钟</p>
+                    </div>
+                    <div>
+                        <img src="../images/icon_l_4.jpg" />
+                        <h3>入睡时间</h3>
+                        <p><span>6</span>分钟</p>
+                    </div>
+                    <div>
+                        <img src="../images/icon_l_5.jpg" />
+                        <h3>醒来次数</h3>
+                        <p><span>6</span>次数</p>
+                    </div>
+                    <div>
+                        <img src="../images/icon_l_6.jpg" />
+                        <h3>床上时间总计</h3>
+                        <p><span>6</span>小时<span>17</span>分钟</p>
+                    </div>
+                </div>
+            </div>	
+            <div class="r">
+            	<div>这是表格占位符</div>
+            </div>
+        </div>
+        <!--end sleepbox-->
+	</div>
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+<script>
+	function diy_select(){this.init.apply(this,arguments)};
+	diy_select.prototype={
+		 init:function(opt)
+		 {
+			this.setOpts(opt);
+			this.o=this.getByClass(this.opt.TTContainer,document,'div');//容器
+			this.b=this.getByClass(this.opt.TTDiy_select_btn);//按钮
+			this.t=this.getByClass(this.opt.TTDiy_select_txt);//显示
+			this.l=this.getByClass(this.opt.TTDiv_select_list);//列表容器
+			this.ipt=this.getByClass(this.opt.TTDiy_select_input);//列表容器
+			this.lengths=this.o.length;
+			this.showSelect();
+		 },
+		 addClass:function(o,s)//添加class
+		 {
+			o.className = o.className ? o.className+' '+s:s;
+		 },
+		 removeClass:function(o,st)//删除class
+		 {
+			var reg=new RegExp('\\b'+st+'\\b');
+			o.className=o.className ? o.className.replace(reg,''):'';
+		 },
+		 addEvent:function(o,t,fn)//注册事件
+		 {
+			return o.addEventListener ? o.addEventListener(t,fn,false):o.attachEvent('on'+t,fn);
+		 },
+		 showSelect:function()//显示下拉框列表
+		 {
+			var This=this;
+			var iNow=0;
+			this.addEvent(document,'click',function(){
+				 for(var i=0;i<This.lengths;i++)
+				 {
+					This.l[i].style.display='none';
+				 }
+			})
+			for(var i=0;i<this.lengths;i++)
+			{
+				this.l[i].index=this.b[i].index=this.t[i].index=i;
+				this.t[i].onclick=this.b[i].onclick=function(ev)  
+				{
+					var e=window.event || ev;
+					var index=this.index;
+					This.item=This.l[index].getElementsByTagName('li');
+
+					This.l[index].style.display= This.l[index].style.display=='block' ? 'none' :'block';
+					for(var j=0;j<This.lengths;j++)
+					{
+						if(j!=index)
+						{
+							This.l[j].style.display='none';
+						}
+					}
+					This.addClick(This.item);
+					e.stopPropagation ? e.stopPropagation() : (e.cancelBubble=true); //阻止冒泡
+				}
+			}
+		 },
+		 addClick:function(o)//点击回调函数
+		 {
+
+			if(o.length>0)
+			{
+				var This=this;
+				for(var i=0;i<o.length;i++)
+				{
+					o[i].onmouseover=function()
+					{
+						This.addClass(this,This.opt.TTFcous);
+					}
+					o[i].onmouseout=function()
+					{
+						This.removeClass(this,This.opt.TTFcous);
+					}
+					o[i].onclick=function()
+					{
+						var index=this.parentNode.index;//获得列表
+						This.t[index].innerHTML=This.ipt[index].value=this.innerHTML.replace(/^\s+/,'').replace(/\s+&/,'');
+						This.l[index].style.display='none';
+					}
+				}
+			}
+		 },
+		 getByClass:function(s,p,t)//使用class获取元素
+		 {
+			var reg=new RegExp('\\b'+s+'\\b');
+			var aResult=[];
+			var aElement=(p||document).getElementsByTagName(t || '*');
+
+			for(var i=0;i<aElement.length;i++)
+			{
+				if(reg.test(aElement[i].className))
+				{
+					aResult.push(aElement[i])
+				}
+			}
+			return aResult;
+		 },
+
+		 setOpts:function(opt) //以下参数可以不设置  //设置参数
+		 { 
+			this.opt={
+				 TTContainer:"diy_select",//控件的class
+				 TTDiy_select_input:"diy_select_input",//用于提交表单的class
+				 TTDiy_select_txt:"diy_select_txt",//diy_select用于显示当前选中内容的容器class
+				 TTDiy_select_btn:"diy_select_btn",//diy_select的打开按钮
+				 TTDiv_select_list:"diy_select_list",//要显示的下拉框内容列表class
+				 TTFcous:"focus"//得到焦点时的class
+			}
+			for(var a in opt)  //赋值 ,请保持正确,没有准确判断的
+			{
+				this.opt[a]=opt[a] ? opt[a]:this.opt[a];
+			}
+		 }
+}
+
+var TTDiy_select=new diy_select({  //参数可选
+		TTContainer:"diy_select",//控件的class
+		TTDiy_select_input:"diy_select_input",//用于提交表单的class
+		TTDiy_select_txt:"diy_select_txt",//diy_select用于显示当前选中内容的容器class
+		TTDiy_select_btn:"diy_select_btn",//diy_select的打开按钮
+		TTDiv_select_list:"diy_select_list",//要显示的下拉框内容列表class
+		TTFcous:"focus"//得到焦点时的class
+});//如同时使用多个时请保持各class一致.
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>基本资料</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐动 运动 感受乐趣" />
+<meta name="keywords"  content="乐动 运动 感受乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <img src="../images/logo_index.png" width="305px" height="90px;" alt="感受运动的乐趣" title="首页"/>
+        </span>
+        <ul class="user-nav">
+        	<li class="user-nav-3"><a href="javascript:;" title="我的乐动"></a></li>
+            <li class="user-nav-4">
+           		<a class="first" href="javascript:;" title="运动日志"></a>
+                <ul>
+                    <li><a href="javascript:;" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                </ul>
+            </li>
+            <li class="user-nav-5"><a href="javascript:;" title="群组动态"></a></li>
+        </ul>
+        <ul class="topmenu">
+            <li class="weltxt">欢迎一起来乐动</li>
+            <li class="dropmenu">
+            	<a href="javascript:;" ></a>
+                <ul>
+                    <li><a href="javascript:;" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                    <li><a href="javascript:;" >账号安全</a></li>
+                    <li><a href="javascript:;" >设备管理</a></li>
+                    <li><a href="javascript:;" >退出</a></li>
+                </ul>
+             </li>
+        </ul>
+        <!--end topmenu-->
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="minwrapper">
+        <div id="left">
+            <p class="thumb">
+                <img src="../images/imagthumb.gif" width="123"  height="146" alt=""/>
+            </p>
+            <ul class="sidebar">
+                <li  class="bar_info_current"><a href="javascript:;" title="查看位置"></a></li>
+                <li  class="bar_count"><a href="javascript:;" title="查看足迹"></a></li>
+                <li  class="bar_manage" ><a title="报警信息"></a></li>
+            </ul>  
+        </div>
+        <div id="right">
+        	<div class="right-menu-box">
+            	<ul class="right-menu">
+                	<li class="current"><a href="javascript:;" title="基本资料">基本资料</a></li>
+                </ul>
+                <span class="btnsave btnsave-pos"><a href="javascript:;" title="保存">保    存</a></span>
+            </div>
+            
+            <div class="form-box">
+            	<div class="form-box-head">
+                	<h3>个人信息</h3>
+                </div>
+                <div class="form-box-container">
+					<div class="left">
+                    	<form  method="post">
+                            <p>
+                            	<label for="userName">姓名</label>
+                            	<input  class="inputstyle" type="text" id="userName" />
+                            </p>
+                            <p>
+                            	<label for="nickName">呢称</label>
+                            	<input class="inputstyle"  type="text" id="nickName" />
+                            </p>
+                            <p>
+                            	<label>性别</label>
+                            	<label><input class="align-middle" type="radio" name="RGroup1" /> 男</label>
+                      			<label><input class="align-middle" type="radio" name="RGroup1" /> 女</label> 
+                            </p>
+                            <p>
+                            	<label for="weight">体重</label>
+                            	<input class="inputstyle" type="text" id="weight" />
+                            </p>
+                            <p>
+                            	<label for="birth">出生日期</label>
+                            	<input class="inputstyle" type="text" id="birth" />
+                            </p>
+                            <p>
+                            	<label for="birth">所属区域</label>
+                                 <select>
+                                     <option  selected="selected">选择省（直辖市）</option>
+                                     <option>广东省</option>
+                                 </select>
+                             <select>
+                                   <option  selected="selected">选择市（县）</option>
+                                   <option>广州市</option>
+                      		 </select>
+                             <select>
+                                   <option  selected="selected">选择区</option>
+                                   <option>萝岗区</option>
+                      		 </select>
+                            </p>            
+                         </form>
+                    </div>
+                    <div class="right">
+                    	<a href="javascript:;"><img src="../images/imagthumb.gif" alt="更换照片" title="更换照片" width="123px" height="146px"/></a>
+                        <p><a href="javascript:;">更换照片</a></p>
+                    </div>
+              </div>	
+            </div>
+           <!--end form-box-->
+        </div>
+        
+        <div class="clear"></div>
+	</div>
+</div>
+
+</body>
+</html>

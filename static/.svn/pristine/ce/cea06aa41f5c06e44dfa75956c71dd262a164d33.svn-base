@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>404错误</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+</head>
+<body>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>     
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+	<div class="well">
+    	<div class="row">
+        	<div class="span3 offset1 mt30"><img src="theme1/images/icon_404.gif"/></div>
+            <div class="span1"><img src="theme1/images/line-divide.gif"/></div>
+            <div class="span5 mt30">
+            	<img src="theme1/images/404_txt.jpg"/>
+                <p>点击以下链接继续网站浏览</p>
+            <p><a href="javascript:;" onclick="window.history.go(-1);">>>返回上一页面</a></p>
+            <p><a href="../index.html">>>返回乐动页面</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

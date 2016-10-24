@@ -1,0 +1,6 @@
+#\u6570\u636E\u5E93\u5730\u5740
+jdbc.trace=true
+jdbc.main.database=127.0.0.1/db_sport
+jdbc.main.old.database=127.0.0.1/db_appscomm
+jdbc.main.user=bluecloud
+jdbc.main.password=bc!@#$%^

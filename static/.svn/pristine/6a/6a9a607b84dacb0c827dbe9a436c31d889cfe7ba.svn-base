@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*	登陆框*/
+.loginbox{ 
+	position:absolute;
+	top:27px; 
+	left:575px;
+	padding:30px 50px 0 50px;;
+	width:290px; 
+	height:395px; 
+	background:url(../images/login_bg.png) no-repeat;
+}
+.loginbox h2{ font-size:18px; font-family:"黑体", "微软雅黑", "宋体"; margin-bottom:25px;}
+.loginbox p{ 
+	margin-bottom:20px; 
+	_padding:1px 0;
+	/*ie bug 遮住最上面input框*/
+}
+
+
+/*登录--表单验证的提示图标*/
+.tipbox{
+	background:url(../images/bg_tipbox.gif) no-repeat;
+	width:235px; 
+	height:35px;
+	line-height:35px; 
+	padding-left:5px; 
+	color:#F00;
+	
+	
+}
+.tipbox-pos,.tipbox-pos2{ position:absolute;  left:40px;}
+.tipbox-pos{top:-37px;}
+.tipbox-pos2{top:28px;}
+
+.tipbox .error,.tipbox .correct{
+	padding:2px 0 2px 23px;
+}
+.tipbox .error{	background:url(../images/no.gif)  no-repeat;}
+.tipbox .correct{background:url(../images/yes.gif) no-repeat;}
+
+/*注册框 bindwrapper和bindbox是绑定设备页面css， */
+.regwrapper,.bindwrapper{
+	background:#f0f0f0;
+	padding: 1px 50px;
+}
+.regbox{
+	background:#FFF;
+	font-size:13px;
+	padding: 20px 0 20px 40px;
+}
+.regbox h2{
+	font-size: 18px;
+	font-family: "黑体", "微软雅黑", "宋体";
+	margin-bottom: 15px;
+}
+
+/*注册--表单验证的提示图标*/
+.tipbox-reg-error,.tipbox-reg-correct{color:#F00;padding:2px 0 2px 23px; margin-left:5px; }
+.tipbox-reg-error{background:url(../images/no.gif)  no-repeat; }
+.tipbox-reg-correct{background:url(../images/yes.gif)  no-repeat;}
+
+/*绑定设备界面*/
+.bindbox{
+	background:#FFF;
+	font-size:13px;
+	padding: 20px 0 0 40px;
+}
+.bindbox p
+{
+	margin-bottom:15px;
+}
+.bindbox h2{ font-size:22px; font-family:"微软雅黑", "黑体";color:#ff7900;margin-bottom:20px;}
+.bindbox h3{ font-size:18px;margin-bottom:20px;}
+.bindbox h3 span{
+	background:url(../images/tip_confirm.gif) no-repeat;
+	padding-left:70px;
+	margin-left:270px;
+	display:inline-block;
+	height:60px;
+	line-height:60px;
+}
+
+
+
+/*主页banner1*/
+.banner1box{height:461px; position:relative; background:url(../images/banner1.gif) no-repeat;}
+.banner2box,.banner3box{height:466px;font-family:"微软雅黑", "黑体"; color:#3f3f3f;}
+.banner2box{ background:url(../images/banner2.jpg) no-repeat; padding:5px 0 0 457px;}
+.banner3box{ background:url(../images/banner3.jpg) no-repeat;}
+.banner2box h2{font-size:30px; line-height:60px;}
+.banner2box p,.banner3box p{font-size:15px; line-height:28px;}
+.banner3box p{ padding:10px 0 0 12px;}
+
+/*legal*/
+.legal{ padding:20px 30px 30px 30px;}
+.legal p{
+	text-align:justify;
+	line-height:18px;
+	margin:20px 0;
+}
+.legal h2{ 
+	font-size:20px; 
+	color:#ff7100;
+	font-weight:bold;
+	font-family:"微软雅黑", "宋体";
+	text-align:center;
+	margin-bottom:20px;
+}
+.legal h3,
+.legal h4{
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+
+/*下载页面d:download*/
+.downwrapper{ background:#b1b1b1; padding:0 50px;}
+.d-section{ position:relative;}
+.d-section h2{
+	color:black;
+	font-size:36px;
+	font-family:"微软雅黑", "宋体";
+	margin-bottom: 10px;
+}
+.d-section h3{
+	font-size:20px;
+	font-family:"微软雅黑", "宋体";
+	margin-bottom: 5px;
+}
+.d-section p{
+	line-height:22px;
+}
+
+.d-section-b1{background:#f2f5f7; height:285px;}
+.d-section-b1 .left{position:absolute;top:35px; left:30px; }
+.d-section-b1 .middle{
+	position:absolute;
+	top:28px;
+	left:170px;
+}
+.d-section-b1 .right{position:absolute;top:35px; left:675px;}
+
+.d-section-b2{background:#e8edf1; height:440px;}
+.d-section-b2 .left{position:absolute;top:140px; left:115px;}
+.d-section-b2 .right{position:absolute;bottom:0; right:35px;}
+.d-section-b2-pc{ background:url(../images/d_pc_1.jpg) center center no-repeat #e8edf1;height:420px;}
+.d-section-b2-pc h2{ padding:30px 0 0 150px;}
+
+.d-section-b3{background:#e8edf1; height:394px;}
+.d-section-b3 .left{position:absolute;bottom:0; left:0;}
+.d-section-b3 .right{position:absolute;top:130px; right:20px;}
+.d-section-b3-pc{ background:url(../images/d_pc_2.jpg) 170px 130px no-repeat #f1f4f6;height:390px;}
+.d-section-b3-pc h2{ padding:50px 0 0 50px; font-size:25px;}
+.d-section-b3-pc h3{ padding:120px 0 0 510px; font-size:40px; color:#000;}
+
+.d-section-b4{background:#e8edf1; height:430px;}
+.d-section-b4 .left{position:absolute;bottom:0; left:0;}
+.d-section-b4 .right{position:absolute;top:25px; left:195px;}
+
+.d-section-b4-pc{ background:url(../images/d_pc_3.jpg) 10px 90px no-repeat #e6ebef;height:380px;}
+.d-section-b4-pc h2{ padding:20px 0 0 50px; font-size:40px;}
+
+.d-section-b5{background:#e8edf1; height:302px;}
+.d-section-b5 .left{
+	position:absolute;
+	top:90px;
+	left:60px;
+}
+.d-section-b5 .right{position:absolute;bottom:0; right:25px;}
+
+.d-section-b6{background:#e8edf1; height:305px;}
+.d-section-b6 .left{position:absolute;top:0; left:41px;}
+.d-section-b6 .right{position:absolute;top:75px; right:100px;}
+.icon-oh{ color:red; padding-left:23px; background:url(../images/oh.gif) no-repeat; line-height:20px; height:20px;}
+
+.d-section-b7{background:#e8edf1; height:395px;}
+.d-section-b7 .left{position:absolute;top:140px; left:120px;}
+.d-section-b7 .right{position:absolute;top:0; right:0;}

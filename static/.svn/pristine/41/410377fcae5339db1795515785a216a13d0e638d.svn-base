@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>myScope</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Scope" />
+<meta name="keywords"  content="Scope" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body class="bg-lightgray pb30">
+<div class="header">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li> 
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="battery-box">
+    <div class="l">
+    	<span class="ml20">Last sync</span>
+        <i class="icon icon-refresh"></i>
+        <span>Today 12:35</span>
+    </div>
+    <div class="r">
+        <span class="mr20">Battery Level<i class="icon icon-ele1"></i></span>
+        <span class="mr20">Scope Version:1.1</span>
+    </div>
+</div>
+<div class="tc pb10 pt10">
+    <a href="javascript:;" class="btn-arrowleft"></a>
+    <input value="TODAY" id="datepicker"  class="input-noborder"/>
+    <a href="javascript:;" class="btn-arrowright disable"></a>
+    <p>May 29 2014</p>
+</div>
+<div class="content bg-white ">
+	<div class="chart-zefit">
+        <ul class="nav-tabs l f12">
+            <li><a href="javascript:;">STEP</a></li>
+            <li class="active"><a href="javascript:;">DISTANCE</a></li>
+            <li><a href="javascript:;">COLORIES</a></li>
+            <li><a href="javascript:;">SLEEP</a></li>
+        </ul>
+        <a href="javascript:;" class="btn btn-red r">ACTIVITY REPORT</a>
+        <p class="clear"></p>
+        <div class="chart nodata"></div>
+    </div>
+</div>
+<div class="content bg-white mt20 mb20 pb20">
+	<div class="span4 box-step">
+        <div id="g1" class="gauge"></div>
+    </div>
+    <div class="span4 box-distance">
+       <div id="g2" class="gauge"></div>
+    </div>
+    <div class="span4 box-calories">
+       <div id="g3" class="gauge"></div>
+    </div>
+    <div class="span4 box-sleep">
+       <div id="g4" class="gauge"></div>
+    </div>
+</div>
+
+<div class="content bg-white">
+    <div class="span3">
+    	<div class="brc bbc sleep-group">
+            <img src="../images/icon_l_6.jpg" />
+            <h3>Total sleep time</h3>
+            <p><span>6</span>h<span>17</span>min</p>
+        </div>
+    </div>
+    <div class="span3">
+    	<div class="brc bbc sleep-group">
+            <img src="../images/icon_l_1.jpg" />
+            <h3>Light Sleep</h3>
+            <p><span>6</span>h<span>17</span>m</p>
+        </div>
+    </div>
+    <div class="span3">
+    	<div class="bbc sleep-group">
+            <img src="../images/icon_l_3.jpg" />
+            <h3>Deep Sleep</h3>
+            <p><span>6</span>h</p>
+        </div>
+    </div>
+    <div class="span3">
+    	<div class="brc sleep-group">
+            <img src="../images/icon_l_4.jpg" />
+            <h3>Fell Asleep in</h3>
+            <p><span>10</span>min</p>
+        </div>
+    </div>
+    <div class="span3">
+    	<div class="brc sleep-group">
+            <img src="../images/icon_l_5.jpg" />
+            <h3>Awake</h3>
+            <p><span>6</span>times</p>
+        </div>
+    </div>
+    <div class="span3">
+    	<div class="sleepbox sleep-group">
+            <img src="../images/icon_l_2.jpg" />
+            <h3>Awake for</h3>
+            <p><span>15</span>min</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/justgage/justgage.1.0.1.js" type="text/javascript"></script>
+<script src="../js/justgage/raphael.2.1.0.min.js" type="text/javascript"></script>
+<script src="../js/jquery.fixedHeader.js"></script>
+<script>
+	$( "#datepicker" ).datepicker({
+			dateFormat:'yy-mm-dd',  //更改时间显示模式
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'关闭',      //设置关闭按钮的值
+			currentText:'今天', //设置今天按钮的值
+			showOtherMonths  :true,
+            yearRange:'2008:2017',  //显示可供选择的年份7天
+			defaultDate:1
+	})
+	var g1, g2, g3, g4, g5;
+	window.onload = function () {
+		var g1 = new JustGage({
+			id: "g1",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"STEPS",
+			showMinMax: false,
+		});
+
+		var g3 = new JustGage({
+			id: "g2",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"DISTANCE",
+			showMinMax: false,
+		});
+
+		var g4 = new JustGage({
+			id: "g3",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			showMinMax: false,
+			title:"CALORIES",
+		});
+
+
+		var g5 = new JustGage({
+			id: "g4",
+			value: getRandomInt(0, 100),
+			min: 0,
+			max: 100,
+			title:"SLEEP",
+			showMinMax: false,
+
+		});
+	}
+</script>
+</html>

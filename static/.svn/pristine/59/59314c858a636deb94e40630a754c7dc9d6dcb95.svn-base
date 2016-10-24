@@ -1,0 +1,332 @@
+body,button,input,select,textarea {
+	font-family:tahoma,arial,"Hiragino Sans GB";
+}
+h1,h2,h3,h4,h5,h6{font-family:"微软雅黑",tahoma,arial,"Hiragino Sans GB";}
+.table thead th{ text-align:center;}
+.table td{ text-align:center;}
+.absolute{position:absolute;}
+.relative{position:relative;}
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+legend{ color: #666;font-family:"微软雅黑",tahoma,arial,"Hiragino Sans GB"; font-size:17.5px; font-weight:bold;}
+.loginbox legend{ margin-bottom:0px}
+.nav-tabs{}
+.navbar-inner{height:75px;}
+.navbar-inverse .navbar-inner {
+  background-color: #0771a1;
+  background-image: -moz-linear-gradient(top, #0771a1, #0771a1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0771a1), to(#0771a1));
+  background-image: -webkit-linear-gradient(top, #0771a1, #0771a1);
+  background-image: -o-linear-gradient(top, #0771a1, #0771a1);
+  background-image: linear-gradient(to bottom, #0771a1, #0771a1);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0771a1', endColorstr='#0771a1', GradientType=0);
+  border-color: #065478;
+}
+.hero-unit{
+	background:url(../images/banner.jpg) no-repeat #fff;
+	min-height:420px;height:auto !important; height:420px;
+	padding:0;
+	font-size: 14px;
+ 	line-height: 20px;
+}
+.regbox h4{ color:#666;}
+.skybox{
+	background:url(../images/register-bg.jpg) no-repeat #fff;
+}
+.navbar{
+  margin-bottom: 20px;
+}
+.navbar .navbar-inner .container{ margin:0 auto; width:940px;}
+.logo{ padding-top:15px; float:left; width:150px; display:block;}
+.ad .thumbnail{ text-align:center; border:none;}
+.ad .span2{width: 170px;}
+
+.copyright{ border-top:1px solid #ddd; margin-top:10px;}
+.copyright p{ text-align:center; padding:15px 0;}
+.loginbox{ background:#fff; width:320px;margin:20px; padding:10px 20px 0px 20px;}
+.loginbox .control-group{margin-bottom:5px;}
+.loginbox .alert {
+  padding:5px 5px;
+  *padding:5px;
+  margin-bottom: 10px;
+}
+.regbox{ 
+	background:#fff; 
+	width:600px; 
+	margin:0 auto;
+	padding:10px 20px 10px 20px;
+	border-top:1px solid #a1cdea; 
+	border-bottom:2px solid #d8eaf6;
+	min-height:420px;height:auto !important; height:420px;
+}
+.regbox .btn{ margin-left:0px;}
+.navbar-inverse {
+  color: #fff;
+}
+.navbar-inverse .nav  li  a {
+  color: #fff;
+}
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover {
+  color: #ddd;
+}
+.navbar-inverse .nav  li  a:focus,
+.navbar-inverse .nav  li  a:hover {
+  background-color: transparent;
+  color: #ddd;
+}
+.navbar-inverse .nav .active  a,
+.navbar-inverse .nav .active  a:hover,
+.navbar-inverse .nav .active  a:focus {
+  color: #ddd;
+  background-color: #111111;
+}
+.navbar-inverse .nav li.dropdown.open  .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active  .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active  .dropdown-toggle {
+  background-color:#004e71;
+  border-radius:4px;
+  color: #ffffff;
+}
+.navbar-inverse .nav li.dropdown  .dropdown-toggle .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+.navbar-inverse .dropdown-menu li > a{ color:#333;}
+.sidebar-nav{ font-size:14px; min-height:500px;height:auto !important; height:500px}
+.sidebar-nav li{ line-height:30px; margin-bottom:10px;}
+.sidebar-nav li a:hover{border-radius:8px;background-color:#ddd}
+.sidebar-nav .nav-list  .active  a,
+.sidebar-nav .nav-list  .active  a:hover {
+  background-color: #00b25c;
+  border-radius:8px;
+}
+.sidebar-nav .nav-header {
+  font-size: 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  display:inline-block;
+}
+.sidebar-nav .nav-header .add{
+	display:inline-block;
+	margin-left:3px;
+	*margin-left:2px;
+	*vertical-align:middle;
+	background:none;
+}
+.sidebar-nav .nav-header .add:hover{
+	background:none;
+}
+.more{ font-size:12px; float:right; margin-right:5px; display:inline; cursor:pointer; display:none}
+#curdata .span4{ width:340px;}
+.ml5{ margin-left:5px;}
+.ml10{ margin-left:10px;}
+.ml15{ margin-left:15px;}
+.ml25{ margin-left:25px;}
+.mb10{ margin-bottom:10px;}
+.mb20{ margin-bottom:20px;}
+.mt10{ margin-top:10px;}
+.mt30{ margin-top:30px;}
+.pl40{ padding-left:40px;}
+.vertical-align-n7{vertical-align:-7px;}
+.text-error.help-inline{ color:#b94a48;}
+.input-mini{ width:75px; font-size:12px;}
+.uploadimg{position:absolute; right:0; top:0;}
+.alert h4 {
+  margin: 5px 0 10px 0;
+}
+.form-horizontal-small .control-label {
+  width: 80px;
+}
+.form-horizontal-small .controls {
+  margin-left: 100px;
+  *margin-left: 0px;
+}
+.form-horizontal-small .controls:first-child {
+  *padding-left: 100px;
+}
+.form-control-static {
+  padding-top: 5px;
+  *padding-top: 3px;
+  margin-bottom: 0;
+}
+.media-heading{ color:#999;}
+.sprite,.sprite-disable{width:52px; height:85px;display:block; float:left; margin-right:10px; margin-left:20px;}
+.sprite{background:url(../images/icon-sprite-color.jpg);}
+.sprite-disable{background:url(../images/icon-sprite-white.jpg);}
+.icon-1,.icon-disable-1{ 
+	background-position:0 0;
+}
+.icon-2,.icon-disable-2{ 
+	background-position:-100px 0;
+}
+.icon-3,.icon-disable-3{ 
+	background-position:0px -100px;
+}
+.icon-4,.icon-disable-4{ 
+	background-position:-100px -100px;
+}
+.icon-5,.icon-disable-5{ 
+	background-position:0px -200px;
+}
+.icon-6,.icon-disable-6{ 
+	background-position:-100px -200px;
+}
+.icon-7,.icon-disable-7{ 
+	background-position:0px -300px;
+}
+.icon-8,.icon-disable-8{ 
+	background-position:-100px -300px;
+}
+.icon-9,.icon-disable-9{ 
+	background-position:0 -400px;
+}
+.icon-10,.icon-disable-10{ 
+	background-position:-100px -400px;
+}
+.icon-11,.icon-disable-11{ 
+	background-position:0px -500px;
+}
+.table-th-bg{background-color:#E6E6FA;}
+.legal p{ text-indent:2em; padding:10px 0; line-height:24px;}
+hr {
+  *margin: -5px 0;
+}
+.loginbox .input-block-level {
+	min-height:auto;
+	height:auto !important;
+}
+.tabbernav li{
+	float:left;
+	list-style:none;
+}
+
+.tabbernav li a{
+  display:inline-block;
+  width:150px; 
+  height:30px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+
+}
+.tabbernav li a:hover{
+	background-color:#ddd;
+	text-decoration:none;
+}
+
+.tabbernav li.active a{
+  color:#fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, #51a351, #62c462);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#51a351), to(#62c462));
+  background-image: -webkit-linear-gradient(top, #51a351, #62c462);
+  background-image: -o-linear-gradient(top, #51a351, #62c462);
+  background-image: linear-gradient(to bottom, #51a351, #62c462);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff51a351', endColorstr='#ff62c462', GradientType=0);
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #51a351;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.tabbernav li.active a:hover{
+  background-color: #01934c;
+}
+/*以下运动管理*/
+.sportbox .h-medium{ height:400px;}
+.sportbox .pos1{position:absolute; left:20px; top:85px;}
+.sportbox .pos2{position:absolute; left:290px; top:115px;}
+.sportbox .pos3{position:absolute; left:360px; top:110px;}
+.sportbox .pos4{position:absolute; left:110px; top:110px;}
+.map{ 
+	width:690; 
+	height:420px;
+	overflow:hidden;
+	border:1px solid #ccc;
+	-moz-box-shadow:5px 5px 4px #eee inset ;              
+	-webkit-box-shadow:5px 5px 4px #eee inset;           
+			box-shadow:3px 2px 4px #eee ;
+}
+.map-large{ width:690; height:440px;}
+
+.chart img{
+	border:1px solid #ccc;
+	*margin-top:-1px; 
+	-moz-box-shadow:5px 5px 4px #eee inset ;              
+	-webkit-box-shadow:5px 5px 4px #eee inset;           
+			box-shadow:3px 2px 4px #eee ;
+	width:690px;
+	height:330px;
+}
+.chart-small{ height:204px;}
+.chart-small img{
+	width:300px; 
+	height:200px;
+}
+.chart-medium{ margin:10px 0;height:334px;}
+.chart-medium img{ 
+	width:690px;
+	height:330px;
+}
+.mapbox .foot{
+	background: #999;
+	width: 700px;
+	color: #000;
+	position: absolute;
+	top: 400px;
+	left: 0;
+	padding: 10px 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* ie8  */
+	filter: alpha(opacity=70);    /* ie5-7  */
+	opacity: 0.7;    /* css standard, currently it works in most modern browsers  */
+}
+.btn-mini{ font-size:12px}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+.error500{min-height:400px}
+
+.cus-input-file{
+	height: 30px;
+	width: 123px;
+	margin-top:10px;
+}
+.cus-input-file input{
+    width: 123px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    opacity:0; 
+}

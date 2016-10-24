@@ -1,0 +1,146 @@
+﻿.pager {
+	clear:both;line-height: 17px;font-size: 11px;color: #3772AE;font-family: verdana, arial, helvetica, sans-serif; text-align:left;
+}
+.pager a, .pager span {
+	display: inline-block;margin: 0 1px;padding: 0 4px;border: 1px solid #B2E7F1;
+	cursor:pointer
+}
+.pager .current {
+	border: 1px solid #02A9EC;background: #02A9EC;font-weight: bold;color: #FFFFFF;     
+}
+.pager .count {
+	border: none;margin-top: 1px;font-size: 12px;
+}
+
+
+
+.pager .allcount {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial;
+}
+.pager .pagecount {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial 宋体;  
+}
+
+.pager .direct {
+	font-size: 12px;font-weight: bold;
+}
+.pager a {
+	text-decoration: none;color: #3772AE;
+}
+.pager a:hover { 
+    border: 1px solid #02A9EC;
+}
+
+.pager_white {
+	line-height: 17px;font-size: 11px;color: #3772AE;font-family: verdana, arial, helvetica, sans-serif;
+}
+.pager_white a, .pager_white span {
+	display: inline-block;margin: 0 1px;color: #FFFFFF;padding: 0 4px;border: 1px solid #0072C3;
+}
+.pager_white .current {
+	border: 1px solid #0072C3;background: #02A9EC;font-weight: bold;color: #FFFFFF;
+}
+.pager_white .count {
+	border: none;margin-top: 1px;font-size: 12px;
+}
+.pager_white .direct {
+	font-size: 12px;font-weight: bold;
+}
+.pager_white a {
+	text-decoration: none;color: #3772AE;background: #ffffff;
+}
+.pager_white a:hover {
+    border: 1px solid #43ABF6;
+}
+
+/****************************************/
+/**************   分页样式1  ***********/
+/**************************************/
+
+.pager_Gray .allcount {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial; display:none;
+}
+.pager_Gray .pagecount {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial 宋体;  display:none;
+} 
+.pager_Gray .pagedirect {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial 宋体;  display:none;
+} 
+.pager_Gray {
+	clear:both;line-height: 17px;font-size: 11px;color: #3772AE;font-family: verdana, arial, helvetica, sans-serif; text-align:left;
+}
+.pager_Gray a {
+	display: inline-block;margin: 0 1px;padding: 0 4px;border: 1px solid #e5e5e5; padding:2px;  line-height:20px;   min-width:20px;  text-align:center;
+}
+ .pager_Gray span 
+{ 
+	display: inline-block;margin: 0 1px;padding: 0 4px;border: 0px solid #e5e5e5; padding:2px;  line-height:20px;   min-width:20px;  text-align:center;
+}
+.pager_Gray .current {
+	border: 1px solid #858585;background: #efefef;font-weight: bold;color: #b6aba3;  padding:2px;  line-height:20px;   width:20px; text-align:center;
+}
+.pager_Gray .count {
+	border: none;margin-top: 1px;font-size: 12px;
+}
+.pager_Gray_2 .pagecountbody
+{
+     display:none;   float:left;
+} 
+.pager_Gray .direct {
+	font-size: 12px;font-weight: bold;  padding:2px;  line-height:20px;    text-align:center;  float:left;
+}
+.pager_Gray a {
+	text-decoration: none;color: #3772AE;float:left;
+}
+.pager_Gray a:hover { 
+    border: 1px solid #858585;
+}
+
+ 
+/********************************************/
+/********  分页样式2 (只显示上下页)  *******/
+/******************************************/
+
+.pager_Gray_2 .allcount {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial; display:none; float:left;
+}
+.pager_Gray_2 .pagecount {
+	border: none; font-size: 12px; font-family: Arial 宋体;  display:block; float:left;  margin-top:3px; line-height:22px;
+} 
+.pager_Gray_2 .pagedirect {
+	border: none;margin-top: 1px;font-size: 12px; font-family: Arial 宋体;  display:block; float:left; 
+}  
+.pager_Gray_2 .pagedirect b{
+	display: inline-block;  border: 1px solid #e5e5e5; padding:3px;  line-height:20px;   min-width:20px;  text-align:center; background: #efefef;
+}  
+.pager_Gray_2 .pagecountbody
+{
+     display:none; 
+} 
+.pager_Gray_2 {
+	clear:both;line-height: 17px;font-size: 11px;color: #3772AE;font-family: verdana, arial, helvetica, sans-serif; text-align:left;
+}
+.pager_Gray_2 a {
+	display: inline-block;padding: 0 4px;border: 1px solid #e5e5e5; padding:2px;  line-height:20px;   min-width:20px;  text-align:center;
+}
+ .pager_Gray_2 span 
+{ 
+	display: inline-block;padding: 0 4px;border: 0px solid #e5e5e5; padding:2px;  line-height:20px;   min-width:20px;  text-align:center;
+}
+.pager_Gray_2 .current {
+	border: 1px solid #858585;background: #efefef;font-weight: bold;color: #b6aba3;  padding:2px;  line-height:20px;   width:20px; text-align:center;
+}
+.pager_Gray_2 .count {
+	border: none;margin-top: 1px;font-size: 12px;
+}
+.pager_Gray_2 .direct {
+	font-size: 12px;font-weight: bold;  padding:3px;  line-height:20px;    text-align:center; 
+}
+.pager_Gray_2 a {
+	text-decoration: none;color: #3772AE;
+}
+.pager_Gray_2 a:hover { 
+    border: 1px solid #858585;
+}
+
+ 

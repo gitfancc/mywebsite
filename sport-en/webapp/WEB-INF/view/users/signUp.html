@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><@s.text name='page.signUp.t1'/></title>
+	<#include "../../commons/top.html">
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<div class="content">
+	    <div class="ui-grid-row ptb30">
+	<!--     <form class="ui-form" method="post"  action="doRegister" id="register" enctype="multipart/form-data">--> 
+	    <form class="ui-form" method="post"  id="register" enctype="multipart/form-data">
+	        <div class="ui-grid-4">
+	        	<div id="preview">
+	            	<img class="mb10" width="123"  height="123" src="<@s.text name='static.file.path'/>/images/imagthumb.gif"/>
+	            </div>
+	            <div class="cus-uploadfile">
+	            	<input type="file" onchange="previewImage(this)" id="uploadFile" name="uploadFile" />
+	            	<a class="color-red"><@s.text name='page.signUp.b1'/></a>
+	            </div>
+	        </div>
+	        <div class="ui-grid-21">
+	                <fieldset>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="email"><@s.text name='page.signUp.b2'/></label>
+	                        <input type="text"  id="regAccount" name="user.account" class="ui-input" />
+						</div>
+						
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="username"><@s.text name='page.signUp.b3'/></label>
+	                        <input type="text"  id="regNickName" name="user.userName" class="ui-input" />
+	                    </div>
+	                    
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="password"><@s.text name='page.signUp.b4'/></label>
+	                        <input type="password" id="regPassword" name="user.password"  class="ui-input" />
+	                    </div>
+	                    
+	                     <div class="ui-form-item">
+	                        <label class="ui-label" for="conPassword"><@s.text name='page.signUp.b5'/></label>
+	                        <input type="password" id="regConPassword"  class="ui-input" />
+	                    </div>
+	                    
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="height"><@s.text name='page.signUp.b6'/></label>
+	                        <span id="sht"><input size="6" type="text" id="regHeight" name="user.height" /></span>
+	                        <span id="shtft" style="display:none"><input size="6" type="text" name="heightFt" id="heightFt" value="0" /></span>
+	                        <select id="heightUnit" name="user.heightUnit">
+	                        	<option value="0" ><@s.text name='page.signUp.b7'/></option>
+	                            <option value="1" ><@s.text name='page.signUp.b8'/></option>
+	                        </select>
+	                        <span id="sftin" style="display:none">
+	                        	<input type="text" size="6"  name="heightIn" id="heightIn" value="0" /><@s.text name='page.signUp.b20'/>
+	                        </span>
+	                        <span id="height_error_message"></span>
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="weight"><@s.text name='page.signUp.b9'/></label>
+	                        <input size="6" type="text" id="regWeight" name="user.weight" >
+	                        <select id="weightUnit" name="user.weightUnit">
+	                        	<option value="0" ><@s.text name='page.signUp.b10'/></option>
+	                            <option value="1" ><@s.text name='page.signUp.b11'/></option>
+	                        </select>
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label" for="gender"><@s.text name='page.signUp.b12'/></label>
+                            <label class="ui-radio"><input  type="radio" name="user.gender" value="0" checked /> <@s.text name='page.signUp.b13'/></label>
+                            <label class="ui-radio"><input  type="radio" name="user.gender" value="1" /> <@s.text name='page.signUp.b14'/></label>
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <label class="ui-label"><@s.text name='page.signUp.b15'/></label>
+	                        <input type="text" id="datepicker"  class="ui-input calendar" />
+	                        <label><@s.text name='page.time.format.tips'/></label>
+	                        <input type="hidden" id="alternate" name="user.birthDate"  />
+	                    </div>
+
+						 <div class="ui-form-item">
+	                        <label class="ui-label" for="country"><@s.text name='page.signUp.b16'/></label>
+	                        <select id="country" name="user.countryId" >
+	                        </select>
+	                    </div>
+	                    
+	                    <div class="ui-form-item" >
+	                        <input type="checkbox" value="" id="readerService" class="ui-checkbox">
+	                        <label for="readerService" ><@s.text name='page.signUp.b17'/> </label><a class="underline" target="_blank" href="http://www.mykronoz.com/credits-legal-mentions/"><@s.text name='page.signUp.b18'/></a>
+	                    </div>
+	                    <div class="ui-form-item">
+	                        <input type="button" value="<@s.text name='page.signUp.b19'/>" id="btnRegister" class="btn btn-red">
+	                    </div>
+	                </fieldset>
+	        </div>
+	        </form>
+	    </div>
+	</div>    
+	
+	<#include "../../commons/foot2.html">
+</body>
+
+<script src="<@s.text name='static.file.path'/>/js/modules/users/register.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/pictureupload.js"></script>
+<script>
+$(function(){
+	$( "#datepicker" ).datepicker({
+			//dateFormat:'yy-mm-dd',  //更改时间显示模式
+			dateFormat:'dd/mm/yy', 
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'Close',      //设置关闭按钮的值
+			currentText:'Today', //设置今天按钮的值
+			showOtherMonths  :true,
+			altField: "#alternate",
+            altFormat:'yy-mm-dd',
+            yearRange:'-80:+0',  //显示可供选择的年份7天
+            maxDate:'+0',
+			defaultDate:1
+	});
+	
+	$.post(cxtPath+'/city/loadCountry',{"language":lang},function(result){
+				result = eval(result);
+				$.each(result,function(i,data){
+					$("#country").append("<option value='"+data.shortName+"'>"+data.name+"</option>");
+				});
+		});
+ });
+</script>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<constant name="struts.patternMatcher" value="namedVariable"/>
+<constant name="struts.enable.SlashesInActionNames" value="true"/>
+<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+<constant name="struts.patternMatcher" value="regex" />
+
+   <package name="user" extends="secure" namespace="/user">
+		<action name="info" class="com.appscomm.sport.action.UserAction" method="info">
+			<result name="success" type="freemarker">${getText("view.path")}/users/myProfile.html</result>
+		</action>
+		<action name="save" class="com.appscomm.sport.action.UserAction" method="save">
+			<result name="success" type="redirect">/user/sport/
+			</result>
+		</action>
+		
+		<action name="modifyPassword" class="com.appscomm.sport.action.UserAction" method="modifyPassword">
+			<result type="json"></result>
+		</action>
+		<action name="changePassword/{token}" class="com.appscomm.sport.action.UserAction" method="changePassword">
+			<result name="success" type="freemarker">${getText("view.path")}/users/changePasswd.html</result>
+		</action> 
+		<action name="forgetPassword_emailinput" class="com.appscomm.sport.action.UserAction"
+			method="forgetPassword_emailinput">
+			<result name="success" type="freemarker">${getText("view.path")}/users/forgetPassword.html
+			</result>
+		</action>
+		<action name="forgetPassword_sendEmail" class="com.appscomm.sport.action.UserAction"
+			method="forgetPassword_sendEmail">
+			<result name="success" type="freemarker">${getText("view.path")}/users/confirm.html
+			</result>
+		</action>
+	
+   </package>
+   
+</struts>

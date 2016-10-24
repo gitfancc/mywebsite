@@ -1,0 +1,29 @@
+static.file.path = http://app-zecircle.mykronoz.com/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url = http://app-zecircle.mykronoz.com/sportimg/user/
+
+file.upload.path = /usr/local/apache/htdocs/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:6080/appscomm/
+
+emailAddress=noreply@mykronoz.com
+email.url=http://app-zecircle.mykronoz.com
+findPwdsubject=ZeCircle password reset
+registSubject=ZeCircle sign up confirmation
+newPwdSubject=ZeCircle get new password
+email.forgotPwd=/usr/local/L11/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/L11/tomcat/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/L11/tomcat/webapps/ROOT/WEB-INF/classes/template_register.html
+
+watch.search.system.user=test@test.com
+
+deviceType=L11
+deviceName=ZeCircle
+href.learnmore=http://www.mykronoz.com/collections/
+pc.download=http://app-zecircle.mykronoz.com/download/pcmac/v1.44/ZeCircle For WinPC V1.44.exe
+mac.download=http://app-zecircle.mykronoz.com/download/pcmac/v1.44/ZeCircle For Mac V1.44.dmg
+ios.download=https://itunes.apple.com/fr/app/zecircle/id961601713?mt=8
+andriod.download=https://play.google.com/store/apps/details?id=cn.l11.appscomm.pedometer.activity
+wp.download=http://www.windowsphone.com/s?appid=b76a1534-2508-4912-a19a-f93719962840

@@ -1,0 +1,6 @@
+#\u6570\u636E\u5E93\u5730\u5740
+jdbc.trace=false
+jdbc.main.database=128.65.193.93/db_sport_en
+jdbc.main.old.database=128.65.193.93/db_appscomm_en
+jdbc.main.user=appscomm
+jdbc.main.password=appscomm!@#$%^

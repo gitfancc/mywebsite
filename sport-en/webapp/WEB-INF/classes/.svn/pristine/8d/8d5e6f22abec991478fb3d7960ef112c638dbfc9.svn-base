@@ -1,0 +1,33 @@
+static.file.path = http://app-zefit2.mykronoz.com/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url = http://app-zefit2.mykronoz.com/sportimg/user/
+file.upload.path = /usr/local/apache/htdocs/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:8080/appscomm/
+
+emailAddress=noreply@mykronoz.com
+email.url=http://app-zefit2.mykronoz.com
+findPwdsubject=ZeFit2 password reset
+registSubject=Welcome to ZeFit2 by MyKronoz
+newPwdSubject=ZeFit get new password
+registSubject.ext = Welcome to ZeFit2 by MyKronoz
+findPwdsubject.ext = ZeFit2 password reset
+newPwdSubject.ext = ZeFit get new password
+email.forgotPwd=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_register.html
+email.register.ext=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_register_ext.html
+email.forgotPwd.ext=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd_ext.html
+
+watch.search.system.user=test@test.com
+
+deviceType=L28w
+deviceName=ZeFit2
+href.learnmore=http://www.mykronoz.com/collections/
+pc.download=http://app-zefit2.mykronoz.com/download/pcmac/ZeFit2_For_WinPC_V1.1.exe
+mac.download=http://app-zefit2.mykronoz.com/download/pcmac/ZeFit2_For_Mac_V1.1.dmg
+ios.download=https://itunes.apple.com/fr/app/zefit2/id1012864175?mt=8 
+andriod.download=https://play.google.com/store/apps/details?id=cn.app.zefit2.mykronoz 
+wp.download=http://windowsphone.com/s?appid=b435bba0-c983-4ab5-a4e9-d778a6d064fa

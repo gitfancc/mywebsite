@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>免费注册成为乐康会员</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<div class="hero-unit skybox">
+        <div class="regbox">
+                <h4>忘记密码</h4>
+                <hr></hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab-setting1" data-toggle="tab">通过手机短信重置</a></li>
+                    <li><a href="#tab-setting2" data-toggle="tab">通过注册邮箱重置</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="tab-setting1">
+                        <form class="form-horizontal">
+                            <div class="control-group error">
+                                <label class="control-label" for="num">手机号码：</label>
+                                <div class="controls">
+                                    <input type="text" id="num" placeholder="请输入手机号码">
+                                    <button class="btn">获取验证码</button>
+                                    <span class="help-block">请输入正确的手机号码</span>
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <label class="control-label">输入验证码:</label>
+                                <div class="controls">
+                                    <input type="text" class="input-small" placeholder="请输入验证码">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-large btn-success">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--end手机账号-->
+                    <div class="tab-pane fade relative" id="tab-setting2">
+                        <form class="form-horizontal">
+                            <div class="control-group error">
+                                <label class="control-label" for="mail">注册邮箱账号：</label>
+                                <div class="controls">
+                                    <input type="text" id="mail" placeholder="请输入邮箱账号">
+                                    <span class="help-block">请输入正确的邮箱账号</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="mail">输入验证码:</label>
+                                <div class="controls">
+                                    <input type="text" class="input-small" placeholder="请输入验证码">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-large btn-success">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <!--tab-content-->
+        </div>
+    </div>
+    <div class="row ad">
+    	<div class="span2">
+        	<div class="thumbnail">
+				<img src="theme1/images/icon_i1.jpg"/>
+            	<h4 class="muted">乐康运动app</h4>
+            </div>
+        </div>
+        <div class="span2">
+        	<div class="thumbnail">
+				<img src="theme1/images/icon_i2.jpg"/>
+            	<h4 class="muted">乐康养老app</h4>
+            </div>
+        </div>
+        <div class="span2">
+        	<div class="thumbnail">
+				<img src="theme1/images/icon_i3.jpg"/>
+            	<h4 class="muted">乐康宠物app</h4>
+            </div>
+        </div>
+        <div class="span2">
+        	<div class="thumbnail">
+				<img src="theme1/images/icon_i4.jpg"/>
+            	<h4 class="muted">乐康儿童app</h4>
+            </div>
+        </div>
+        <div class="span2">
+        	<div class="thumbnail">
+				<img src="theme1/images/icon_i1.jpg"/>
+            	<h4 class="muted">乐康运动app</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

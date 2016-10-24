@@ -1,0 +1,42 @@
+<#if user??&&user.id??>
+	<div class="header">
+	    <#include "common.html">
+	    <#include "loginHead.html">
+	</div>
+	
+	<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+	    <#include "common.html">
+	    <#include "loginHead.html">
+	</div>
+<#else>
+	<div class="header">
+	   <#include "noLoginCommon.html">
+	   <#include "noLoginHead.html">
+	</div>
+	
+	<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+	    <#include "noLoginCommon.html">
+	    <#include "noLoginHead.html">
+	</div>
+	
+	<div class="loginbox">
+	    <a class="btn-close" href="javascript:;">×</a>
+
+	    <form method="post" action="login"  id="login">
+	    	<div class="l mr20 mt-5">
+				<p class="color-red" id="account_error_message"></p>
+				<p class="color-red" id="password_error_message"></p>
+			</div>
+	        <div class="l mr20">
+	            <input class="ui-input" type="text" name="user.account" id="account"  placeholder="<@s.text name='page.head.email' />" />
+	        </div>
+	        <div class="l mr20">
+	            <input class="ui-input" type="password" name="user.password" id="password" placeholder="<@s.text name='page.head.password' />"/>
+	             <p><a class="color-red" href="<@s.text name='root.path'/>/forgetPassword_emailinput"><@s.text name='page.head.forget' /></a></p> 
+	        </div>       
+	        <div class="l">
+	        	<a class="btn btn-red"  href="#"  title="<@s.text name='page.head.login' />" id="userLogin"><@s.text name='page.head.login' /></a>
+	        </div>           
+	     </form>
+	</div>
+</#if>

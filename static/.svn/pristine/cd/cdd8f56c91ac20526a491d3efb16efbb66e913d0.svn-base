@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*	登陆框*/
+.loginbox{ 
+	position:absolute;
+	top:27px; 
+	left:575px;
+	padding:30px 50px 0 50px;;
+	width:290px; 
+	height:395px; 
+	background:url(../images/login_bg.png) no-repeat;
+}
+.loginbox h2{ font-size:18px; font-family:"黑体", "微软雅黑", "宋体"; margin-bottom:25px;}
+
+.loginbox .w-input{height:23px; font-size:14px;line-height:23px; width:240px; padding:3px; border:1px solid #a4a4a4;}
+.loginbox p{ 
+	margin-bottom:20px; 
+	_padding:1px 0;
+	/*ie bug 遮住最上面input框*/
+}
+
+
+/*登录--表单验证的提示图标*/
+.tipbox{
+	background:url(../images/bg_tipbox.gif) no-repeat; 
+	width:242px; height:35px;
+	line-height:35px; 
+	padding-left:5px; 
+	color:#F00;
+	
+}
+.tipbox-pos,.tipbox-pos2{ position:absolute;  left:30px;}
+.tipbox-pos{top:-40px;}
+.tipbox-pos2{top:30px;}
+
+.tipbox .error,.tipbox .correct{
+	padding:2px 0 2px 23px;
+}
+.tipbox .error{	background:url(../images/no.gif)  no-repeat;}
+.tipbox .correct{background:url(../images/yes.gif) no-repeat;}
+
+/*注册框 bindwrapper和bindbox是绑定设备页面css， */
+.regwrapper,.bindwrapper{
+	background:#f0f0f0;
+	padding: 1px 50px;
+}
+.regbox,.bindbox{
+	background:#FFF;
+	font-size:13px;
+	padding: 20px 0 20px 40px;
+}
+.regbox h2{font-size:18px; font-family:"黑体", "微软雅黑", "宋体";  padding-left:70px; margin-bottom:15px;}
+
+.regbox div{margin-bottom:10px; }
+.sectionitem input{
+	border: 1px solid #a4a4a4;
+	height:22px;line-height:22px; 
+	padding:3px;
+	width:240px;
+	vertical-align:middle; 
+	margin-top:-2px; 
+	margin-bottom:1px;
+}
+/*注册--表单验证的提示图标*/
+.tipbox-reg-error,.tipbox-reg-correct{color:#F00;padding:2px 0 2px 23px; margin-left:5px; }
+.tipbox-reg-error{background:url(../images/no.gif)  no-repeat; }
+.tipbox-reg-correct{background:url(../images/yes.gif)  no-repeat;}
+
+/*绑定设备界面*/
+.bindbox{ color:#3e3e3e}
+.bindbox p{ 
+	line-height:60px; 
+	height:60px;
+	_padding:1px 0;
+	/*使input框全部外露*/
+}
+.bindbox h2{ font-size:22px; font-family:"微软雅黑", "黑体";color:#ff7900;margin-bottom:20px; padding-left:0;}
+.bindbox h3{ font-size:18px;}
+.bindbox h3 span{
+	background:url(../images/tip_confirm.gif) no-repeat;
+	padding-left:70px;
+	margin-left:270px;
+	display:inline-block;
+	height:60px;
+	line-height:60px;
+}
+.bindbox ul{padding:0 200px;}
+.bindbox li{float:left; width:122px; height:29px; margin:20px;}
+.bindbox input{
+	border: 1px solid #a4a4a4;
+	height:22px;
+	line-height:22px; 
+	padding:3px;
+	width:160px;
+}
+.bindbox .h50{ height:50px;}
+.bindbox .h145{ height:145px; }
+.bindbox .h130{
+	height:195px;
+}
+
+/*绑定设备页面的两个按钮*/
+.btnbind1 a{ 
+	display:inline-block;
+	width:84px; 
+	height:30px; 
+	line-height:30px; 
+	text-align:center; 
+	background:url(../images/btn_bind.gif) no-repeat; 
+	font-size:13px; 
+	font-weight:bold; 
+	color:#3a3a3a;
+}
+.btnbind1 a:hover{ background-position:0 -30px;}
+
+.btnbind2 a{ 
+	display:inline-block;
+	width:122px; 
+	height:29px; 
+	line-height:29px; 
+	text-align:center; 
+	background:url(../images/btn_bind2.gif) no-repeat; 
+	font-size:13px; 
+	font-weight:bold; 
+	color:#fff;
+}
+.btnbind2 a:hover{ background-position:0 -29px;}
+
+/*登录按钮注册按钮*/
+.btnsummit a{ 
+	display:inline-block;
+	width:102px; 
+	height:40px; 
+	line-height:40px; 
+	text-align:center; 
+	background:url(../images/btn_summit.gif) no-repeat; 
+	font-size:17px; 
+	font-weight:bold; 
+	color:#FFF;
+}
+.btnsummit a:hover{ background-position:0 -40px;color:#FFF;}
+
+/*主页banner1*/
+.banner1box{height:461px; position:relative; background:url(../images/banner1.gif) no-repeat;}
+.banner2box,.banner3box{height:466px;font-family:"微软雅黑", "黑体"; color:#3f3f3f;}
+.banner2box{ background:url(../images/banner2.jpg) no-repeat; padding:5px 0 0 457px;}
+.banner3box{ background:url(../images/banner3.jpg) no-repeat;}
+.banner2box h2{font-size:30px; line-height:60px;}
+.banner2box p,.banner3box p{font-size:15px; line-height:28px;}
+.banner3box p{ padding:10px 0 0 12px;}

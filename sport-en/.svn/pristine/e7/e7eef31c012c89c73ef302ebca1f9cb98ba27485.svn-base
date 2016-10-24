@@ -1,0 +1,28 @@
+static.file.path = http://app-zefit.mykronoz.com/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url = http://app-zefit.mykronoz.com/sportimg/user/
+
+file.upload.path = /usr/local/apache/htdocs/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:8002/appscomm/
+
+emailAddress=noreply@mykronoz.com
+email.url=http://app-zefit.mykronoz.com
+findPwdsubject=Zefit password reset
+registSubject=Zefit sign up confirmation
+newPwdSubject=Zefit get new password
+email.forgotPwd=/usr/local/L28/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/L28/tomcat/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/L28/tomcat/webapps/ROOT/WEB-INF/classes/template_register.html
+
+watch.search.system.user=test@test.com,s.brault@test.com,a.riou@test.com,g.pirard@test.com,r.hsieh@test.com
+
+deviceType=L28
+deviceName=Zefit
+href.learnmore=http://www.mykronoz.com/zefit
+pc.download=http://app-zefit.mykronoz.com/download/ZeFit For WinPC V1.39.exe
+mac.download=http://app-zefit.mykronoz.com/download/ZeFit For Mac V1.39.dmg
+ios.download=https://itunes.apple.com/us/app/zefit/id873887501?mt=8
+andriod.download=https://play.google.com/store/apps/details?id=cn.appscomm.pedometer.activity&hl=fr_FR

@@ -1,0 +1,128 @@
+﻿	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="<@s.text name='deviceName'/>" />
+	<meta name="keywords"  content="<@s.text name='deviceName'/>" />
+	<!-- <link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/base.css">
+	 <link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/user.css">
+	 -->
+	 <link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/ui-lightness/jquery-ui-1.10.3.custom.css">
+	<script src="<@s.text name='static.file.path'/>/js/jquery/jquery-1.8.0.min.js"></script>
+	<script src="<@s.text name='static.file.path'/>/js/jquery/jquery-ui-1.10.3.custom.js"></script>
+	<script src="<@s.text name='static.file.path'/>/js/jquery.fixedHeader.js"></script>
+	<script src="<@s.text name='static.file.path'/>/js/modules/users/login.js"></script>
+	<script src="<@s.text name='static.file.path'/>/js/md5.js"></script>
+	
+	<script type="text/javascript">
+	    var cssPath="<@s.text name='static.file.path'/>";
+		var lang="<@s.text name='js.common.lang'/>";
+		loadjscssfile(cssPath+"/css/base.css", "css");
+		if(lang=="french"){
+			loadjscssfile(cssPath+"/css/user-fr.css","css");
+		}
+		else {
+			loadjscssfile(cssPath+"/css/user.css","css");
+		}
+			
+		var cxtPath = "<@s.text name='root.path'/>";
+	    var staticPath = "<@s.text name='static.file.path'/>";
+	    
+		var mustEmail = "<@s.text name='js.login.must.email'/>";
+        var emailFormat = "<@s.text name='js.login.email.format'/>";
+        var pwdNotNull="<@s.text name='js.login.pwd.not.null'/>";
+        var pwdLength="<@s.text name='js.login.pwd.length'/>";
+        
+        var confirmPwd="<@s.text name='js.register.pwd.confirm'/>";
+        var pwdConsistant="<@s.text name='js.register.pwd.not.consistant'/>";
+        var regNickname="<@s.text name='js.register.nickname'/>";
+        var regNicknameFormat="<@s.text name='js.register.nickname.format'/>";
+        var regHeightMsg="<@s.text name='js.register.height'/>";
+        var regHeightFormatMsg="<@s.text name='js.register.height.format'/>";
+        var regFtMsg="<@s.text name='js.register.height.ft'/>";
+        var regFtFormatMsg="<@s.text name='js.register.height.ft.format'/>";
+        var regFtinMsg="<@s.text name='js.register.height.ftin'/>";
+        var regFtinFormatMsg="<@s.text name='js.register.height.ftin.format'/>";
+        
+        var regWeightMsg="<@s.text name='js.register.weight'/>";
+        var regWeightFormatMsg="<@s.text name='js.register.weight.format'/>";
+        var regWeightFormatTwoMsg="<@s.text name='js.register.weight.format.two'/>";
+        var regWeightFormatThreeMsg="<@s.text name='js.register.weight.format.three'/>";
+        
+        var regEmailCheckMsg="<@s.text name='js.register.email.information'/>";
+        var regEmailCheckFormatMsg="<@s.text name='js.register.email.info.format'/>";
+        var regPwdCheckMsg="<@s.text name='js.register.pwd.check'/>";
+        var regRepwdCheckMsg="<@s.text name='js.register.retpwd.confirm'/>";
+        var regNameCheckMsg="<@s.text name='js.register.name.check'/>";
+        var regServiceCheckMsg="<@s.text name='js.register.service.check'/>";
+        var regAccountReg="<@s.text name='js.register.account.have.reg'/>";
+        var regNameUsed="<@s.text name='js.register.name.have.used'/>";
+        
+        var spReportStarttime="<@s.text name='js.sport.report.starttime'/>";
+        var spReportEndtime="<@s.text name='js.sport.report.endtime'/>";
+        var spReportSteps="<@s.text name='js.sport.report.setps'/>";
+        var spReportMile="<@s.text name='js.sport.report.distance.mile'/>";
+        var spReportKm="<@s.text name='js.sport.report.distance.km'/>";
+        var spReportCalorie="<@s.text name='js.sport.report.calorie'/>";
+        var spLevel="<@s.text name='js.sport.report.level'/>";
+        
+        var spReportQuality="<@s.text name='js.sport.report.quality'/>";
+        var reportSleepDuration="<@s.text name='js.sport.report.sleep.duration'/>";
+        var reportAwakeDuration="<@s.text name='js.sport.report.awake.duration'/>";
+        var reportLightDuration="<@s.text name='js.sport.report.light.duration'/>";
+        var reportDeepDuration="<@s.text name='js.sport.report.deep.duration'/>";
+        var reportTotalDuration="<@s.text name='js.sport.report.total.duration'/>";
+        
+        var myledongToday="<@s.text name='js.myledong.today'/>";       
+        var myledongYesterday="<@s.text name='js.myledong.yesterday'/>";
+        var myledongSteps="<@s.text name='js.myledong.steps'/>";
+        var myledongMile="<@s.text name='js.myledong.mile'/>";
+        var myledongKm="<@s.text name='js.myledong.km'/>";
+        var myledongKcal="<@s.text name='js.myledong.kcal'/>";
+        var myledongHour="<@s.text name='js.myledong.hours'/>";
+        
+        var myledongCurrent="<@s.text name='js.myledong.current'/>";
+        var myledongTitleStep="<@s.text name='js.myledong.title.steps'/>";
+        var myledongTitleCalories="<@s.text name='js.myledong.title.calories'/>";
+        var myledongTitleDistance="<@s.text name='js.myledong.title.distance'/>";
+        var myledongTitleSleep="<@s.text name='js.myledong.title.sleep'/>";
+        var myledongTxtDeepSleep="<@s.text name='js.myledong.txt.deep.sleep'/>";
+        var myledongTxtLightSleep="<@s.text name='js.myledong.txt.light.sleep'/>";
+        var myledongTxtWake="<@s.text name='js.myledong.txt.wake'/>";
+        var weeks="<@s.text name='js.myledong.array.week'/>"; 
+		var months="<@s.text name='js.myledong.array.month'/>";
+		var lowerweeks="<@s.text name='js.myledong.array.week.lower'/>";
+		var commonUnit="<@s.text name='js.common.unit'/>";
+		var accountNotExist="<@s.text name='login_account_not_exist'/>";
+		
+		function loadjscssfile(filename, filetype){
+			if (filetype=="js"){  
+			  var fileref=document.createElement('script');
+			  fileref.setAttribute("type","text/javascript");
+			  fileref.setAttribute("src", filename);
+			}else if (filetype=="css"){ 
+			  var fileref=document.createElement("link");   
+			  fileref.setAttribute("rel", "stylesheet");
+			  fileref.setAttribute("type", "text/css");  
+			  fileref.setAttribute("href", filename);
+			}   
+			
+			if (typeof fileref!="undefined"){
+			  document.getElementsByTagName("head")[0].appendChild(fileref);   
+			}  
+		}
+		
+	    $(function(){
+			$("#logIn").click(function(){
+				if($(".loginbox").is(":hidden")){
+					$(".loginbox").fadeIn("fast")
+				}
+			})
+			$("#logInSmall").click(function(){
+				if($(".loginbox").is(":hidden")){
+					$("body,html").animate({scrollTop:0},500)
+					$(".loginbox").fadeIn("fast");
+				}
+			})
+			$(".btn-close").click(function(){
+				$(this).parent(".loginbox").fadeOut("fast")
+			})
+		})
+	</script>

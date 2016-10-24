@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+打包生产环境war包:
+ant -f build.xml production
+ -->
+<project name="static" basedir="." default="all">
+	<property name="static.dir" value="${basedir}/webapp/sport" />
+	<property name="target.dir" value="build/tar" />
+
+	<!-- 创建目录 -->
+	<target name="init">
+		<mkdir dir="${target.dir}" />
+	</target>
+
+	<!-- 清理 -->
+	<target name="clean">
+		<delete dir="${target.dir}" />
+	</target>
+
+	<!-- 缺省 -->
+	<target name="all" depends="clean, L28" />
+
+	<!--生成集成测试 war包结构-->
+	<!-- <target name="it-test" depends="init">
+		<war warfile="${war.dir}/static.war" needxmlfile="false" duplicate="preserve">
+			<fileset dir="${static.dir}">
+				<include name="**/*" />
+			</fileset>
+		</war>
+	</target>
+	-->
+	
+	<!--生成生产环境 tar包结构-->
+	<target name="L28" depends="init">
+		<tar destfile="${target.dir}/static_L28.tar">
+			<fileset dir="${static.dir}/L28">
+				<include name="**/*" />
+				<exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+	
+	<target name="L11" depends="init">
+		<tar destfile="${target.dir}/static_L11.tar">
+			<fileset dir="${static.dir}/L11">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+	
+	<target name="L30" depends="init">
+		<tar destfile="${target.dir}/static_L30.tar">
+			<fileset dir="${static.dir}/L30">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+		
+	<target name="L31" depends="init">
+		<tar destfile="${target.dir}/static_L31.tar">
+			<fileset dir="${static.dir}/L31">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+	
+	<target name="L28W" depends="init">
+		<tar destfile="${target.dir}/static_L28W.tar">
+			<fileset dir="${static.dir}/L28W">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L30B" depends="init">
+		<tar destfile="${target.dir}/static_L30B.tar">
+			<fileset dir="${static.dir}/L30B">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+	
+	<target name="L38A" depends="init">
+		<tar destfile="${target.dir}/static_L38A.tar">
+			<fileset dir="${static.dir}/L38A">
+				<include name="**/*" />
+			    <exclude name="users"/>
+				<exclude name="**/*.html"/>
+			</fileset>
+		</tar>
+	</target>
+	
+</project>

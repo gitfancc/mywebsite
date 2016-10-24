@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><@s.text name='page.deviceManagement.t1'/></title>
+	<#include "../../commons/top.html">
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<#include "../../commons/batteryBoard.html">
+	<div class="bg-lightgray">
+		<h2 class="tc pt10 pb10"><@s.text name='page.deviceManagement.b1'/></h2>
+	</div>
+	<div class="content pt30 pb30">
+	    <table class="ui-table ui-table-border">
+	        <thead>
+	            <tr>
+	                <th><@s.text name='page.deviceManagement.b2'/></th>
+	                <th><@s.text name='page.deviceManagement.b3'/></th>
+	                <th><@s.text name='page.deviceManagement.b4'/></th>
+	                <th><@s.text name='page.deviceManagement.b5'/></th>
+	                <th><@s.text name='page.deviceManagement.b6'/></th>
+	            </tr>
+	        </thead>
+	        <tbody id="deviceTable">
+	        	
+	        </tbody>         
+	    </table>
+	    <!--<a class="btn btn-red btn-large r mt10" id="dialog-link"><@s.text name='page.deviceManagement.b7'/></a>-->
+	</div>    
+	
+	<!--浮动层;-->
+	<div  id="dialog"  style="display:none;">
+	     <p>No Firmware available</p>
+	</div>
+	<!--end浮动层-->
+	<#include "../../commons/foot2.html">
+</body>
+
+<script>
+$(function(){
+	$( "#dialog" ).dialog({
+		autoOpen: false,
+		modal: true
+	});
+	// Link to open the dialog
+	$( "#dialog-link" ).click(function(event) {
+		$( "#dialog" ).dialog( "open" );
+	});
+	
+	var token = localStorage.getItem("jwt");
+	$.ajax({
+		url:config.host+"v1/pairing/paired",
+		type :"GET",
+		crossDomain: true,
+		dataType: 'json',
+		contentType:"application/json; charset=utf-8",
+		headers :{"Authorization":config.tokenHeader+token},
+		error: function(XHR,textStatus,errorThrown) {
+            var statusCode = XHR.responseText.code;
+            var msg = XHR.responseText.message;
+            console.log(XHR.responseText);
+            //user did't exists
+            if(statusCode == 403){ 
+            	$("#account_error_message").html(msg);
+            }
+            return false;
+        },
+	    success:function(data){
+	    	if (data !== undefined){
+	    		var len = data.length;
+	    		var node = $("#deviceTable");
+	    		for(var i=0;i<len;i++){
+	    			var id = data[i].id;
+	    			var model = data[i].model;
+	    			var sim = data[i].sim;
+	    			var firmwareName = data[i].firmwareName;
+	    			var firmwareVersion = data[i].firmwareVersion;
+	    			node.append("<tr>");
+	    			node.append("<td class='bl'>"+id+"</td>");
+	    			node.append("<td>"+model+"</td>");
+	    			node.append("<td>"+sim+"</td>");
+	    			node.append("<td>"+firmwareName+"</td>");
+	    			node.append("<td class='br'>"+firmwareVersion+"</td>");
+	    			node.append("</tr>");
+	    		}
+			}else{
+				var html = "<tr><td style='height:20px'></td><td style='height:20px'></td><td style='height:20px'></td>"+
+				          	"<td style='height:20px'></td><td style='height:20px'></td>"
+		               		+"</tr>";
+				node.append(html);
+			}
+	   }
+		
+	});
+	
+	/*
+	 {
+    "id": "FLCL53B16342400001",
+    "model": "L53B",
+    "sim": "macAddress",
+    "firmwareName": "L53B#00001",
+    "firmwareVersion": "0.1"
+  },
+
+	*/
+	
+})
+
+function show_confirm(){ 
+		if (!confirm("Sure to Unpair?")){ 
+			 return false;
+		}else{
+			return true;
+		}
+	} ;
+</script>
+</html>

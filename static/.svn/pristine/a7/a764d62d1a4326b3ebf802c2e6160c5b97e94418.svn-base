@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>群组动态</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="乐动 运动 感受乐趣" />
+<meta name="keywords"  content="乐动 运动 感受乐趣" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/jquery/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+window.onload = function () {
+	$( "#progressbar" ).progressbar({
+		value: 56
+	});
+	$( "[title]" ).tooltip({
+		track: true
+	});
+};
+</script>
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <img src="../images/logo_index.png" width="305px" height="90px;" alt="感受运动的乐趣" title="首页"/>
+        </span>
+        <form class="diy_select_form">
+            <div class="diy_select">
+                <input type="hidden" name="" class="diy_select_input"/>
+                <div class="diy_select_txt"><img src="../images/customer_select1.jpg" /></div>
+                <div class="diy_select_btn"></div>
+                <ul class="diy_select_list">
+                    <li class="link1"><img src="../images/customer_select1.jpg" /></li>
+                    <li class="link2"><img src="../images/customer_select2.jpg" /></li>
+                </ul>
+            </div>
+         </form>
+        <ul class="user-nav">
+            <li class="user-nav-3"><a href="../users/myledong.html" title="我的乐动"></a></li>
+            <li class="user-nav-4">
+           		<a class="first" href="../users/sportsLog2.html" title="运动日志"></a>
+                <ul>
+                    <li><a href="../users/sportsLog2.html" >运动日志</a></li>
+                    <li><a href="../users/sportsLog.html" >足迹日志</a></li>
+                </ul>
+            </li>
+            <li class="user-nav-5"><a href="gGroupsLatest.html" title="群组动态"></a></li>
+        </ul>
+        <ul class="topmenu">
+            <li class="weltxt">欢迎一起来乐动</li>
+            <li class="msg">
+            	<a  class="msg-icon" href="javascript:;">
+                    <span class="msg-sup"><b id="">5</b></span>
+                </a>
+            	<div class="ui-poptip" style="width:180px;">
+                    <div class="ui-poptip-shadow">
+                        <div class="ui-poptip-container">
+                            <div class="ui-poptip-arrow ui-poptip-arrow-1">
+                                <em></em>
+                                <span></span>
+                            </div>
+                            <a href="javascript:;" class="ui-poptip-close">×</a>
+                            <div class="ui-poptip-content">
+                            	<div class="top">
+                                	<p><a href="javascript:;">一条新消息，来自raincy</a></p>
+                                </div>
+                                <div class="bottom">
+                                	<p><a href="javascript:;">一个新群组请求</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           		</div>
+            </li>
+            <li class="dropmenu">
+            	<a href="javascript:;" ></a>
+                <ul>
+                    <li><a href="../users/info.html" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                    <li><a href="javascript:;" >账号安全</a></li>
+                    <li><a href="../users/deviceManagement.html" >设备管理</a></li>
+                    <li><a href="../index.html" >退出</a></li>
+                </ul>
+             </li>
+        </ul>
+        <!--end topmenu-->
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="minwrapper">
+        <div id="left">
+            <div class="thumb">
+                <img src="../images/imagthumb.gif" alt=""/>
+            </div>
+           <div id="progressbar" class="pro-box" title="tooltip内容放title里面" ></div>
+            <p class="tc mt10">Leval 6</p>
+            <ul class="thumb-info mt15">
+               <li><a title="日志" href="../users/sportsLog2.html"><p>65</p>日志</a></li>
+               <li><a title="排名" href="gRanking.html"><p>265</p>排名</a></li>
+               <li  class="noborder"><a title="动态" href="gSportLatest.html"><p>65</p>动态</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="relative mt20">
+                <ul class="sidebar">
+                    <li><a href="gGroupsLatest.html" class="current"><span class="i1">群组动态</span></a></li>
+                    <li><a href="gSetting.html" class="default"><span class="i2">群组管理</span></a></li>
+                    <li><a href="gSearching.html" class="default"><span class="i3">搜索群组</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="right" class="overflow-h">
+           <div class="right-menu-box g-nobg mb0">
+           		<ul class="g-right-menu">
+                    <li class="current"><a href="#">全部</a></li>
+                    <li><a href="#">广州跑步群</a></li> 
+                    <li><a href="#">中海御城</a></li>         
+                </ul>
+           </div>
+           <div class="g-left equalheight-item">
+                <ul class="post-list plf20">
+                    <li class="post">
+                        <div class="post-content">
+                            <div class="avatar popClick">
+                                <span><img src="../images/g_thumb.jpg" /></span>    
+                            </div>
+                            <div class="post-body">
+                                <div class="post-header">
+                                    <span class="publisher popClick">咩都唔知</span>
+                                    <a class="btnreply r" href="#">分 享</a>
+                                </div>
+                                <div class="post-message-container">
+                                    <div>刚刚添加了2003步，7天总步数20152万，超越了Fio，韩泰，排名升至17。</div>
+                                    <div class="g-chart"><img src="../images/chart_ex.jpg"/></div>
+                                    <div class="post-media clearfix">
+                                        <a href="../images/d-l.jpg"  data-lightbox="photo-set"><img src="../images/d.jpg"/></a>
+                                        <a href="../images/d-l.jpg"  data-lightbox="photo-set"><img src="../images/d.jpg"/></a>
+                                        <a href="../images/d-l.jpg"  data-lightbox="photo-set"><img src="../images/d.jpg"/></a>
+                                        <a href="../images/d-l.jpg"  data-lightbox="photo-set"><img src="../images/d.jpg"/></a>
+                                        <a href="../images/d-l.jpg"  data-lightbox="photo-set"><img src="../images/d.jpg"/></a>
+                                    </div>
+                                    <link rel="stylesheet" href="../css/lightbox.css"/>
+                                    <script src="../js/lightbox-2.6.min.js"></script>
+                                </div>
+                                <div class="post-message-footer">
+                                    <span class="uptime">6小时前</span>
+                                    <span class="soure">来自iPhone客户端</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <ul class="children">
+                            <li class="post">
+                                <div class="post-content">
+                                    <div class="avatar popClick">
+                                        <span><img src="../images/g_thumb.jpg" /></span>    
+                                    </div>
+                                    <div class="post-body">
+                                        <div class="post-header">
+                                            <span class="publisher popClick">咩都唔知</span>
+                                            <span>哎哟，成绩不错哦</span>
+                                        </div>
+                                        <div class="post-message-footer">
+                                            <span class="uptime">6小时前</span>
+                                            <span><a class=" color-blue" href="javascript:;">回复</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="children">
+                                    <li class="post">
+                                        <div class="post-content">
+                                            <div class="avatar popClick">
+                                                <span><img src="../images/g_thumb.jpg" /></span>    
+                                            </div>
+                                            <div class="post-body">
+                                                <div class="post-header">
+                                                    <span class="publisher popClick">咩都唔知</span>
+                                                    <span>哎哟，成绩不错哦</span>
+                                                </div>
+                                                <div class="post-message-footer">
+                                                    <span class="uptime">6小时前</span>
+                                                    <span><a class=" color-blue" href="javascript:;">回复</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>    
+                              </ul>
+                            </li>
+                            <li class="post">
+                                <div class="post-content">
+                                    <div class="avatar popClick">
+                                        <span><img src="../images/g_thumb.jpg" /></span>    
+                                    </div>
+                                    <div class="post-body">
+                                        <div class="post-header">
+                                            <span class="publisher popClick">咩都唔知</span>
+                                            <span>哎哟，成绩不错哦</span>
+                                        </div>
+                                        <div class="post-message-footer">
+                                            <span class="uptime">6小时前</span>
+                                            <span><a class=" color-blue" href="javascript:;">回复</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>     
+                      </ul>
+                      
+                      <div  class="pop_reply">
+                            <textarea class="textarea" name="content" placeholder="我也说一句" autocomplete="off"></textarea>        
+                            <a  class="btnreply" href="#">发 表</a>
+                      </div>
+                     </li>
+                     <li class="post">
+                       <div class="post-content">
+                            <div class="avatar popClick">
+                                <span><img src="../images/g_thumb.jpg" /></span>    
+                            </div>
+                            <div class="post-body">
+                                <div class="post-header">
+                                    <span class="publisher popClick">咩都唔知</span>
+                                </div>
+                                <div class="post-message-container">
+                                    <div>刚刚添加了2003步，7天总步数20152万，超越了Fio，韩泰，排名升至17。</div>
+                                    <div class="g-chart"><img src="../images/chart_ex.jpg"/></div>
+                                </div>
+                                <div class="post-message-footer">
+                                    <span class="uptime">6小时前</span>
+                                    <span class="soure">来自iPhone客户端</span>
+                                </div>
+                            </div>
+                        </div>                                   
+                      <div  class="pop_reply">
+                            <textarea class="textarea" name="content" placeholder="我也说一句" autocomplete="off"></textarea>        
+                            <a  class="btnreply" href="#">发 表</a>
+                      </div>
+                    </li>
+                </ul>	
+                <p class="tc f20 color-orange mt30 mb30">暂无消息</p>
+                <div class="tr mb10">这里放分页按钮</div>
+           </div>
+           <div class="g-right equalheight-item">
+           		<div class="g-sidebox">
+                	<div class="g-sidebox-head">
+                    	<h3>群动态消息</h3>
+                    </div>
+                    <div class="g-sidebox-container">
+                    	<ul class="g-newslist">
+                        	<li class="new1"><a href="gLatestNews.html">最新消息(<span>1</span>)</a></li>
+                            <li class="new2"><a href="gGroupsMessage.html">群组消息(<span>2</span>)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="g-sidebox">
+                	<div class="g-sidebox-head">
+                    	<h3>广州跑步群一周排行</h3>
+                    </div>
+                    <div class="g-sidebox-container">
+                    	<ol>
+                            <li class="g-list g-list-li">
+                                <span class="middle decimal">1</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123123123步</h4>
+                                </span>
+                            </li>
+                            <li class="g-list g-list-li">
+                                <span class="middle decimal">2</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123步</h4>
+                                </span>
+                            </li>
+                            <li class="g-list g-list-li no-b-border">
+                                <span class="middle decimal">3</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123步</h4>
+                                </span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="g-sidebox">
+                	<div class="g-sidebox-head">
+                    	<h3>中海御城一周排行</h3>
+                    </div>
+                    <div class="g-sidebox-container">
+                    	<ol>
+                            <li class="g-list g-list-li">
+                                <span class="middle decimal">1</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123步</h4>
+                                </span>
+                            </li>
+                            <li class="g-list g-list-li">
+                                <span class="middle decimal">2</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123步</h4>
+                                </span>
+                            </li>
+                            <li class="g-list g-list-li no-b-border">
+                                <span class="middle decimal">3</span>
+                                <img class="middle" src="../images/g_thumb.jpg" />
+                                <span class="middle">
+                                    <p>city</p>
+                                    <h4>123步</h4>
+                                </span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+           </div>	
+        </div>
+        <div class="clear"></div>
+        
+	</div>
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+<script>
+	function diy_select(){this.init.apply(this,arguments)};
+	diy_select.prototype={
+		 init:function(opt)
+		 {
+			this.setOpts(opt);
+			this.o=this.getByClass(this.opt.TTContainer,document,'div');//容器
+			this.b=this.getByClass(this.opt.TTDiy_select_btn);//按钮
+			this.t=this.getByClass(this.opt.TTDiy_select_txt);//显示
+			this.l=this.getByClass(this.opt.TTDiv_select_list);//列表容器
+			this.ipt=this.getByClass(this.opt.TTDiy_select_input);//列表容器
+			this.lengths=this.o.length;
+			this.showSelect();
+		 },
+		 addClass:function(o,s)//添加class
+		 {
+			o.className = o.className ? o.className+' '+s:s;
+		 },
+		 removeClass:function(o,st)//删除class
+		 {
+			var reg=new RegExp('\\b'+st+'\\b');
+			o.className=o.className ? o.className.replace(reg,''):'';
+		 },
+		 addEvent:function(o,t,fn)//注册事件
+		 {
+			return o.addEventListener ? o.addEventListener(t,fn,false):o.attachEvent('on'+t,fn);
+		 },
+		 showSelect:function()//显示下拉框列表
+		 {
+			var This=this;
+			var iNow=0;
+			this.addEvent(document,'click',function(){
+				 for(var i=0;i<This.lengths;i++)
+				 {
+					This.l[i].style.display='none';
+				 }
+			})
+			for(var i=0;i<this.lengths;i++)
+			{
+				this.l[i].index=this.b[i].index=this.t[i].index=i;
+				this.t[i].onclick=this.b[i].onclick=function(ev)  
+				{
+					var e=window.event || ev;
+					var index=this.index;
+					This.item=This.l[index].getElementsByTagName('li');
+
+					This.l[index].style.display= This.l[index].style.display=='block' ? 'none' :'block';
+					for(var j=0;j<This.lengths;j++)
+					{
+						if(j!=index)
+						{
+							This.l[j].style.display='none';
+						}
+					}
+					This.addClick(This.item);
+					e.stopPropagation ? e.stopPropagation() : (e.cancelBubble=true); //阻止冒泡
+				}
+			}
+		 },
+		 addClick:function(o)//点击回调函数
+		 {
+
+			if(o.length>0)
+			{
+				var This=this;
+				for(var i=0;i<o.length;i++)
+				{
+					o[i].onmouseover=function()
+					{
+						This.addClass(this,This.opt.TTFcous);
+					}
+					o[i].onmouseout=function()
+					{
+						This.removeClass(this,This.opt.TTFcous);
+					}
+					o[i].onclick=function()
+					{
+						var index=this.parentNode.index;//获得列表
+						This.t[index].innerHTML=This.ipt[index].value=this.innerHTML.replace(/^\s+/,'').replace(/\s+&/,'');
+						This.l[index].style.display='none';
+					}
+				}
+			}
+		 },
+		 getByClass:function(s,p,t)//使用class获取元素
+		 {
+			var reg=new RegExp('\\b'+s+'\\b');
+			var aResult=[];
+			var aElement=(p||document).getElementsByTagName(t || '*');
+
+			for(var i=0;i<aElement.length;i++)
+			{
+				if(reg.test(aElement[i].className))
+				{
+					aResult.push(aElement[i])
+				}
+			}
+			return aResult;
+		 },
+
+		 setOpts:function(opt) //以下参数可以不设置  //设置参数
+		 { 
+			this.opt={
+				 TTContainer:"diy_select",//控件的class
+				 TTDiy_select_input:"diy_select_input",//用于提交表单的class
+				 TTDiy_select_txt:"diy_select_txt",//diy_select用于显示当前选中内容的容器class
+				 TTDiy_select_btn:"diy_select_btn",//diy_select的打开按钮
+				 TTDiv_select_list:"diy_select_list",//要显示的下拉框内容列表class
+				 TTFcous:"focus"//得到焦点时的class
+			}
+			for(var a in opt)  //赋值 ,请保持正确,没有准确判断的
+			{
+				this.opt[a]=opt[a] ? opt[a]:this.opt[a];
+			}
+		 }
+}
+
+var TTDiy_select=new diy_select({  //参数可选
+		TTContainer:"diy_select",//控件的class
+		TTDiy_select_input:"diy_select_input",//用于提交表单的class
+		TTDiy_select_txt:"diy_select_txt",//diy_select用于显示当前选中内容的容器class
+		TTDiy_select_btn:"diy_select_btn",//diy_select的打开按钮
+		TTDiv_select_list:"diy_select_list",//要显示的下拉框内容列表class
+		TTFcous:"focus"//得到焦点时的class
+});//如同时使用多个时请保持各class一致.
+</script>
+</body>
+</html>

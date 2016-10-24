@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="globleAppender"
+		class="org.apache.log4j.AsyncAppender">
+		<appender-ref ref="stdout" />
+	</appender>
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{HH:mm:ss,SSS\} %p] %c - %m%n" />
+		</layout>
+	</appender>
+	<appender name="sportAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/sport.log" />
+		<param name="MaxFileSize" value="5120KB"/>
+		<param name="MaxBackupIndex" value="10"/>    
+        <param name="DatePattern" value="'.'yyyy-MM-dd" /> 
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %5p %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="org.springframework">
+		<level value="info" />
+	</logger>
+	<logger name="com.opensymphony">
+        <level value="info" />
+    </logger>
+	<logger name="org.apache.struts2">
+		<level value="info" />
+	</logger>
+	<logger name="freemarker">
+		<level value="info" />
+	</logger>
+	<logger name="org.logicalcobwebs">
+		<level value="debug" />
+	</logger>
+	<logger name="com.opensymphony.xwork2.ognl.OgnlValueStack">
+		<level value="error" />
+	</logger>
+	<logger name="com.appscomm.sport.service.impl.SendMailForPasswordImpl">
+		<level value="info" />
+		<appender-ref ref="sportAppender" />
+	</logger>
+	<root>
+		<level value="debug" />
+		<appender-ref ref="globleAppender" />
+	</root>
+</log4j:configuration>

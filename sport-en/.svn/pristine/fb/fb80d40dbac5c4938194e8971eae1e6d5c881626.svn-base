@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><@s.text name='page.myZeFit.t1'/></title>
+	<#include "../../commons/top.html">
+	<style type="text/css">
+		.J_chartWrap { 
+			position: relative;
+			width: 900px;
+			height: 300px;
+			margin: 0 auto auto -23;
+		}
+	</style>
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<#include "../../commons/batteryBoard.html">
+	<div class="tc pb10 pt10">
+		<input type="hidden" name="searchDate" id="searchDate"/>
+	    <a href="javascript:;" class="btn-arrowleft" id="previous"></a>
+	    <input style="cursor: pointer;" value="" id="datepicker"  class="input-noborder"/>
+	    <a href="javascript:;" class="btn-arrowright disable" id="next"></a>
+	    <!-- <p class="b color-black">Fri,February 21<sup>st</sup> 2014</p> -->
+	    <p class="b color-black"  id="currentDate"></p>
+	   <input type="hidden" id="alternate" />
+	</div>
+	<div class="content bg-white ">
+		<div class="chart-zefit">
+	        <ul class="nav-tabs l f12">
+	            <li class="active"><a href="javascript:;" id="stepsA" onclick="showStepsDiv()"><@s.text name='page.myZeFit.b1'/></a></li>
+	            <li><a href="javascript:;" id="distanceA" onclick="showDistanceDiv()"><@s.text name='page.myZeFit.b3'/></a></li>
+	            <li><a href="javascript:;" id="calA" onclick="showCalDiv()"><@s.text name='page.myZeFit.b2'/></a></li>
+	            <li><a href="javascript:;" id="sleepA" onclick="showSleepDiv()" ><@s.text name='page.myZeFit.b4'/></a></li>
+	        </ul>
+	        <a href="javascript:;" class="btn btn-red r" onclick="logAnalysis()"><@s.text name='page.myZeFit.b5'/></a>
+	        <p class="clear"></p>
+	        <div class="chart" style="margin-left:-23px" id="chart"></div>
+	        <div class="J_chartWrap chart" id="main_sleep" style="display: none;"></div>
+	    </div>
+	</div>
+	<div class="content bg-white mt20 mb20 pb20">
+		<div class="span4 box-step">
+	        <div id="stepCount" class="gauge"></div>
+            <!-- <h4>steps</h4> -->
+	    </div>
+	    <div class="span4 box-distance">
+	       <div id="distance" class="gauge"></div>
+	       <!-- <h4>kcal</h4> -->
+	    </div>
+	    <div class="span4 box-calories">
+	       <div id="calories" class="gauge"></div>
+	       <!-- <h4>m</h4> -->
+	    </div>
+	    <div class="span4 box-sleep">
+	       <div id="sleep" class="gauge"></div>
+	       <!-- <h4>hour</h4> -->
+	    </div>
+	</div>
+	
+	<div class="content bg-white">
+	    <div class="span3">
+	    	<div class="brc bbc sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_6.jpg" />
+	            <h3><@s.text name='page.myZeFit.b6'/></h3>
+	            <p><span id="totalsleep">0</span><@s.text name='page.myZeFit.b7'/><span id="totalsleep_2">0</span><@s.text name='page.myZeFit.b8'/></p>
+	        </div>
+	    </div>
+	    <div class="span3">
+	    	<div class="brc bbc sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_1.jpg" />
+	            <h3><@s.text name='page.myZeFit.b9'/></h3>
+	            <p><span id="lightDuration">0</span><@s.text name='page.myZeFit.b7'/><span id="lightDuration_2">0</span><@s.text name='page.myZeFit.b8'/></p>
+	        </div>
+	    </div>
+	    <div class="span3">
+	    	<div class="bbc sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_3.jpg" />
+	            <h3><@s.text name='page.myZeFit.b10'/></h3>
+	            <p><span id="deepDuration">0</span><@s.text name='page.myZeFit.b7'/><span id="deepDuration_2">0</span><@s.text name='page.myZeFit.b8'/></p>
+	        </div>
+	    </div>
+	    <div class="span3">
+	    	<div class="brc sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_4.jpg" />
+	            <h3><@s.text name='page.myZeFit.b11'/></h3>
+	            <p><span id='sleepDuration'>0</span><@s.text name='page.myZeFit.b8'/></p>
+	        </div>
+	    </div>
+	    <div class="span3">
+	    	<div class="brc sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_5.jpg" />
+	            <h3><@s.text name='page.myZeFit.b12'/></h3>
+	            <p><span id="awakeDuration">0</span><@s.text name='page.myZeFit.b8'/></p>
+	        </div>
+	    </div>
+	    <div class="span3">
+	    	<div class="sleepbox sleep-group">
+	            <img src="<@s.text name='static.file.path'/>/images/icon_l_2.jpg" />
+	            <h3><@s.text name='page.myZeFit.b13'/></h3>
+	            <p><span id="awakeCount">0</span><@s.text name='page.myZeFit.b14'/></p>
+	        </div>
+	    </div>
+	</div>
+	
+	<#include "../../commons/foot.html">
+</body>
+
+<script src="<@s.text name='static.file.path'/>/js/justgage/justgage.1.0.1.js" type="text/javascript"></script>
+<script src="<@s.text name='static.file.path'/>/js/justgage/raphael.2.1.0.min.js" type="text/javascript"></script>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/myledong.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/modules/users/chartSleep.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/hightcharts/highcharts-3.0.5.min.js"></script>
+<script src="<@s.text name='static.file.path'/>/js/Lecomm.Common.js"></script>
+<script>
+	var watchId = '${(user.watchId)!}';
+	var myledong = 'myledong';
+	var lengthUnit = '${user.heightUnit}';
+	
+	$( "#datepicker" ).datepicker({
+			dateFormat:'DD',  //更改时间显示模式
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'Close',      //设置关闭按钮的值
+			currentText:'Today', //设置今天按钮的值
+			showOtherMonths  :true,
+            yearRange:'-10:+0',  //显示可供选择的年份7天
+            altField: "#alternate",
+            altFormat:'yy-mm-dd',
+            maxDate: new Date(),
+			defaultDate:1
+	})
+</script>
+</html>

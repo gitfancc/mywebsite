@@ -1,0 +1,76 @@
+<#assign s=JspTaglibs["/WEB-INF/struts-tags.tld"] />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="<@s.text name='deviceName'/>,Sports,Enjoy sports fun" />
+<meta name="keywords"  content="<@s.text name='deviceName'/>,Sports,Enjoy sports fun" />
+<script src="<@s.text name='static.file.path'/>/js/correctPNG.js" type="text/ecmascript"></script>
+<link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/base.css">
+<link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/layout.css">
+<link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/user.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+        <a href="<@s.text name='root.path'/>/user/sport/index">
+            <img src="<@s.text name='static.file.path'/>/images/logo_index.png" width="305px" height="90px;" alt="Experience the fun of sports" title="Home Page"/>
+        </a>
+        </span>
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="error">
+    	<img class=" img-icon mt30" src="<@s.text name='static.file.path'/>/images/icon_404.gif"/>
+        <img class="img-divide" src="<@s.text name='static.file.path'/>/images/line-divide.gif"/>
+        <img class="img-txt" src="<@s.text name='static.file.path'/>/images/404_txt.jpg"/>
+        <div class="link">
+        	<p>Click on the following link to web browsing</p>
+            <p><a href="javascript:;" onclick="window.history.go(-1);">>>To return to the previous page</a></p>
+            <p><a href="@s.text name='root.path'/>/user/sport/index">>>Returns the Le Kang page</a></p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footbox2">
+        	<div class="w300 m0">
+                <h3>${message?if_exists}</h3>
+                <ul>
+                    <li>
+                        <p><img src="<@s.text name='static.file.path'/>/images/pic-product1.jpg"/></p>
+                        <h4><@s.text name='deviceName'/> pedometer</h4>
+                        <h5>Bluetooth +ios client display</h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+         <div class="footbox">
+        	<h3><@s.text name='deviceName'/> Applications</h3>
+            <ul>
+                <li><a href="<@s.text name='root.path'/>/dispaterHtml!dispaterdownloadAndroid" >Android download</a></li>
+                <li><a href="<@s.text name='root.path'/>/dispaterHtml!dispaterdownhtml" >iOS download</a></li>
+               <!--  <li><a href="javascript:;" title="FAQ in the website and production">FAQ in the website and production</a></li>
+                <li><a href="javascript:;" title="website map">website map</a></li> -->
+            </ul>
+        </div>
+        <div class="footbox">
+        	<h3>Business cooperation</h3>
+            <ul>
+            	<li><a href="http://www.mykronoz.com/contact/" title="contact us">contact us</a></li>
+                <li><a href="http://www.mykronoz.com/support/" title="business consulting">Support</a></li>
+                <li><a href="http://www.mykronoz.com/credits-legal-mentions/" title="legal statement">Legal mentions</a></li> 
+            </ul>
+        </div>
+        <div  class="clear"></div>
+    </div> 
+    <div id="copyright">Copyright 2015 - KRONOZ LLC</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+$(function(){
+	
+	$("#btnSearchByDay").click(function(){
+		$.post(cxtPath+"/monitor/findHealthMonitorByDay",{'searchDay':$("#txtSportDay").val()?$("#txtSportDay").val():'2013-08-15'},function(healthMonitorList){
+			healthMonitorByDay(healthMonitorList);
+		},'json');
+		$("#txtSportDay").val()?'':$("#txtSportDay").val('2013-08-15');
+	});
+	
+	$.post(cxtPath+"/monitor/findHealthMonitorByDay",function(healthMonitorList){
+		healthMonitorByDay(healthMonitorList);
+	},'json');
+	
+	$("#searchByWeeks").click(function(){
+		$.post(cxtPath+"/monitor/findHealthMonitorByWeeks",{'searchDay':'weeks'},function(healthMonitorList){
+			healthMonitorByWeeks(healthMonitorList);
+		},'json');
+	});
+	$("#searchByMonth").click(function(){
+		$.post(cxtPath+"/monitor/findHealthMonitorByWeeks",{'searchDay':'month'},function(healthMonitorList){
+			healthMonitorByWeeks(healthMonitorList);
+		},'json');
+	});
+
+	$.post(cxtPath+"/monitor/findHealthMonitorByWeeks",function(healthMonitorList){
+		healthMonitorByWeeks(healthMonitorList);
+	},'json');
+	
+	$("#btnHeartRateDay").click(function(){
+		$.post(cxtPath+"/monitor/findHeartRateByDay",{'searchDay':$("#txtHeartRateDay").val()?$("#txtHeartRateDay").val():'2013-08-15'},function(heartRateByDayList){
+			heartRateByDay(heartRateByDayList);
+		},'json');
+		$("#txtHeartRateDay").val()?'':$("#txtHeartRateDay").val('2013-08-15');
+	});
+	$.post(cxtPath+"/monitor/findHeartRateByDay",function(heartRateByDayList){
+		heartRateByDay(heartRateByDayList);
+	},'json');
+	
+	$("#btnPersonOthDay").click(function(){
+		$.post(cxtPath+"/monitor/findPersonOthByDay",{'searchDay':$("#txtPersonOthDay").val()?$("#txtPersonOthDay").val():'2013-08-27'},function(personOthList){
+			personOthByDay(personOthList);
+		},'json');
+		$("#txtPersonOthDay").val()?'':$("#txtPersonOthDay").val('2013-08-27');
+	});
+	$.post(cxtPath+"/monitor/findPersonOthByDay",function(personOthList){
+		personOthByDay(personOthList);
+	},'json');
+});
+
+function healthMonitorByDay(healthMonitorList){
+	var stepsArray = [],distArray = [],speedArray = [],calArray = [], xArray = [];
+	$.each(healthMonitorList,function(i,healthMonitor){
+		stepsArray.push([healthMonitor.steps]);
+		distArray.push([healthMonitor.dist]);
+		speedArray.push([healthMonitor.speed]);
+		calArray.push([healthMonitor.cal]);
+		xArray.push([i+1]);
+	});
+
+	$('#healthMonitorByDay').highcharts({
+        title: {
+            text: $("#txtSportDay").val()+'当天运动报告',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+        	title: {
+                text: '记录(次)'
+            },
+            lables: {
+            	style: {fontSize: '36px'}
+            },
+            min: 0,
+            categories: xArray
+        },
+        yAxis: {
+            title: {
+                text: '<br/>'
+            },
+            min: 0
+        },
+        tooltip: {
+        	formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>第'+
+                    this.x +'次: '+ this.y +'';
+            }
+        },
+        /*legend: {
+            align: 'right',
+            //verticalAlign: 'top',
+            y: 20,
+            floating: true,
+            borderWidth: 0
+        },*/
+        series: [{
+            name: '运动距离(米)',
+            data: distArray
+        }, {
+            name: '运动步数(步)',
+            data: stepsArray
+        }, {
+            name: '消耗热量(千卡)',
+            data: calArray
+        }, {
+            name: '平均速度(公里/时)',
+            data: speedArray
+        }],
+        credits: {
+			enabled: false
+		}
+     });
+}
+
+function healthMonitorByWeeks(healthMonitorList){
+	var stepsArray = [],distArray = [],speedArray = [],calArray = [], xArray = [];
+	$.each(healthMonitorList,function(i,healthMonitor){
+		stepsArray.push([healthMonitor.steps]);
+		distArray.push([healthMonitor.dist]);
+		speedArray.push([healthMonitor.speed]);
+		calArray.push([healthMonitor.cal]);
+		xArray.push([healthMonitor.startTime]);
+	});
+	
+	$('#healthMonitorByWeeks').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '周/月运动数据表'
+        },
+        subtitle: {
+            text: '<br/>'
+        },
+        xAxis: {
+            categories: xArray
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            /*headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true*/
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '运动距离(米)',
+            data: distArray
+
+        }, {
+            name: '运动步数(步)',
+            data: stepsArray
+
+        }, {
+            name: '消耗热量(千卡)',
+            data: calArray
+
+        }, {
+            name: '平均速度(公里/时)',
+            data: speedArray
+
+        }],
+        credits: {
+			enabled: false
+		}
+    });
+}
+
+function heartRateByDay(heartRateByDayList){
+	var currentArray = [], xArray = [];
+	$.each(heartRateByDayList,function(i,heartRate){
+		currentArray.push([heartRate.current]);
+		xArray.push([i+1]);
+	});
+	
+	$('#heartRateByDay').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: $("#txtHeartRateDay").val()+'当天心率'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+        	title: '记录(次)',
+            categories: xArray,
+            min:0
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            min:0
+        },
+        tooltip: {
+        	formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>第'+
+                    this.x +'次: '+ this.y +'分';
+            }
+        },
+        series: [{
+            name: '当天心率',
+            data: currentArray
+        }],
+        credits: {
+			enabled: false
+		},
+		legend: {
+			enabled: false
+		}
+    });
+}
+
+function personOthByDay(personOthList){
+	var weightArray = [], xArray = [];
+	$.each(personOthList,function(i,personOth){
+		weightArray.push([personOth.weight]);
+		xArray.push([i+1]);
+	});
+	
+	$('#personOthByDay').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: $("#txtPersonOthDay").val()+'当天体重'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+        	title: '记录(次)',
+            categories: xArray,
+            min:0
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            min:0
+        },
+        tooltip: {
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>第'+
+                    this.x +'次: '+ this.y +'KG';
+            }
+        },
+        series: [{
+            name: '当天体重',
+            data: weightArray
+        }],
+        credits: {
+			enabled: false
+		}
+    });
+}

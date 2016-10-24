@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<include file="struts-default.xml" />
+
+	<package name="default2" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result type="freemarker">/error/error404.html</result>
+		</action>
+	</package>
+
+	<package name="default" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="json"
+				class="org.apache.struts2.json.JSONInterceptor" />
+			<interceptor name="auth"
+				class="com.appscomm.sport.interceptor.AuthenticationInterceptor" />
+			<interceptor-stack name="secureStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="auth" />
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="none" type="redirect">/index</result>
+			<result name="login" type="redirect">/index</result>
+		</global-results>
+
+		<!-- update by 陈林 start -->
+		<action name="" class="com.appscomm.sport.action.IndexAction"
+			method="login_index">
+			<result name="success" type="freemarker">/index.html</result>
+		</action>
+		<!-- update by 陈林 end -->
+
+		<action name="index" class="com.appscomm.sport.action.IndexAction"
+			method="login_index">
+			<result name="success" type="freemarker">/index.html</result>
+			<!-- <result name="success" type="redirect">/</result> -->
+		</action>
+
+		<!-- 用户登录、注册、登出 -->
+		<action name="login" class="com.appscomm.sport.action.IndexAction"
+			method="login">
+			<result type="json"></result>
+		</action>
+
+		<!-- 忘记密码 -->
+		<action name="forgetPassword_*" class="com.appscomm.sport.action.UserAction"
+			method="forgetPassword_{1}">
+			<result name="input" type="freemarker">${getText("view.path")}/users/forgetPassword.html
+			</result>
+			<result name="success" type="freemarker">${getText("view.path")}/users/resetPassword.html
+			</result>
+			<result name="confirm" type="freemarker">${getText("view.path")}/users/confirm.html
+			</result>
+			<result name="none" type="redirect">/</result>
+		</action>
+
+		<action name="checkEmail" class="com.appscomm.sport.action.UserAction"
+			method="checkEmail">
+			<result type="json"></result>
+		</action>
+		<!-- add by 陈林 end -->
+		<action name="valid_account" class="com.appscomm.sport.action.IndexAction"
+			method="validAccount">
+			<result type="json">
+				<param name="root">results</param>
+			</result>
+		</action>
+		<action name="valid_nickname" class="com.appscomm.sport.action.IndexAction"
+			method="validNickname">
+			<result type="json">
+				<param name="root">results</param>
+			</result>
+		</action>
+	<!-- end用户登录、注册、登出 -->
+		<action name="signup" class="com.appscomm.sport.action.IndexAction"
+			method="register_index">
+			<result name="none" type="freemarker">${getText("view.path")}/users/signUp.html
+			</result>
+			<result name="success" type="redirect">/user/info</result>
+		</action>
+		<action name="doRegister" class="com.appscomm.sport.action.IndexAction"
+			method="register">
+			<result name="input" type="freemarker">${getText("view.path")}/users/signUp.html
+			</result>
+			<result name="success" type="redirect">/user/sport/index</result>
+		</action>
+		<action name="logout" class="com.appscomm.sport.action.IndexAction"
+			method="logout" />
+		<action name="mobileAppDownload" class="com.appscomm.sport.action.IndexAction"
+			method="mobileAppDownload">
+			<result name="success" type="freemarker">${getText("view.path")}/users/mobileApplication.html</result>
+		</action>
+		<action name="softwareAppDownload" class="com.appscomm.sport.action.IndexAction"
+			method="pcAppDownload">
+			<result name="success" type="freemarker">${getText("view.path")}/users/software.html</result>
+		</action>
+		<action name="iosDownload" class="com.appscomm.sport.action.IndexAction"
+			method="iosDownload">
+			<result name="success" type="freemarker">${getText("view.path")}/users/downloadiOS.html</result>
+		</action>
+		<action name="andriodDownload" class="com.appscomm.sport.action.IndexAction"
+			method="andriodDownload">
+			<result name="success" type="freemarker">${getText("view.path")}/users/downloadAndroid.html</result>
+		</action>
+	</package>
+	<package name="secure" extends="default">
+		<default-interceptor-ref name="secureStack" />
+	</package>
+
+	<include file="struts/config/struts-user.xml" />
+	<include file="struts/config/struts-device.xml" />
+	<include file="struts/config/struts-city.xml" />
+	<include file="struts/config/struts-sport.xml" />
+	<include file="struts/config/struts-api.xml" />
+
+	<package name="mediaUtils" extends="struts-default" namespace="/media">
+		<action name="upload" class="com.appscomm.sport.utils.MediaUtils"
+			method="uploadFile">
+			<result name="success" type="freemarker">${getText("view.path")}/users/myZeFit.html
+			</result>
+		</action>
+		<action name="download" class="com.appscomm.sport.utils.MediaUtils"
+			method="downloadFile" />
+	</package>
+</struts>

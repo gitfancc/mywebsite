@@ -1,0 +1,42 @@
+﻿if (!Lecomm) var Lecomm = function () { }
+Lecomm.Cookie = {
+   //获取Cookie值
+    getCookieVal: function (offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1)
+            endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    },
+    //获取Cookies的通用方法
+    GetCookie: function (name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return this.getCookieVal(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    },
+    //设置Cookies的通用方法 
+    SetCookie: function (name, value) {
+        var argv = this.SetCookie.arguments;
+        var argc = this.SetCookie.arguments.length;
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (3650 * 24 * 60 * 60 * 1000));
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name + "=" + escape(value) +
+	 ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+	 ((path == null) ? "" : ("; path=" + path)) +
+	 ((domain == null) ? "" : ("; domain=" + domain)) +
+	((secure == true) ? "; secure" : "");
+    }
+};
+

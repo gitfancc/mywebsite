@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>联系我们</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="品思 运动 感受乐趣" />
+<meta name="keywords"  content="品思 运动 感受乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/homepage.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <a href="../index.html"><img src="../images/logo_index.png" title="首页"/></a>
+        </span>
+        <ul class="index-nav">
+        	
+            <li class="index-nav-2">
+            	<a href="../users/download.html"></a>
+                <ul>
+                    <li><a href="../users/download.html" >iPhone客户端下载</a></li>
+                    <li><a href="../users/downloadPC.html" >PC客户端下载</a></li>
+              </ul>
+          </li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="legal">
+        <h2>联系我们</h2>
+        <h4>电话：020-28065366</h4>
+        <p>地址：广州萝岗区科学城科学大道182号创新大厦C3栋903</p>
+        <p><img src="../images/map_company.jpg" alt="公司地址" class="b-one"/></p>
+  </div> 
+</div>
+<div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>activity Report</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="ZeFit" />
+<meta name="keywords"  content="ZeFit" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="header">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Zefit" title="Zefit"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Zefit" title="Zefit"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="myZeFit.html">DASHBOARD</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+    <ul class="info-nav pure">
+    	<li><a href="myProfile.html" title="my profile"><i class="icon icon-info"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:;"><i class="icon icon-setting"></i></a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="myZeFit.html">Dashboard</a></li>
+                <li class="bbc"><a href="myProfile.html">My Profile</a></li>
+                <li class="bbc"><a href="deviceManagement.html">Device Manager</a></li>
+                <li><a href="../index.html">Log out</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="battery-box">
+    <div class="l">
+    	<span class="ml20">Last sync</span>
+        <i class="icon icon-refresh"></i>
+        <span>Today 12:35</span>
+    </div>
+    <div class="r">
+        <span class="mr20">Battery Level <i class="icon icon-ele1"></i></span>
+        <span class="mr20">ZeFit Version:1.1</span>
+    </div>
+</div>
+<div class="bg-lightgray">
+	<h2 class="tc pt10 pb10">DEVICE MANAGER</h2>
+</div>
+<div class="content pt30 pb30">
+    <table class="ui-table ui-table-border">
+        <thead>
+            <tr>
+                <th>Device name</th>
+                <th>Preview</th>
+                <th>Device No</th>
+                <th>Date of pairing</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="bl">ZeFit</td>
+                <td><img src="../images/pic-product1.png"/></td>
+                <td>A40B6542</td>
+                <td>2014-6-3 8:09:34</td>
+                <td class="br"><a href="javascript:;" >Unpair >></a><br></td>
+            </tr>
+        </tbody>         
+    </table>
+    <a class="btn btn-red btn-large r mt10" id="dialog-link">DOWNLOAD NEW FIRMWARE</a>
+</div>    
+<div class="bg-lightgray pt20 pb20">
+    	<div class="clearfix">
+        	<div class="footer l ml20">
+            	<h3>COMPATIBLE PRODUCT </h3>
+                <img src="../images/pic-product1.png"/>
+                <p>ZeFit</p>
+                <p>Activity & Sleep Tracker</p>
+            </div>
+             <div class="footer r small">
+            	<h3>INFORMATION</h3>
+        		<p><a href="javascript:;" title="Contact us">Contact us</a></p>
+            	<p><a href="javascript:;" title="Support">Support</a></p>
+            	<p><a href="javascript:;" title="Legal Mentions">Legal Mentions</a></p>
+            </div>
+             <div class="footer r">
+            	<h3>DOWNLOAD</h3>
+        		<p><a href="mobileApplication.html" title="Mobile Application">Mobile Application</a></p>
+            	<p><a href="software.html" title="Software">Software</a></p>
+            </div> 
+        </div>
+        <div class="lang">
+            <a class="mr20"><img alt="English" src="../images/UK.png"> English</a>
+            <a><img alt="Français" src="../images/FR.png"> Français</a>
+        </div>
+</div>
+<p class="copyright">© 2014 KRONOZ LLC, All rights reserved</p>
+<!--浮动层;-->
+<div  id="dialog"  style="display:none;">
+     <p>No Firmware available</p>
+</div>
+<!--end浮动层-->
+</body>
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/jquery.fixedHeader.js"></script>
+<script>
+$(function(){
+	$( "#dialog" ).dialog({
+		autoOpen: false,
+		modal: true
+	});
+	// Link to open the dialog
+	$( "#dialog-link" ).click(function(event) {
+		$( "#dialog" ).dialog( "open" );
+	});
+})
+</script>
+</html>

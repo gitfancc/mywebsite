@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="theme/css/bootstrap/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="theme/css/bootstrap/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="theme/css/bootstrap/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme/css/custom.css">
+</head>
+<body>
+<div class="navbar-top">
+	<div class="container">
+    	<ul class="nav pull-left">
+        	<li><a href="users/login.html">[登录]</a></li>
+            <li><a href="users/register.html">[注册]</a></li>    
+        </ul>
+        <ul class="nav pull-right">
+        	<li><a href="javascript:;"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="http://www.fashioncomm.com/L28C.php"  target="_blank">购买设备</a></li>
+            <li><a href="users/download.html">客户端下载</a></li>
+        </ul>
+    </div>         
+</div>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="javascript:;"><img src="theme/images/logo.jpg"/></a>
+    </div>
+  </div>
+  <div class="navbar-bottom"></div>
+</div>
+<div style="background:#13b8ba; height:300px; margin-top:-20px;"></div>
+<div class="container" style="margin-top:-280px">
+	<div class="banner-section-1">
+        <p class="t1"><big>多</big>设备<i>便捷</i>记录</p>
+        <p class="t2">随时<i>体验</i></p>
+        <ul class="thumbnails noborder">
+        	<li class="span3"></li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-1.jpg">
+                    <h5 class="text-center">卡路里</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-2.jpg">
+                    <h5 class="text-center">跑步速度</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-3.jpg">
+                    <h5 class="text-center">动一动</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-4.jpg">
+                    <h5 class="text-center">睡眠检测</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-5.jpg">
+                    <h5 class="text-center">设定提醒</h5>
+                </div>
+            </li>
+            <li>
+                <div class="thumbnail">
+                    <img src="theme/images/icon-6.jpg">
+                    <h5 class="text-center">后台分享</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="banner-section-2">
+    	<p class="intro-title">详细介绍</p>
+        <div class="intro">
+        	<h2 class="text-info">活动量检测</h2>
+            <p>佩戴在身上的设备，检测你的活动状态。</p>
+            <p>重新定义你每天的活动量，为自己带来健康的生活方式。</p>
+            <p>距离、步数、卡路里燃烧等数字的不断增加，</p>
+            <p>任何时候都能了解你的活动量。</p>
+        </div>
+    </div>
+    <hr>
+    <div class="banner-section-3">
+    	<div class="intro">
+        	<h2 class="text-info">轨迹追踪</h2>
+            <p>任何时候都可以查看、分享运动信息</p>
+            <p>查看好友群组的排行、评论</p>
+        </div>
+    </div>
+    <hr>
+    <div class="banner-section-4">
+    	<div class="intro">
+        	<h2 class="text-info">分享你的成功</h2>
+            <p>任何时候都可以查看、分享运动信息</p>
+            <p>查看好友群组的排行、评论</p>
+        </div>
+    </div>
+    <div class="banner-section-5">
+    	<p class="intro-title">免费下载</p>
+        <div class="intro">
+        	<h2 class="text-info">免费APP支持</h2>
+            <p>除了登录乐康网，您还可以通过手机APP</p>
+            <p>查看您的运动信息</p>
+			<p>以及更多丰富的功能。</p>
+        </div>
+        <a class="btn-app" href="https://itunes.apple.com/cn/app/dulife-dong-dong/id787317205?mt=8" target="_blank"></a>
+   </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span5 offset1">
+                <h4><img src="theme/images/icon-footer-title.jpg"/> 乐康平台支持绑定的设备</h4>
+                <ul class="unstyled">
+                    <li class="mb20">
+                        <p>乐康L28计步器</p>
+                        <p>蓝牙设备+ios客户端展示</p>
+                        
+                    </li>
+                    <li>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank">A1智能腕表</a></p>
+                        <p><a href="http://www.fashioncomm.com/A1.php" target="_blank">蓝牙耳机+Android客户端</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="span3">
+                <h4><img src="theme/images/icon-footer-title.jpg"/> 乐康服务</h4>
+                <ul class="unstyled">
+                    <li><a href="users/download.html" title="iPhone客户端下载">iPhone客户端下载</a></li>
+                    <li><a href="users/downloadPC.html"  title="PC客户端下载">PC客户端下载</a></li>
+                    <li><a href="javascript:;" title="乐康产品说明">乐康产品说明</a></li>
+                    <li><a href="javascript:;" title="网站及产品常见问题">网站及产品常见问题</a></li>
+                    <li><a href="javascript:;" title="网站地图">网站地图</a></li>
+                </ul>
+            </div>
+            <div class="span3">
+                <h4><img src="theme/images/icon-footer-title.jpg"/> 商务合作</h4>
+                <ul class="unstyled">
+                    <li><a href="fp/contactus.html" title="联系我们">联系我们</a></li>
+                    <li><a href="fp/contactus.html" title="商务咨询">商务咨询</a></li>
+                    <li><a href="fp/legal.html" title="法律声明">法律声明</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p class="text-center">Copyright 2012-2014Lifesense粤ICP备 110110100</p> 
+</footer>
+<script type="text/javascript" src="theme/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="theme/js/bootstrap/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="theme/js/bootstrap/bootstrap-ie.js"></script>
+<![endif]-->
+</body>
+</html>

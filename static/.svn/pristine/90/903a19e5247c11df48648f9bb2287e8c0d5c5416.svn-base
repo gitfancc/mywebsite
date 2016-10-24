@@ -1,0 +1,266 @@
+//发布评论
+pubComment =  function(obj,a){
+	var pText = $.trim($(obj).prev().val());
+	var content = pText;
+	if(content==null || content==""){
+//		alert("评论信息不能为空!")
+		show_div($(obj).attr("id"), "评论信息不能为空!", 300, -156);
+		return false;
+	}
+	if(content.length > 500){
+//		alert("评论数字不能超过500字!")
+		show_div($(obj).attr("id"), "评论数字不能超过500字!", 300, -156);
+		return false;
+	}
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!pubComment',{'content':content,'postsId':a},function(data){
+		var d = eval(data);
+		if(d.result == 0){
+			var imgSrc = "";
+			if(d.data.creator.imgUrl!=undefined && d.data.creator.imgUrl!="undefined"){
+				imgSrc = "<img src="+d.data.creator.imgUrl+" />";
+			}else{
+				imgSrc = "<img src='"+staticPath+"/images/g_thumb.jpg' />";
+			}
+			$(obj).parent().parent().prev().after("<ul class='children'>" +
+					"<li class='post'><div class='post-content'><div class='avatar popClick'>" +
+					"<span><a href='"+cxtPath+"/group/memberinfo?personId="+d.data.creator.id+"'>"+imgSrc+"</a></span>" +
+					"</div><div class='post-body'><div class='post-header'><a href='"+cxtPath+"/group/memberinfo?personId="+d.data.creator.id+"'>" +
+							"<span class='publisher popClick'>"+d.data.creator.nickname+"</span></a>" +
+					"<span>"+html_encode(d.data.content)+"</span></div><div class='post-message-footer'>" +
+					"<span class='uptime'>刚刚发布</span><span><a class=' color-blue' href='javascript:void(0)' onclick='replyFun(this);'> 回复</a>" +
+					"<div class='pop_reply' style='display: none;'><textarea class='textarea' name='reply' style='height:50px' placeholder='我也说一句' autocomplete='off'>" +
+					"</textarea><a  class='btnreply' href='javascript:void(0)' id='pub_"+d.data.id+"' onclick='replyInfo(this, "+d.data.id+");'>确定</a></div></span>" +
+					"</div></div></div><span class='myClass'></span></li></ul>");
+		}
+		$(obj).prev().val('');
+	},'json');
+}
+
+function html_encode(str)  
+{  
+  var s = "";  
+  if (str.length == 0) return "";  
+  s = str.replace(/&/g, "&gt;");  
+  s = s.replace(/</g, "&lt;");  
+  s = s.replace(/>/g, "&gt;");  
+  s = s.replace(/ /g, "&nbsp;");  
+  s = s.replace(/\'/g, "&#39;");  
+  s = s.replace(/\"/g, "&quot;");  
+  s = s.replace(/\n/g, "<br>");  
+  return s;  
+}  
+
+
+this.REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g; 
+this.REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+this.encodeHtml = function(s){
+    return (typeof s != "string") ? s :
+    s.replace(this.REGX_HTML_ENCODE,
+              function($0){
+                  var c = $0.charCodeAt(0), r = ["&#"];
+                  c = (c == 0x20) ? 0xA0 : c;
+                  r.push(c); r.push(";");
+                  return r.join("");
+              });
+};
+
+this.decodeHtml = function(s){
+    return (typeof s != "string") ? s :
+        s.replace(this.REGX_HTML_DECODE,
+                  function($0,$1){
+                      var c = this.HTML_ENCODE[$0]; // 尝试查表
+                      if(c === undefined){
+                          // Maybe is Entity Number
+                          if(!isNaN($1)){
+                              c = String.fromCharCode(($1 == 160) ? 32:$1);
+                          }else{
+                              // Not Entity Number
+                              c = $0;
+                          }
+                      }
+                      return c;
+                  });
+};
+
+
+//回复按钮事件函数
+replyFun = function(obj){
+	var d = $(obj).next();
+	d.toggle();
+}
+
+
+String.prototype.replaceAll = function(s1, s2) {      
+    return this.replace(new RegExp(s1, "gm"), s2); //g全局     
+}     
+    
+String.prototype.replaceAll2Excep = function(s1, s2) {        
+    var temp = this;        
+    while (temp.indexOf(s1) != -1) {        
+        temp = temp.replace(s1, s2);        
+    }        
+    return temp;        
+}      
+
+
+//回复评论
+replyInfo = function(obj, id, subcomment){
+	var pText = $.trim($(obj).prev().val());
+	var content =  pText;
+	
+	if(content==null || content==""){
+//		alert("回复内容不能为空!");
+		show_div($(obj).attr("id"), "回复内容不能为空!", -30, -200);
+		return false;
+	}
+	if(content.length > 500){
+//		alert("回复数字不能超过500字!");
+		show_div($(obj).attr("id"), "回复数字不能超过500字!", -30, -200);
+		return false;
+	}
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!pubReply', {'reply':content, 'id':id}, function(data){
+		if(data.split(",")[0] == 0) {
+			$(obj).parent().hide();
+			var imgSrc = "";
+			if(data.split(",")[4]!=undefined && data.split(",")[4]!="undefined" && data.split(",")[4]!=null && data.split(",")[4]!="null"){
+				imgSrc = "<img src="+data.split(",")[4]+" />";
+			}else{
+				imgSrc = "<img src='"+staticPath+"/images/g_thumb.jpg' />";
+			}
+			//拼凑内容
+			$("#myTemplate").html(
+					$("#myTemplate").html().replace("#nickname",
+							data.split(",")[1]).replace("#content", html_encode(content))
+							.replaceAll("#sublistId", data.split(",")[2]).replace(
+									"#createTime", data.split(",")[3]).replace(
+									"#imgUrl", imgSrc)
+									.replace("#personId",
+							"group/memberinfo?personId=" + data.split(",")[5])
+							.replace("#repliedPerson", data.split(",")[6]));
+			
+			if (subcomment == 'subcomment') {
+				$(obj).parent().parent().parent().parent().parent().parent().parent().parent().append(
+						$("#myTemplate").html());
+			} else {
+				$(obj).parent().parent().parent().parent().parent().next().append($("#myTemplate").html());
+			}
+			//赋值后再次清空模板
+			var nk = $("#myTemplate").find("span#nk");
+			var ct = $("#myTemplate").find("span#ct");
+			var iu = $("#myTemplate").find("span#iu");
+			var perhref1 = $("#myTemplate").find("a#perhref1");
+			var perhref2 = $("#myTemplate").find("a#perhref2");
+			
+			
+			var btnreply = $("#myTemplate").find("a.btnreply");
+			nk.html("#nickname<span style='color: black;'>回复</span>#repliedPerson<span style='color: black;'>：</span>");
+			ct.html("#content");
+			iu.html("#imgUrl");
+			btnreply.attr("onclick","replyInfo(this,'#sublistId','subcomment');");
+			
+			
+			perhref1.attr("href","<@s.text name='root.path'/>#personId");
+			perhref2.attr("href","<@s.text name='root.path'/>#personId");
+		}
+	},'json');
+}
+
+
+//显示更多评论信息
+showMore = function(obj, postId, subcomment, pubid, currentPage){
+	$(obj).attr("page", parseInt($(obj).attr("page")) + 1);
+	var page = $(obj).attr("page");
+	$.post(cxtPath+'/groupMsgAction/groupMsgAction!getAGroupComment', {'page':page,'postId':postId,'pubid':pubid}, function(data){
+		var text = "";
+		var commentsResposelist = eval(data.data);
+		if(subcomment == 'subcomment'){ //子回复 
+			for(var i=0; i<commentsResposelist.length; i++){
+				var subComments = commentsResposelist[i].subComments;
+				if(commentsResposelist[i].id == pubid){
+					for(var j=0; j<subComments.length; j++){
+						var subComment = subComments[i];
+						text+="<ul class='children'><li class='post'><div class='post-content'><div class='avatar popClick'><span><img src="+subComment.creator.imgUrl+" /></span></div>";
+						text+="<div class='post-body'><div class='post-header'><span class='publisher popClick'>"+subComment.creator.nickname+"</span><span>"+html_encode(subComment.content)+"</span></div>";
+						text+="<div class='post-message-footer'><span class='uptime'>"+subComment.showTime+" </span><span><a class=' color-blue' href='javascript:;' onclick='replyFun(this);'>回复</a>";
+						text+="<div class='pop_reply' style='display: none'><textarea class='textarea' name='reply' style='height:50px' placeholder='我也说一句' autocomplete='off'></textarea>";
+						text+="<a  class='btnreply' href='javascript:void(0)' onclick='replyInfo(this,'1222','subcomment');'>确定</a>";
+						text+="</div></span></div></div></div></li></ul>";
+					}
+					$(obj).parent().parent().before(text);
+					break;
+				}
+			}
+		}else{ //评论
+			if(commentsResposelist.length <= 0){
+//				alert("已经没有更多评论可以查看了!");
+				show_div("morePubs", "已经没有更多评论可以查看了!", 20, -256);
+				return false;
+			}
+			for(var i=0; i<commentsResposelist.length; i++){
+				var commentsRespose = commentsResposelist[i];
+				var subComments = commentsResposelist[i].subComments;
+				
+				var imgSrc = "";
+				if(commentsRespose.creator.imgUrl!=undefined && commentsRespose.creator.imgUrl!="undefined" && commentsRespose.creator.imgUrl!=null && commentsRespose.creator.imgUrl!="null"){
+					imgSrc = "<img src="+commentsRespose.creator.imgUrl+" />";
+				}else{
+					imgSrc = "<img src='"+staticPath+"/images/g_thumb.jpg' />";
+				}
+				
+				//sport/images/g_thumb.jpg
+				text+="<ul class='children' id='mychild'><li class='post'><div class='post-content'><div class='avatar popClick'><span>"+imgSrc+"</span></div>";
+				text+="<div class='post-body'><div class='post-header'><a href='"+cxtPath+"/group/memberinfo?personId="+commentsRespose.creator.id+"'><span class='publisher popClick'>"+commentsRespose.creator.nickname+"</span></a><span>"+html_encode(commentsRespose.content)+"</span></div><div class='post-message-footer'>";
+				text+="<span class='uptime'>"+commentsRespose.showTime+" </span><span><a class='color-blue' href='javascript:;' onclick='replyFun(this);'>回复</a>";
+				text+="<div class='pop_reply' style='display: none;'><textarea class='textarea' name='reply' style='height:50px' placeholder='我也说一句' autocomplete='off'></textarea>" ;
+				text+="<a  class='btnreply' href='javascript:void(0)' onclick='replyInfo(this, "+commentsRespose.id+");'>确定</a></div></span></div></div></div>";
+				text+="<div class='myClass'>";
+				for(var j=0; j<subComments.length; j++){
+					var subComment = subComments[j];
+					
+					if(subComment.creator.imgUrl!=undefined && subComment.creator.imgUrl!="undefined" && subComment.creator.imgUrl!=null && subComment.creator.imgUrl!="null"){
+						imgSrc = "<img src="+subComment.creator.imgUrl+" />";
+					}else{
+						imgSrc = "<img src='"+staticPath+"/images/g_thumb.jpg' />";
+					}
+					
+					var id = 'replyInfo(this, '+subComment.id+', "subcomment")' ;
+					text+="<ul class='children'><li class='post'><div class='post-content'><div class='avatar popClick'><span>"+imgSrc+"</span></div>";
+					text+="<div class='post-body'><div class='post-header'><a href='"+cxtPath+"/group/memberinfo?personId="+subComment.creator.id+"'><span class='publisher popClick'>"+subComment.creator.nickname+"</a><span style='color:black'>回复</span>" +
+							"<a href='"+cxtPath+"/group/memberinfo?personId="+subComment.repliedPerson.id+"'><span class='publisher popClick'>"+subComment.repliedPerson.nickname+"</span><span style='color:black'>：</span></a></span><span>"+html_encode(subComment.content)+"</span></div>";
+					text+="<div class='post-message-footer'><span class='uptime'>"+subComment.showTime+" </span><span><a class=' color-blue' href='javascript:;' onclick='replyFun(this);'>回复</a>";
+					text+="<div class='pop_reply' style='display: none'><textarea class='textarea' name='reply' style='height:50px' placeholder='我也说一句' autocomplete='off'></textarea>";
+					text+="<a  class='btnreply' href='javascript:void(0)' onclick="+id+">确定</a>";
+					text+="</div></span></div></div></div></li></ul>";
+				}
+				text+="</div></li></ul>";
+			}
+			$(obj).parent().parent().before(text);
+		}
+	},'json');
+}
+
+
+//收起评论 移除信息
+removeMore = function(obj, subcomment){
+	var len = $(obj).parent().parent().parent().find("ul#mychild").length;
+	if(subcomment != 'subcomment'){ //评论信息
+		if(len>4){
+			for(var i=len-4; i<len; i++){
+				$(obj).parent().parent().parent().find("ul#mychild").eq(i).remove();
+			}
+		}
+	}else{ //回复信息
+		if(len>4){
+			for(var i=len-4; i<len; i++){
+				$(obj).parent().parent().parent().find("ul#mychild").eq(i).remove();
+			}
+		}
+	}
+}
+
+
+
+
+
+

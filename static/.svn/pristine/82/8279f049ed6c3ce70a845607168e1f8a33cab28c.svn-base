@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Forget Password</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Scope" />
+<meta name="keywords"  content="Scope" />
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+
+<div class="header">
+    <span class="logo">
+        <a href="../index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="http://www.mykronoz.com/collections" target="_blank">COLLECTIONS</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+    <ul class="info-nav">
+    	<li><a href="signUp.html">Sign up</a></li>
+        <li><a id="logIn" href="javascript:;">Log in</a></li>
+    </ul>
+</div>
+
+<div class="header header-small navbar-fixed-top" id="header-small" style="display:none;">
+    <span class="logo">
+        <a href="index.html"><img src="../images/logo_index.png" alt="Scope" title="Scope"/></a>
+    </span>
+    <ul class="nav">
+        <li><a href="http://www.mykronoz.com/collections" target="_blank">COLLECTIONS</a></li>
+        <li><a href="http://www.mykronoz.com/support"  target="_blank">SUPPORT</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">DOWNLOAD</a>
+            <ul class="dropdown-menu">
+                <li class="bbc"><a href="mobileApplication.html" >Mobile Application</a></li>
+                <li><a href="software.html" >Software</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="info-nav">
+    	<li><a href="signUp.html">Sign up</a></li>
+        <li><a id="logInSmall" href="javascript:;">Log in</a></li>
+    </ul>
+</div>
+
+<div class="loginbox">
+    <a class="btn-close" href="javascript:;">×</a>
+    <form action="myZeFit.html">
+        <div class="l mr20">
+            <input  class="ui-input" type="text" name="userName" id="userName"  placeholder="Email" />
+            <p class="color-red">there must be mail box</p>
+        </div>
+        <div class="l mr20">
+            <input class="ui-input" type="password" name="password" id="password" placeholder="password"/>
+            <p class="color-red">password is 0 to 6 characters</p>
+        </div>
+        <div class="l">
+        	<a class="btn btn-red"  href="myZeFit.html" title="登录">Sign In</a>
+            <p><a class="color-red" href="forgetPassword.html">Forget Password</a></p> 
+        </div> 
+                  
+     </form>
+</div>
+<div class="bg-lightgray">
+	<h2 class="tc pt10 pb10">RESET PASSWORD</h2>
+</div>
+<div class="content">
+    <form class="ui-form pt30">
+            <fieldset>
+                <div class="ui-form-item">
+                    <label class="ui-label" for="email">Email</label>
+                    <input type="text" id="email" class="ui-input">
+                </div>
+                <div class="ui-form-item">
+                    <input type="submit" value="RESET PASSWORD" class="btn btn-red">
+                </div>
+        
+            </fieldset>
+        </form>
+</div>    
+<div class="bg-lightgray pt20 pb20">
+    	<div class="clearfix">
+        	<div class="footer l ml20">
+            	<h3>COMPATIBLE PRODUCT </h3>
+                <img src="../images/pic-product1.png"/>
+                <p>Scope</p>
+                <p>Activity & Sleep Tracker</p>
+            </div>
+             <div class="footer r small">
+            	<h3>INFORMATION</h3>
+        		<p><a href="javascript:;" title="Contact us">Contact us</a></p>
+            	<p><a href="javascript:;" title="Support">Support</a></p>
+            	<p><a href="javascript:;" title="Legal Mentions">Legal Mentions</a></p>
+            </div>
+             <div class="footer r">
+            	<h3>DOWNLOAD</h3>
+        		<p><a href="mobileApplication.html" title="Mobile Application">Mobile Application</a></p>
+            	<p><a href="software.html" title="Software">Software</a></p>
+            </div> 
+        </div>
+        <div class="lang">
+            <a class="mr20"><img alt="English" src="../images/UK.png"> English</a>
+            <a><img alt="Français" src="../images/FR.png"> Français</a>
+        </div>
+</div> 
+<p class="copyright">© 2014 KRONOZ LLC, All rights reserved</p>
+</body>
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="../js/jquery/query.ui.datepicker-zh-CN.js"></script>
+<script src="../js/jquery.fixedHeader.js"></script>
+<script>
+$(function(){
+	$("#logIn").click(function(){
+		if($(".loginbox").is(":hidden")){
+			$(".loginbox").fadeIn("fast")
+		}
+	})
+	$("#logInSmall").click(function(){
+		if($(".loginbox").is(":hidden")){
+			$("body,html").animate({scrollTop:0},500)
+			$(".loginbox").fadeIn("fast");
+		}
+	})
+	$(".btn-close").click(function(){
+		$(this).parent(".loginbox").fadeOut("fast")
+	})
+})
+</script>
+</html>

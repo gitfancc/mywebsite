@@ -1,0 +1,81 @@
+var email_pattern=/(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+var telphone_pattern=/^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+$(function(){
+	var boolean = true;
+	$("#account").focus();
+	$("#account").blur(function(){
+		boolean = true;
+		$("#account_error_message").remove();
+		if(!$(this).val()){
+    		$(this).after("<span id='account_error_message' style='color: red;'>手机号/邮箱不能为空!</span>");
+    		return boolean = false;
+    	}else if($(this).val().indexOf("@")!=-1&&!email_pattern.exec($(this).val())){
+    		$(this).after("<span id='account_error_message' style='color: red;'>请输入正确格式的邮箱!</span>");
+    		return boolean = false;
+    	}else if($(this).val().indexOf("@")==-1&&!telphone_pattern.exec($(this).val())){
+    		$(this).after("<span id='account_error_message' style='color: red;'>请输入正确格式的手机号码!</span>");
+    		return boolean = false;
+    	}
+		
+		valid_account();
+	});
+	$("#password").blur(function(){
+		boolean = true;
+		$("#password_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span id='password_error_message' style='color: red;'>登录密码不能为空!</span>");
+    		return boolean = false;
+		}
+	});
+	$("#rePassword").blur(function(){
+		boolean = true;
+		$("#repassword_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span id='repassword_error_message' style='color: red;'>确认密码不能为空!</span>");
+    		return boolean = false;
+		}
+		if($(this).val()!=$("#password").val()){
+    		$(this).val("");
+    		$(this).after("<span id='repassword_error_message' style='color: red;'>输入的密码不相符!</span>");
+    		$("#password").val("");
+    		$("#password").focus();
+    		return boolean = false;
+    	}
+	});
+	$("#userName").blur(function(){
+		boolean = true;
+		$("#userName_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span id='userName_error_message' style='color: red;'>昵称不能为空!</span>");
+    		return boolean = false;
+		}
+	});
+	$("#txtVarcode").blur(function(){
+		boolean = true;
+		$("#varcode_error_message").remove();
+		if(!$(this).val()){
+			$(this).after("<span id='varcode_error_message' style='color: red;'>验证码不能为空!</span>");
+    		return boolean = false;
+		}
+	});
+	
+	$("#btnRegister").click(function(){
+		$("#service_error_message").remove();
+		if(!$("#readerService").attr("checked")){
+			$("#readerService ~ a").after("<span id='service_error_message' style='color: red;'>请先阅读乐康服务条款!</span>");
+			return false;
+		}
+		if(boolean)
+			$("#register").submit();
+	});
+});
+
+function valid_account(){
+	$("#account_error_message").remove();
+	$.post(cxtPath+'/valid_account',{"operType":"validAccount","user.account":$("#account").val()},function(results){
+		if(!results)
+			$("#account").after("<span id='account_error_message' style='color: red;'>帐号已经被注册!</span>");
+		else
+			$("#account").after("<span id='account_error_message' style='color: green;'>可用!</span>");
+	},'json');
+}

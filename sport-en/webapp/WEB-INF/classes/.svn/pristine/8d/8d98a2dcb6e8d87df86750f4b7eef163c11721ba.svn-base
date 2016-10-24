@@ -1,0 +1,23 @@
+static.file.path = http://192.168.1.200:8080/static/sport/V2
+view.path = /WEB-INF/view${user.view}
+root.path = /sport
+prefix.url = http://192.168.1.200:8080/upload/user/
+
+file.upload.path = /home/tomcatl/apache-tomcat-7.0.42/webapps/upload/user/
+ 
+#restful  URL
+restfulURL=http\://192.168.1.200\:8080/appscomm/
+
+#email config
+emailAddress=noreply@mykronoz.com
+#emailPwd=!@#$%^
+#serverHost=smtp.163.com
+#serverPort=25
+#encryType=Default
+email.url=http://localhost:8080/sport
+findPwdsubject=Zefit password reset
+registSubject=Zefit sign up confirmation
+newPwdSubject=Zefit get new password
+watch.search.system.user=test@test.com
+
+deviceType=L28

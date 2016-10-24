@@ -1,0 +1,250 @@
+﻿if (!Lecomm) var Lecomm = {};
+var ChartData = {times:[], steps: [], cal: [], speed: [], distance: [], heartRate: [] };
+Lecomm.Sport = {
+    //加载图表数据
+    LoadChartData: function (url, startTime, endTime, action) {
+        jQuery.ajax({
+            url: url,
+            type: "post",
+            data: { action: action, t: new Date(), startTime: startTime, endTime: endTime },
+            dataType: "text",
+            beforeSend: function () {
+            	//http://localhost:8080/static/sport/V1/images/loading.gif
+                $("#chart").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/>loading....</p>");
+            },
+            success: function (data, textStatus) {
+            	 $("#chart").html("");
+            	 ChartData = {times:[], steps: [], cal: [], speed: [], distance: [], heartRate: [] };
+            	$("#action").val(action);
+                Lecomm.Sport.ParseJSONChartData(data);
+                Lecomm.Sport.GetPage(startTime,endTime,action);//获取分页数据
+                  $("#ViewSteps").click();
+            },
+            error: function (XMLHttpRequest, textStatus) {
+            	 $("#chart").html("")
+                alert(textStatus);
+            }
+        });
+    },
+  
+    //生成分页
+    GetPage:function(startTime,endTime,action){
+    	var page = new Lecomm.FY();
+		Lecomm.Sport.LoadSportData(cxtPath+"/user/sport/GetSportData", {
+			oPagePanel : "msg",
+			currentPageIndex : 1,
+            startTime: startTime,
+             endTime: endTime,
+			pageSize : 20,
+			action:action
+		}, function(data, total) {
+		   
+			page.GetPagerText({
+				oPagePanel : "page",
+				recordCount : total,
+				currentPage : 1,
+				displayPages : 8,
+				pageSize : 6,
+				language : 'cn'
+			}, function(currentPage) {
+				Lecomm.Sport.LoadSportData(cxtPath+"/user/sport/GetSportData", {
+					oPagePanel : "msg",
+				    startTime: startTime,
+		             endTime: endTime,
+					currentPageIndex : currentPage,
+					pageSize : 20,
+					action:action
+				}, function() {
+				});
+			});
+		});
+    },
+  //加载运动数据
+    LoadSportData: function (url, options, callback) {
+        var defaultOptions = { action: "", currentPage: 1, pageSize: 10 };
+        options = $.extend(defaultOptions, options);
+        var data = $.extend({ time: new Date().getTime() }, options);
+        jQuery.ajax({
+            type: "get",
+            url: url,
+            data: data,
+            dataType: "text",
+            beforeSend: function () {
+              $("#msg").html("<p class='loading'><img src='"+staticPath+"/images/loading.gif'/>loading....</p>");
+            },
+            error: function (status, data) {
+            	 $("#msg").html("")
+                if (typeof error == "function") {
+                    error.call(null);
+                }
+            },
+            success: function (data) {
+             	 $("#msg").html("")
+                var d =eval( "["+data+"]");
+                var recordCount =d[0].count; //总条数
+                Lecomm.Sport.ParseJSONSportData(d);
+             
+                if (typeof callback == "function") {
+                    callback.call(null, data, recordCount);
+                }
+
+            }
+        });
+    },
+    //解析运动日志数据
+     ParseJSONSportData: function(data) {
+            var d = data[0].data;
+            var len = d.length;
+            if (len < 2) return;
+            var sb = "<table class='table-sync'>";
+             sb+="<tr>";
+             sb+="<th>开始时间</th><th>同步时间</th><th>步数<br />(步)</th><th>距离<br />(米)</th>";
+             sb+="<th>速度<br />(公里/小时)</th><th>卡路里<br />(卡)</th><th>平均心率<br />(帕)</th>";
+             sb+="<th>最高/最低心率<br />(帕)</th>";
+             sb+="</tr>";
+            for (var i = 0; i < len - 1; i++) {
+                sb += "<tr>";
+                sb += "<td>" + d[i].startTime + "</td>";
+                sb += "<td>" + d[i].endTime + "</td>";
+                sb += "<td>" + d[i].steps + "</td>";
+                sb += "<td>" + d[i].dist + "</td>";
+                sb += "<td>" + d[i].speed + "</td>";
+                sb += "<td>" + d[i].cal + "</td>";
+                sb += "<td>" + d[i].avgrate + "</td>";
+                sb += "<td>" + d[i].maxrate+"/"+d[i].minrate + "</td>";
+                sb += "</tr>";
+            }
+            sb += "</table>";
+            $("#msg").html(sb);
+    },
+    //解析图表JSON
+    ParseJSONChartData: function (data) {
+        var d = eval(data);
+        var len = d.length;
+        if (len < 2) return;
+        ChartData = {times:[], steps: [], cal: [], speed: [], dist: [], heartRate: [] };
+        for (var i = 0; i < len - 1; i++) {
+            ChartData.times.push(d[i].endTime);
+            ChartData.steps.push(d[i].steps);
+            ChartData.cal.push(d[i].cal);
+            ChartData.speed.push(d[i].speed);
+            ChartData.dist.push(d[i].dist);
+            ChartData.heartRate.push(d[i].avgrate);
+        }
+    },
+    //查看今天的数据
+    //type 1: 步数，2距离，3.速度，4.卡路里，5.心率
+    //今天1，最近一周2，最近一月3，最近一年4，全部5，自定义6
+    LoadToday:function(){
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',1);
+      $("#LoadToday").parents("ul");
+    },
+    //最近一周
+     LoadLastWeek:function(){
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',2);
+    },
+    //最近一月
+     LoadLastMonth:function(){
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',3);
+    },
+    //最近一年
+     LoadLastYear:function(){
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',4);
+    },
+    //所有
+    LoadALL:function(){
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData','','',5);
+    },
+    //自定义搜索
+    LoadFromTo:function(){
+   
+      var startTime=$("#startTime").val()+" 00:00:00";
+      var endTime=$("#endTime").val()+" 00:00:00";
+      
+      Lecomm.Sport.LoadChartData(cxtPath+'/user/sport/GetChartData',startTime,endTime,6);
+    },
+    //查看步数
+    ViewSteps:function(){
+       Lecomm.Sport.CreateChart(ChartData.times,ChartData.steps,"","步数");
+     
+    },
+       //查看距离
+    ViewDistance:function(){
+       Lecomm.Sport.CreateChart(ChartData.times,ChartData.dist,"","距离");
+    },
+       //查看速度
+    ViewSpeed:function(){
+       Lecomm.Sport.CreateChart(ChartData.times,ChartData.speed,"","速度");
+    },
+       //查看卡路里
+    ViewCalories:function(){
+       Lecomm.Sport.CreateChart(ChartData.times,ChartData.cal,"","卡路里");
+    },
+       //查看心率
+    ViewHeartRate:function(){
+       Lecomm.Sport.CreateChart(ChartData.times,ChartData.heartRate,"","心率");
+    },
+    //获取倾斜度
+    GetRotation:function(){
+    	var action=parseInt( $("#action").val());
+    	if(!action)action=0;
+    	  //今天1，最近一周2，最近一月3，最近一年4，全部5，自定义6
+    	var rotation=[0,0,0,-45,0,0,-45];
+    	return rotation[action];
+    },
+    //创建图表
+    CreateChart: function (categories,data,title,text) { 
+      $('#chart').highcharts(
+       {
+		chart : {
+			type : 'column',
+			margin : [ 30, 50, 50, 80 ]
+		},
+		title : {
+			text :title
+		},
+		xAxis : {
+			categories :categories,
+			labels : {
+				rotation :  Lecomm.Sport.GetRotation(),
+				align : 'right',
+				style : {
+					fontSize : '12px',
+					fontFamily : '微软雅黑'
+				}
+			}
+		},
+		yAxis : {
+			min : 0,
+			title : {
+				text : text
+			}
+		},
+		legend : {
+			enabled : false
+		},
+		tooltip : {
+			pointFormat :text+ '<b>{point.y:.1f}</b>',
+		},
+		series : [ {
+			name : text,
+			data : data,
+			dataLabels : {
+				enabled : false,
+				rotation : -10,
+				color : '#FFFFFF',
+				align : 'left',
+				x : 4,
+				y : -90,
+				style : {
+					fontSize : '11px',
+					fontFamily : '微软雅黑',
+					textShadow : '0 0 3px black'
+				}
+			}
+		} ],
+		credits : [ false ]
+	});
+
+    }
+};

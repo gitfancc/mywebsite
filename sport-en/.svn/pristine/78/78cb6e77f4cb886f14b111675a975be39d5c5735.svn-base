@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<#include "../../commons/top.html">
+<link type="text/css" rel="stylesheet" href="<@s.text name='static.file.path'/>/css/b.css">
+<script>
+$(function() {
+	$( "#ui-tabs-device").tabs();
+});
+
+
+function realseOne(sid){
+   if(sid==''&&sid==null){
+      alert("参数错误!");
+      return;
+   }   
+   var url="<@s.text name='root.path'/>/user/releaseWatch?sid="+sid;     
+   jQuery.ajax({
+            type: "get",
+            url: url,
+            dataType: "text",           
+            error: function (data) {
+            	alert(data);
+            },
+            success: function (data) {
+                alert(data);
+                document.getElementById("sysUserserachForm").submit();
+            }
+        });
+}
+</script>
+</head>
+<body>
+    <div class="ht_right">
+    	<div class="ht_site">
+        	<span class="f">Device Bind Search：<font color="red">${message?if_exists}</font></span>           
+        </div>
+        <br />
+        <form action="<@s.text name='root.path'/>/user/listDevByAccount" method="post" name="sysUserserachForm" id="sysUserserachForm">
+        <table border="0" align="left" class="table02">
+            <tr>
+                <td>User Account：</td>
+                <td ><input name="userAccount" id="userAccount" value="${userAccount?if_exists}" type="text"/> </td>
+            </tr> 
+            <tr>
+                <td>Watch ID：</td>
+                <td ><textarea name="watchId" id="watchId" rows="7" cols="20">${watchId?if_exists}</textarea></td>
+            </tr>          
+            <tr>
+                <td><input type="submit" class="tbn01" value="Search" /></td>               
+            </tr>
+        </table>
+        </form>
+        
+        <table border="0" cellspacing="1" cellpadding="0" class="table03">
+          <tr>
+            <th>User Account</th>
+            <th>Watch Type</th>                              
+            <th>Watch ID</th>                                          
+            <th>Bind Time</th>                                
+            <th>Operate</th>
+          </tr>
+          <#if watchList?exists>
+               <#list watchList as bind>
+                   <tr>
+                        <td>${bind.userAccount?if_exists}</td>
+                        <td>${bind.watchType?if_exists}</td>
+                        <td>${bind.watchId?if_exists}</td>                                         
+                         <td>${bind.bindTime?string('yyyy-MM-dd hh:MM:ss')}</td>                    
+                         <td>
+                               <a class="btn btn-mini" href="javascript::" onClick="realseOne('${bind.id?c}')">Realse</a>                                                                    
+                         </td>
+                   </tr>
+                 </#list>
+                 <#else>
+                  <tr>
+                     
+                 </tr>
+            </#if>
+       </table>          
+        <div class="btnBox"></div>
+    </div>
+  </body>
+</html>

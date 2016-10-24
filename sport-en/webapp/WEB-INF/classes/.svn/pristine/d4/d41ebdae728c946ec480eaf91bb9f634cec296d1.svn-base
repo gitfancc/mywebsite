@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:annotation-config />
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<context:component-scan base-package="com.appscomm.sport.action" />
+	<context:component-scan base-package="com.appscomm.sport.utils" />
+	<context:component-scan base-package="com.appscomm.sport.service.impl" />
+	<context:component-scan base-package="com.appscomm.sport.dao.impl" />
+	
+	<!-- spring中以dataSource方式使用proxool连接池 -->
+	<bean name="abstractDataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource" abstract="true">
+		<property name="driver" value="com.mysql.jdbc.Driver" />
+		<property name="maximumConnectionCount" value="120" />
+		<property name="minimumConnectionCount" value="1" />
+		<property name="prototypeCount" value="2" />
+		<property name="simultaneousBuildThrottle" value="30" />
+		<property name="trace" value="${jdbc.trace}" />
+	</bean>
+
+	<bean id="mainDataSource" parent="abstractDataSource">
+		<property name="driverUrl">
+			<value>jdbc:mysql://${jdbc.main.database}?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull</value>
+		</property>
+        <property name="user" value="${jdbc.main.user}"/>
+        <property name="password" value="${jdbc.main.password}"/>
+        <property name="alias" value="mainDataSource"/>
+        <property name="maximumActiveTime" value="6000000"/>
+        <property name="testBeforeUse" value="true"/>
+        <property name="houseKeepingTestSql" value="select 1"/>
+	</bean>
+	<bean id="oldDataSource" parent="abstractDataSource">
+		<property name="driverUrl">
+			<value>jdbc:mysql://${jdbc.main.old.database}?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull</value>
+		</property>
+        <property name="user" value="${jdbc.main.user}"/>
+        <property name="password" value="${jdbc.main.password}"/>
+        <property name="alias" value="oldDataSource"/>
+        <property name="maximumActiveTime" value="6000000"/>
+        <property name="testBeforeUse" value="true"/>
+        <property name="houseKeepingTestSql" value="select 1"/>
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="mainDataSource" />
+	</bean>
+	<bean id="oldJdbcTemplate" class="com.appscomm.sport.dao.impl.OldJdbcTemplate">
+		<constructor-arg ref="oldDataSource" />
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="mainDataSource" />
+	</bean>
+	<bean id="oldTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="oldDataSource" />
+	</bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven transaction-manager="oldTransactionManager"/>
+    
+    <!-- 配置restful template -->
+    <bean id="restTemplate" class="com.appscomm.sport.service.RestTemplate">
+    
+    </bean>
+    
+    
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >  
+	 <property name="messageConverters">   
+	          <list>   
+	              <bean class = "org.springframework.http.converter.StringHttpMessageConverter">   
+	                 <property name = "supportedMediaTypes">
+	                       <list>
+	                           <value>text/html;charset=UTF-8</value>   
+	                      </list>   
+	                 </property>   
+	              </bean>   
+	          </list>   
+	    </property>  
+	 </bean>
+    
+</beans>

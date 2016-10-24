@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+打包生产环境war包:
+ant -f build.xml production
+ -->
+<project name="sport" basedir="." default="compile">
+	<property name="classpath_lib" value="webapp/WEB-INF/lib" />
+	<property name="sources" value="${basedir}/src/java" />
+
+	<path id="classpath">
+		<!--添加lib 中的jar 包到软件中-->
+		<fileset dir="${classpath_lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<property name="debuglevel" value="source,lines,vars" />
+
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+
+	<target name="define">
+		<property name="war_dir" value="build/war/"></property>
+		<property name="build" value="build/destination/webapp"></property>
+		<property name="src" value="src/main/java">	</property>
+	</target>
+
+	<target name="init" depends="define">
+		<delete verbose="true" includeemptydirs="true" failonerror="no">
+			<fileset dir="${build}">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="webapp/WEB-INF/classes">
+				<include name="**/*" />
+			</fileset>
+		</delete>
+
+		<mkdir dir="${war_dir}" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${build}/WEB-INF" />
+		<mkdir dir="${build}/WEB-INF/classes" />
+		<mkdir dir="${build}/WEB-INF/lib" />
+
+		<copy todir="${build}">
+			<fileset dir="${basedir}/webapp">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!--运行环境中提供，war包不需要-->
+		<delete verbose="true" file="${build}/WEB-INF/lib/jsp-api.jar" failonerror="false">	</delete>
+		<delete verbose="true" file="${build}/WEB-INF/lib/servlet-api.jar" failonerror="false"> </delete>
+
+		<!-- 复制资源文件，准备好打包相关资源文件 -->
+		<!-- <copy overwrite="true" todir="${build}/WEB-INF/classes">
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="**" />
+				<include name="**/**" />
+			</fileset>
+		</copy>
+        -->
+	</target>
+	<target name="compile" depends="init">
+		<!--添加源文件内容和编码utf-8 -->
+		<javac srcdir="${src}" destdir="${build}/WEB-INF/classes" encoding="UTF-8" classpathref="classpath">
+		</javac>
+	</target>
+	<!--生成集成测试 war包结构-->
+	<target name="it-test" depends="compile">
+		<delete verbose="true" file="${war_dir}/sport_for_it-test.war" failonerror="false">
+		</delete>
+		<!-- 复制目标环境资源 
+		<copy overwrite="true" todir="${build}/WEB-INF/classes">
+			<fileset dir="${basedir}/src/main/filters/it-test">
+				<include name="**" />
+			</fileset>
+		</copy>
+		-->
+		<war warfile="${war_dir}/sport_for_it-test.war" webxml="${build}/WEB-INF/web.xml" duplicate="preserve">
+			<fileset dir="${build}" />
+		</war>
+	</target>
+
+
+	<!--生成生产环境 war包结构-->
+	<target name="WAR" depends="compile">
+		<delete verbose="true" file="${war_dir}/ROOT.war" failonerror="false">
+		</delete>
+		<war warfile="${war_dir}/ROOT.war" webxml="${build}/WEB-INF/web.xml" duplicate="preserve">
+			<fileset dir="${build}" />
+		</war>
+	</target>
+
+	<target name="L28" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L28.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L28.tar">
+			<fileset dir="${basedir}/src/main/filters/prodcution">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L30" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L30.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L30.tar">
+			<fileset dir="${basedir}/src/main/filters/L30">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L31" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L31.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L31.tar">
+			<fileset dir="${basedir}/src/main/filters/L31">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L11" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L11.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L11.tar">
+			<fileset dir="${basedir}/src/main/filters/L11">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L28W" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L28W.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L28W.tar">
+			<fileset dir="${basedir}/src/main/filters/L28W">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L30B" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L30B.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L30B.tar">
+			<fileset dir="${basedir}/src/main/filters/L30B">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="L38A" depends="define">
+		<delete verbose="true" file="${war_dir}/config_root_L38A.tar" failonerror="false">
+		</delete>
+		<tar destfile="${war_dir}/config_root_L38A.tar">
+			<fileset dir="${basedir}/src/main/filters/L38A">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="${basedir}/src/main/resources">
+				<include name="country*.properties" />
+				<include name="struts.*" />
+				<include name="struts/**" />
+				<include name="spring/**" />
+			</fileset>
+		</tar>
+	</target>
+</project>

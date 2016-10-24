@@ -1,0 +1,219 @@
+var ChartSleep = function(node, data, opts){
+	var chart = {
+		'DOM' : {},
+		'renderData' : [],
+		'starttime' : 0,
+		'endtime' : 0,
+		'duration' : 0
+	};
+
+	opts = $.extend({
+
+	}, opts);
+
+	var utils = {
+		'insertBlock' : function(index, type, sTime, bDuration){
+			var block = $('<div></div>');
+			block.addClass('J_block');
+			block.attr('index', index);
+			var size = utils.getBlockSize(type, bDuration);
+			var pos = utils.getBlockPosition(sTime, size.h);
+			block.css({
+				'width' : size.w +'px',
+				'height' :size.h + 'px',
+				'position' : 'absolute',
+				'left' : pos['l'],
+				'top' : pos['t'] + 50,
+				'background' : opts['colors'][type]
+			});
+			chart.DOM['blockWrap'].append(block);
+		},
+		'getBlockSize' : function(type, bDuration){
+			var w = Math.floor((bDuration / chart.duration) * opts.chartWidth);
+			var h = opts.chartHeight;
+			if(type == 1){
+				h = Math.floor(opts.chartHeight * 2 / 3);
+			}
+			if(type == 2){
+				h = Math.floor(opts.chartHeight / 3);
+			}
+			if(type == 3){
+				h = Math.floor(opts.chartHeight / 3);
+			}
+			return {
+				'w' : w,
+				'h' : h
+			};
+		},
+		'getBlockPosition' : function(sTime, h){
+			var l = Math.floor(((sTime - chart.starttime) / chart.duration) * opts.chartWidth);
+			var t = Math.floor(opts.chartHeight - h);
+			return{
+				'l' : l,
+				't' : t
+			};
+		},
+		'getShowTime' : function(t){
+			var str = '';
+			var d = new Date(t);
+			var h = d.getHours();
+			var m = d.getMinutes();
+			//var h = d.getUTCHours();
+			//var m = d.getUTCMinutes();
+			str += (h < 10) ? ('0' + h) : h;
+			str += ':';
+			str += (m < 10) ? ('0' + m) : m;
+			return str;
+		}
+	};
+	
+	var initData = function(){
+		$.each(data, function(i, v){
+			$.merge(chart.renderData, v['details']);
+		});
+		chart.starttime = data[0]['starttime'];
+		chart.endtime = data[data.length - 1]['endtime'];
+		chart.duration = chart.endtime - chart.starttime;
+	};
+
+	var initDOM = function(){
+		var blockWrap = $('<div></div>');
+		blockWrap.addClass('.J_blockWrap');
+		blockWrap.css({
+			'position' : 'absolute',
+			'left' : 0,
+			'top' : 0,
+			'width' : opts.chartWidth + 'px',
+			'height' : opts.chartHeight + 'px'
+		});
+		chart.DOM['blockWrap'] = blockWrap;
+		node.append(blockWrap);
+
+		var tip = $('<div></div>');
+		tip.addClass('.J_tip');
+		tip.css({
+			'position' : 'absolute',
+			'left' : 0,
+			'top' : '10px',
+			'width' : '140px',
+			'height' : '20px',
+			'border' :'1px solid #BCBCBC',
+			'textAlign' : 'center',
+			'fontSize' : '12px',
+			'lineHeight' : '20px',
+			'display' : 'none',
+			'background' : '#fff'
+		});
+		tip.html('');
+		chart.DOM['tip'] = tip;
+		node.append(tip);
+
+		var line = $('<div></div>');
+		line.addClass('.J_line');
+		line.css({
+			'position' : 'absolute',
+			'left' : '10px',
+			'top' : '31px',
+			'width' : '1px',
+			'background' : '#BCBCBC',
+			'height' : opts.chartHeight + 19 + 'px',
+			'display' : 'none'
+		});
+		chart.DOM['line'] = line;
+		node.append(line);
+
+		var xAxisS = $('<div></div>');
+		xAxisS.addClass('.J_xAxisS');
+		xAxisS.css({
+			'position' : 'absolute',
+			'left' : '0px',
+			'top' : opts.chartHeight + 50 + 'px',
+			'width' : '30px',
+			'fontSize' : '12px',
+			'lineHeight' : '20px'
+		});
+		xAxisS.html(utils.getShowTime(chart.starttime));
+		chart.DOM['xAxisS'] = xAxisS;
+		node.append(xAxisS);
+
+		var xAxisE = $('<div></div>');
+		xAxisE.addClass('.J_xAxisE');
+		xAxisE.css({
+			'position' : 'absolute',
+			'right' : 0,
+			'top' : opts.chartHeight + 50 + 'px',
+			'width' : '30px',
+			'fontSize' : '12px',
+			'lineHeight' : '20px'
+		});
+		xAxisE.html(utils.getShowTime(chart.endtime));
+		chart.DOM['xAxisE'] = xAxisE;
+		node.append(xAxisE);		
+	};
+
+	var insertBlocks = function(){
+		$.each(chart.renderData, function(i, v){
+			if(i == chart.renderData.length - 1){
+				return;
+			}
+			var bDuration = chart.renderData[i + 1]['starttime'] - v['starttime'];
+			if(v['status'] != 0 && v['status'] != 1 && v['status'] != 2 && v['status'] != 3){
+				return;
+			}
+			if(bDuration <= 0){
+				return;
+			}
+			utils.insertBlock(i, v['status'], v['starttime'], bDuration);
+		});
+	};
+
+	var bindDOM = function(){
+		node.delegate('.J_block', 'mousemove', function(e, a){
+			var el = $(this);
+			var index = parseInt(el.attr('index'));
+			var bLeft = parseInt(el.css('left'));
+			var d = chart.renderData[index];
+
+			//相对该block starttime的时间差
+			//fire居然木有offsetX
+			if (!e.offsetX){
+			    e.offsetX = e.clientX - node.position().left - el.position().left;
+			}
+
+			var p = Math.floor((e.offsetX / opts.chartWidth) * chart.duration);
+			if(d!=null){
+				var nowTime = d['starttime'] + p;
+				var showTime = utils.getShowTime(nowTime);
+				chart.DOM['tip'].html(showTime + ' ' + opts['txt'][d['status']]);
+			}
+
+			var tipLeft = bLeft + e.offsetX - 50;
+			if(tipLeft + 100 > opts.chartWidth){
+				tipLeft = opts.chartWidth - 101;
+			}
+			if(tipLeft < 0){
+				tipLeft = 0;
+			}
+			chart.DOM['tip'].css({
+				'left' : tipLeft + 'px',
+				'display' : 'block'
+			});
+			chart.DOM['line'].css({
+				'left' : bLeft + e.offsetX + 'px',
+				'display' : 'block'
+			});
+
+		});
+	};
+
+	var init = function(){
+		initData();
+		initDOM();
+		insertBlocks();
+		bindDOM();
+	};
+
+	init();
+
+	return chart;
+};

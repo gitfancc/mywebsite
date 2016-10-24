@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><@s.text name='page.deviceBind.t1'/></title>
+<#include "../../commons/top.html">
+<script src="<@s.text name='static.file.path'/>/js/modules/users/deviceset.js" type="text/javascript"></script>
+<script>
+$(function() {
+	$( "#ui-tabs-device").tabs();
+});
+</script>
+</head>
+<body>
+	<#include "../../commons/head.html">
+	<div id="wrapper">
+		<div class="bindwrapper">
+			<div class="bindbox b-b-three">
+				<h3>
+					<span>
+						<#if user.isBind??>
+							<#if user.isBind==1><@s.text name='page.deviceBind.b1'/></#if><#else> <@s.text name='page.deviceBind.b2'/>
+						</#if>
+					</span>
+				</h3>
+			</div>
+			
+			<div class="bindbox">
+    	  		<h3><@s.text name='page.deviceBind.b3'/></h3>
+    	  		<p><@s.text name='page.deviceBind.b4'/></p>
+    	  		    <div id="ui-tabs-device">
+	                	<ul>
+	                    	<li><a class="link2" href="#tabs-2"></a></li>
+	                	</ul>
+	                	<div id="tabs-1">
+	                    	</ul>
+	               	 	</div>
+		                <div id="tabs-2">
+		                    <p class="f14"><@s.text name='page.deviceBind.b5'/></p>
+		                     <a href="<@s.text name='root.path'/>/dispaterHtml!dispaterdownhtml" target="_blank"><@s.text name='page.deviceBind.b6'/></a>
+		                	 <a href="<@s.text name='root.path'/>/dispaterHtml!dispaterdownloadAndroid" target="_blank"><@s.text name='page.deviceBind.b7'/></a>
+		                </div>
+        		</div>
+            </div>
+		</div>
+	</div>
+	<#include "../../commons/foot.html">
+</body>
+</html>

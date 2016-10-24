@@ -1,0 +1,37 @@
+/**
+ * 陈林 2013-12-26 16:16
+ * 系统弹出 提示框
+ * @param divID 点击操作某个元素ID
+ * @param content 提示内容
+ * @param width 离元素右边宽度
+ * @param height 离元素下面高度
+ * @param callback 回调函数 示例："checkBind()"
+ */
+function show_div(divID, content, width, height, callback){
+    var jquery_divID='#'+divID;  // 鼠标点击的对象
+   //  获得鼠标点击的对象的绝对坐标位置：然后X坐标-320个像素，Y坐标加20个像素 （这个根据需要自由设置喽）
+    var X = $(jquery_divID).offset().left-(width);
+    var Y = $(jquery_divID).offset().top+(height);
+    Y = Y - $(document).scrollTop();
+    
+    $("#dialog_text").html(content);
+    $( "#dialog_top" ).dialog({
+	  title:'提示框',
+	  height: 150,
+	  buttons: {
+			"确定": function() {
+				$(this).dialog('close');
+				if(callback!=undefined && callback!=null){
+					setTimeout(callback, "1000");
+				}
+			},
+			"取消": function() { 
+				$(this).dialog('close'); return false; 
+			}
+		},
+		position:[X,Y]   // 赋值弹出坐标位置
+    });
+}
+
+
+

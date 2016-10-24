@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>群组管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />   
+<meta name="description" content="品思 运动 感受乐趣" />
+<meta name="keywords"  content="品思 运动 感受乐趣" />
+<script src="../js/correctPNG.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../css/base.css">
+<link type="text/css" rel="stylesheet" href="../css/layout.css">
+<link type="text/css" rel="stylesheet" href="../css/user.css">
+<link type="text/css" rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.custom.css">
+<script src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script>
+window.onload = function () {
+	$( "#progressbar" ).progressbar({
+		value: 56
+	}); 
+};
+</script>
+</head>
+<body>
+
+<div id="header">
+	<div class="minbox">
+        <span class="logo">
+            <a href="../index.html"><img src="../images/logo_index.png" title="首页"/></a>
+        </span>
+        
+        <ul class="user-nav">
+            <li class="user-nav-6"><a  href="#"></a></li>
+            <li class="user-nav-3"><a href="../users/myledong.html" title="我的品思"></a></li>
+            <li class="user-nav-4">
+           		<a class="first" href="../users/sportsLog2.html" title="运动日志"></a>
+                <ul>
+                    <li><a href="../users/sportsLog2.html" >运动日志</a></li>
+                    <li><a href="../users/sportsLog.html" >足迹日志</a></li>
+                </ul>
+            </li>
+            <li class="user-nav-5"><a href="gGroupsLatest.html" title="群组动态"></a></li>
+        </ul>
+        <ul class="topmenu">
+            <li class="weltxt">欢迎来到品思</li>
+            <li class="msg">
+            	<a  class="msg-icon" href="javascript:;">
+                    <span class="msg-sup"><b id="">5</b></span>
+                </a>
+            	<div class="ui-poptip" style="width:180px;">
+                    <div class="ui-poptip-shadow">
+                        <div class="ui-poptip-container">
+                            <div class="ui-poptip-arrow ui-poptip-arrow-1">
+                                <em></em>
+                                <span></span>
+                            </div>
+                            <a href="javascript:;" class="ui-poptip-close">×</a>
+                            <div class="ui-poptip-content">
+                            	<div class="top">
+                                	<p><a href="javascript:;">一条新消息，来自raincy</a></p>
+                                </div>
+                                <div class="bottom">
+                                	<p><a href="javascript:;">一个新群组请求</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           		</div>
+            </li>
+            <li class="dropmenu">
+            	<a href="javascript:;" ></a>
+                <ul>
+                    <li><a href="../users/info.html" >编辑资料</a></li>
+                    <li><a href="javascript:;" >账号管理</a></li>
+                    <li><a href="javascript:;" >账号安全</a></li>
+                    <li><a href="../users/deviceManagement.html" >设备管理</a></li>
+                    <li><a href="../index.html" >退出</a></li>
+                </ul>
+             </li>
+        </ul>
+        <!--end topmenu-->
+    </div>
+</div>
+
+
+<div id="wrapper">
+	<div class="minwrapper">
+        <div id="left">
+            <div class="thumb">
+                <img src="../images/imagthumb.gif" alt=""/>
+            </div>
+            <div id="progressbar" class="pro-box" title="tooltip内容放title里面" ></div>
+            <p class="tc mt10">Leval 6</p>
+            <ul class="thumb-info mt15">
+               <li><a title="日志" href="../users/sportsLog2.html"><p>65</p>日志</a></li>
+               <li><a title="排名" href="gRanking.html"><p>265</p>排名</a></li>
+               <li  class="noborder"><a title="动态" href="gSportLatest.html"><p>65</p>动态</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="relative mt20">
+                <ul class="sidebar">
+                    <li><a href="gGroupsLatest.html" class="default"><span class="i1">群组动态</span></a></li>
+                    <li><a href="gSetting.html" class="current"><span class="i2">群组管理</span></a></li>
+                    <li><a href="gSearching.html" class="default"><span class="i3">搜索群组</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="right">
+            <div class="right-menu-box"></div>
+            <div class="form-box first-child">
+                <div class="form-box-container form-box-container-nohead">
+                	<table class="ui-table ui-table-inbox">
+                        <thead class="fblue">
+                            <tr>
+                                <th class="w2">群名称</th>
+                                <th>群号</th>
+                                <th>城市</th>
+                                <th>人数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td class="g-list g-list-table">
+                                   <img class="middle" src="../images/g_thumb.jpg" />
+                                   <span class="middle">
+                                        <h3>广州跑步群</h3>
+                                        <p>落大雨，好收衣服啦~~~~~~</p>
+                                   </span>
+                                </td>
+                                <td>529240355</td>
+                                <td>广州</td>
+                                <td>15</td>
+                                <td><a class="button button-sblue" href="gMemberSetting.html" >设置</a> <a class="button button-sblue"  href="gJoinus.html" >邀请加入</a></td>
+                             </tr>
+                             <tr>
+                                <td class="g-list g-list-table">
+                                   <img class="middle" src="../images/g_thumb.jpg" />
+                                   <span class="middle">
+                                        <h3>广州跑步群</h3>
+                                        <p>落大雨，好收衣服啦~~~~~~</p>
+                                   </span>
+                                </td>
+                                <td>153444087</td>
+                                <td>深圳</td>
+                                <td>80</td>
+                                <td><a class="button button-sblue" href="gMemberSetting.html" >设置</a> <a class="button button-sblue"  href="gJoinus.html" >邀请加入</a></td>
+                             </tr> 
+                        </tbody>
+                    </table>
+                    <p class="tc mt20">你还没有新建群组，每个用户可以 <a class="color-blue"  href="gCreation.html">创建</a> 一个群组</p>
+                </div>	
+            </div>
+           <!--end form-box-->
+        </div>
+        <div class="clear"></div>
+	</div>
+    <div id="copyright">Copyright 2012-2013Lifesense粤ICP备 110110100</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+	    <ul class="info-nav">
+	    	<li><a href="<@s.text name='root.path'/>/signup"><@s.text name='page.nologin.head.register' /></a></li>
+	        <li><a id="logIn" href="javascript:;"><@s.text name='page.nologin.head.login' /></a></li>
+	    </ul>

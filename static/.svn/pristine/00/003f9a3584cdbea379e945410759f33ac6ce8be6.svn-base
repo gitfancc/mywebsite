@@ -1,0 +1,308 @@
+@charset "utf-8";
+/*!
+ * @名称：layout.css
+ * @功能：1、用于写整体大框架的布局
+ * 乐动     
+ */
+
+#header{
+	width:100%;
+	background:url(../images/bg_header.jpg) repeat-x;
+	height:90px;
+}
+.minbox{
+	width:990px; 
+	margin:0 auto; 
+	position:relative; 
+	z-index:80;/*此处z-index:1是为了让下来菜单在rightmenu的最上面，ie6bug。设置了relative，z-index要设一下*/
+}
+#wrapper{
+	margin:0 auto;
+	width:990px;
+	background:#f0f0f0;
+	border-bottom:1px solid #f0f0f0;
+}
+/*border-bottom:1px solid #f0f0f0;是解决wrapper和minwrapper下边距合并问题*/
+.minwrapper{
+	background:#fff;
+	width:890px;
+	margin:0 auto;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+
+#main{}
+#left,#right{ float:left;}
+#left{
+	width:165px;
+}
+#right{width:725px; background:url(../images/bg_shadow.jpg) repeat-y;min-height:500px;height:auto !important; height:500px; }
+
+#footer{
+	background:#f8f8f8;
+	padding:20px 0 10px 20px;
+	border-top:3px solid #e4e4e4;
+	border-left:1px solid #e4e4e4;
+	border-right:1px solid #e4e4e4;
+}
+#copyright{
+	background:#f8f8f8;
+	height:47px;
+	line-height:47px;
+	border:1px solid #e4e4e4;
+	text-align:center;
+	clear: both;
+}
+
+
+/*主页logo，主页menu*/
+.logo{ width:305px;position:absolute; top:0; left:0;}
+
+.index-nav{position:absolute; top:24px; left:350px;}/*left:350px;*/
+.index-nav li{ float:left; margin:0 20px; display:inline;}
+.index-nav li a{ display:block;}
+
+.index-nav-1 a{background:url(../images/link_return.png) no-repeat; width:226px; height:37px;}
+.index-nav-1 a:hover{background:url(../images/link_return_hover.png) no-repeat;}
+
+/*.index-nav-2 a{background:url(../images/link_download.png) no-repeat; width:75px; height:37px;}
+.index-nav-2 a:hover{background:url(../images/link_download_hover.png) no-repeat;}
+*/
+/*自定义下拉框*/
+.diy_select_form{ position:absolute; left:315px; top:2px;z-index:100000;}
+.diy_select{position: relative;cursor:pointer; margin:0; padding:0;}
+.diy_select_txt{height:78px; width:76px}
+.diy_select_btn{ position:absolute; right:5px; bottom:6px; background:url(../images/diy_select_btn.png) no-repeat; height:13px; width:11px;}
+.diy_select_list{position: absolute;top:78px; display:none;z-index: 88888;}
+.diy_select_list li{cursor:pointer;height:78px; width:76px;}
+/**/
+
+.index-nav-2{
+	position:relative;
+	background:url(../images/link_download.png) no-repeat; 
+	width:110px; 
+	height:37px; 
+	cursor:pointer;
+}
+.index-nav-2:hover{background:url(../images/link_download_hover.png) no-repeat;}
+.index-nav-2 ul{display:none;position:absolute;top:37px; left:-20px;}
+.index-nav-2 ul li{
+	background:url(../images/bg_dropmenu_large.jpg) no-repeat; 
+	height:26px; 
+	width:110px; 
+	line-height:26px; 
+	text-align:center;
+}
+.index-nav-2 ul li a{color:#686868;}
+.index-nav-2 ul li a label{ cursor:pointer;}
+.index-nav-2 ul li a:hover{color:#ff6e00;}
+.index-nav-2:hover ul{ display:block;}
+
+
+/*user页面的nav*/
+.user-nav{position:absolute; top:29px; left:390px; z-index:80;}/*z-index:999使群组动态按钮手型正常*/
+.user-nav li{ float:left;}
+.user-nav li a{ display:block;}
+.user-nav-3 a{
+	background:url(../images/link_3.png) no-repeat; 
+	width:96px; 
+	height:26px;
+}
+.user-nav-3 a:hover{background:url(../images/link_3_hover.png) no-repeat;}
+.user-nav-4 {
+	position:relative;
+	background:url(../images/link_4.png) no-repeat; 
+	width:110px; 
+	height:26px; 
+	cursor:pointer;
+}
+.user-nav-4 .first{width:110px;height:26px;}
+.user-nav-4:hover{background:url(../images/link_4_hover.png) no-repeat;}
+.user-nav-4 ul{display:none;position:absolute;top:26px; left:0;}
+.user-nav-4 ul li{background:url(../images/bg_dropmenu_large.jpg) no-repeat; height:26px; width:110px; line-height:26px; text-align:center;}
+.user-nav-4 ul li a{color:#686868;}
+.user-nav-4 ul li a label{ cursor:pointer;}
+.user-nav-4 ul li a:hover{color:#ff6e00;}
+.user-nav-4:hover ul{ display:block;}
+
+.user-nav-5 a{
+	background:url(../images/link_5.png) no-repeat; 
+	width:96px; 
+	height:26px;
+}
+.user-nav-5 a:hover{
+	background:url(../images/link_5_hover.png) no-repeat;
+}
+
+/*首页中的下拉菜单left:650px;*/
+.topmenu{
+	position:absolute;
+	top:30px;
+	left:610px;
+	text-align:center;
+}
+.topmenu .weltxt{
+	width:200px;
+	text-align:right;
+	color:#fff;
+}
+.topmenu .news{
+	width:60px;
+}
+.topmenu li{
+	float:left;
+	position:relative;
+	/*width:86px;*/
+	height:22px;
+	line-height:22px;
+}
+
+.dropmenu{ background:url(../images/bg_dropmenu.gif) no-repeat; cursor:pointer;width:86px; }
+.dropmenu:hover{background:url(../images/bg_dropmenu_hover.jpg) no-repeat;}
+.dropmenu li{background:url(../images/bg_dropmenu.jpg) no-repeat;width:86px;}
+.dropmenu ul{display:none;position:absolute;top:22px; left:0; z-index:80;}
+.dropmenu ul li a{color:#686868;}
+.dropmenu ul li a:hover{color:#ff6e00;}
+.dropmenu:hover ul{ display:block;}
+
+.msg{width:40px;}
+.msg-icon{
+	background:url(../images/icon_mail.gif) center center no-repeat;
+	padding-left:25px;
+	width:30px;
+	height:20px;
+	display:block;
+}
+.msg-sup{
+	background-color:#005CA3;
+	color: #FFFFFF;
+	font-size: 10px;
+	height: 12px;
+	line-height: 12px;
+	padding:1px 2px;
+	vertical-align:super;
+	margin-left:-10px;
+	font-family:Tahoma;
+}
+.msg:hover .ui-poptip{display:block;}
+/*sidebar*/
+.thumb{ margin:70px 0 0 23px;}
+.thumb img{ width:123px; height:123px;}
+.thumb-info li{ 
+	float:left; 
+	padding:5px 10px;
+	text-align:center;
+	border-right:1px solid #CCC;
+	line-height:1.5;
+}
+.thumb-info li.noborder{border-right:none;}
+.pro-box{
+	margin:10px 10px 0 10px;
+}
+
+.thumb-info li p{
+	font-size:22px;
+	font-family:"微软雅黑", "黑体";
+	font-weight:bold;
+	color:#000;
+}
+.sidebar{
+	position:absolute; 
+	right:0; 
+	width:155px;
+}
+.sidebar li{margin-bottom:2px;height:32px;}
+.sidebar a{ 
+	display:block;
+}
+.sidebar a:hover{background:url(../images/bg_bar_over.gif) no-repeat; text-decoration:none;}
+.sidebar a span{
+	display:block;
+	padding-left:50px;
+	background:url(../images/icon_sprite.png) no-repeat;
+	_background:url(../images/icon_sprite.gif) no-repeat;
+	font-size: 14px;
+	color:#4c4c4c;
+	line-height:32px;
+	_width:105px;	
+	cursor:pointer;
+}
+
+.sidebar .current,.sidebar .current:hover{background:url(../images/bg_bar_active.gif) no-repeat;}
+.sidebar .current span{color:white;}
+
+.sidebar .default .i1{background-position:0 -160px;}/*群组动态*/
+.sidebar .current .i1{background-position:-157px -160px;}
+.sidebar .default .i2{background-position:0 -192px;}/*群组管理*/
+.sidebar .current .i2{background-position:-157px -192px;}
+.sidebar .default .i3{background-position: 0 -224px;}/*搜索群组*/
+.sidebar .current .i3{background-position:-157px -224px;}
+.sidebar .default .i4{background-position:0 0;}/*基本资料*/
+.sidebar .current .i4{background-position:-157px 0}
+.sidebar .default .i5{background-position:0 -32px;}/*账号安全*/
+.sidebar .current .i5{background-position:-157px -32px;}
+.sidebar .default .i6{background-position: 0 -64px;}/*设备管理*/
+.sidebar .current .i6{background-position:-157px -64px;}
+
+/*sidebar 运动日志页面*/
+.sidebar-log{font-size:15px;}
+.sidebar-log a{height:32px; line-height:32px; text-align:center; margin-bottom:2px; display:block; color:#3e3e3e;}
+.sidebar-log a:hover{ background:#ff7600; color:#fff;}
+.sidebar-log .current{background:#ff7600; color:#fff;}
+
+
+/*footer 页脚*/
+.footbox{
+	float:left;
+	width:25%;
+}
+.footbox h3,.footbox2 h3{
+	font-size:17px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+.footbox li{
+	line-height:27px;
+}
+
+.footbox2{
+	float:left;
+	width:50%;
+}
+.footbox2 li{
+	/*border-bottom:1px solid #a8a8a8;*/
+	padding:20px;
+	height:60px;
+}
+.footbox2 p{
+	float:left;
+	width:70px;
+}
+.footbox2 h4,.footbox2 h5{
+	float:left;
+	width:150px;
+	height:25px;
+	line-height:25px;
+}
+.footbox2 h4{font-size:14px; color:#666; font-weight:bold;}
+
+
+
+.nav{
+	float:right;
+	width:530px;
+}
+/** margin-top:35px; ie6的bug*/
+.nav li{float:left;margin-left:1px;}
+.nav li a{
+	display:block;
+	width:101px; 
+	height:37px;
+	background:url(../images/nav.gif) 0 0 no-repeat; 
+	line-height:37px; 
+	text-align:center;
+	font-size:15px;
+	color:#3e3e3e; 
+}
+.nav li a:hover{background-position:0 -37px;text-decoration:none;color:#3e3e3e; }

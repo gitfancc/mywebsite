@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>安全管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="description" content="乐康" />
+<meta name="keywords"  content="乐康" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="theme1/css/custom.css">
+<link type="text/css" rel="stylesheet" href="theme1/css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     	<a href="index.html" class="logo"><img src="theme1/images/logo.jpg"/></a>
+        <ul class="nav pull-right">
+            <li><a>欢迎您来到乐康</a></li>
+            <li><a href="index.html"><i class="icon-home icon-white"></i> 我的首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="个人信息.html">个人信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="绑定设备.html">设备设置</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">退出</a></li>
+        </ul> 
+    </div>
+  </div>
+</div>
+
+<div class="container userbox">
+	 <div class="row">
+     	<div class="span3">
+        	<div class="well well-large sidebar-nav">
+                <ul class="nav nav-list nav">
+                  <li><a href="健康数据.html">健康管理</a></li>
+                  <li class="active"><a href="安全管理.html">安全管理</a></li>
+                  <li><a href="运动管理.html">运动管理</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">我的应用<a class="add" href="blank.html"><i class=" icon-plus"></i>添加应用</a></li>
+                  <li><a  href="blank.html">群组</a></li>
+                  <li><a  href="blank.html">活动</a></li>
+                </ul>
+          </div><!--/.well -->
+        </div>
+        <div class="span9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-box1" data-toggle="tab">查看状态</a></li>
+                <li><a href="#tab-box2" data-toggle="tab">查看足迹</a></li>
+                <li><a href="#tab-box3" data-toggle="tab">报警信息</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab-box1">
+                    <div class="row">
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left sprite icon-1"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">实时位置</h4>
+                                	广州科学城开泰大道创新大厦
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="media">
+                                <a class="pull-left  sprite icon-2"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">经纬度</h4>
+									89°S 112°E 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left sprite icon-3"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">在线状态</h4>
+                                	在线
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="media">
+                                <a class="pull-left  sprite icon-4"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">定位类型</h4>
+									GPRS 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left sprite icon-5"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">电量</h4>
+                                	85%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="media">
+                                <a class="pull-left  sprite icon-6"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">信号时间</h4>
+									2013-08-05 11:32 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left sprite icon-7"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">当前心率/平均心率（最小值-最大值）</h4>
+                                	85/86（84-88）
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="media">
+                                <a class="pull-left  sprite icon-8"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">运动状态</h4>
+									运动量
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left sprite-disable icon-disable-9"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">海拔</h4>
+                                	没数据
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="media">
+                                <a class="pull-left  sprite-disable icon-disable-10"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">气压</h4>
+									没数据
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="media">
+                                <a class="pull-left  sprite icon-11"></a>
+                                <div class="media-body">
+                                	<h4 class="media-heading">湿度</h4>
+									80% 
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+                <!--最近采集数据-->
+                <div class="tab-pane fade" id="tab-box2">
+					<form class="form-inline">
+                        	<label>选择查看日期:</label>
+                            <span class="input-prepend">
+                                <span class="add-on"><i class="icon-calendar"></i></span>
+                                <input type="text" class="input-mini" id="datepicker">
+                            </span>
+                            <label class="ml25">时间(点):</label>
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <label>--</label>
+                            
+                            <select class="input-mini">
+                                <option>00</option>
+                                <option>01</option>
+                            </select>
+                            <span class="pull-right">
+                            	<button type="submit" class="btn">查看</button>
+                            	<button type="submit" class="btn btn-success">回放</button>
+                            </span>
+                            
+                    </form>
+                    <div class="map map-large"><img src="theme1/images/map.jpg"/></div>  
+                </div>
+                <div class="tab-pane fade" id="tab-box3">
+                	<table class="table table-striped table-hover">
+	<thead>
+		<tr class="table-th-bg">
+			<th>时间日期</th>
+			<th>报警位置</th>
+			<th>经纬度</th>
+			<th>用户状态</th>
+            <th>客服处理信息</th>
+            <th>处理状态</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>2013-08-05 00:00</td>
+			<td>广州市科学城科学大道</td>
+			<td>112°E  89°S</td>
+			<td>正常</td>
+            <td>正常</td>
+            <td>已通知监护人</td>
+		</tr>
+		<tr>
+			<td>2013-08-05 00:00</td>
+			<td>广州市科学城科学大道</td>
+			<td>112°E  89°S</td>
+			<td>正常</td>
+            <td>正常</td>
+            <td>已通知监护人</td>
+		</tr>
+		<tr>
+			<td>2013-08-05 00:00</td>
+			<td>广州市科学城科学大道</td>
+			<td>112°E  89°S</td>
+			<td>正常</td>
+            <td>正常</td>
+            <td>已通知监护人</td>
+		</tr>
+		<tr>
+			<td>2013-08-05 00:00</td>
+			<td>广州市科学城科学大道</td>
+			<td>112°E  89°S</td>
+			<td>正常</td>
+            <td>正常</td>
+            <td>已通知监护人</td>
+		</tr>
+	</tbody>
+</table>
+
+                </div>
+            </div>
+            <!--tab-content-->
+        </div>
+        <!--右边栏span9-->
+     </div>
+</div>
+<div class="container copyright">
+    <p>Copyright 2012-2013Lifesense粤ICP备 110110100</p> 
+</div>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+<script src="theme1/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="theme1/js/query.ui.datepicker-zh-CN.js"></script>
+<script >
+$(function() {
+	$( "#datepicker" ).datepicker({
+			dateFormat:'yy-mm-dd',  //更改时间显示模式
+            showAnim:"fadeIn",       //显示日历的效果slide、fadeIn、show等  
+            changeMonth:true,       //是否显示月份的下拉菜单，默认为false  
+            changeYear:true,        //是否显示年份的下拉菜单，默认为false  e  
+            showButtonPanel:true,   //是否显示取消按钮，并含有today按钮，默认为false  
+            closeText:'关闭',      //设置关闭按钮的值
+			currentText:'今天', //设置今天按钮的值
+			showOtherMonths  :true,
+            yearRange:'2008:2017',  //显示可供选择的年份7天
+			defaultDate:1
+	})
+})
+</script>
+</body>
+</html>

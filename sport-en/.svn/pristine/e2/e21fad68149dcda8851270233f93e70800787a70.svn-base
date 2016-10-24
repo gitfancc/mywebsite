@@ -1,0 +1,29 @@
+static.file.path = http://app-zefit2.mykronoz.com/sport/en
+view.path = /WEB-INF/view${user.view}
+root.path = 
+prefix.url = http://app-zefit2.mykronoz.com/sportimg/user/
+file.upload.path = /usr/local/apache/htdocs/sportimg/user/
+
+#restful  URL
+restfulURL=http\://127.0.0.1\:8080/appscomm/
+
+emailAddress=noreply@mykronoz.com
+email.url=http://app-zefit2.mykronoz.com
+findPwdsubject=ZeFit2 password reset
+registSubject=ZeFit2 sign up confirmation
+newPwdSubject=ZeFit2 get new password
+email.forgotPwd=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_forgot_pwd.html
+email.newPwd=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_new_pwd.html
+email.register=/usr/local/L28W/tomcat/webapps/ROOT/WEB-INF/classes/template_register.html
+
+
+watch.search.system.user=test@test.com,s.brault@test.com,g.pirard@test.com,david@test.com,m.kwan@mykronoz.com
+
+deviceType=L28
+deviceName=ZeFit2
+href.learnmore=http://www.mykronoz.com/collections/
+pc.download=http://app-zecircle.mykronoz.com/download/pcmac/v1.40/ZeCircle For WinPC V1.40.exe
+mac.download=http://app-zecircle.mykronoz.com/download/pcmac/v1.40/ZeCircle For Mac V1.40.dmg
+ios.download=https://itunes.apple.com/fr/app/zecircle/id961601713?mt=8
+andriod.download=https://play.google.com/store/apps/details?id=cn.l11.appscomm.pedometer.activity
+wp.download=http://www.windowsphone.com/s?appid=b76a1534-2508-4912-a19a-f93719962840
